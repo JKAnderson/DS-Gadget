@@ -3,6 +3,9 @@ A multi-purpose testing tool for Dark Souls 1. This program is only compatible w
 Requires [.NET 4.6.2](https://www.microsoft.com/net/download/thank-you/net462)
 
 # Changelog
+### 1.1
+* Fixed maxing your stats against your will
+
 ### 1.0
 * Reorganized and expanded cheats
 * Added phantom and team type

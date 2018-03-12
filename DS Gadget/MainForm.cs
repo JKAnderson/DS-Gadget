@@ -153,10 +153,12 @@ namespace DS_Gadget
                             labelLoaded.Text = "Yes";
                             enableTabs(true);
                             dsProcess.LoadPointers();
+                            reading = true;
                             reloadPlayer();
                             reloadStats();
                             reloadGraphics();
                             reloadCheats();
+                            reading = false;
                             loaded = true;
                         }
                         else

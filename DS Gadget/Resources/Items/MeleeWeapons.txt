@@ -1,0 +1,108 @@
+100000 1 true 0 Dagger
+101000 1 true 0 Parrying Dagger
+102000 1 false 5 Ghost Blade
+103000 1 true 0 Bandit's Knife
+104000 1 false 5 Priscilla's Dagger
+200000 1 true 0 Shortsword
+201000 1 true 0 Longsword
+202000 1 true 0 Broadsword
+203000 1 true 0 Broken Straight Sword
+204000 1 true 0 Balder Side Sword
+205000 1 false 5 Crystal Straight Sword
+206000 1 true 0 Sunlight Straight Sword
+207000 1 true 0 Barbed Straight Sword
+208000 1 false 5 Silver Knight Straight Sword
+209000 1 true 0 Astora's Straight Sword
+210000 1 true 0 Darksword
+211000 1 false 5 Drake Sword
+212000 1 true 0 Straight Sword Hilt
+300000 1 true 0 Bastard Sword
+301000 1 true 0 Claymore
+302000 1 true 0 Man-serpent Greatsword
+303000 1 true 0 Flamberge
+304000 1 false 5 Crystal Greatsword
+306000 1 false 5 Stone Greatsword
+307000 1 false 5 Greatsword of Artorias
+309000 1 false 5 Moonlight Greatsword
+310000 1 false 5 Black Knight Sword
+311000 1 false 5 Greatsword of Artorias (Cursed)
+314000 1 false 5 Great Lord Greatsword
+350000 1 true 0 Zweihander
+351000 1 true 0 Greatsword
+352000 1 true 0 Demon Great Machete
+354000 1 false 5 Dragon Greatsword
+355000 1 false 5 Black Knight Greatsword
+400000 1 true 0 Scimitar
+401000 1 true 0 Falchion
+402000 1 true 0 Shotel
+403000 1 false 5 Jagged Ghost Blade
+405000 1 true 0 Painting Guardian Sword
+406000 1 false 5 Quelaag's Furysword
+450000 1 true 0 Server
+451000 1 true 0 Murakumo
+453000 1 false 5 Gravelord Sword
+500000 1 true 0 Uchigatana
+501000 1 true 0 Washing Pole
+502000 1 true 0 Iaito
+503000 1 false 5 Chaos Blade
+600000 1 true 0 Mail Breaker
+601000 1 true 0 Rapier
+602000 1 true 0 Estoc
+603000 1 false 5 Velka's Rapier
+604000 1 true 0 Ricard's Rapier
+700000 1 true 0 Hand Axe
+701000 1 true 0 Battle Axe
+702000 1 true 0 Crescent Axe
+703000 1 true 0 Butcher Knife
+704000 1 false 5 Golem Axe
+705000 1 true 0 Gargoyle Tail Axe
+750000 1 true 0 Greataxe
+751000 1 true 0 Demon's Greataxe
+752000 1 false 5 Dragon King Greataxe
+753000 1 false 5 Black Knight Greataxe
+800000 1 true 0 Club
+801000 1 true 0 Mace
+802000 1 true 0 Morning Star
+803000 1 true 0 Warpick
+804000 1 true 0 Pickaxe
+809000 1 true 0 Reinforced Club
+810000 1 true 0 Blacksmith Hammer
+811000 1 true 0 Blacksmith Giant Hammer
+812000 1 true 0 Hammer of Vamos
+850000 1 true 0 Great Club
+851000 1 false 5 Grant
+852000 1 true 0 Demon's Great Hammer
+854000 1 false 5 Dragon Tooth
+855000 1 true 0 Large Club
+856000 1 false 5 Smough's Hammer
+901000 1 true 0 Caestus
+902000 1 true 0 Claw
+903000 1 false 5 Dragon Bone Fist
+904000 1 false 5 Dark Hand
+1000000 1 true 0 Spear
+1001000 1 true 0 Winged Spear
+1002000 1 true 0 Partizan
+1003000 1 true 0 Demon's Spear
+1004000 1 true 0 Channeler's Trident
+1006000 1 false 5 Silver Knight Spear
+1050000 1 true 0 Pike
+1051000 1 false 5 Dragonslayer Spear
+1052000 1 false 5 Moonlight Butterfly Horn
+1100000 1 true 0 Halberd
+1101000 1 true 0 Giant's Halberd
+1102000 1 false 5 Titanite Catch Pole
+1103000 1 true 0 Gargoyle's Halberd
+1105000 1 false 5 Black Knight Halberd
+1106000 1 true 0 Lucerne 
+1107000 1 true 0 Scythe
+1150000 1 true 0 Great Scythe
+1151000 1 false 5 Lifehunt Scythe
+1600000 1 true 0 Whip
+1601000 1 true 0 Notched Whip
+9010000 1 false 5 Gold Tracer
+9011000 1 false 5 Dark Silver Tracer
+9012000 1 false 5 Abyss Greatsword
+9015000 1 false 5 Stone Greataxe
+9016000 1 true 0 Four-pronged Plow
+9019000 1 true 0 Guardian Tail
+9020000 1 false 5 Obsidian Greatsword

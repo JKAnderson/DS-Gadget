@@ -1,0 +1,28 @@
+﻿1202000 1 true 0 Black Bow of Pharis
+1204000 1 true 0 Composite Bow
+1205000 1 false 5 Darkmoon Bow
+1203000 1 false 5 Dragonslayer Greatbow
+1201000 1 true 0 Longbow
+1200000 1 true 0 Short Bow
+9021000 1 false 5 Gough's Greatbow
+
+1252000 1 true 0 Avelyn
+1251000 1 true 0 Heavy Crossbow
+1250000 1 true 0 Light Crossbow
+1253000 1 true 0 Sniper Crossbow
+
+2002000 999 false 0 Feather Arrow
+2003000 999 false 0 Fire Arrow
+2001000 999 false 0 Large Arrow
+2000000 999 false 0 Standard Arrow
+2004000 999 false 0 Poison Arrow
+2005000 999 false 0 Moonlight Arrow
+2006000 999 false 0 Wooden Arrow
+2007000 999 false 0 Dragonslayer Arrow
+2008000 999 false 0 Gough's Great Arrow
+
+2100000 999 false 0 Standard Bolt
+2101000 999 false 0 Heavy Bolt
+2102000 999 false 0 Sniper Bolt
+2103000 999 false 0 Wood Bolt
+2104000 999 false 0 Lightning Bolt

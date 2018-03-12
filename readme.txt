@@ -11,3 +11,14 @@ Requires .NET 4.6.2: https://www.microsoft.com/net/download/thank-you/net462
 	Reorganized and expanded cheats
 	Added phantom and team type
 	Added missing Painted World respawn
+
+--| Credits
+
+Wulf's Dark Souls Gizmo by Wulf2k
+https://github.com/Wulf2k/DaS-PC-Overlay
+
+LowLevelHooking by Joseph N. Musser II
+https://github.com/jnm2/LowLevelHooking
+
+Costura.Fody by Simon Cropp, Cameron MacFarland
+https://github.com/Fody/Costura

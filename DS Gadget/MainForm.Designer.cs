@@ -2575,8 +2575,10 @@
             this.Controls.Add(this.labelProcessStatic);
             this.Controls.Add(this.linkLabelNewVersion);
             this.Controls.Add(this.labelCheckVersion);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::DS_Gadget.Properties.Settings.Default, "WindowLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = global::DS_Gadget.Properties.Settings.Default.WindowLocation;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "DS Gadget <version>";

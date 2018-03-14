@@ -65,5 +65,8 @@
     <Setting Name="UpgradeRequired" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="WindowLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">100, 100</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

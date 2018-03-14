@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32.SafeHandles;
+using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
@@ -14,19 +15,16 @@ namespace DS_Gadget
         private static extern IntPtr OpenProcess(uint dwDesiredAccess, bool bInheritHandle, uint dwProcessId);
 
         [DllImport("kernel32.dll")]
-        private static extern bool CloseHandle(IntPtr hObject);
+        private static extern bool ReadProcessMemory(SafeProcessHandle hProcess, IntPtr lpBaseAddress, byte[] lpBuffer, uint nSize, uint lpNumberOfBytesRead);
 
         [DllImport("kernel32.dll")]
-        private static extern bool ReadProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress, byte[] lpBuffer, uint nSize, uint lpNumberOfBytesRead);
+        private static extern bool WriteProcessMemory(SafeProcessHandle hProcess, IntPtr lpBaseAddress, byte[] lpBuffer, uint nSize, uint lpNumberOfBytesWritten);
 
         [DllImport("kernel32.dll")]
-        private static extern bool WriteProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress, byte[] lpBuffer, uint nSize, uint lpNumberOfBytesWritten);
+        private static extern IntPtr VirtualAllocEx(SafeProcessHandle hProcess, IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);
 
         [DllImport("kernel32.dll")]
-        private static extern IntPtr VirtualAllocEx(IntPtr hProcess, IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);
-
-        [DllImport("kernel32.dll")]
-        private static extern IntPtr CreateRemoteThread(IntPtr hProcess, IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, IntPtr lpThreadId);
+        private static extern IntPtr CreateRemoteThread(SafeProcessHandle hProcess, IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, IntPtr lpThreadId);
 
 
         public static DSInterface Attach(Process process)
@@ -34,20 +32,21 @@ namespace DS_Gadget
             DSInterface result = null;
             IntPtr handle = OpenProcess(PROCESS_ALL_ACCESS, false, (uint)process.Id);
             if (handle != IntPtr.Zero)
-                result = new DSInterface(handle);
+                result = new DSInterface(new SafeProcessHandle(handle, true));
             return result;
         }
 
-        private IntPtr handle;
 
-        private DSInterface(IntPtr setHandle)
+        private SafeProcessHandle handle;
+
+        private DSInterface(SafeProcessHandle setHandle)
         {
             handle = setHandle;
         }
 
         public void Close()
         {
-            CloseHandle(handle);
+            handle.Close();
         }
 
         public IntPtr VirtualAllocEx(int size)
@@ -72,8 +71,7 @@ namespace DS_Gadget
 
         public void CreateRemoteThread(IntPtr address)
         {
-            IntPtr threadID = new IntPtr();
-            CreateRemoteThread(handle, IntPtr.Zero, 0, address, IntPtr.Zero, 0, threadID);
+            CreateRemoteThread(handle, IntPtr.Zero, 0, address, IntPtr.Zero, 0, IntPtr.Zero);
         }
 
         private byte[] ReadProcessMemory(int address, uint size)
@@ -82,6 +80,7 @@ namespace DS_Gadget
             ReadProcessMemory(handle, (IntPtr)address, result, size, 0);
             return result;
         }
+
 
         public bool ReadBool(int address)
         {
@@ -106,22 +105,46 @@ namespace DS_Gadget
             return BitConverter.ToSingle(bytes, 0);
         }
 
-        public Int32 ReadInt32(int address)
+        public double ReadDouble(int address)
+        {
+            byte[] bytes = ReadProcessMemory(address, 8);
+            return BitConverter.ToDouble(bytes, 0);
+        }
+
+        public short ReadInt16(int address)
+        {
+            byte[] bytes = ReadProcessMemory(address, 2);
+            return BitConverter.ToInt16(bytes, 0);
+        }
+
+        public ushort ReadUInt16(int address)
+        {
+            byte[] bytes = ReadProcessMemory(address, 2);
+            return BitConverter.ToUInt16(bytes, 0);
+        }
+
+        public int ReadInt32(int address)
         {
             byte[] bytes = ReadProcessMemory(address, 4);
             return BitConverter.ToInt32(bytes, 0);
         }
 
-        public UInt32 ReadUInt32(int address)
+        public uint ReadUInt32(int address)
         {
             byte[] bytes = ReadProcessMemory(address, 4);
             return BitConverter.ToUInt32(bytes, 0);
         }
 
-        public Int64 ReadInt64(int address)
+        public long ReadInt64(int address)
         {
             byte[] bytes = ReadProcessMemory(address, 8);
             return BitConverter.ToInt64(bytes, 0);
+        }
+
+        public ulong ReadUInt64(int address)
+        {
+            byte[] bytes = ReadProcessMemory(address, 8);
+            return BitConverter.ToUInt64(bytes, 0);
         }
 
         public bool ReadFlag32(int address, uint mask)
@@ -130,6 +153,7 @@ namespace DS_Gadget
             uint flags = BitConverter.ToUInt32(bytes, 0);
             return (flags & mask) != 0;
         }
+
 
         public void WriteBool(int address, bool value)
         {
@@ -151,6 +175,16 @@ namespace DS_Gadget
             WriteProcessMemory(address, BitConverter.GetBytes(value));
         }
 
+        public void WriteInt16(int address, short value)
+        {
+            WriteProcessMemory(address, BitConverter.GetBytes(value));
+        }
+
+        public void WriteUInt16(int address, ushort value)
+        {
+            WriteProcessMemory(address, BitConverter.GetBytes(value));
+        }
+
         public void WriteInt32(int address, int value)
         {
             WriteProcessMemory(address, BitConverter.GetBytes(value));
@@ -162,6 +196,11 @@ namespace DS_Gadget
         }
 
         public void WriteInt64(int address, long value)
+        {
+            WriteProcessMemory(address, BitConverter.GetBytes(value));
+        }
+
+        public void WriteUInt64(int address, ulong value)
         {
             WriteProcessMemory(address, BitConverter.GetBytes(value));
         }

@@ -73,11 +73,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DSBonfire.cs" />
-    <Compile Include="DSClass.cs" />
-    <Compile Include="DSInfusion.cs" />
-    <Compile Include="DSItem.cs" />
-    <Compile Include="DSItemCategory.cs" />
+    <Compile Include="List Items\DSBonfire.cs" />
+    <Compile Include="List Items\DSClass.cs" />
+    <Compile Include="List Items\DSInfusion.cs" />
+    <Compile Include="List Items\DSItem.cs" />
+    <Compile Include="List Items\DSItemCategory.cs" />
     <Compile Include="DSOffsets.cs" />
     <Compile Include="DSProcess.cs" />
     <Compile Include="DSInterface.cs" />
@@ -148,6 +148,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets" Condition="Exists('..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GadgetHotkey.cs" />
     <Compile Include="List Items\DSBonfire.cs" />
     <Compile Include="List Items\DSClass.cs" />
     <Compile Include="List Items\DSInfusion.cs" />

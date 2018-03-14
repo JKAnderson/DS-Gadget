@@ -49,7 +49,11 @@ namespace DS_Gadget
             keyboardHook.KeyDownOrUp += GlobalKeyboardHook_KeyDownOrUp;
 
             Properties.Settings settings = Properties.Settings.Default;
-            settings.Upgrade();
+            if (settings.UpgradeRequired)
+            {
+                settings.Upgrade();
+                settings.UpgradeRequired = false;
+            }
 
             numericUpDownSpeed.Value = settings.Speed;
 
@@ -65,22 +69,7 @@ namespace DS_Gadget
             numericUpDownSaturation.Value = settings.FilterSaturation;
             numericUpDownHue.Value = settings.FilterHue;
 
-            hotkeyFilter = (VirtualKey)settings.HotkeyFilter;
-            textBoxHotkeyFilter.Text = hotkeyFilter.ToString();
-            hotkeyMoveswap = (VirtualKey)settings.HotkeyMoveswap;
-            textBoxHotkeyMoveswap.Text = hotkeyMoveswap.ToString();
-            hotkeyAnim = (VirtualKey)settings.HotkeyAnim;
-            textBoxHotkeyAnim.Text = hotkeyAnim.ToString();
-            hotkeyStore = (VirtualKey)settings.HotkeyStore;
-            textBoxHotkeyStore.Text = hotkeyStore.ToString();
-            hotkeyRestore = (VirtualKey)settings.HotkeyRestore;
-            textBoxHotkeyRestore.Text = hotkeyRestore.ToString();
-            hotkeyGravity = (VirtualKey)settings.HotkeyGravity;
-            textBoxHotkeyGravity.Text = hotkeyGravity.ToString();
-            hotkeyCollision = (VirtualKey)settings.HotkeyCollision;
-            textBoxHotkeyCollision.Text = hotkeyCollision.ToString();
-            hotkeySpeed = (VirtualKey)settings.HotkeySpeed;
-            textBoxHotkeySpeed.Text = hotkeySpeed.ToString();
+            initHotkeys();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -103,14 +92,7 @@ namespace DS_Gadget
             settings.FilterSaturation = numericUpDownSaturation.Value;
             settings.FilterHue = numericUpDownHue.Value;
 
-            settings.HotkeyFilter = (int)hotkeyFilter;
-            settings.HotkeyMoveswap = (int)hotkeyMoveswap;
-            settings.HotkeyAnim = (int)hotkeyAnim;
-            settings.HotkeyStore = (int)hotkeyStore;
-            settings.HotkeyRestore = (int)hotkeyRestore;
-            settings.HotkeyGravity = (int)hotkeyGravity;
-            settings.HotkeyCollision = (int)hotkeyCollision;
-            settings.HotkeySpeed = (int)hotkeySpeed;
+            saveHotkeys();
             settings.Save();
         }
 
@@ -840,175 +822,68 @@ namespace DS_Gadget
 
         #region Hotkeys Tab
         private KeysConverter keyConverter = new KeysConverter();
-        private VirtualKey hotkeyFilter, hotkeyMoveswap, hotkeyAnim, hotkeyStore, hotkeyRestore, hotkeyGravity, hotkeyCollision, hotkeySpeed;
+        private List<GadgetHotkey> hotkeys = new List<GadgetHotkey>();
+
+        private void initHotkeys()
+        {
+            Properties.Settings settings = Properties.Settings.Default;
+
+            hotkeys.Add(new GadgetHotkey("HotkeyFilter", textBoxHotkeyFilter, tabPageHotkeys, () =>
+            {
+                checkBoxFilter.Checked = !checkBoxFilter.Checked;
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyMoveswap", textBoxHotkeyMoveswap, tabPageHotkeys, () =>
+            {
+                dsProcess.MoveSwap();
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyAnim", textBoxHotkeyAnim, tabPageHotkeys, () =>
+            {
+                dsProcess.ResetAnim();
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyStore", textBoxHotkeyStore, tabPageHotkeys, () =>
+            {
+                posStore();
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyRestore", textBoxHotkeyRestore, tabPageHotkeys, () =>
+            {
+                posRestore();
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyGravity", textBoxHotkeyGravity, tabPageHotkeys, () =>
+            {
+                checkBoxGravity.Checked = !checkBoxGravity.Checked;
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyCollision", textBoxHotkeyCollision, tabPageHotkeys, () =>
+            {
+                checkBoxCollision.Checked = !checkBoxCollision.Checked;
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeySpeed", textBoxHotkeySpeed, tabPageHotkeys, () =>
+            {
+                checkBoxSpeed.Checked = !checkBoxSpeed.Checked;
+            }));
+        }
+
+        private void saveHotkeys()
+        {
+            foreach (GadgetHotkey hotkey in hotkeys)
+                hotkey.Save();
+        }
 
         private void GlobalKeyboardHook_KeyDownOrUp(object sender, GlobalKeyboardHookEventArgs e)
         {
             if (loaded && dsProcess.Focused() && !e.IsUp)
             {
-                if (e.KeyCode == hotkeyFilter)
-                    checkBoxFilter.Checked = !checkBoxFilter.Checked;
-                else if (e.KeyCode == hotkeyMoveswap)
-                    dsProcess.MoveSwap();
-                else if (e.KeyCode == hotkeyAnim)
-                    dsProcess.ResetAnim();
-                else if (e.KeyCode == hotkeyStore)
-                    posStore();
-                else if (e.KeyCode == hotkeyRestore)
-                    posRestore();
-                else if (e.KeyCode == hotkeyGravity)
-                    checkBoxGravity.Checked = !checkBoxGravity.Checked;
-                else if (e.KeyCode == hotkeyCollision)
-                    checkBoxCollision.Checked = !checkBoxCollision.Checked;
-                else if (e.KeyCode == hotkeySpeed)
-                    checkBoxSpeed.Checked = !checkBoxSpeed.Checked;
-                else if (e.KeyCode == VirtualKey.NumPad6)
-                    dsProcess.Test();
+                foreach (GadgetHotkey hotkey in hotkeys)
+                {
+                    hotkey.Trigger(e.KeyCode);
+                }
             }
-        }
-
-        private void textBoxHotkeyStore_Enter(object sender, EventArgs e)
-        {
-            textBoxHotkeyStore.BackColor = Color.LightGreen;
-        }
-
-        private void textBoxHotkeyStore_Leave(object sender, EventArgs e)
-        {
-            textBoxHotkeyStore.BackColor = Color.White;
-        }
-
-        private void textBoxHotkeyStore_KeyUp(object sender, KeyEventArgs e)
-        {
-            hotkeyStore = (VirtualKey)e.KeyValue;
-            textBoxHotkeyStore.Text = hotkeyStore.ToString();
-            e.Handled = true;
-            tabPageHotkeys.Focus();
-        }
-
-        private void textBoxHotkeyRestore_Enter(object sender, EventArgs e)
-        {
-            textBoxHotkeyRestore.BackColor = Color.LightGreen;
-        }
-
-        private void textBoxHotkeyRestore_Leave(object sender, EventArgs e)
-        {
-            textBoxHotkeyRestore.BackColor = Color.White;
-        }
-
-        private void textBoxHotkeyRestore_KeyUp(object sender, KeyEventArgs e)
-        {
-            hotkeyRestore = (VirtualKey)e.KeyValue;
-            textBoxHotkeyRestore.Text = hotkeyRestore.ToString();
-            e.Handled = true;
-            tabPageHotkeys.Focus();
-        }
-
-        private void textBoxHotkeyFilter_Enter(object sender, EventArgs e)
-        {
-            textBoxHotkeyFilter.BackColor = Color.LightGreen;
-        }
-
-        private void textBoxHotkeyFilter_Leave(object sender, EventArgs e)
-        {
-            textBoxHotkeyFilter.BackColor = Color.White;
-        }
-
-        private void textBoxHotkeyFilter_KeyUp(object sender, KeyEventArgs e)
-        {
-            hotkeyFilter = (VirtualKey)e.KeyValue;
-            textBoxHotkeyFilter.Text = hotkeyFilter.ToString();
-            e.Handled = true;
-            tabPageHotkeys.Focus();
-        }
-
-        private void textBoxHotkeyMoveswap_Enter(object sender, EventArgs e)
-        {
-            textBoxHotkeyMoveswap.BackColor = Color.LightGreen;
-        }
-
-        private void textBoxHotkeyMoveswap_Leave(object sender, EventArgs e)
-        {
-            textBoxHotkeyMoveswap.BackColor = Color.White;
-        }
-
-        private void textBoxHotkeyMoveswap_KeyUp(object sender, KeyEventArgs e)
-        {
-            hotkeyMoveswap = (VirtualKey)e.KeyValue;
-            textBoxHotkeyMoveswap.Text = hotkeyMoveswap.ToString();
-            e.Handled = true;
-            tabPageHotkeys.Focus();
-        }
-
-        private void textBoxHotkeyAnim_Enter(object sender, EventArgs e)
-        {
-            textBoxHotkeyAnim.BackColor = Color.LightGreen;
-        }
-
-        private void textBoxHotkeyAnim_Leave(object sender, EventArgs e)
-        {
-            textBoxHotkeyAnim.BackColor = Color.White;
-        }
-
-        private void textBoxHotkeyAnim_KeyUp(object sender, KeyEventArgs e)
-        {
-            hotkeyAnim = (VirtualKey)e.KeyValue;
-            textBoxHotkeyAnim.Text = hotkeyAnim.ToString();
-            e.Handled = true;
-            tabPageHotkeys.Focus();
-        }
-
-        private void textBoxHotkeyGravity_Enter(object sender, EventArgs e)
-        {
-            textBoxHotkeyGravity.BackColor = Color.LightGreen;
-        }
-
-        private void textBoxHotkeyGravity_Leave(object sender, EventArgs e)
-        {
-            textBoxHotkeyGravity.BackColor = Color.White;
-        }
-
-        private void textBoxHotkeyGravity_KeyUp(object sender, KeyEventArgs e)
-        {
-            hotkeyGravity = (VirtualKey)e.KeyValue;
-            textBoxHotkeyGravity.Text = hotkeyGravity.ToString();
-            e.Handled = true;
-            tabPageHotkeys.Focus();
-        }
-
-        private void textBoxHotkeyCollision_Enter(object sender, EventArgs e)
-        {
-            textBoxHotkeyCollision.BackColor = Color.LightGreen;
-        }
-
-        private void textBoxHotkeyCollision_Leave(object sender, EventArgs e)
-        {
-            textBoxHotkeyCollision.BackColor = Color.White;
-        }
-
-        private void textBoxHotkeyCollision_KeyUp(object sender, KeyEventArgs e)
-        {
-            hotkeyCollision = (VirtualKey)e.KeyValue;
-            textBoxHotkeyCollision.Text = hotkeyCollision.ToString();
-            e.Handled = true;
-            tabPageHotkeys.Focus();
-        }
-
-        private void textBoxHotkeySpeed_Enter(object sender, EventArgs e)
-        {
-            textBoxHotkeySpeed.BackColor = Color.LightGreen;
-        }
-
-        private void textBoxHotkeySpeed_Leave(object sender, EventArgs e)
-        {
-            textBoxHotkeySpeed.BackColor = Color.White;
-        }
-
-        private void textBoxHotkeySpeed_KeyUp(object sender, KeyEventArgs e)
-        {
-            hotkeySpeed = (VirtualKey)e.KeyValue;
-            textBoxHotkeySpeed.Text = hotkeySpeed.ToString();
-            e.Handled = true;
-            tabPageHotkeys.Focus();
         }
         #endregion
     }

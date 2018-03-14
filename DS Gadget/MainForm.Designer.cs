@@ -2416,9 +2416,6 @@
             this.textBoxHotkeySpeed.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeySpeed.TabIndex = 14;
             this.textBoxHotkeySpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxHotkeySpeed.Enter += new System.EventHandler(this.textBoxHotkeySpeed_Enter);
-            this.textBoxHotkeySpeed.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxHotkeySpeed_KeyUp);
-            this.textBoxHotkeySpeed.Leave += new System.EventHandler(this.textBoxHotkeySpeed_Leave);
             // 
             // label7
             // 
@@ -2436,9 +2433,6 @@
             this.textBoxHotkeyCollision.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyCollision.TabIndex = 12;
             this.textBoxHotkeyCollision.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxHotkeyCollision.Enter += new System.EventHandler(this.textBoxHotkeyCollision_Enter);
-            this.textBoxHotkeyCollision.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxHotkeyCollision_KeyUp);
-            this.textBoxHotkeyCollision.Leave += new System.EventHandler(this.textBoxHotkeyCollision_Leave);
             // 
             // label6
             // 
@@ -2456,9 +2450,6 @@
             this.textBoxHotkeyGravity.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyGravity.TabIndex = 10;
             this.textBoxHotkeyGravity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxHotkeyGravity.Enter += new System.EventHandler(this.textBoxHotkeyGravity_Enter);
-            this.textBoxHotkeyGravity.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxHotkeyGravity_KeyUp);
-            this.textBoxHotkeyGravity.Leave += new System.EventHandler(this.textBoxHotkeyGravity_Leave);
             // 
             // label5
             // 
@@ -2476,9 +2467,6 @@
             this.textBoxHotkeyAnim.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyAnim.TabIndex = 8;
             this.textBoxHotkeyAnim.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxHotkeyAnim.Enter += new System.EventHandler(this.textBoxHotkeyAnim_Enter);
-            this.textBoxHotkeyAnim.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxHotkeyAnim_KeyUp);
-            this.textBoxHotkeyAnim.Leave += new System.EventHandler(this.textBoxHotkeyAnim_Leave);
             // 
             // label4
             // 
@@ -2496,9 +2484,6 @@
             this.textBoxHotkeyMoveswap.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyMoveswap.TabIndex = 6;
             this.textBoxHotkeyMoveswap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxHotkeyMoveswap.Enter += new System.EventHandler(this.textBoxHotkeyMoveswap_Enter);
-            this.textBoxHotkeyMoveswap.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxHotkeyMoveswap_KeyUp);
-            this.textBoxHotkeyMoveswap.Leave += new System.EventHandler(this.textBoxHotkeyMoveswap_Leave);
             // 
             // label3
             // 
@@ -2516,9 +2501,6 @@
             this.textBoxHotkeyFilter.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyFilter.TabIndex = 4;
             this.textBoxHotkeyFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxHotkeyFilter.Enter += new System.EventHandler(this.textBoxHotkeyFilter_Enter);
-            this.textBoxHotkeyFilter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxHotkeyFilter_KeyUp);
-            this.textBoxHotkeyFilter.Leave += new System.EventHandler(this.textBoxHotkeyFilter_Leave);
             // 
             // label2
             // 
@@ -2536,9 +2518,6 @@
             this.textBoxHotkeyRestore.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyRestore.TabIndex = 2;
             this.textBoxHotkeyRestore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxHotkeyRestore.Enter += new System.EventHandler(this.textBoxHotkeyRestore_Enter);
-            this.textBoxHotkeyRestore.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxHotkeyRestore_KeyUp);
-            this.textBoxHotkeyRestore.Leave += new System.EventHandler(this.textBoxHotkeyRestore_Leave);
             // 
             // textBoxHotkeyStore
             // 
@@ -2548,9 +2527,6 @@
             this.textBoxHotkeyStore.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyStore.TabIndex = 1;
             this.textBoxHotkeyStore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxHotkeyStore.Enter += new System.EventHandler(this.textBoxHotkeyStore_Enter);
-            this.textBoxHotkeyStore.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxHotkeyStore_KeyUp);
-            this.textBoxHotkeyStore.Leave += new System.EventHandler(this.textBoxHotkeyStore_Leave);
             // 
             // label1
             // 

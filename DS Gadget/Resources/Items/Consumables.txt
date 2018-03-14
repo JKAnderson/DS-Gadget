@@ -32,10 +32,10 @@
 390 1 false 0 Fire Keeper Soul (Anastacia of Astora)
 391 1 false 0 Fire Keeper Soul (Darkmoon Knightess)
 392 1 false 0 Fire Keeper Soul (Daughter of Chaos)
-393 1 false 0 Fire Keeper Soul (393)
-394 1 false 0 Fire Keeper Soul (394)
-395 1 false 0 Fire Keeper Soul (395)
-396 1 false 0 Fire Keeper Soul (396)
+393 1 false 0 Fire Keeper Soul (New Londo)
+394 1 false 0 Fire Keeper Soul (Blighttown)
+395 1 false 0 Fire Keeper Soul (Duke's Archives)
+396 1 false 0 Fire Keeper Soul (Undead Parish)
 400 99 false 0 Soul of a Lost Undead
 401 99 false 0 Large Soul of a Lost Undead
 402 99 false 0 Soul of a Nameless Soldier

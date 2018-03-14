@@ -1,8 +1,8 @@
 ﻿199000 1 false 0 Ghost Dagger
 299000 1 false 0 Ghost Sword
 308000 1 false 5 Great Lord Greatsword
-398000 1 false 0 Ghost Large Sword
-399000 1 false 0 Ghost Large Sword
+398000 1 false 0 Ghost Greatsword
+399000 1 false 0 Ghost Ultra Greatsword
 454001 1 false 0 454001
 454002 1 false 0 454002
 454003 1 false 0 454003

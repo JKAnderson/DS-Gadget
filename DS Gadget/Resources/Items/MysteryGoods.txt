@@ -1,18 +1,19 @@
-200 1 false 0 Estus Flask
+116 1 false 0 Black Eye Orb (Shiva)
+200 1 false 0 Estus Flask (Empty)
 201 1 false 0 Estus Flask
-202 1 false 0 Estus Flask+1
+202 1 false 0 Estus Flask+1 (Empty)
 203 1 false 0 Estus Flask+1
-204 1 false 0 Estus Flask+2
+204 1 false 0 Estus Flask+2 (Empty)
 205 1 false 0 Estus Flask+2
-206 1 false 0 Estus Flask+3
+206 1 false 0 Estus Flask+3 (Empty)
 207 1 false 0 Estus Flask+3
-208 1 false 0 Estus Flask+4
+208 1 false 0 Estus Flask+4 (Empty)
 209 1 false 0 Estus Flask+4
-210 1 false 0 Estus Flask+5
+210 1 false 0 Estus Flask+5 (Empty)
 211 1 false 0 Estus Flask+5
-212 1 false 0 Estus Flask+6
+212 1 false 0 Estus Flask+6 (Empty)
 213 1 false 0 Estus Flask+6
-214 1 false 0 Estus Flask+7
+214 1 false 0 Estus Flask+7 (Empty)
 215 1 false 0 Estus Flask+7
 350 99 false 0 Humanity
 2200 1 false 0 Placeholder Key

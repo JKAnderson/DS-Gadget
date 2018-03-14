@@ -23,10 +23,10 @@
 2021 1 false 0 Residence Key
 2022 1 false 0 Crest Key
 2100 1 false 0 Master Key
-2500 1 false 0 Lord Soul (2500)
-2501 1 false 0 Lord Soul (2501)
-2502 1 false 0 Bequeathed Lord Soul Shard (2502)
-2503 1 false 0 Bequeathed Lord Soul Shard (2503)
+2500 1 false 0 Lord Soul (Nito)
+2501 1 false 0 Lord Soul (Bed of Chaos)
+2502 1 false 0 Bequeathed Lord Soul Shard (Four Kings)
+2503 1 false 0 Bequeathed Lord Soul Shard (Seath)
 2510 1 false 0 Lordvessel
 2520 1 false 0 Broken Pendant
 2600 1 false 0 Weapon Smithbox

@@ -71,8 +71,6 @@ namespace DS_Gadget
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (dsProcess != null)
-                dsProcess.Close();
             savePlayer();
             saveStats();
             saveItems();
@@ -80,6 +78,8 @@ namespace DS_Gadget
             saveCheats();
             saveHotkeys();
             settings.Save();
+            if (dsProcess != null)
+                dsProcess.Close();
         }
 
         private void enableTabs(bool enable)
@@ -183,6 +183,11 @@ namespace DS_Gadget
         private void savePlayer()
         {
             settings.Speed = numericUpDownSpeed.Value;
+
+            if (dsProcess != null)
+            {
+                dsProcess.SetPosLock(false);
+            }
         }
 
         private void reloadPlayer()
@@ -464,6 +469,29 @@ namespace DS_Gadget
             settings.FilterContrastB = numericUpDownContrastB.Value;
             settings.FilterSaturation = numericUpDownSaturation.Value;
             settings.FilterHue = numericUpDownHue.Value;
+
+            if (dsProcess != null)
+            {
+                dsProcess.DrawMap(true);
+                dsProcess.DrawCreatures(true);
+                dsProcess.DrawObjects(true);
+                dsProcess.DrawSFX(true);
+
+                dsProcess.DrawSpriteMasks(true);
+                dsProcess.DrawSprites(true);
+                dsProcess.DrawTrans(true);
+                dsProcess.DrawShadows(true);
+                dsProcess.DrawSpriteShadows(true);
+                dsProcess.DrawTextures(true);
+
+                dsProcess.DrawBounding(false);
+                dsProcess.DrawCompassLarge(false);
+                dsProcess.DrawCompassSmall(false);
+                dsProcess.DrawAltimeter(false);
+                dsProcess.DrawNodes(false);
+
+                dsProcess.OverrideFilter(true);
+            }
         }
 
         private void reloadGraphics()
@@ -756,7 +784,22 @@ namespace DS_Gadget
 
         #region Cheats Tab
         private void initCheats() { }
-        private void saveCheats() { }
+        private void saveCheats()
+        {
+            dsProcess.SetAllNoMagic(false);
+            dsProcess.SetNoDead(false);
+            dsProcess.SetExterminate(false);
+            dsProcess.SetAllStamina(false);
+            dsProcess.SetAllAmmo(false);
+            dsProcess.SetHide(false);
+            dsProcess.SetSilence(false);
+            dsProcess.SetAllNoDead(false);
+            dsProcess.SetAllNoDamage(false);
+            dsProcess.SetAllNoHit(false);
+            dsProcess.SetAllNoAttack(false);
+            dsProcess.SetAllNoMove(false);
+            dsProcess.SetAllNoUpdateAI(false);
+        }
 
         private void reloadCheats()
         {

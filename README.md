@@ -1,3 +1,4 @@
+
 # DS Gadget
 A multi-purpose testing tool for Dark Souls 1. This program is only compatible with the current Steam version of DS1.
 Requires [.NET 4.6.2](https://www.microsoft.com/net/download/thank-you/net462)
@@ -14,6 +15,10 @@ Requires [.NET 4.6.2](https://www.microsoft.com/net/download/thank-you/net462)
 # Credits
 [Wulf's Dark Souls Gizmo](https://github.com/Wulf2k/DaS-PC-Overlay) by Wulf2k
 
+[Costura.Fody](https://github.com/Fody/Costura) by Simon Cropp, Cameron MacFarland
+
 [LowLevelHooking](https://github.com/jnm2/LowLevelHooking) by Joseph N. Musser II
 
-[Costura.Fody](https://github.com/Fody/Costura) by Simon Cropp, Cameron MacFarland
+[Octokit](https://github.com/octokit/octokit.net) by GitHub
+
+[Semver](https://github.com/maxhauser/semver) by Max Hauser

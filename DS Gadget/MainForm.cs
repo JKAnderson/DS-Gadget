@@ -1,4 +1,6 @@
 ﻿using LowLevelHooking;
+using Octokit;
+using Semver;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,6 +11,8 @@ namespace DS_Gadget
 {
     public partial class MainForm : Form
     {
+        private static Properties.Settings settings = Properties.Settings.Default;
+
         private GlobalKeyboardHook keyboardHook = new GlobalKeyboardHook();
         private List<DSItemCategory> categories = new List<DSItemCategory>();
         private DSProcess dsProcess = null;
@@ -26,72 +30,54 @@ namespace DS_Gadget
             keyboardHook.Dispose();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private async void MainForm_Load(object sender, EventArgs e)
         {
-            Text = "DS Gadget " + Application.ProductVersion;
+            Text = "DS Gadget " + System.Windows.Forms.Application.ProductVersion;
             enableTabs(false);
-
-            foreach (DSBonfire bonfire in DSBonfire.All)
-                comboBoxBonfire.Items.Add(bonfire);
-            comboBoxBonfire.SelectedIndex = 0;
-            foreach (DSClass charClass in DSClass.All)
-                comboBoxClass.Items.Add(charClass);
-            foreach (DSInfusion infusion in DSInfusion.All)
-                comboBoxInfusion.Items.Add(infusion);
-            comboBoxInfusion.SelectedIndex = 0;
-            foreach (DSItemCategory category in DSItemCategory.All)
-                comboBoxCategory.Items.Add(category);
-            comboBoxCategory.SelectedIndex = 0;
-
-            numericUpDownHumanity.Maximum = Int32.MaxValue;
-            numericUpDownHumanity.Minimum = Int32.MinValue;
-
-            keyboardHook.KeyDownOrUp += GlobalKeyboardHook_KeyDownOrUp;
-
-            Properties.Settings settings = Properties.Settings.Default;
             if (settings.UpgradeRequired)
             {
                 settings.Upgrade();
                 settings.UpgradeRequired = false;
             }
-
-            numericUpDownSpeed.Value = settings.Speed;
-
-            checkBoxFilter.Checked = settings.FilterEnable;
-            checkBoxBrightnessSync.Checked = settings.FilterBrightnessSync;
-            numericUpDownBrightnessR.Value = settings.FilterBrightnessR;
-            numericUpDownBrightnessG.Value = settings.FilterBrightnessG;
-            numericUpDownBrightnessB.Value = settings.FilterBrightnessB;
-            checkBoxContrastSync.Checked = settings.FilterContrastSync;
-            numericUpDownContrastR.Value = settings.FilterContrastR;
-            numericUpDownContrastG.Value = settings.FilterContrastG;
-            numericUpDownContrastB.Value = settings.FilterContrastB;
-            numericUpDownSaturation.Value = settings.FilterSaturation;
-            numericUpDownHue.Value = settings.FilterHue;
-
+            initPlayer();
+            initStats();
+            initItems();
+            initGraphics();
+            initCheats();
             initHotkeys();
+
+            GitHubClient gitHubClient = new GitHubClient(new ProductHeaderValue("DS-Gadget"));
+            try
+            {
+                Release release = await gitHubClient.Repository.Release.GetLatest("JKAnderson", "DS-Gadget");
+                if (SemVersion.Parse(release.TagName) > System.Windows.Forms.Application.ProductVersion)
+                {
+                    labelCheckVersion.Visible = false;
+                    LinkLabel.Link link = new LinkLabel.Link();
+                    link.LinkData = release.HtmlUrl;
+                    linkLabelNewVersion.Links.Add(link);
+                    linkLabelNewVersion.Visible = true;
+                }
+                else
+                {
+                    labelCheckVersion.Text = "App up to date";
+                }
+            }
+            catch (Exception ex) when (ex is ApiException || ex is ArgumentException)
+            {
+                labelCheckVersion.Text = "Current app version unknown";
+            }
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (dsProcess != null)
                 dsProcess.Close();
-
-            Properties.Settings settings = Properties.Settings.Default;
-            settings.Speed = numericUpDownSpeed.Value;
-
-            settings.FilterEnable = checkBoxFilter.Checked;
-            settings.FilterBrightnessSync = checkBoxBrightnessSync.Checked;
-            settings.FilterBrightnessR = numericUpDownBrightnessR.Value;
-            settings.FilterBrightnessG = numericUpDownBrightnessG.Value;
-            settings.FilterBrightnessB = numericUpDownBrightnessB.Value;
-            settings.FilterContrastSync = checkBoxContrastSync.Checked;
-            settings.FilterContrastR = numericUpDownContrastR.Value;
-            settings.FilterContrastG = numericUpDownContrastG.Value;
-            settings.FilterContrastB = numericUpDownContrastB.Value;
-            settings.FilterSaturation = numericUpDownSaturation.Value;
-            settings.FilterHue = numericUpDownHue.Value;
-
+            savePlayer();
+            saveStats();
+            saveItems();
+            saveGraphics();
+            saveCheats();
             saveHotkeys();
             settings.Save();
         }
@@ -138,8 +124,10 @@ namespace DS_Gadget
                             reading = true;
                             reloadPlayer();
                             reloadStats();
+                            reloadItems();
                             reloadGraphics();
                             reloadCheats();
+                            reloadHotkeys();
                             reading = false;
                             loaded = true;
                         }
@@ -148,8 +136,10 @@ namespace DS_Gadget
                             reading = true;
                             updatePlayer();
                             updateStats();
+                            updateItems();
                             updateGraphics();
                             updateCheats();
+                            updateHotkeys();
                             reading = false;
                         }
                     }
@@ -174,8 +164,26 @@ namespace DS_Gadget
             }
         }
 
+        private void linkLabelNewVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(e.Link.LinkData.ToString());
+        }
+
         #region Player Tab
         private int skipBonfire = 0;
+
+        private void initPlayer()
+        {
+            foreach (DSBonfire bonfire in DSBonfire.All)
+                comboBoxBonfire.Items.Add(bonfire);
+            comboBoxBonfire.SelectedIndex = 0;
+            numericUpDownSpeed.Value = settings.Speed;
+        }
+
+        private void savePlayer()
+        {
+            settings.Speed = numericUpDownSpeed.Value;
+        }
 
         private void reloadPlayer()
         {
@@ -334,6 +342,16 @@ namespace DS_Gadget
         #endregion
 
         #region Stats Tab
+        private void initStats()
+        {
+            foreach (DSClass charClass in DSClass.All)
+                comboBoxClass.Items.Add(charClass);
+            numericUpDownHumanity.Maximum = Int32.MaxValue;
+            numericUpDownHumanity.Minimum = Int32.MinValue;
+        }
+
+        private void saveStats() { }
+
         private void reloadStats()
         {
             comboBoxClass.SelectedIndex = dsProcess.GetClass();
@@ -418,6 +436,36 @@ namespace DS_Gadget
         #endregion
 
         #region Graphics Tab
+        private void initGraphics()
+        {
+            checkBoxFilter.Checked = settings.FilterEnable;
+            checkBoxBrightnessSync.Checked = settings.FilterBrightnessSync;
+            numericUpDownBrightnessR.Value = settings.FilterBrightnessR;
+            numericUpDownBrightnessG.Value = settings.FilterBrightnessG;
+            numericUpDownBrightnessB.Value = settings.FilterBrightnessB;
+            checkBoxContrastSync.Checked = settings.FilterContrastSync;
+            numericUpDownContrastR.Value = settings.FilterContrastR;
+            numericUpDownContrastG.Value = settings.FilterContrastG;
+            numericUpDownContrastB.Value = settings.FilterContrastB;
+            numericUpDownSaturation.Value = settings.FilterSaturation;
+            numericUpDownHue.Value = settings.FilterHue;
+        }
+
+        private void saveGraphics()
+        {
+            settings.FilterEnable = checkBoxFilter.Checked;
+            settings.FilterBrightnessSync = checkBoxBrightnessSync.Checked;
+            settings.FilterBrightnessR = numericUpDownBrightnessR.Value;
+            settings.FilterBrightnessG = numericUpDownBrightnessG.Value;
+            settings.FilterBrightnessB = numericUpDownBrightnessB.Value;
+            settings.FilterContrastSync = checkBoxContrastSync.Checked;
+            settings.FilterContrastR = numericUpDownContrastR.Value;
+            settings.FilterContrastG = numericUpDownContrastG.Value;
+            settings.FilterContrastB = numericUpDownContrastB.Value;
+            settings.FilterSaturation = numericUpDownSaturation.Value;
+            settings.FilterHue = numericUpDownHue.Value;
+        }
+
         private void reloadGraphics()
         {
             dsProcess.DrawMap(checkBoxMap.Checked);
@@ -445,10 +493,7 @@ namespace DS_Gadget
             dsProcess.SetHue((float)numericUpDownHue.Value);
         }
 
-        private void updateGraphics()
-        {
-
-        }
+        private void updateGraphics() { }
 
         private void checkBoxBounding_CheckedChanged(object sender, EventArgs e)
         {
@@ -611,6 +656,20 @@ namespace DS_Gadget
         #endregion
 
         #region Items Tab
+        private void initItems()
+        {
+            foreach (DSInfusion infusion in DSInfusion.All)
+                comboBoxInfusion.Items.Add(infusion);
+            comboBoxInfusion.SelectedIndex = 0;
+            foreach (DSItemCategory category in DSItemCategory.All)
+                comboBoxCategory.Items.Add(category);
+            comboBoxCategory.SelectedIndex = 0;
+        }
+
+        private void saveItems() { }
+        private void reloadItems() { }
+        private void updateItems() { }
+
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBoxItems.Items.Clear();
@@ -696,6 +755,9 @@ namespace DS_Gadget
         #endregion
 
         #region Cheats Tab
+        private void initCheats() { }
+        private void saveCheats() { }
+
         private void reloadCheats()
         {
             dsProcess.SetPlayerDeadMode(checkBoxPlayerDeadMode.Checked);
@@ -719,10 +781,7 @@ namespace DS_Gadget
             dsProcess.SetAllNoUpdateAI(checkBoxAllNoUpdateAI.Checked);
         }
 
-        private void updateCheats()
-        {
-
-        }
+        private void updateCheats() { }
 
         private void checkBoxPlayerDeadMode_CheckedChanged(object sender, EventArgs e)
         {
@@ -826,8 +885,6 @@ namespace DS_Gadget
 
         private void initHotkeys()
         {
-            Properties.Settings settings = Properties.Settings.Default;
-
             hotkeys.Add(new GadgetHotkey("HotkeyFilter", textBoxHotkeyFilter, tabPageHotkeys, () =>
             {
                 checkBoxFilter.Checked = !checkBoxFilter.Checked;
@@ -867,6 +924,8 @@ namespace DS_Gadget
             {
                 checkBoxSpeed.Checked = !checkBoxSpeed.Checked;
             }));
+
+            keyboardHook.KeyDownOrUp += GlobalKeyboardHook_KeyDownOrUp;
         }
 
         private void saveHotkeys()
@@ -874,6 +933,9 @@ namespace DS_Gadget
             foreach (GadgetHotkey hotkey in hotkeys)
                 hotkey.Save();
         }
+
+        private void reloadHotkeys() { }
+        private void updateHotkeys() { }
 
         private void GlobalKeyboardHook_KeyDownOrUp(object sender, GlobalKeyboardHookEventArgs e)
         {

@@ -202,6 +202,8 @@
             this.textBoxHotkeyRestore = new System.Windows.Forms.TextBox();
             this.textBoxHotkeyStore = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelCheckVersion = new System.Windows.Forms.Label();
+            this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -2537,10 +2539,32 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Store Position";
             // 
+            // labelCheckVersion
+            // 
+            this.labelCheckVersion.Location = new System.Drawing.Point(105, 9);
+            this.labelCheckVersion.Name = "labelCheckVersion";
+            this.labelCheckVersion.Size = new System.Drawing.Size(249, 23);
+            this.labelCheckVersion.TabIndex = 6;
+            this.labelCheckVersion.Text = "Checking for new version...";
+            this.labelCheckVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // linkLabelNewVersion
+            // 
+            this.linkLabelNewVersion.Location = new System.Drawing.Point(108, 9);
+            this.linkLabelNewVersion.Name = "linkLabelNewVersion";
+            this.linkLabelNewVersion.Size = new System.Drawing.Size(246, 23);
+            this.linkLabelNewVersion.TabIndex = 7;
+            this.linkLabelNewVersion.TabStop = true;
+            this.linkLabelNewVersion.Text = "New version available!";
+            this.linkLabelNewVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.linkLabelNewVersion.Visible = false;
+            this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(366, 604);
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.labelVersion);
@@ -2549,10 +2573,11 @@
             this.Controls.Add(this.labelLoaded);
             this.Controls.Add(this.labelProcess);
             this.Controls.Add(this.labelProcessStatic);
+            this.Controls.Add(this.linkLabelNewVersion);
+            this.Controls.Add(this.labelCheckVersion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(382, 625);
             this.Name = "MainForm";
             this.Text = "DS Gadget <version>";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
@@ -2808,6 +2833,8 @@
         private System.Windows.Forms.NumericUpDown numericUpDownPhantom;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelCheckVersion;
+        private System.Windows.Forms.LinkLabel linkLabelNewVersion;
     }
 }
 

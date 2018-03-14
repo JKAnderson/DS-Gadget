@@ -786,19 +786,22 @@ namespace DS_Gadget
         private void initCheats() { }
         private void saveCheats()
         {
-            dsProcess.SetAllNoMagic(false);
-            dsProcess.SetNoDead(false);
-            dsProcess.SetExterminate(false);
-            dsProcess.SetAllStamina(false);
-            dsProcess.SetAllAmmo(false);
-            dsProcess.SetHide(false);
-            dsProcess.SetSilence(false);
-            dsProcess.SetAllNoDead(false);
-            dsProcess.SetAllNoDamage(false);
-            dsProcess.SetAllNoHit(false);
-            dsProcess.SetAllNoAttack(false);
-            dsProcess.SetAllNoMove(false);
-            dsProcess.SetAllNoUpdateAI(false);
+            if (dsProcess != null)
+            {
+                dsProcess.SetAllNoMagic(false);
+                dsProcess.SetNoDead(false);
+                dsProcess.SetExterminate(false);
+                dsProcess.SetAllStamina(false);
+                dsProcess.SetAllAmmo(false);
+                dsProcess.SetHide(false);
+                dsProcess.SetSilence(false);
+                dsProcess.SetAllNoDead(false);
+                dsProcess.SetAllNoDamage(false);
+                dsProcess.SetAllNoHit(false);
+                dsProcess.SetAllNoAttack(false);
+                dsProcess.SetAllNoMove(false);
+                dsProcess.SetAllNoUpdateAI(false);
+            }
         }
 
         private void reloadCheats()

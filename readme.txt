@@ -1,11 +1,18 @@
 
---| DS Gadget 1.1
+--| DS Gadget 1.2
 --| https://github.com/JKAnderson/DS-Gadget
 
 A multi-purpose testing tool for Dark Souls 1. This program is only compatible with the current Steam version of DS1.
 Requires .NET 4.6.2: https://www.microsoft.com/net/download/thank-you/net462
 
 --| Changelog
+
+1.2
+	Permanent changes are now cleaned up on app exit; quit out to clear the rest
+	App indicates if there's an update available
+	Window position is saved
+	Settings actually work now
+	Ambiguous items like Firekeeper Souls are no longer ambiguous
 
 1.1
 	Fixed maxing your stats against your will

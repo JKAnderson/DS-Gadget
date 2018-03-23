@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace DS_Gadget
 {
@@ -14,7 +14,7 @@ namespace DS_Gadget
             Name = name;
             ID = id;
             Items = new List<DSItem>();
-            foreach (string line in itemList.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries))
+            foreach (string line in Regex.Split(itemList, "[\r\n]+"))
                 Items.Add(new DSItem(line, showIDs));
             Items.Sort();
         }

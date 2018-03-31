@@ -490,7 +490,7 @@ namespace DS_Gadget
                 dsProcess.DrawAltimeter(false);
                 dsProcess.DrawNodes(false);
 
-                dsProcess.OverrideFilter(true);
+                dsProcess.OverrideFilter(false);
             }
         }
 

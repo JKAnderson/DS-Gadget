@@ -186,6 +186,9 @@
             this.checkBoxPlayerSilence = new System.Windows.Forms.CheckBox();
             this.checkBoxAllNoArrow = new System.Windows.Forms.CheckBox();
             this.tabPageHotkeys = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.checkBoxHandleHotkeys = new System.Windows.Forms.CheckBox();
+            this.checkBoxEnableHotkeys = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxHotkeySpeed = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -204,9 +207,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
-            this.checkBoxEnableHotkeys = new System.Windows.Forms.CheckBox();
-            this.checkBoxHandleHotkeys = new System.Windows.Forms.CheckBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -2142,6 +2143,7 @@
             this.checkBoxAllNoAttack.Size = new System.Drawing.Size(88, 17);
             this.checkBoxAllNoAttack.TabIndex = 11;
             this.checkBoxAllNoAttack.Text = "No Attacking";
+            this.toolTip1.SetToolTip(this.checkBoxAllNoAttack, "Will notice and chase you, but not attack");
             this.checkBoxAllNoAttack.UseVisualStyleBackColor = true;
             this.checkBoxAllNoAttack.CheckedChanged += new System.EventHandler(this.checkBoxAllNoAttack_CheckedChanged);
             // 
@@ -2153,6 +2155,7 @@
             this.checkBoxAllNoMove.Size = new System.Drawing.Size(93, 17);
             this.checkBoxAllNoMove.TabIndex = 12;
             this.checkBoxAllNoMove.Text = "No Movement";
+            this.toolTip1.SetToolTip(this.checkBoxAllNoMove, "Will notice and attack you, but cannot walk or turn");
             this.checkBoxAllNoMove.UseVisualStyleBackColor = true;
             this.checkBoxAllNoMove.CheckedChanged += new System.EventHandler(this.checkBoxAllNoMove_CheckedChanged);
             // 
@@ -2164,6 +2167,7 @@
             this.checkBoxAllNoUpdateAI.Size = new System.Drawing.Size(74, 17);
             this.checkBoxAllNoUpdateAI.TabIndex = 13;
             this.checkBoxAllNoUpdateAI.Text = "Disable AI";
+            this.toolTip1.SetToolTip(this.checkBoxAllNoUpdateAI, "Enemies won\'t do anything");
             this.checkBoxAllNoUpdateAI.UseVisualStyleBackColor = true;
             this.checkBoxAllNoUpdateAI.CheckedChanged += new System.EventHandler(this.checkBoxAllNoUpdateAI_CheckedChanged);
             // 
@@ -2189,6 +2193,7 @@
             this.checkBoxAllNoDead.Size = new System.Drawing.Size(72, 17);
             this.checkBoxAllNoDead.TabIndex = 8;
             this.checkBoxAllNoDead.Text = "No Death";
+            this.toolTip1.SetToolTip(this.checkBoxAllNoDead, "Cannot be killed");
             this.checkBoxAllNoDead.UseVisualStyleBackColor = true;
             this.checkBoxAllNoDead.CheckedChanged += new System.EventHandler(this.checkBoxAllNoDead_CheckedChanged);
             // 
@@ -2200,6 +2205,7 @@
             this.checkBoxAllNoDamage.Size = new System.Drawing.Size(83, 17);
             this.checkBoxAllNoDamage.TabIndex = 9;
             this.checkBoxAllNoDamage.Text = "No Damage";
+            this.toolTip1.SetToolTip(this.checkBoxAllNoDamage, "Can be hit, but will not take damage");
             this.checkBoxAllNoDamage.UseVisualStyleBackColor = true;
             this.checkBoxAllNoDamage.CheckedChanged += new System.EventHandler(this.checkBoxAllNoDamage_CheckedChanged);
             // 
@@ -2211,6 +2217,7 @@
             this.checkBoxAllNoHit.Size = new System.Drawing.Size(56, 17);
             this.checkBoxAllNoHit.TabIndex = 10;
             this.checkBoxAllNoHit.Text = "No Hit";
+            this.toolTip1.SetToolTip(this.checkBoxAllNoHit, "Cannot be hit");
             this.checkBoxAllNoHit.UseVisualStyleBackColor = true;
             this.checkBoxAllNoHit.CheckedChanged += new System.EventHandler(this.checkBoxAllNoHit_CheckedChanged);
             // 
@@ -2222,6 +2229,7 @@
             this.checkBoxAllNoStamina.Size = new System.Drawing.Size(98, 17);
             this.checkBoxAllNoStamina.TabIndex = 3;
             this.checkBoxAllNoStamina.Text = "Infinite Stamina";
+            this.toolTip1.SetToolTip(this.checkBoxAllNoStamina, "Enemies only use stamina for being guard broken");
             this.checkBoxAllNoStamina.UseVisualStyleBackColor = true;
             this.checkBoxAllNoStamina.CheckedChanged += new System.EventHandler(this.checkBoxAllNoStamina_CheckedChanged);
             // 
@@ -2255,6 +2263,7 @@
             this.checkBoxPlayerNoHit.Size = new System.Drawing.Size(56, 17);
             this.checkBoxPlayerNoHit.TabIndex = 18;
             this.checkBoxPlayerNoHit.Text = "No Hit";
+            this.toolTip1.SetToolTip(this.checkBoxPlayerNoHit, "Cannot be hit");
             this.checkBoxPlayerNoHit.UseVisualStyleBackColor = true;
             this.checkBoxPlayerNoHit.CheckedChanged += new System.EventHandler(this.checkBoxPlayerNoHit_CheckedChanged);
             // 
@@ -2266,6 +2275,7 @@
             this.checkBoxPlayerNoStamina.Size = new System.Drawing.Size(98, 17);
             this.checkBoxPlayerNoStamina.TabIndex = 11;
             this.checkBoxPlayerNoStamina.Text = "Infinite Stamina";
+            this.toolTip1.SetToolTip(this.checkBoxPlayerNoStamina, "Stamina is always full");
             this.checkBoxPlayerNoStamina.UseVisualStyleBackColor = true;
             this.checkBoxPlayerNoStamina.CheckedChanged += new System.EventHandler(this.checkBoxPlayerNoStamina_CheckedChanged);
             // 
@@ -2277,6 +2287,7 @@
             this.checkBoxPlayerNoDamage.Size = new System.Drawing.Size(83, 17);
             this.checkBoxPlayerNoDamage.TabIndex = 17;
             this.checkBoxPlayerNoDamage.Text = "No Damage";
+            this.toolTip1.SetToolTip(this.checkBoxPlayerNoDamage, "Can be hit, but will not take damage");
             this.checkBoxPlayerNoDamage.UseVisualStyleBackColor = true;
             this.checkBoxPlayerNoDamage.CheckedChanged += new System.EventHandler(this.checkBoxPlayerNoDamage_CheckedChanged);
             // 
@@ -2288,6 +2299,7 @@
             this.checkBoxPlayerNoGoods.Size = new System.Drawing.Size(103, 17);
             this.checkBoxPlayerNoGoods.TabIndex = 10;
             this.checkBoxPlayerNoGoods.Text = "Unlimited Goods";
+            this.toolTip1.SetToolTip(this.checkBoxPlayerNoGoods, "Consumables will not be consumed");
             this.checkBoxPlayerNoGoods.UseVisualStyleBackColor = true;
             this.checkBoxPlayerNoGoods.CheckedChanged += new System.EventHandler(this.checkBoxPlayerNoGoods_CheckedChanged);
             // 
@@ -2299,6 +2311,7 @@
             this.checkBoxPlayerSuperArmor.Size = new System.Drawing.Size(86, 17);
             this.checkBoxPlayerSuperArmor.TabIndex = 9;
             this.checkBoxPlayerSuperArmor.Text = "Infinite Poise";
+            this.toolTip1.SetToolTip(this.checkBoxPlayerSuperArmor, "Cannot be staggered");
             this.checkBoxPlayerSuperArmor.UseVisualStyleBackColor = true;
             this.checkBoxPlayerSuperArmor.CheckedChanged += new System.EventHandler(this.checkBoxPlayerSuperArmor_CheckedChanged);
             // 
@@ -2310,6 +2323,8 @@
             this.checkBoxPlayerDeadMode.Size = new System.Drawing.Size(72, 17);
             this.checkBoxPlayerDeadMode.TabIndex = 8;
             this.checkBoxPlayerDeadMode.Text = "No Death";
+            this.toolTip1.SetToolTip(this.checkBoxPlayerDeadMode, "Disables death, but deathcams will still trigger and killboxes will still do dama" +
+        "ge");
             this.checkBoxPlayerDeadMode.UseVisualStyleBackColor = true;
             this.checkBoxPlayerDeadMode.CheckedChanged += new System.EventHandler(this.checkBoxPlayerDeadMode_CheckedChanged);
             // 
@@ -2321,6 +2336,7 @@
             this.checkBoxAllNoMagic.Size = new System.Drawing.Size(100, 17);
             this.checkBoxAllNoMagic.TabIndex = 0;
             this.checkBoxAllNoMagic.Text = "Unlimited Spells";
+            this.toolTip1.SetToolTip(this.checkBoxAllNoMagic, "Spell casts will not be consumed");
             this.checkBoxAllNoMagic.UseVisualStyleBackColor = true;
             this.checkBoxAllNoMagic.CheckedChanged += new System.EventHandler(this.checkBoxAllNoMagic_CheckedChanged);
             // 
@@ -2332,6 +2348,8 @@
             this.checkBoxPlayerNoDead.Size = new System.Drawing.Size(124, 17);
             this.checkBoxPlayerNoDead.TabIndex = 1;
             this.checkBoxPlayerNoDead.Text = "No Death, Ignore Kill";
+            this.toolTip1.SetToolTip(this.checkBoxPlayerNoDead, "Disables death, deathcams will not trigger, and instant kills like killboxes won\'" +
+        "t do damage");
             this.checkBoxPlayerNoDead.UseVisualStyleBackColor = true;
             this.checkBoxPlayerNoDead.CheckedChanged += new System.EventHandler(this.checkBoxPlayerNoDead_CheckedChanged);
             // 
@@ -2343,6 +2361,7 @@
             this.checkBoxPlayerExterminate.Size = new System.Drawing.Size(81, 17);
             this.checkBoxPlayerExterminate.TabIndex = 2;
             this.checkBoxPlayerExterminate.Text = "Exterminate";
+            this.toolTip1.SetToolTip(this.checkBoxPlayerExterminate, "Instantly kill all enemies; also includes rolling");
             this.checkBoxPlayerExterminate.UseVisualStyleBackColor = true;
             this.checkBoxPlayerExterminate.CheckedChanged += new System.EventHandler(this.checkBoxPlayerExterminate_CheckedChanged);
             // 
@@ -2354,6 +2373,7 @@
             this.checkBoxPlayerHide.Size = new System.Drawing.Size(64, 17);
             this.checkBoxPlayerHide.TabIndex = 6;
             this.checkBoxPlayerHide.Text = "Invisible";
+            this.toolTip1.SetToolTip(this.checkBoxPlayerHide, "Enemies will turn if they hear you, but won\'t chase or attack");
             this.checkBoxPlayerHide.UseVisualStyleBackColor = true;
             this.checkBoxPlayerHide.CheckedChanged += new System.EventHandler(this.checkBoxPlayerHide_CheckedChanged);
             // 
@@ -2365,6 +2385,7 @@
             this.checkBoxPlayerSilence.Size = new System.Drawing.Size(52, 17);
             this.checkBoxPlayerSilence.TabIndex = 7;
             this.checkBoxPlayerSilence.Text = "Silent";
+            this.toolTip1.SetToolTip(this.checkBoxPlayerSilence, "Enemies will only chase and attack if you\'re in line of sight");
             this.checkBoxPlayerSilence.UseVisualStyleBackColor = true;
             this.checkBoxPlayerSilence.CheckedChanged += new System.EventHandler(this.checkBoxPlayerSilence_CheckedChanged);
             // 
@@ -2376,6 +2397,7 @@
             this.checkBoxAllNoArrow.Size = new System.Drawing.Size(101, 17);
             this.checkBoxAllNoArrow.TabIndex = 5;
             this.checkBoxAllNoArrow.Text = "Unlimited Ammo";
+            this.toolTip1.SetToolTip(this.checkBoxAllNoArrow, "Arrows and bolts will not be consumed");
             this.checkBoxAllNoArrow.UseVisualStyleBackColor = true;
             this.checkBoxAllNoArrow.CheckedChanged += new System.EventHandler(this.checkBoxAllNoArrow_CheckedChanged);
             // 
@@ -2407,6 +2429,40 @@
             this.tabPageHotkeys.TabIndex = 7;
             this.tabPageHotkeys.Text = "Hotkeys";
             this.tabPageHotkeys.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 49);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(213, 13);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Click box to rebind; press escape to unbind.";
+            // 
+            // checkBoxHandleHotkeys
+            // 
+            this.checkBoxHandleHotkeys.AutoSize = true;
+            this.checkBoxHandleHotkeys.Checked = true;
+            this.checkBoxHandleHotkeys.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxHandleHotkeys.Location = new System.Drawing.Point(6, 29);
+            this.checkBoxHandleHotkeys.Name = "checkBoxHandleHotkeys";
+            this.checkBoxHandleHotkeys.Size = new System.Drawing.Size(115, 17);
+            this.checkBoxHandleHotkeys.TabIndex = 17;
+            this.checkBoxHandleHotkeys.Text = "Consume keypress";
+            this.toolTip1.SetToolTip(this.checkBoxHandleHotkeys, "Keypresses caught will not be passed on to the game");
+            this.checkBoxHandleHotkeys.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxEnableHotkeys
+            // 
+            this.checkBoxEnableHotkeys.AutoSize = true;
+            this.checkBoxEnableHotkeys.Checked = true;
+            this.checkBoxEnableHotkeys.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxEnableHotkeys.Location = new System.Drawing.Point(6, 6);
+            this.checkBoxEnableHotkeys.Name = "checkBoxEnableHotkeys";
+            this.checkBoxEnableHotkeys.Size = new System.Drawing.Size(99, 17);
+            this.checkBoxEnableHotkeys.TabIndex = 16;
+            this.checkBoxEnableHotkeys.Text = "Enable hotkeys";
+            this.checkBoxEnableHotkeys.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -2565,39 +2621,6 @@
             this.linkLabelNewVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
-            // 
-            // checkBoxEnableHotkeys
-            // 
-            this.checkBoxEnableHotkeys.AutoSize = true;
-            this.checkBoxEnableHotkeys.Checked = true;
-            this.checkBoxEnableHotkeys.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxEnableHotkeys.Location = new System.Drawing.Point(6, 6);
-            this.checkBoxEnableHotkeys.Name = "checkBoxEnableHotkeys";
-            this.checkBoxEnableHotkeys.Size = new System.Drawing.Size(99, 17);
-            this.checkBoxEnableHotkeys.TabIndex = 16;
-            this.checkBoxEnableHotkeys.Text = "Enable hotkeys";
-            this.checkBoxEnableHotkeys.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxHandleHotkeys
-            // 
-            this.checkBoxHandleHotkeys.AutoSize = true;
-            this.checkBoxHandleHotkeys.Checked = true;
-            this.checkBoxHandleHotkeys.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxHandleHotkeys.Location = new System.Drawing.Point(6, 29);
-            this.checkBoxHandleHotkeys.Name = "checkBoxHandleHotkeys";
-            this.checkBoxHandleHotkeys.Size = new System.Drawing.Size(115, 17);
-            this.checkBoxHandleHotkeys.TabIndex = 17;
-            this.checkBoxHandleHotkeys.Text = "Consume keypress";
-            this.checkBoxHandleHotkeys.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 49);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(213, 13);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Click box to rebind; press escape to unbind.";
             // 
             // MainForm
             // 
@@ -2879,6 +2902,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckBox checkBoxHandleHotkeys;
         private System.Windows.Forms.CheckBox checkBoxEnableHotkeys;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

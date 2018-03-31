@@ -16,31 +16,14 @@ namespace DS_Gadget
         private const uint VERSION_DEBUG = 0xCE9634B4;
         private const uint VERSION_BETA = 0xE91B11E2;
 
-        public static DSProcess Attach(Process candidate, out string versionName, out bool valid)
+        public static DSProcess GetProcess()
         {
             DSProcess result = null;
-            versionName = "Unknown";
-            valid = false;
-            DSInterface dsInterface = DSInterface.Attach(candidate);
-            if (dsInterface != null)
+            Process[] candidates = Process.GetProcessesByName("DARKSOULS");
+            foreach (Process candidate in candidates)
             {
-                uint version = dsInterface.ReadUInt32(DSOffsets.CheckVersion);
-                if (version == VERSION_RELEASE)
-                {
-                    result = new DSProcess(candidate, dsInterface, true);
-                    versionName = "Steam";
-                    valid = true;
-                }
-                else if (version == VERSION_DEBUG)
-                {
-                    result = new DSProcess(candidate, dsInterface, false);
-                    versionName = "Debug";
-                }
-                else if (version == VERSION_BETA)
-                {
-                    result = new DSProcess(candidate, dsInterface, false);
-                    versionName = "Beta";
-                }
+                if (result == null)
+                    result = new DSProcess(candidate);
             }
             return result;
         }
@@ -48,13 +31,35 @@ namespace DS_Gadget
 
         private Process process;
         private DSInterface dsInterface;
-        private bool enabled;
 
-        public DSProcess(Process setProcess, DSInterface setDSInterface, bool setEnabled)
+        public readonly int ID;
+        public readonly string Version;
+        public readonly bool Valid;
+
+        public DSProcess(Process candidate)
         {
-            process = setProcess;
-            dsInterface = setDSInterface;
-            enabled = setEnabled;
+            process = candidate;
+            ID = process.Id;
+            dsInterface = DSInterface.Attach(process);
+            switch (dsInterface?.ReadUInt32(DSOffsets.CheckVersion))
+            {
+                case VERSION_RELEASE:
+                    Version = "Steam";
+                    Valid = true;
+                    break;
+                case VERSION_DEBUG:
+                    Version = "Debug";
+                    Valid = false;
+                    break;
+                case VERSION_BETA:
+                    Version = "Beta";
+                    Valid = false;
+                    break;
+                default:
+                    Version = "Unknown";
+                    Valid = false;
+                    break;
+            }
         }
 
         public void Close()
@@ -69,7 +74,7 @@ namespace DS_Gadget
 
         public bool Loaded()
         {
-            if (enabled)
+            if (Valid)
             {
                 return getCharData1() != 0;
             }
@@ -88,12 +93,6 @@ namespace DS_Gadget
         {
             byte[] bytes = BitConverter.GetBytes(value);
             Array.Copy(bytes, 0, victim, index, bytes.Length);
-        }
-
-        public void Test()
-        {
-            bool flag = dsInterface.ReadFlag32(charData1 + (int)DSOffsets.CharData1.CharFlags1, (uint)DSOffsets.CharFlags1.FirstPerson);
-            dsInterface.WriteFlag32(charData1 + (int)DSOffsets.CharData1.CharFlags1, (uint)DSOffsets.CharFlags1.FirstPerson, !flag);
         }
 
         #region Pointer loading

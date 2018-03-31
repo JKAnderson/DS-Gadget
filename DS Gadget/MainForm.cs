@@ -34,11 +34,6 @@ namespace DS_Gadget
         {
             Text = "DS Gadget " + System.Windows.Forms.Application.ProductVersion;
             enableTabs(false);
-            if (settings.UpgradeRequired)
-            {
-                settings.Upgrade();
-                settings.UpgradeRequired = false;
-            }
             initPlayer();
             initStats();
             initItems();
@@ -77,7 +72,6 @@ namespace DS_Gadget
             saveGraphics();
             saveCheats();
             saveHotkeys();
-            settings.Save();
             if (dsProcess != null)
                 dsProcess.Close();
         }
@@ -92,18 +86,13 @@ namespace DS_Gadget
         {
             if (dsProcess == null)
             {
-                Process[] candidates = Process.GetProcessesByName("DARKSOULS");
-                foreach (Process candidate in candidates)
+                DSProcess result = DSProcess.GetProcess();
+                if (result != null)
                 {
-                    DSProcess result = DSProcess.Attach(candidate, out string version, out bool valid);
-                    labelProcess.Text = candidate.Id.ToString();
-                    labelVersion.Text = version;
-                    if (valid)
-                        labelVersion.ForeColor = Color.DarkGreen;
-                    else
-                        labelVersion.ForeColor = Color.DarkRed;
-                    if (result != null)
-                        dsProcess = result;
+                    labelProcess.Text = result.ID.ToString();
+                    labelVersion.Text = result.Version;
+                    labelVersion.ForeColor = result.Valid ? Color.DarkGreen : Color.DarkRed;
+                    dsProcess = result;
                 }
             }
         }

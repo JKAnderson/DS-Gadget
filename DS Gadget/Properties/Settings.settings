@@ -68,5 +68,11 @@
     <Setting Name="WindowLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">100, 100</Value>
     </Setting>
+    <Setting Name="EnableHotkeys" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="HandleHotkeys" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

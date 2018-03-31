@@ -931,6 +931,9 @@ namespace DS_Gadget
 
         private void initHotkeys()
         {
+            checkBoxEnableHotkeys.Checked = settings.EnableHotkeys;
+            checkBoxHandleHotkeys.Checked = settings.HandleHotkeys;
+
             hotkeys.Add(new GadgetHotkey("HotkeyFilter", textBoxHotkeyFilter, tabPageHotkeys, () =>
             {
                 checkBoxFilter.Checked = !checkBoxFilter.Checked;
@@ -976,6 +979,8 @@ namespace DS_Gadget
 
         private void saveHotkeys()
         {
+            settings.EnableHotkeys = checkBoxEnableHotkeys.Checked;
+            settings.HandleHotkeys = checkBoxHandleHotkeys.Checked;
             foreach (GadgetHotkey hotkey in hotkeys)
                 hotkey.Save();
         }
@@ -985,11 +990,12 @@ namespace DS_Gadget
 
         private void GlobalKeyboardHook_KeyDownOrUp(object sender, GlobalKeyboardHookEventArgs e)
         {
-            if (loaded && dsProcess.Focused() && !e.IsUp)
+            if (checkBoxEnableHotkeys.Checked && loaded && dsProcess.Focused() && !e.IsUp)
             {
                 foreach (GadgetHotkey hotkey in hotkeys)
                 {
-                    hotkey.Trigger(e.KeyCode);
+                    if (hotkey.Trigger(e.KeyCode) && checkBoxHandleHotkeys.Checked)
+                        e.Handled = true;
                 }
             }
         }

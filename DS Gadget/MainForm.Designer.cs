@@ -204,6 +204,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
+            this.checkBoxEnableHotkeys = new System.Windows.Forms.CheckBox();
+            this.checkBoxHandleHotkeys = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -2378,6 +2381,9 @@
             // 
             // tabPageHotkeys
             // 
+            this.tabPageHotkeys.Controls.Add(this.label12);
+            this.tabPageHotkeys.Controls.Add(this.checkBoxHandleHotkeys);
+            this.tabPageHotkeys.Controls.Add(this.checkBoxEnableHotkeys);
             this.tabPageHotkeys.Controls.Add(this.label9);
             this.tabPageHotkeys.Controls.Add(this.textBoxHotkeySpeed);
             this.tabPageHotkeys.Controls.Add(this.label7);
@@ -2405,7 +2411,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(112, 191);
+            this.label9.Location = new System.Drawing.Point(112, 250);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 13);
             this.label9.TabIndex = 15;
@@ -2413,7 +2419,7 @@
             // 
             // textBoxHotkeySpeed
             // 
-            this.textBoxHotkeySpeed.Location = new System.Drawing.Point(6, 188);
+            this.textBoxHotkeySpeed.Location = new System.Drawing.Point(6, 247);
             this.textBoxHotkeySpeed.Name = "textBoxHotkeySpeed";
             this.textBoxHotkeySpeed.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeySpeed.TabIndex = 14;
@@ -2422,7 +2428,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(112, 165);
+            this.label7.Location = new System.Drawing.Point(112, 224);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 13);
             this.label7.TabIndex = 13;
@@ -2430,7 +2436,7 @@
             // 
             // textBoxHotkeyCollision
             // 
-            this.textBoxHotkeyCollision.Location = new System.Drawing.Point(6, 162);
+            this.textBoxHotkeyCollision.Location = new System.Drawing.Point(6, 221);
             this.textBoxHotkeyCollision.Name = "textBoxHotkeyCollision";
             this.textBoxHotkeyCollision.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyCollision.TabIndex = 12;
@@ -2439,7 +2445,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(112, 139);
+            this.label6.Location = new System.Drawing.Point(112, 198);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 13);
             this.label6.TabIndex = 11;
@@ -2447,7 +2453,7 @@
             // 
             // textBoxHotkeyGravity
             // 
-            this.textBoxHotkeyGravity.Location = new System.Drawing.Point(6, 136);
+            this.textBoxHotkeyGravity.Location = new System.Drawing.Point(6, 195);
             this.textBoxHotkeyGravity.Name = "textBoxHotkeyGravity";
             this.textBoxHotkeyGravity.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyGravity.TabIndex = 10;
@@ -2456,7 +2462,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(112, 113);
+            this.label5.Location = new System.Drawing.Point(112, 172);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 9;
@@ -2464,7 +2470,7 @@
             // 
             // textBoxHotkeyAnim
             // 
-            this.textBoxHotkeyAnim.Location = new System.Drawing.Point(6, 110);
+            this.textBoxHotkeyAnim.Location = new System.Drawing.Point(6, 169);
             this.textBoxHotkeyAnim.Name = "textBoxHotkeyAnim";
             this.textBoxHotkeyAnim.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyAnim.TabIndex = 8;
@@ -2473,7 +2479,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(112, 87);
+            this.label4.Location = new System.Drawing.Point(112, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 7;
@@ -2481,7 +2487,7 @@
             // 
             // textBoxHotkeyMoveswap
             // 
-            this.textBoxHotkeyMoveswap.Location = new System.Drawing.Point(6, 84);
+            this.textBoxHotkeyMoveswap.Location = new System.Drawing.Point(6, 143);
             this.textBoxHotkeyMoveswap.Name = "textBoxHotkeyMoveswap";
             this.textBoxHotkeyMoveswap.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyMoveswap.TabIndex = 6;
@@ -2490,7 +2496,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(112, 61);
+            this.label3.Location = new System.Drawing.Point(112, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 5;
@@ -2498,7 +2504,7 @@
             // 
             // textBoxHotkeyFilter
             // 
-            this.textBoxHotkeyFilter.Location = new System.Drawing.Point(6, 58);
+            this.textBoxHotkeyFilter.Location = new System.Drawing.Point(6, 117);
             this.textBoxHotkeyFilter.Name = "textBoxHotkeyFilter";
             this.textBoxHotkeyFilter.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyFilter.TabIndex = 4;
@@ -2507,7 +2513,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(112, 35);
+            this.label2.Location = new System.Drawing.Point(112, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 3;
@@ -2515,7 +2521,7 @@
             // 
             // textBoxHotkeyRestore
             // 
-            this.textBoxHotkeyRestore.Location = new System.Drawing.Point(6, 32);
+            this.textBoxHotkeyRestore.Location = new System.Drawing.Point(6, 91);
             this.textBoxHotkeyRestore.Name = "textBoxHotkeyRestore";
             this.textBoxHotkeyRestore.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyRestore.TabIndex = 2;
@@ -2524,7 +2530,7 @@
             // textBoxHotkeyStore
             // 
             this.textBoxHotkeyStore.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxHotkeyStore.Location = new System.Drawing.Point(6, 6);
+            this.textBoxHotkeyStore.Location = new System.Drawing.Point(6, 65);
             this.textBoxHotkeyStore.Name = "textBoxHotkeyStore";
             this.textBoxHotkeyStore.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyStore.TabIndex = 1;
@@ -2533,7 +2539,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(112, 9);
+            this.label1.Location = new System.Drawing.Point(112, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 0;
@@ -2559,6 +2565,39 @@
             this.linkLabelNewVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
+            // 
+            // checkBoxEnableHotkeys
+            // 
+            this.checkBoxEnableHotkeys.AutoSize = true;
+            this.checkBoxEnableHotkeys.Checked = true;
+            this.checkBoxEnableHotkeys.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxEnableHotkeys.Location = new System.Drawing.Point(6, 6);
+            this.checkBoxEnableHotkeys.Name = "checkBoxEnableHotkeys";
+            this.checkBoxEnableHotkeys.Size = new System.Drawing.Size(99, 17);
+            this.checkBoxEnableHotkeys.TabIndex = 16;
+            this.checkBoxEnableHotkeys.Text = "Enable hotkeys";
+            this.checkBoxEnableHotkeys.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxHandleHotkeys
+            // 
+            this.checkBoxHandleHotkeys.AutoSize = true;
+            this.checkBoxHandleHotkeys.Checked = true;
+            this.checkBoxHandleHotkeys.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxHandleHotkeys.Location = new System.Drawing.Point(6, 29);
+            this.checkBoxHandleHotkeys.Name = "checkBoxHandleHotkeys";
+            this.checkBoxHandleHotkeys.Size = new System.Drawing.Size(115, 17);
+            this.checkBoxHandleHotkeys.TabIndex = 17;
+            this.checkBoxHandleHotkeys.Text = "Consume keypress";
+            this.checkBoxHandleHotkeys.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 49);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(213, 13);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Click box to rebind; press escape to unbind.";
             // 
             // MainForm
             // 
@@ -2837,6 +2876,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label labelCheckVersion;
         private System.Windows.Forms.LinkLabel linkLabelNewVersion;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.CheckBox checkBoxHandleHotkeys;
+        private System.Windows.Forms.CheckBox checkBoxEnableHotkeys;
     }
 }
 

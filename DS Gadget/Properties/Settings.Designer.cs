@@ -286,5 +286,29 @@ namespace DS_Gadget.Properties {
                 this["WindowLocation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool EnableHotkeys {
+            get {
+                return ((bool)(this["EnableHotkeys"]));
+            }
+            set {
+                this["EnableHotkeys"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool HandleHotkeys {
+            get {
+                return ((bool)(this["HandleHotkeys"]));
+            }
+            set {
+                this["HandleHotkeys"] = value;
+            }
+        }
     }
 }

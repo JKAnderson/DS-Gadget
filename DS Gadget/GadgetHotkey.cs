@@ -41,16 +41,23 @@ namespace DS_Gadget
         private void keyUp(object sender, KeyEventArgs e)
         {
             Key = (VirtualKey)e.KeyValue;
-            hotkeyTextBox.Text = Key.ToString();
+            if (Key == VirtualKey.Escape)
+                hotkeyTextBox.Text = "Unbound";
+            else
+                hotkeyTextBox.Text = Key.ToString();
             e.Handled = true;
             hotkeyTabPage.Focus();
         }
 
         public bool Trigger(VirtualKey pressed)
         {
-            if (pressed == Key)
+            bool result = false;
+            if (Key != VirtualKey.Escape && pressed == Key)
+            {
                 hotkeyAction();
-            return pressed == Key;
+                result = true;
+            }
+            return result;
         }
 
         public void Save()

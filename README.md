@@ -4,6 +4,13 @@ A multi-purpose testing tool for Dark Souls 1. This program is only compatible w
 Requires [.NET 4.6.2](https://www.microsoft.com/net/download/thank-you/net462)
 
 # Changelog
+### 1.3
+* Hotkeys can be globally enabled or disabled
+* Hotkeys can be passed to the game as well or not
+* Hotkeys can be unbound with escape
+* Cheats have tooltips now
+* Fixed filter turning on when you close the app
+
 ### 1.2
 * Permanent changes are now cleaned up on app exit; quit out to clear the rest
 * App indicates if there's an update available

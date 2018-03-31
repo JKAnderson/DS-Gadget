@@ -191,8 +191,6 @@ namespace DS_Gadget
             Category = 0x01,
             ItemID = 0x06,
             Count = 0x10,
-            Ptr1 = 0x15,
-            Ptr2 = 0x32,
             Jump = 0x38
         }
     }

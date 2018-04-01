@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Binarysharp.Assemblers.Fasm;
+using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
@@ -618,32 +619,23 @@ namespace DS_Gadget
         #region Items Tab
         public void DropItem(int category, int itemID, int count)
         {
-            byte[] bytes =
-            {
-                0xBD, 0x00, 0x00, 0x00, 0x00,
-                0xBB, 0x00, 0x00, 0x00, 0x00,
-                0xB9, 0xFF, 0xFF, 0xFF, 0xFF,
-                0xBA, 0x00, 0x00, 0x00, 0x00,
-                0xA1, 0xD0, 0x86, 0x37, 0x01,
-                0x89, 0xA8, 0x28, 0x08, 0x00, 0x00,
-                0x89, 0x98, 0x2C, 0x08, 0x00, 0x00,
-                0x89, 0x88, 0x30, 0x08, 0x00, 0x00,
-                0x89, 0x90, 0x34, 0x08, 0x00, 0x00,
-                0xA1, 0xBC, 0xD6, 0x37, 0x01,
-                0x50,
-                0xE8, 0x00, 0x00, 0x00, 0x00,
-                0xC3
-            };
+            string asm = String.Format(
+                "mov ebp, 0x{0:X}\n" +
+                "mov ebx, 0x{1:X}\n" +
+                "mov ecx, 0xFFFFFFFF\n" +
+                "mov edx, 0x{2:X}\n" +
+                "mov eax, [0x13786D0]\n" +
+                "mov [eax + 0x828], ebp\n" +
+                "mov [eax + 0x82C], ebx\n" +
+                "mov [eax + 0x830], ecx\n" +
+                "mov [eax + 0x834], edx\n" +
+                "mov eax, [0x137D6BC]\n" +
+                "push eax\n" +
+                "call 0xDC8C60\n" +
+                "ret",
+                category, itemID, count);
 
-            ReplaceBytes(bytes, category, (int)DSOffsets.DropItem.Category);
-            ReplaceBytes(bytes, itemID, (int)DSOffsets.DropItem.ItemID);
-            ReplaceBytes(bytes, count, (int)DSOffsets.DropItem.Count);
-
-            IntPtr insertPtr = dsInterface.VirtualAllocEx(bytes.Length);
-            ReplaceBytes(bytes, 0 - ((int)insertPtr + 0x3C - 0xDC8C60), (int)DSOffsets.DropItem.Jump);
-
-            dsInterface.WriteProcessMemory(insertPtr, bytes, bytes.Length);
-            dsInterface.CreateRemoteThread(insertPtr);
+            dsInterface.AsmExecute(asm);
         }
         #endregion
 

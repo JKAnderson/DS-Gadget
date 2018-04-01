@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32.SafeHandles;
+﻿using Binarysharp.Assemblers.Fasm;
+using Microsoft.Win32.SafeHandles;
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
@@ -7,9 +8,10 @@ namespace DS_Gadget
 {
     class DSInterface
     {
-        private const uint PROCESS_ALL_ACCESS = 0x001F0FFF;
-        private const uint MEM_COMMIT = 4096;
-        private const uint PAGE_READWRITE = 4;
+        private const uint PROCESS_ALL_ACCESS = 0x1F0FFF;
+        private const uint MEM_COMMIT = 0x1000;
+        private const uint MEM_RELEASE = 0x8000;
+        private const uint PAGE_READWRITE = 0x4;
 
         [DllImport("kernel32.dll")]
         private static extern IntPtr OpenProcess(uint dwDesiredAccess, bool bInheritHandle, uint dwProcessId);
@@ -24,8 +26,13 @@ namespace DS_Gadget
         private static extern IntPtr VirtualAllocEx(SafeProcessHandle hProcess, IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);
 
         [DllImport("kernel32.dll")]
+        private static extern bool VirtualFreeEx(SafeProcessHandle hProcess, IntPtr lpAddress, uint dwSize, uint dwFreeType);
+
+        [DllImport("kernel32.dll")]
         private static extern IntPtr CreateRemoteThread(SafeProcessHandle hProcess, IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, IntPtr lpThreadId);
 
+        [DllImport("kernel32.dll")]
+        private static extern int WaitForSingleObject(IntPtr hHandle, uint dwMilliseconds);
 
         public static DSInterface Attach(Process process)
         {
@@ -49,29 +56,29 @@ namespace DS_Gadget
             handle.Close();
         }
 
-        public IntPtr VirtualAllocEx(int size)
+        private IntPtr VirtualAllocEx(int size)
         {
             return VirtualAllocEx(handle, IntPtr.Zero, (uint)size, MEM_COMMIT, PAGE_READWRITE);
         }
 
-        public void WriteProcessMemory(IntPtr address, byte[] bytes)
+        private bool VirtualFreeEx(IntPtr address)
+        {
+            return VirtualFreeEx(handle, address, 0, MEM_RELEASE);
+        }
+
+        private void WriteProcessMemory(IntPtr address, byte[] bytes)
         {
             WriteProcessMemory(handle, address, bytes, (uint)bytes.Length, 0);
         }
 
-        public void WriteProcessMemory(int address, byte[] bytes)
+        private void WriteProcessMemory(int address, byte[] bytes)
         {
             WriteProcessMemory((IntPtr)address, bytes);
         }
 
-        public void WriteProcessMemory(IntPtr address, byte[] bytes, int size)
+        private IntPtr CreateRemoteThread(IntPtr address)
         {
-            WriteProcessMemory(handle, address, bytes, (uint)size, 0);
-        }
-
-        public void CreateRemoteThread(IntPtr address)
-        {
-            CreateRemoteThread(handle, IntPtr.Zero, 0, address, IntPtr.Zero, 0, IntPtr.Zero);
+            return CreateRemoteThread(handle, IntPtr.Zero, 0, address, IntPtr.Zero, 0, IntPtr.Zero);
         }
 
         private byte[] ReadProcessMemory(int address, uint size)
@@ -79,6 +86,21 @@ namespace DS_Gadget
             byte[] result = new byte[size];
             ReadProcessMemory(handle, (IntPtr)address, result, size, 0);
             return result;
+        }
+
+
+        public void AsmExecute(string asm)
+        {
+            // Assemble once to determine size
+            byte[] bytes = FasmNet.Assemble("use32\norg 0x0\n" + asm);
+            IntPtr insertPtr = VirtualAllocEx(bytes.Length);
+            // Then rebase and inject
+            // Note: you can't use String.Format here because IntPtr is not IFormattable
+            bytes = FasmNet.Assemble("use32\norg 0x" + insertPtr.ToString("X") + "\n" + asm);
+            WriteProcessMemory(insertPtr, bytes);
+            IntPtr thread = CreateRemoteThread(insertPtr);
+            WaitForSingleObject(thread, 0xFFFFFFFF);
+            VirtualFreeEx(insertPtr);
         }
 
 

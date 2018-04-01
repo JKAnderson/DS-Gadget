@@ -310,5 +310,17 @@ namespace DS_Gadget.Properties {
                 this["HandleHotkeys"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool StoreHP {
+            get {
+                return ((bool)(this["StoreHP"]));
+            }
+            set {
+                this["StoreHP"] = value;
+            }
+        }
     }
 }

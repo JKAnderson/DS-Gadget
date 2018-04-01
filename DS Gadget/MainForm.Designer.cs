@@ -208,6 +208,8 @@
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tabPageMisc = new System.Windows.Forms.TabPage();
+            this.checkBoxStoreHP = new System.Windows.Forms.CheckBox();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -265,6 +267,7 @@
             this.groupBoxCheatAll.SuspendLayout();
             this.groupBoxCheatPlayer.SuspendLayout();
             this.tabPageHotkeys.SuspendLayout();
+            this.tabPageMisc.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerCheckProcess
@@ -343,6 +346,7 @@
             this.tabControlMain.Controls.Add(this.tabPageItems);
             this.tabControlMain.Controls.Add(this.tabPageGraphics);
             this.tabControlMain.Controls.Add(this.tabPageCheats);
+            this.tabControlMain.Controls.Add(this.tabPageMisc);
             this.tabControlMain.Controls.Add(this.tabPageHotkeys);
             this.tabControlMain.Location = new System.Drawing.Point(12, 51);
             this.tabControlMain.Name = "tabControlMain";
@@ -647,7 +651,6 @@
             // 
             // numericUpDownHP
             // 
-            this.numericUpDownHP.Enabled = false;
             this.numericUpDownHP.Location = new System.Drawing.Point(57, 32);
             this.numericUpDownHP.Maximum = new decimal(new int[] {
             10000,
@@ -657,6 +660,7 @@
             this.numericUpDownHP.Name = "numericUpDownHP";
             this.numericUpDownHP.Size = new System.Drawing.Size(75, 20);
             this.numericUpDownHP.TabIndex = 7;
+            this.numericUpDownHP.ValueChanged += new System.EventHandler(this.numericUpDownHP_ValueChanged);
             // 
             // groupBoxPosition
             // 
@@ -2622,6 +2626,29 @@
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
             // 
+            // tabPageMisc
+            // 
+            this.tabPageMisc.Controls.Add(this.checkBoxStoreHP);
+            this.tabPageMisc.Location = new System.Drawing.Point(4, 22);
+            this.tabPageMisc.Name = "tabPageMisc";
+            this.tabPageMisc.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageMisc.Size = new System.Drawing.Size(334, 515);
+            this.tabPageMisc.TabIndex = 8;
+            this.tabPageMisc.Text = "Misc";
+            this.tabPageMisc.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxStoreHP
+            // 
+            this.checkBoxStoreHP.AutoSize = true;
+            this.checkBoxStoreHP.Location = new System.Drawing.Point(6, 6);
+            this.checkBoxStoreHP.Name = "checkBoxStoreHP";
+            this.checkBoxStoreHP.Size = new System.Drawing.Size(130, 17);
+            this.checkBoxStoreHP.TabIndex = 0;
+            this.checkBoxStoreHP.Text = "Store HP with position";
+            this.toolTip1.SetToolTip(this.checkBoxStoreHP, "Storing and restoring your position will also store and restore your current heal" +
+        "th");
+            this.checkBoxStoreHP.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2718,6 +2745,8 @@
             this.groupBoxCheatPlayer.PerformLayout();
             this.tabPageHotkeys.ResumeLayout(false);
             this.tabPageHotkeys.PerformLayout();
+            this.tabPageMisc.ResumeLayout(false);
+            this.tabPageMisc.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2903,6 +2932,8 @@
         private System.Windows.Forms.CheckBox checkBoxHandleHotkeys;
         private System.Windows.Forms.CheckBox checkBoxEnableHotkeys;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TabPage tabPageMisc;
+        private System.Windows.Forms.CheckBox checkBoxStoreHP;
     }
 }
 

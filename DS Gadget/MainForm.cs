@@ -160,6 +160,7 @@ namespace DS_Gadget
 
         #region Player Tab
         private int skipBonfire = 0;
+        private int storedHP = -1;
 
         private void initPlayer()
         {
@@ -231,14 +232,22 @@ namespace DS_Gadget
             }
         }
 
+        private void numericUpDownHP_ValueChanged(object sender, EventArgs e)
+        {
+            if (!reading)
+                dsProcess.SetHP((int)numericUpDownHP.Value);
+        }
+
         private void numericUpDownPhantom_ValueChanged(object sender, EventArgs e)
         {
-            dsProcess.SetPhantomType((int)numericUpDownPhantom.Value);
+            if (!reading)
+                dsProcess.SetPhantomType((int)numericUpDownPhantom.Value);
         }
 
         private void numericUpDownTeam_ValueChanged(object sender, EventArgs e)
         {
-            dsProcess.SetTeamType((int)numericUpDownTeam.Value);
+            if (!reading)
+                dsProcess.SetTeamType((int)numericUpDownTeam.Value);
         }
 
         private void checkBoxPosLock_CheckedChanged(object sender, EventArgs e)
@@ -286,6 +295,7 @@ namespace DS_Gadget
             numericUpDownPosStoredY.Value = numericUpDownPosY.Value;
             numericUpDownPosStoredZ.Value = numericUpDownPosZ.Value;
             numericUpDownPosStoredAngle.Value = numericUpDownPosAngle.Value;
+            storedHP = (int)numericUpDownHP.Value;
         }
 
         private void buttonPosRestore_Click(object sender, EventArgs e)
@@ -300,6 +310,8 @@ namespace DS_Gadget
             float z = (float)numericUpDownPosStoredZ.Value;
             float angle = (float)((double)numericUpDownPosStoredAngle.Value / 360 * (Math.PI * 2) - Math.PI);
             dsProcess?.PosWarp(x, y, z, angle);
+            if (checkBoxStoreHP.Checked && storedHP > 0)
+                numericUpDownHP.Value = storedHP;
         }
 
         private void checkBoxGravity_CheckedChanged(object sender, EventArgs e)
@@ -912,6 +924,21 @@ namespace DS_Gadget
         {
             dsProcess.SetAllNoUpdateAI(checkBoxAllNoUpdateAI.Checked);
         }
+        #endregion
+
+        #region Misc Tab
+        private void initMisc()
+        {
+            checkBoxStoreHP.Checked = settings.StoreHP;
+        }
+
+        private void saveMisc()
+        {
+            settings.StoreHP = checkBoxStoreHP.Checked;
+        }
+
+        private void reloadMisc() { }
+        private void updateMisc() { }
         #endregion
 
         #region Hotkeys Tab

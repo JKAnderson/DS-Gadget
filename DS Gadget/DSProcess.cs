@@ -137,6 +137,12 @@ namespace DS_Gadget
             return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.HP);
         }
 
+        public void SetHP(int value)
+        {
+            // HP in CharData2 can't be written
+            dsInterface.WriteInt32(charData1 + (int)DSOffsets.CharData1.HP, value);
+        }
+
         public float GetHPMax()
         {
             return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.HPMax);

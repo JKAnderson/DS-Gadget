@@ -42,6 +42,7 @@ namespace DS_Gadget
             TeamType = 0x74,
             ForcePlayAnimation1 = 0xFC,
             CharFlags1 = 0x1FC,
+            HP = 0x2D4,
             CharFlags2 = 0x3C4,
         }
 

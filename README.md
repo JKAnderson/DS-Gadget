@@ -29,7 +29,7 @@ Requires [.NET 4.6.2](https://www.microsoft.com/net/download/thank-you/net462)
 # Credits
 [Wulf's Dark Souls Gizmo](https://github.com/Wulf2k/DaS-PC-Overlay) by Wulf2k
 
-[Costura.Fody](https://github.com/Fody/Costura) by Simon Cropp, Cameron MacFarland
+[Fasm.NET](https://github.com/ZenLulz/Fasm.NET) by Jämes Ménétrey
 
 [LowLevelHooking](https://github.com/jnm2/LowLevelHooking) by Joseph N. Musser II
 

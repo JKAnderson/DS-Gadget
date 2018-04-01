@@ -4,6 +4,11 @@ A multi-purpose testing tool for Dark Souls 1. This program is only compatible w
 Requires [.NET 4.6.2](https://www.microsoft.com/net/download/thank-you/net462)
 
 # Changelog
+### 1.4
+* HP can now be edited
+* Added option to store and restore HP along with position (ur welcome Milt :V)
+* Fixed missing bonfire ID for Seath's prison (again)
+
 ### 1.3
 * Hotkeys can be globally enabled or disabled
 * Hotkeys can be passed to the game as well or not

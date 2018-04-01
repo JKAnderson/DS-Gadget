@@ -1,4 +1,4 @@
--1 None
+-1 [None]
 1002900 Depths (Entrance)
 1002950 Depths (Gaping Dragon's Room)
 1002960 Depths (Bonfire)
@@ -54,7 +54,7 @@
 1602951 New Londo Ruins (Entrance)
 1602960 New Londo Ruins (Pre-Ingward)
 1602961 Darkroot Basin (Bonfire)
-1202900 The Duke's Archives (Cell, After Seath)
+1702900 The Duke's Archives (Cell, After Seath)
 1702950 Crystal Cave (Seath)
 1702960 The Duke's Archives (Balcony Bonfire)
 1702961 The Duke's Archives (Cell Bonfire)

@@ -186,13 +186,5 @@ namespace DS_Gadget
         {
             DeathCam = 0x40,
         }
-
-        public enum DropItem
-        {
-            Category = 0x01,
-            ItemID = 0x06,
-            Count = 0x10,
-            Jump = 0x38
-        }
     }
 }

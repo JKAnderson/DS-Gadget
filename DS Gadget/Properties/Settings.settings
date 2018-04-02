@@ -77,5 +77,11 @@
     <Setting Name="StoreHP" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="HotkeyTest1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">219</Value>
+    </Setting>
+    <Setting Name="HotkeyTest2" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">220</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

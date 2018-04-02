@@ -185,31 +185,35 @@
             this.checkBoxPlayerHide = new System.Windows.Forms.CheckBox();
             this.checkBoxPlayerSilence = new System.Windows.Forms.CheckBox();
             this.checkBoxAllNoArrow = new System.Windows.Forms.CheckBox();
+            this.tabPageMisc = new System.Windows.Forms.TabPage();
+            this.checkBoxStoreHP = new System.Windows.Forms.CheckBox();
             this.tabPageHotkeys = new System.Windows.Forms.TabPage();
-            this.label12 = new System.Windows.Forms.Label();
+            this.labelHotkeyInstruction = new System.Windows.Forms.Label();
             this.checkBoxHandleHotkeys = new System.Windows.Forms.CheckBox();
             this.checkBoxEnableHotkeys = new System.Windows.Forms.CheckBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelHotkeySpeed = new System.Windows.Forms.Label();
             this.textBoxHotkeySpeed = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelHotkeyCollision = new System.Windows.Forms.Label();
             this.textBoxHotkeyCollision = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelHotkeyGravity = new System.Windows.Forms.Label();
             this.textBoxHotkeyGravity = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelHotkeyAnim = new System.Windows.Forms.Label();
             this.textBoxHotkeyAnim = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelHotkeyMoveswap = new System.Windows.Forms.Label();
             this.textBoxHotkeyMoveswap = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelHotkeyFilter = new System.Windows.Forms.Label();
             this.textBoxHotkeyFilter = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelHotkeyRestore = new System.Windows.Forms.Label();
             this.textBoxHotkeyRestore = new System.Windows.Forms.TextBox();
             this.textBoxHotkeyStore = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelHotkeyStore = new System.Windows.Forms.Label();
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tabPageMisc = new System.Windows.Forms.TabPage();
-            this.checkBoxStoreHP = new System.Windows.Forms.CheckBox();
+            this.labelHotkeyTest2 = new System.Windows.Forms.Label();
+            this.textBoxHotkeyTest2 = new System.Windows.Forms.TextBox();
+            this.labelHotkeyTest1 = new System.Windows.Forms.Label();
+            this.textBoxHotkeyTest1 = new System.Windows.Forms.TextBox();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -266,8 +270,8 @@
             this.groupBoxCheatEnemy.SuspendLayout();
             this.groupBoxCheatAll.SuspendLayout();
             this.groupBoxCheatPlayer.SuspendLayout();
-            this.tabPageHotkeys.SuspendLayout();
             this.tabPageMisc.SuspendLayout();
+            this.tabPageHotkeys.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerCheckProcess
@@ -2405,27 +2409,54 @@
             this.checkBoxAllNoArrow.UseVisualStyleBackColor = true;
             this.checkBoxAllNoArrow.CheckedChanged += new System.EventHandler(this.checkBoxAllNoArrow_CheckedChanged);
             // 
+            // tabPageMisc
+            // 
+            this.tabPageMisc.Controls.Add(this.checkBoxStoreHP);
+            this.tabPageMisc.Location = new System.Drawing.Point(4, 22);
+            this.tabPageMisc.Name = "tabPageMisc";
+            this.tabPageMisc.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageMisc.Size = new System.Drawing.Size(334, 515);
+            this.tabPageMisc.TabIndex = 8;
+            this.tabPageMisc.Text = "Misc";
+            this.tabPageMisc.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxStoreHP
+            // 
+            this.checkBoxStoreHP.AutoSize = true;
+            this.checkBoxStoreHP.Location = new System.Drawing.Point(6, 6);
+            this.checkBoxStoreHP.Name = "checkBoxStoreHP";
+            this.checkBoxStoreHP.Size = new System.Drawing.Size(130, 17);
+            this.checkBoxStoreHP.TabIndex = 0;
+            this.checkBoxStoreHP.Text = "Store HP with position";
+            this.toolTip1.SetToolTip(this.checkBoxStoreHP, "Storing and restoring your position will also store and restore your current heal" +
+        "th");
+            this.checkBoxStoreHP.UseVisualStyleBackColor = true;
+            // 
             // tabPageHotkeys
             // 
-            this.tabPageHotkeys.Controls.Add(this.label12);
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeyTest1);
+            this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyTest1);
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeyTest2);
+            this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyTest2);
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeyInstruction);
             this.tabPageHotkeys.Controls.Add(this.checkBoxHandleHotkeys);
             this.tabPageHotkeys.Controls.Add(this.checkBoxEnableHotkeys);
-            this.tabPageHotkeys.Controls.Add(this.label9);
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeySpeed);
             this.tabPageHotkeys.Controls.Add(this.textBoxHotkeySpeed);
-            this.tabPageHotkeys.Controls.Add(this.label7);
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeyCollision);
             this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyCollision);
-            this.tabPageHotkeys.Controls.Add(this.label6);
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeyGravity);
             this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyGravity);
-            this.tabPageHotkeys.Controls.Add(this.label5);
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeyAnim);
             this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyAnim);
-            this.tabPageHotkeys.Controls.Add(this.label4);
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeyMoveswap);
             this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyMoveswap);
-            this.tabPageHotkeys.Controls.Add(this.label3);
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeyFilter);
             this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyFilter);
-            this.tabPageHotkeys.Controls.Add(this.label2);
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeyRestore);
             this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyRestore);
             this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyStore);
-            this.tabPageHotkeys.Controls.Add(this.label1);
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeyStore);
             this.tabPageHotkeys.Location = new System.Drawing.Point(4, 22);
             this.tabPageHotkeys.Name = "tabPageHotkeys";
             this.tabPageHotkeys.Padding = new System.Windows.Forms.Padding(3);
@@ -2434,14 +2465,14 @@
             this.tabPageHotkeys.Text = "Hotkeys";
             this.tabPageHotkeys.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // labelHotkeyInstruction
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 49);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(213, 13);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Click box to rebind; press escape to unbind.";
+            this.labelHotkeyInstruction.AutoSize = true;
+            this.labelHotkeyInstruction.Location = new System.Drawing.Point(6, 49);
+            this.labelHotkeyInstruction.Name = "labelHotkeyInstruction";
+            this.labelHotkeyInstruction.Size = new System.Drawing.Size(213, 13);
+            this.labelHotkeyInstruction.TabIndex = 18;
+            this.labelHotkeyInstruction.Text = "Click box to rebind; press escape to unbind.";
             // 
             // checkBoxHandleHotkeys
             // 
@@ -2468,14 +2499,14 @@
             this.checkBoxEnableHotkeys.Text = "Enable hotkeys";
             this.checkBoxEnableHotkeys.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // labelHotkeySpeed
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(112, 250);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 13);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Toggle Speed";
+            this.labelHotkeySpeed.AutoSize = true;
+            this.labelHotkeySpeed.Location = new System.Drawing.Point(112, 250);
+            this.labelHotkeySpeed.Name = "labelHotkeySpeed";
+            this.labelHotkeySpeed.Size = new System.Drawing.Size(74, 13);
+            this.labelHotkeySpeed.TabIndex = 15;
+            this.labelHotkeySpeed.Text = "Toggle Speed";
             // 
             // textBoxHotkeySpeed
             // 
@@ -2485,14 +2516,14 @@
             this.textBoxHotkeySpeed.TabIndex = 14;
             this.textBoxHotkeySpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label7
+            // labelHotkeyCollision
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(112, 224);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Toggle Collision";
+            this.labelHotkeyCollision.AutoSize = true;
+            this.labelHotkeyCollision.Location = new System.Drawing.Point(112, 224);
+            this.labelHotkeyCollision.Name = "labelHotkeyCollision";
+            this.labelHotkeyCollision.Size = new System.Drawing.Size(81, 13);
+            this.labelHotkeyCollision.TabIndex = 13;
+            this.labelHotkeyCollision.Text = "Toggle Collision";
             // 
             // textBoxHotkeyCollision
             // 
@@ -2502,14 +2533,14 @@
             this.textBoxHotkeyCollision.TabIndex = 12;
             this.textBoxHotkeyCollision.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label6
+            // labelHotkeyGravity
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(112, 198);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Toggle Gravity";
+            this.labelHotkeyGravity.AutoSize = true;
+            this.labelHotkeyGravity.Location = new System.Drawing.Point(112, 198);
+            this.labelHotkeyGravity.Name = "labelHotkeyGravity";
+            this.labelHotkeyGravity.Size = new System.Drawing.Size(76, 13);
+            this.labelHotkeyGravity.TabIndex = 11;
+            this.labelHotkeyGravity.Text = "Toggle Gravity";
             // 
             // textBoxHotkeyGravity
             // 
@@ -2519,14 +2550,14 @@
             this.textBoxHotkeyGravity.TabIndex = 10;
             this.textBoxHotkeyGravity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label5
+            // labelHotkeyAnim
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(112, 172);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Stand Up";
+            this.labelHotkeyAnim.AutoSize = true;
+            this.labelHotkeyAnim.Location = new System.Drawing.Point(112, 172);
+            this.labelHotkeyAnim.Name = "labelHotkeyAnim";
+            this.labelHotkeyAnim.Size = new System.Drawing.Size(52, 13);
+            this.labelHotkeyAnim.TabIndex = 9;
+            this.labelHotkeyAnim.Text = "Stand Up";
             // 
             // textBoxHotkeyAnim
             // 
@@ -2536,14 +2567,14 @@
             this.textBoxHotkeyAnim.TabIndex = 8;
             this.textBoxHotkeyAnim.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label4
+            // labelHotkeyMoveswap
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(112, 146);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Moveswap";
+            this.labelHotkeyMoveswap.AutoSize = true;
+            this.labelHotkeyMoveswap.Location = new System.Drawing.Point(112, 146);
+            this.labelHotkeyMoveswap.Name = "labelHotkeyMoveswap";
+            this.labelHotkeyMoveswap.Size = new System.Drawing.Size(59, 13);
+            this.labelHotkeyMoveswap.TabIndex = 7;
+            this.labelHotkeyMoveswap.Text = "Moveswap";
             // 
             // textBoxHotkeyMoveswap
             // 
@@ -2553,14 +2584,14 @@
             this.textBoxHotkeyMoveswap.TabIndex = 6;
             this.textBoxHotkeyMoveswap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label3
+            // labelHotkeyFilter
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(112, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Toggle Filter";
+            this.labelHotkeyFilter.AutoSize = true;
+            this.labelHotkeyFilter.Location = new System.Drawing.Point(112, 120);
+            this.labelHotkeyFilter.Name = "labelHotkeyFilter";
+            this.labelHotkeyFilter.Size = new System.Drawing.Size(65, 13);
+            this.labelHotkeyFilter.TabIndex = 5;
+            this.labelHotkeyFilter.Text = "Toggle Filter";
             // 
             // textBoxHotkeyFilter
             // 
@@ -2570,14 +2601,14 @@
             this.textBoxHotkeyFilter.TabIndex = 4;
             this.textBoxHotkeyFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label2
+            // labelHotkeyRestore
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(112, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Restore Position";
+            this.labelHotkeyRestore.AutoSize = true;
+            this.labelHotkeyRestore.Location = new System.Drawing.Point(112, 94);
+            this.labelHotkeyRestore.Name = "labelHotkeyRestore";
+            this.labelHotkeyRestore.Size = new System.Drawing.Size(84, 13);
+            this.labelHotkeyRestore.TabIndex = 3;
+            this.labelHotkeyRestore.Text = "Restore Position";
             // 
             // textBoxHotkeyRestore
             // 
@@ -2596,14 +2627,14 @@
             this.textBoxHotkeyStore.TabIndex = 1;
             this.textBoxHotkeyStore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label1
+            // labelHotkeyStore
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(112, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Store Position";
+            this.labelHotkeyStore.AutoSize = true;
+            this.labelHotkeyStore.Location = new System.Drawing.Point(112, 68);
+            this.labelHotkeyStore.Name = "labelHotkeyStore";
+            this.labelHotkeyStore.Size = new System.Drawing.Size(72, 13);
+            this.labelHotkeyStore.TabIndex = 0;
+            this.labelHotkeyStore.Text = "Store Position";
             // 
             // labelCheckVersion
             // 
@@ -2626,28 +2657,39 @@
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
             // 
-            // tabPageMisc
+            // labelHotkeyTest2
             // 
-            this.tabPageMisc.Controls.Add(this.checkBoxStoreHP);
-            this.tabPageMisc.Location = new System.Drawing.Point(4, 22);
-            this.tabPageMisc.Name = "tabPageMisc";
-            this.tabPageMisc.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMisc.Size = new System.Drawing.Size(334, 515);
-            this.tabPageMisc.TabIndex = 8;
-            this.tabPageMisc.Text = "Misc";
-            this.tabPageMisc.UseVisualStyleBackColor = true;
+            this.labelHotkeyTest2.AutoSize = true;
+            this.labelHotkeyTest2.Location = new System.Drawing.Point(112, 492);
+            this.labelHotkeyTest2.Name = "labelHotkeyTest2";
+            this.labelHotkeyTest2.Size = new System.Drawing.Size(37, 13);
+            this.labelHotkeyTest2.TabIndex = 20;
+            this.labelHotkeyTest2.Text = "Test 2";
             // 
-            // checkBoxStoreHP
+            // textBoxHotkeyTest2
             // 
-            this.checkBoxStoreHP.AutoSize = true;
-            this.checkBoxStoreHP.Location = new System.Drawing.Point(6, 6);
-            this.checkBoxStoreHP.Name = "checkBoxStoreHP";
-            this.checkBoxStoreHP.Size = new System.Drawing.Size(130, 17);
-            this.checkBoxStoreHP.TabIndex = 0;
-            this.checkBoxStoreHP.Text = "Store HP with position";
-            this.toolTip1.SetToolTip(this.checkBoxStoreHP, "Storing and restoring your position will also store and restore your current heal" +
-        "th");
-            this.checkBoxStoreHP.UseVisualStyleBackColor = true;
+            this.textBoxHotkeyTest2.Location = new System.Drawing.Point(6, 489);
+            this.textBoxHotkeyTest2.Name = "textBoxHotkeyTest2";
+            this.textBoxHotkeyTest2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHotkeyTest2.TabIndex = 19;
+            this.textBoxHotkeyTest2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelHotkeyTest1
+            // 
+            this.labelHotkeyTest1.AutoSize = true;
+            this.labelHotkeyTest1.Location = new System.Drawing.Point(112, 466);
+            this.labelHotkeyTest1.Name = "labelHotkeyTest1";
+            this.labelHotkeyTest1.Size = new System.Drawing.Size(37, 13);
+            this.labelHotkeyTest1.TabIndex = 22;
+            this.labelHotkeyTest1.Text = "Test 1";
+            // 
+            // textBoxHotkeyTest1
+            // 
+            this.textBoxHotkeyTest1.Location = new System.Drawing.Point(6, 463);
+            this.textBoxHotkeyTest1.Name = "textBoxHotkeyTest1";
+            this.textBoxHotkeyTest1.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHotkeyTest1.TabIndex = 21;
+            this.textBoxHotkeyTest1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MainForm
             // 
@@ -2743,10 +2785,10 @@
             this.groupBoxCheatAll.PerformLayout();
             this.groupBoxCheatPlayer.ResumeLayout(false);
             this.groupBoxCheatPlayer.PerformLayout();
-            this.tabPageHotkeys.ResumeLayout(false);
-            this.tabPageHotkeys.PerformLayout();
             this.tabPageMisc.ResumeLayout(false);
             this.tabPageMisc.PerformLayout();
+            this.tabPageHotkeys.ResumeLayout(false);
+            this.tabPageHotkeys.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2863,15 +2905,15 @@
         private System.Windows.Forms.NumericUpDown numericUpDownPosStoredX;
         private System.Windows.Forms.Button buttonPosStore;
         private System.Windows.Forms.TabPage tabPageHotkeys;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelHotkeyMoveswap;
         private System.Windows.Forms.TextBox textBoxHotkeyMoveswap;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelHotkeyFilter;
         private System.Windows.Forms.TextBox textBoxHotkeyFilter;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelHotkeyRestore;
         private System.Windows.Forms.TextBox textBoxHotkeyRestore;
         private System.Windows.Forms.TextBox textBoxHotkeyStore;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelHotkeyStore;
+        private System.Windows.Forms.Label labelHotkeyAnim;
         private System.Windows.Forms.TextBox textBoxHotkeyAnim;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBoxBonfire;
@@ -2907,11 +2949,11 @@
         private System.Windows.Forms.GroupBox groupBoxOther;
         private System.Windows.Forms.NumericUpDown numericUpDownSpeed;
         private System.Windows.Forms.CheckBox checkBoxSpeed;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelHotkeySpeed;
         private System.Windows.Forms.TextBox textBoxHotkeySpeed;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelHotkeyCollision;
         private System.Windows.Forms.TextBox textBoxHotkeyCollision;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelHotkeyGravity;
         private System.Windows.Forms.TextBox textBoxHotkeyGravity;
         private System.Windows.Forms.GroupBox groupBoxCheatEnemy;
         private System.Windows.Forms.GroupBox groupBoxCheatAll;
@@ -2928,12 +2970,16 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label labelCheckVersion;
         private System.Windows.Forms.LinkLabel linkLabelNewVersion;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelHotkeyInstruction;
         private System.Windows.Forms.CheckBox checkBoxHandleHotkeys;
         private System.Windows.Forms.CheckBox checkBoxEnableHotkeys;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TabPage tabPageMisc;
         private System.Windows.Forms.CheckBox checkBoxStoreHP;
+        private System.Windows.Forms.Label labelHotkeyTest1;
+        private System.Windows.Forms.TextBox textBoxHotkeyTest1;
+        private System.Windows.Forms.Label labelHotkeyTest2;
+        private System.Windows.Forms.TextBox textBoxHotkeyTest2;
     }
 }
 

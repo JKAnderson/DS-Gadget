@@ -322,5 +322,29 @@ namespace DS_Gadget.Properties {
                 this["StoreHP"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("219")]
+        public int HotkeyTest1 {
+            get {
+                return ((int)(this["HotkeyTest1"]));
+            }
+            set {
+                this["HotkeyTest1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("220")]
+        public int HotkeyTest2 {
+            get {
+                return ((int)(this["HotkeyTest2"]));
+            }
+            set {
+                this["HotkeyTest2"] = value;
+            }
+        }
     }
 }

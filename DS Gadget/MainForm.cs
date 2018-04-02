@@ -990,6 +990,22 @@ namespace DS_Gadget
                 checkBoxSpeed.Checked = !checkBoxSpeed.Checked;
             }));
 
+#if DEBUG
+            hotkeys.Add(new GadgetHotkey("HotkeyTest1", textBoxHotkeyTest1, tabPageHotkeys, () =>
+            {
+                
+            }));
+            hotkeys.Add(new GadgetHotkey("HotkeyTest2", textBoxHotkeyTest2, tabPageHotkeys, () =>
+            {
+                
+            }));
+#else
+            textBoxHotkeyTest1.Visible = false;
+            labelHotkeyTest1.Visible = false;
+            textBoxHotkeyTest2.Visible = false;
+            labelHotkeyTest2.Visible = false;
+#endif
+
             keyboardHook.KeyDownOrUp += GlobalKeyboardHook_KeyDownOrUp;
         }
 
@@ -1015,6 +1031,6 @@ namespace DS_Gadget
                 }
             }
         }
-        #endregion
+#endregion
     }
 }

@@ -81,7 +81,7 @@
       <Value Profile="(Default)">219</Value>
     </Setting>
     <Setting Name="HotkeyTest2" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">220</Value>
+      <Value Profile="(Default)">221</Value>
     </Setting>
   </Settings>
 </SettingsFile>

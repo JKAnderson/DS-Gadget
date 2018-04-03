@@ -184,7 +184,8 @@ namespace DS_Gadget
 
         public void WriteByte(int address, byte value)
         {
-            WriteProcessMemory(address, BitConverter.GetBytes(value));
+            // Note: do not BitConverter.GetBytes this, stupid
+            WriteProcessMemory(address, new byte[] { value });
         }
 
         public void WriteBytes(int address, byte[] bytes)

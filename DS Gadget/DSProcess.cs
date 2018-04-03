@@ -1,5 +1,4 @@
-﻿using Binarysharp.Assemblers.Fasm;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
@@ -97,7 +96,7 @@ namespace DS_Gadget
         }
 
         #region Pointer loading
-        private int charData1, charMapData, animData, charPosData, charData2, graphicsData, worldState, unknown1, unknown2;
+        private int charData1, charMapData, animData, charPosData, charData2, graphicsData, worldState, chrFollowCam, unknown1, unknown2;
 
         public void LoadPointers()
         {
@@ -116,6 +115,10 @@ namespace DS_Gadget
             graphicsData = dsInterface.ReadInt32(pointer + DSOffsets.GraphicsDataPtr2);
 
             worldState = dsInterface.ReadInt32(DSOffsets.WorldStatePtr);
+
+            pointer = dsInterface.ReadInt32(DSOffsets.ChrFollowCamPtr);
+            pointer = dsInterface.ReadInt32(pointer + DSOffsets.ChrFollowCamPtr2);
+            chrFollowCam = dsInterface.ReadInt32(pointer + DSOffsets.ChrFollowCamPtr3);
 
             unknown1 = dsInterface.ReadInt32(DSOffsets.Unknown1Ptr);
 
@@ -266,6 +269,16 @@ namespace DS_Gadget
             dsInterface.WriteFloat(charMapData + (int)DSOffsets.CharMapData.WarpZ, z);
             dsInterface.WriteFloat(charMapData + (int)DSOffsets.CharMapData.WarpAngle, angle);
             dsInterface.WriteBool(charMapData + (int)DSOffsets.CharMapData.Warp, true);
+        }
+
+        public byte[] DumpFollowCam()
+        {
+            return dsInterface.ReadBytes(chrFollowCam, 512);
+        }
+
+        public void UndumpFollowCam(byte[] bytes)
+        {
+            dsInterface.WriteBytes(chrFollowCam, bytes);
         }
 
         public void SetGravity(bool enable)
@@ -654,6 +667,14 @@ namespace DS_Gadget
         public void ResetAnim()
         {
             dsInterface.WriteInt32(charData1 + (int)DSOffsets.CharData1.ForcePlayAnimation1, 0);
+        }
+
+        public void HotkeyTest1()
+        {
+        }
+
+        public void HotkeyTest2()
+        {
         }
         #endregion
     }

@@ -337,7 +337,7 @@ namespace DS_Gadget.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("220")]
+        [global::System.Configuration.DefaultSettingValueAttribute("221")]
         public int HotkeyTest2 {
             get {
                 return ((int)(this["HotkeyTest2"]));

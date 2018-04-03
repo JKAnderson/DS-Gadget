@@ -161,6 +161,7 @@ namespace DS_Gadget
         #region Player Tab
         private int skipBonfire = 0;
         private int storedHP = -1;
+        private byte[] camDump = null;
 
         private void initPlayer()
         {
@@ -296,6 +297,7 @@ namespace DS_Gadget
             numericUpDownPosStoredZ.Value = numericUpDownPosZ.Value;
             numericUpDownPosStoredAngle.Value = numericUpDownPosAngle.Value;
             storedHP = (int)numericUpDownHP.Value;
+            camDump = dsProcess.DumpFollowCam();
         }
 
         private void buttonPosRestore_Click(object sender, EventArgs e)
@@ -312,6 +314,10 @@ namespace DS_Gadget
             dsProcess?.PosWarp(x, y, z, angle);
             if (checkBoxStoreHP.Checked && storedHP > 0)
                 numericUpDownHP.Value = storedHP;
+            // Two frames for safety, restore camera after warp takes effect
+            System.Threading.Thread.Sleep(1000 / 15);
+            if (camDump != null)
+                dsProcess.UndumpFollowCam(camDump);
         }
 
         private void checkBoxGravity_CheckedChanged(object sender, EventArgs e)
@@ -409,7 +415,6 @@ namespace DS_Gadget
         private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             DSClass charClass = comboBoxClass.SelectedItem as DSClass;
-            dsProcess.SetClass(charClass.ID);
             numericUpDownVit.Minimum = charClass.Vitality;
             numericUpDownAtt.Minimum = charClass.Attunement;
             numericUpDownEnd.Minimum = charClass.Endurance;
@@ -419,7 +424,10 @@ namespace DS_Gadget
             numericUpDownInt.Minimum = charClass.Intelligence;
             numericUpDownFth.Minimum = charClass.Faith;
             if (!reading)
+            {
+                dsProcess.SetClass(charClass.ID);
                 recalculateStats();
+            }
         }
 
         private void numericUpDownStats_ValueChanged(object sender, EventArgs e)
@@ -993,11 +1001,14 @@ namespace DS_Gadget
 #if DEBUG
             hotkeys.Add(new GadgetHotkey("HotkeyTest1", textBoxHotkeyTest1, tabPageHotkeys, () =>
             {
-                
+                posStore();
+                dsProcess.HotkeyTest1();
             }));
             hotkeys.Add(new GadgetHotkey("HotkeyTest2", textBoxHotkeyTest2, tabPageHotkeys, () =>
             {
-                
+                posRestore();
+                //System.Threading.Thread.Sleep(1000 / 15);
+                dsProcess.HotkeyTest2();
             }));
 #else
             textBoxHotkeyTest1.Visible = false;

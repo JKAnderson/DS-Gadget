@@ -174,6 +174,25 @@ namespace DS_Gadget
             PosStableAngle = 0xB84,
         }
 
+        public const int ChrFollowCamPtr = 0x137D6DC;
+        public const int ChrFollowCamPtr2 = 0x3C;
+        public const int ChrFollowCamPtr3 = 0x60;
+        public enum ChrFollowCam
+        {
+            RotX = 0xE0,
+            RotY = 0xE4,
+            RotZ = 0xE8,
+            PosX = 0x100,
+            PosY = 0x104,
+            PosZ = 0x108,
+            CamRotX = 0x140,
+            CamRotY = 0x144,
+            CamRotZ = 0x148,
+            TargetRotX = 0x150,
+            TargetRotY = 0x154,
+            TargetRotZ = 0x158,
+        }
+
         public const int Unknown1Ptr = 0x137E204;
         public enum Unknown1
         {

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Net.Http;
 using System.Windows.Forms;
 
 namespace DS_Gadget
@@ -58,7 +59,7 @@ namespace DS_Gadget
                     labelCheckVersion.Text = "App up to date";
                 }
             }
-            catch (Exception ex) when (ex is ApiException || ex is ArgumentException)
+            catch (Exception ex) when (ex is HttpRequestException || ex is ApiException || ex is ArgumentException)
             {
                 labelCheckVersion.Text = "Current app version unknown";
             }

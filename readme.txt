@@ -1,11 +1,15 @@
 
---| DS Gadget 1.4
+--| DS Gadget 1.5
 --| https://github.com/JKAnderson/DS-Gadget
 
 A multi-purpose testing tool for Dark Souls 1. This program is only compatible with the current Steam version of DS1.
 Requires .NET 4.6.2: https://www.microsoft.com/net/download/thank-you/net462
 
 --| Changelog
+
+1.5
+	Camera state is now stored along with position
+	Fixed body type being overwritten
 
 1.4
 	HP can now be edited

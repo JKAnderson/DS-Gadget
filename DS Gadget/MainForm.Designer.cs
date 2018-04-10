@@ -186,7 +186,6 @@
             this.checkBoxPlayerSilence = new System.Windows.Forms.CheckBox();
             this.checkBoxAllNoArrow = new System.Windows.Forms.CheckBox();
             this.tabPageMisc = new System.Windows.Forms.TabPage();
-            this.checkBoxStoreHP = new System.Windows.Forms.CheckBox();
             this.tabPageHotkeys = new System.Windows.Forms.TabPage();
             this.labelHotkeyTest1 = new System.Windows.Forms.Label();
             this.textBoxHotkeyTest1 = new System.Windows.Forms.TextBox();
@@ -214,6 +213,8 @@
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.checkBoxStoreState = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -668,6 +669,7 @@
             this.groupBoxPosition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxPosition.AutoSize = true;
+            this.groupBoxPosition.Controls.Add(this.checkBoxStoreState);
             this.groupBoxPosition.Controls.Add(this.checkBoxPosLock);
             this.groupBoxPosition.Controls.Add(this.labelPosAngle);
             this.groupBoxPosition.Controls.Add(this.numericUpDownPosZ);
@@ -2408,7 +2410,7 @@
             // 
             // tabPageMisc
             // 
-            this.tabPageMisc.Controls.Add(this.checkBoxStoreHP);
+            this.tabPageMisc.Controls.Add(this.label1);
             this.tabPageMisc.Location = new System.Drawing.Point(4, 22);
             this.tabPageMisc.Name = "tabPageMisc";
             this.tabPageMisc.Padding = new System.Windows.Forms.Padding(3);
@@ -2416,18 +2418,6 @@
             this.tabPageMisc.TabIndex = 8;
             this.tabPageMisc.Text = "Misc";
             this.tabPageMisc.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxStoreHP
-            // 
-            this.checkBoxStoreHP.AutoSize = true;
-            this.checkBoxStoreHP.Location = new System.Drawing.Point(6, 6);
-            this.checkBoxStoreHP.Name = "checkBoxStoreHP";
-            this.checkBoxStoreHP.Size = new System.Drawing.Size(130, 17);
-            this.checkBoxStoreHP.TabIndex = 0;
-            this.checkBoxStoreHP.Text = "Store HP with position";
-            this.toolTip1.SetToolTip(this.checkBoxStoreHP, "Storing and restoring your position will also store and restore your current heal" +
-        "th");
-            this.checkBoxStoreHP.UseVisualStyleBackColor = true;
             // 
             // tabPageHotkeys
             // 
@@ -2688,6 +2678,26 @@
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
             // 
+            // checkBoxStoreState
+            // 
+            this.checkBoxStoreState.AutoSize = true;
+            this.checkBoxStoreState.Location = new System.Drawing.Point(219, 204);
+            this.checkBoxStoreState.Name = "checkBoxStoreState";
+            this.checkBoxStoreState.Size = new System.Drawing.Size(87, 17);
+            this.checkBoxStoreState.TabIndex = 24;
+            this.checkBoxStoreState.Text = "Include state";
+            this.toolTip1.SetToolTip(this.checkBoxStoreState, "Restoring position will also restore health, stamina, and death cam status");
+            this.checkBoxStoreState.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(6, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(322, 509);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "This tab intentionally left blank.";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2783,7 +2793,6 @@
             this.groupBoxCheatPlayer.ResumeLayout(false);
             this.groupBoxCheatPlayer.PerformLayout();
             this.tabPageMisc.ResumeLayout(false);
-            this.tabPageMisc.PerformLayout();
             this.tabPageHotkeys.ResumeLayout(false);
             this.tabPageHotkeys.PerformLayout();
             this.ResumeLayout(false);
@@ -2972,11 +2981,12 @@
         private System.Windows.Forms.CheckBox checkBoxEnableHotkeys;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TabPage tabPageMisc;
-        private System.Windows.Forms.CheckBox checkBoxStoreHP;
         private System.Windows.Forms.Label labelHotkeyTest1;
         private System.Windows.Forms.TextBox textBoxHotkeyTest1;
         private System.Windows.Forms.Label labelHotkeyTest2;
         private System.Windows.Forms.TextBox textBoxHotkeyTest2;
+        private System.Windows.Forms.CheckBox checkBoxStoreState;
+        private System.Windows.Forms.Label label1;
     }
 }
 

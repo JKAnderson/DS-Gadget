@@ -5,12 +5,21 @@ namespace DS_Gadget
 {
     public partial class MainForm : Form
     {
+        private struct PlayerState
+        {
+            public bool Set;
+            public int HP, Stamina;
+            public bool DeathCam;
+            public byte[] FollowCam;
+        }
+
         private int skipBonfire = 0;
-        private int storedHP = -1;
-        private byte[] camDump = null;
+        private PlayerState playerState;
 
         private void initPlayer()
         {
+            playerState.Set = false;
+            checkBoxStoreState.Checked = settings.StoreHP;
             foreach (DSBonfire bonfire in DSBonfire.All)
                 comboBoxBonfire.Items.Add(bonfire);
             comboBoxBonfire.SelectedIndex = 0;
@@ -33,6 +42,7 @@ namespace DS_Gadget
 
         private void savePlayer()
         {
+            settings.StoreHP = checkBoxStoreState.Checked;
             settings.Speed = numericUpDownSpeed.Value;
             resetPlayer();
         }
@@ -152,8 +162,11 @@ namespace DS_Gadget
             numericUpDownPosStoredY.Value = numericUpDownPosY.Value;
             numericUpDownPosStoredZ.Value = numericUpDownPosZ.Value;
             numericUpDownPosStoredAngle.Value = numericUpDownPosAngle.Value;
-            storedHP = (int)numericUpDownHP.Value;
-            camDump = dsProcess.DumpFollowCam();
+            playerState.HP = (int)numericUpDownHP.Value;
+            playerState.Stamina = (int)numericUpDownStam.Value;
+            playerState.FollowCam = dsProcess.DumpFollowCam();
+            playerState.DeathCam = dsProcess.GetDeathCam();
+            playerState.Set = true;
         }
 
         private void buttonPosRestore_Click(object sender, EventArgs e)
@@ -168,12 +181,19 @@ namespace DS_Gadget
             float z = (float)numericUpDownPosStoredZ.Value;
             float angle = (float)((double)numericUpDownPosStoredAngle.Value / 360 * (Math.PI * 2) - Math.PI);
             dsProcess?.PosWarp(x, y, z, angle);
-            if (checkBoxStoreHP.Checked && storedHP > 0)
-                numericUpDownHP.Value = storedHP;
-            // Two frames for safety, restore camera after warp takes effect
-            System.Threading.Thread.Sleep(1000 / 15);
-            if (camDump != null)
-                dsProcess.UndumpFollowCam(camDump);
+            if (playerState.Set)
+            {
+                // Two frames for safety, wait until after warp
+                System.Threading.Thread.Sleep(1000 / 15);
+                dsProcess.UndumpFollowCam(playerState.FollowCam);
+
+                if (checkBoxStoreState.Checked)
+                {
+                    numericUpDownHP.Value = playerState.HP;
+                    numericUpDownStam.Value = playerState.Stamina;
+                    checkBoxDeathCam.Checked = playerState.DeathCam;
+                }
+            }
         }
 
         private void checkBoxGravity_CheckedChanged(object sender, EventArgs e)

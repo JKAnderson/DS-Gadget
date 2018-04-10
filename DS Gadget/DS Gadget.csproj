@@ -88,6 +88,27 @@
     <Compile Include="DSOffsets.cs" />
     <Compile Include="DSProcess.cs" />
     <Compile Include="DSInterface.cs" />
+    <Compile Include="MainForm Tabs\TabStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm Tabs\TabItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm Tabs\TabHotkeys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm Tabs\TabMisc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm Tabs\TabCheats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm Tabs\TabGraphics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm Tabs\TabPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

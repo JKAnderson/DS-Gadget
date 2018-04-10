@@ -188,6 +188,10 @@
             this.tabPageMisc = new System.Windows.Forms.TabPage();
             this.checkBoxStoreHP = new System.Windows.Forms.CheckBox();
             this.tabPageHotkeys = new System.Windows.Forms.TabPage();
+            this.labelHotkeyTest1 = new System.Windows.Forms.Label();
+            this.textBoxHotkeyTest1 = new System.Windows.Forms.TextBox();
+            this.labelHotkeyTest2 = new System.Windows.Forms.Label();
+            this.textBoxHotkeyTest2 = new System.Windows.Forms.TextBox();
             this.labelHotkeyInstruction = new System.Windows.Forms.Label();
             this.checkBoxHandleHotkeys = new System.Windows.Forms.CheckBox();
             this.checkBoxEnableHotkeys = new System.Windows.Forms.CheckBox();
@@ -210,10 +214,6 @@
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.labelHotkeyTest2 = new System.Windows.Forms.Label();
-            this.textBoxHotkeyTest2 = new System.Windows.Forms.TextBox();
-            this.labelHotkeyTest1 = new System.Windows.Forms.Label();
-            this.textBoxHotkeyTest1 = new System.Windows.Forms.TextBox();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -342,9 +342,6 @@
             // 
             // tabControlMain
             // 
-            this.tabControlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControlMain.Controls.Add(this.tabPagePlayer);
             this.tabControlMain.Controls.Add(this.tabPageStats);
             this.tabControlMain.Controls.Add(this.tabPageItems);
@@ -2465,6 +2462,40 @@
             this.tabPageHotkeys.Text = "Hotkeys";
             this.tabPageHotkeys.UseVisualStyleBackColor = true;
             // 
+            // labelHotkeyTest1
+            // 
+            this.labelHotkeyTest1.AutoSize = true;
+            this.labelHotkeyTest1.Location = new System.Drawing.Point(112, 466);
+            this.labelHotkeyTest1.Name = "labelHotkeyTest1";
+            this.labelHotkeyTest1.Size = new System.Drawing.Size(37, 13);
+            this.labelHotkeyTest1.TabIndex = 22;
+            this.labelHotkeyTest1.Text = "Test 1";
+            // 
+            // textBoxHotkeyTest1
+            // 
+            this.textBoxHotkeyTest1.Location = new System.Drawing.Point(6, 463);
+            this.textBoxHotkeyTest1.Name = "textBoxHotkeyTest1";
+            this.textBoxHotkeyTest1.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHotkeyTest1.TabIndex = 21;
+            this.textBoxHotkeyTest1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelHotkeyTest2
+            // 
+            this.labelHotkeyTest2.AutoSize = true;
+            this.labelHotkeyTest2.Location = new System.Drawing.Point(112, 492);
+            this.labelHotkeyTest2.Name = "labelHotkeyTest2";
+            this.labelHotkeyTest2.Size = new System.Drawing.Size(37, 13);
+            this.labelHotkeyTest2.TabIndex = 20;
+            this.labelHotkeyTest2.Text = "Test 2";
+            // 
+            // textBoxHotkeyTest2
+            // 
+            this.textBoxHotkeyTest2.Location = new System.Drawing.Point(6, 489);
+            this.textBoxHotkeyTest2.Name = "textBoxHotkeyTest2";
+            this.textBoxHotkeyTest2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHotkeyTest2.TabIndex = 19;
+            this.textBoxHotkeyTest2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // labelHotkeyInstruction
             // 
             this.labelHotkeyInstruction.AutoSize = true;
@@ -2656,40 +2687,6 @@
             this.linkLabelNewVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
-            // 
-            // labelHotkeyTest2
-            // 
-            this.labelHotkeyTest2.AutoSize = true;
-            this.labelHotkeyTest2.Location = new System.Drawing.Point(112, 492);
-            this.labelHotkeyTest2.Name = "labelHotkeyTest2";
-            this.labelHotkeyTest2.Size = new System.Drawing.Size(37, 13);
-            this.labelHotkeyTest2.TabIndex = 20;
-            this.labelHotkeyTest2.Text = "Test 2";
-            // 
-            // textBoxHotkeyTest2
-            // 
-            this.textBoxHotkeyTest2.Location = new System.Drawing.Point(6, 489);
-            this.textBoxHotkeyTest2.Name = "textBoxHotkeyTest2";
-            this.textBoxHotkeyTest2.Size = new System.Drawing.Size(100, 20);
-            this.textBoxHotkeyTest2.TabIndex = 19;
-            this.textBoxHotkeyTest2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // labelHotkeyTest1
-            // 
-            this.labelHotkeyTest1.AutoSize = true;
-            this.labelHotkeyTest1.Location = new System.Drawing.Point(112, 466);
-            this.labelHotkeyTest1.Name = "labelHotkeyTest1";
-            this.labelHotkeyTest1.Size = new System.Drawing.Size(37, 13);
-            this.labelHotkeyTest1.TabIndex = 22;
-            this.labelHotkeyTest1.Text = "Test 1";
-            // 
-            // textBoxHotkeyTest1
-            // 
-            this.textBoxHotkeyTest1.Location = new System.Drawing.Point(6, 463);
-            this.textBoxHotkeyTest1.Name = "textBoxHotkeyTest1";
-            this.textBoxHotkeyTest1.Size = new System.Drawing.Size(100, 20);
-            this.textBoxHotkeyTest1.TabIndex = 21;
-            this.textBoxHotkeyTest1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MainForm
             // 

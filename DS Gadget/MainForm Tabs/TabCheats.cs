@@ -62,7 +62,12 @@ namespace DS_Gadget
             dsProcess.SetAllNoUpdateAI(checkBoxAllNoUpdateAI.Checked);
         }
 
-        private void updateCheats() { }
+        private void updateCheats()
+        {
+            // The game sometimes sets and unsets this, for instance when dropping into Manus' arena
+            if (checkBoxPlayerDeadMode.Checked)
+                dsProcess.SetPlayerDeadMode(true);
+        }
 
         private void checkBoxPlayerDeadMode_CheckedChanged(object sender, EventArgs e)
         {

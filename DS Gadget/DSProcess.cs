@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
@@ -74,12 +75,7 @@ namespace DS_Gadget
 
         public bool Loaded()
         {
-            if (Valid)
-            {
-                return getCharData1() != 0;
-            }
-            else
-                return false;
+            return Valid && getCharData1() != 0;
         }
 
         public bool Focused()
@@ -89,42 +85,44 @@ namespace DS_Gadget
             return pid == process.Id;
         }
 
-        private void ReplaceBytes(byte[] victim, int value, int index)
-        {
-            byte[] bytes = BitConverter.GetBytes(value);
-            Array.Copy(bytes, 0, victim, index, bytes.Length);
-        }
-
         #region Pointer loading
-        private int charData1, charMapData, animData, charPosData, charData2, graphicsData, worldState, chrFollowCam, unknown1, unknown2, unknown3;
+        private struct DSPointers
+        {
+            public int CharData1, CharMapData, AnimData, CharPosData, CharData2, GraphicsData,
+                WorldState, ChrFollowCam, EventFlags, Unknown1, Unknown2, Unknown3;
+        }
+        private DSPointers pointers;
 
         public void LoadPointers()
         {
-            charData1 = getCharData1();
+            pointers.CharData1 = getCharData1();
 
-            charMapData = dsInterface.ReadInt32(charData1 + (int)DSOffsets.CharData1.CharMapDataPtr);
+            pointers.CharMapData = dsInterface.ReadInt32(pointers.CharData1 + (int)DSOffsets.CharData1.CharMapDataPtr);
 
-            animData = dsInterface.ReadInt32(charMapData + (int)DSOffsets.CharMapData.AnimDataPtr);
+            pointers.AnimData = dsInterface.ReadInt32(pointers.CharMapData + (int)DSOffsets.CharMapData.AnimDataPtr);
 
-            charPosData = dsInterface.ReadInt32(charMapData + (int)DSOffsets.CharMapData.CharPosDataPtr);
+            pointers.CharPosData = dsInterface.ReadInt32(pointers.CharMapData + (int)DSOffsets.CharMapData.CharPosDataPtr);
 
             int pointer = dsInterface.ReadInt32(DSOffsets.CharData2Ptr);
-            charData2 = dsInterface.ReadInt32(pointer + DSOffsets.CharData2Ptr2);
+            pointers.CharData2 = dsInterface.ReadInt32(pointer + DSOffsets.CharData2Ptr2);
 
             pointer = dsInterface.ReadInt32(DSOffsets.GraphicsDataPtr);
-            graphicsData = dsInterface.ReadInt32(pointer + DSOffsets.GraphicsDataPtr2);
+            pointers.GraphicsData = dsInterface.ReadInt32(pointer + DSOffsets.GraphicsDataPtr2);
 
-            worldState = dsInterface.ReadInt32(DSOffsets.WorldStatePtr);
+            pointers.WorldState = dsInterface.ReadInt32(DSOffsets.WorldStatePtr);
 
             pointer = dsInterface.ReadInt32(DSOffsets.ChrFollowCamPtr);
             pointer = dsInterface.ReadInt32(pointer + DSOffsets.ChrFollowCamPtr2);
-            chrFollowCam = dsInterface.ReadInt32(pointer + DSOffsets.ChrFollowCamPtr3);
+            pointers.ChrFollowCam = dsInterface.ReadInt32(pointer + DSOffsets.ChrFollowCamPtr3);
 
-            unknown1 = dsInterface.ReadInt32(DSOffsets.Unknown1Ptr);
+            pointer = dsInterface.ReadInt32(DSOffsets.EventFlagsPtr);
+            pointers.EventFlags = dsInterface.ReadInt32(pointer + DSOffsets.EventFlagsPtr2);
 
-            unknown2 = dsInterface.ReadInt32(DSOffsets.Unknown2Ptr);
+            pointers.Unknown1 = dsInterface.ReadInt32(DSOffsets.Unknown1Ptr);
 
-            unknown3 = dsInterface.ReadInt32(DSOffsets.Unknown3Ptr);
+            pointers.Unknown2 = dsInterface.ReadInt32(DSOffsets.Unknown2Ptr);
+
+            pointers.Unknown3 = dsInterface.ReadInt32(DSOffsets.Unknown3Ptr);
         }
 
         // Also used to check if game is loaded
@@ -139,68 +137,68 @@ namespace DS_Gadget
         #region Player Tab
         public float GetHP()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.HP);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.HP);
         }
 
         public void SetHP(int value)
         {
             // HP in CharData2 can't be written
-            dsInterface.WriteInt32(charData1 + (int)DSOffsets.CharData1.HP, value);
+            dsInterface.WriteInt32(pointers.CharData1 + (int)DSOffsets.CharData1.HP, value);
         }
 
         public float GetHPMax()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.HPMax);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.HPMax);
         }
 
         public float GetHPModMax()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.HPModMax);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.HPModMax);
         }
 
         public float GetStam()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.Stamina);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Stamina);
         }
 
         public float GetStamMax()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.StaminaMax);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.StaminaMax);
         }
 
         public float GetStamModMax()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.StaminaModMax);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.StaminaModMax);
         }
 
         public int GetPhantomType()
         {
-            return dsInterface.ReadInt32(charData1 + (int)DSOffsets.CharData1.PhantomType);
+            return dsInterface.ReadInt32(pointers.CharData1 + (int)DSOffsets.CharData1.PhantomType);
         }
 
         public void SetPhantomType(int value)
         {
-            dsInterface.WriteInt32(charData1 + (int)DSOffsets.CharData1.PhantomType, value);
+            dsInterface.WriteInt32(pointers.CharData1 + (int)DSOffsets.CharData1.PhantomType, value);
         }
 
         public int GetTeamType()
         {
-            return dsInterface.ReadInt32(charData1 + (int)DSOffsets.CharData1.TeamType);
+            return dsInterface.ReadInt32(pointers.CharData1 + (int)DSOffsets.CharData1.TeamType);
         }
 
         public void SetTeamType(int value)
         {
-            dsInterface.WriteInt32(charData1 + (int)DSOffsets.CharData1.TeamType, value);
+            dsInterface.WriteInt32(pointers.CharData1 + (int)DSOffsets.CharData1.TeamType, value);
         }
 
         public int GetWorld()
         {
-            return dsInterface.ReadByte(unknown1 + (int)DSOffsets.Unknown1.World);
+            return dsInterface.ReadByte(pointers.Unknown1 + (int)DSOffsets.Unknown1.World);
         }
 
         public int GetArea()
         {
-            return dsInterface.ReadByte(unknown1 + (int)DSOffsets.Unknown1.Area);
+            return dsInterface.ReadByte(pointers.Unknown1 + (int)DSOffsets.Unknown1.Area);
         }
 
         public void SetPosLock(bool enable)
@@ -219,245 +217,374 @@ namespace DS_Gadget
 
         public void SetPos(float x, float y, float z)
         {
-            dsInterface.WriteFloat(charPosData + (int)DSOffsets.CharPosData.PosX, x);
-            dsInterface.WriteFloat(charPosData + (int)DSOffsets.CharPosData.PosY, y);
-            dsInterface.WriteFloat(charPosData + (int)DSOffsets.CharPosData.PosZ, z);
+            dsInterface.WriteFloat(pointers.CharPosData + (int)DSOffsets.CharPosData.PosX, x);
+            dsInterface.WriteFloat(pointers.CharPosData + (int)DSOffsets.CharPosData.PosY, y);
+            dsInterface.WriteFloat(pointers.CharPosData + (int)DSOffsets.CharPosData.PosZ, z);
         }
 
         public float GetPosX()
         {
-            return dsInterface.ReadFloat(charPosData + (int)DSOffsets.CharPosData.PosX);
+            return dsInterface.ReadFloat(pointers.CharPosData + (int)DSOffsets.CharPosData.PosX);
         }
 
         public float GetPosY()
         {
-            return dsInterface.ReadFloat(charPosData + (int)DSOffsets.CharPosData.PosY);
+            return dsInterface.ReadFloat(pointers.CharPosData + (int)DSOffsets.CharPosData.PosY);
         }
 
         public float GetPosZ()
         {
-            return dsInterface.ReadFloat(charPosData + (int)DSOffsets.CharPosData.PosZ);
+            return dsInterface.ReadFloat(pointers.CharPosData + (int)DSOffsets.CharPosData.PosZ);
         }
 
         public float GetPosAngle()
         {
-            return dsInterface.ReadFloat(charPosData + (int)DSOffsets.CharPosData.PosAngle);
+            return dsInterface.ReadFloat(pointers.CharPosData + (int)DSOffsets.CharPosData.PosAngle);
         }
 
         public float GetPosStableX()
         {
-            return dsInterface.ReadFloat(worldState + (int)DSOffsets.WorldState.PosStableX);
+            return dsInterface.ReadFloat(pointers.WorldState + (int)DSOffsets.WorldState.PosStableX);
         }
 
         public float GetPosStableY()
         {
-            return dsInterface.ReadFloat(worldState + (int)DSOffsets.WorldState.PosStableY);
+            return dsInterface.ReadFloat(pointers.WorldState + (int)DSOffsets.WorldState.PosStableY);
         }
 
         public float GetPosStableZ()
         {
-            return dsInterface.ReadFloat(worldState + (int)DSOffsets.WorldState.PosStableZ);
+            return dsInterface.ReadFloat(pointers.WorldState + (int)DSOffsets.WorldState.PosStableZ);
         }
 
         public float GetPosStableAngle()
         {
-            return dsInterface.ReadFloat(worldState + (int)DSOffsets.WorldState.PosStableAngle);
+            return dsInterface.ReadFloat(pointers.WorldState + (int)DSOffsets.WorldState.PosStableAngle);
         }
 
         public void PosWarp(float x, float y, float z, float angle)
         {
-            dsInterface.WriteFloat(charMapData + (int)DSOffsets.CharMapData.WarpX, x);
-            dsInterface.WriteFloat(charMapData + (int)DSOffsets.CharMapData.WarpY, y);
-            dsInterface.WriteFloat(charMapData + (int)DSOffsets.CharMapData.WarpZ, z);
-            dsInterface.WriteFloat(charMapData + (int)DSOffsets.CharMapData.WarpAngle, angle);
-            dsInterface.WriteBool(charMapData + (int)DSOffsets.CharMapData.Warp, true);
+            dsInterface.WriteFloat(pointers.CharMapData + (int)DSOffsets.CharMapData.WarpX, x);
+            dsInterface.WriteFloat(pointers.CharMapData + (int)DSOffsets.CharMapData.WarpY, y);
+            dsInterface.WriteFloat(pointers.CharMapData + (int)DSOffsets.CharMapData.WarpZ, z);
+            dsInterface.WriteFloat(pointers.CharMapData + (int)DSOffsets.CharMapData.WarpAngle, angle);
+            dsInterface.WriteBool(pointers.CharMapData + (int)DSOffsets.CharMapData.Warp, true);
         }
 
         public byte[] DumpFollowCam()
         {
-            return dsInterface.ReadBytes(chrFollowCam, 512);
+            return dsInterface.ReadBytes(pointers.ChrFollowCam, 512);
         }
 
         public void UndumpFollowCam(byte[] bytes)
         {
-            dsInterface.WriteBytes(chrFollowCam, bytes);
+            dsInterface.WriteBytes(pointers.ChrFollowCam, bytes);
         }
 
         public void SetGravity(bool enable)
         {
-            dsInterface.WriteFlag32(charData1 + (int)DSOffsets.CharData1.CharFlags1, (uint)DSOffsets.CharFlags1.SetDisableGravity, !enable);
+            dsInterface.WriteFlag32(pointers.CharData1 + (int)DSOffsets.CharData1.CharFlags1, (uint)DSOffsets.CharFlags1.SetDisableGravity, !enable);
         }
 
         public void SetCollision(bool enable)
         {
-            dsInterface.WriteFlag32(charMapData + (int)DSOffsets.CharMapData.CharMapFlags, (uint)DSOffsets.CharMapFlags.DisableMapHit, !enable);
+            dsInterface.WriteFlag32(pointers.CharMapData + (int)DSOffsets.CharMapData.CharMapFlags, (uint)DSOffsets.CharMapFlags.DisableMapHit, !enable);
         }
 
         public bool GetDeathCam()
         {
-            return dsInterface.ReadBool(unknown2 + (int)DSOffsets.Unknown2.DeathCam);
+            return dsInterface.ReadBool(pointers.Unknown2 + (int)DSOffsets.Unknown2.DeathCam);
         }
 
         public void SetDeathCam(bool enable)
         {
-            dsInterface.WriteBool(unknown2 + (int)DSOffsets.Unknown2.DeathCam, enable);
+            dsInterface.WriteBool(pointers.Unknown2 + (int)DSOffsets.Unknown2.DeathCam, enable);
         }
 
         public int GetBonfire()
         {
-            return dsInterface.ReadInt32(worldState + (int)DSOffsets.WorldState.LastBonfire);
+            return dsInterface.ReadInt32(pointers.WorldState + (int)DSOffsets.WorldState.LastBonfire);
         }
 
         public void SetBonfire(int id)
         {
-            dsInterface.WriteInt32(worldState + (int)DSOffsets.WorldState.LastBonfire, id);
+            dsInterface.WriteInt32(pointers.WorldState + (int)DSOffsets.WorldState.LastBonfire, id);
         }
 
         public void SetSpeed(float speed)
         {
-            dsInterface.WriteFloat(animData + (int)DSOffsets.AnimData.PlaySpeed, speed);
+            dsInterface.WriteFloat(pointers.AnimData + (int)DSOffsets.AnimData.PlaySpeed, speed);
         }
         #endregion
 
         #region Stats Tab
         public int GetClass()
         {
-            return dsInterface.ReadByte(charData2 + (int)DSOffsets.CharData2.Class);
+            return dsInterface.ReadByte(pointers.CharData2 + (int)DSOffsets.CharData2.Class);
         }
         public void SetClass(byte value)
         {
-            dsInterface.WriteByte(charData2 + (int)DSOffsets.CharData2.Class, value);
+            dsInterface.WriteByte(pointers.CharData2 + (int)DSOffsets.CharData2.Class, value);
         }
 
         public long GetSoulLevel()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.SoulLevel);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.SoulLevel);
         }
         public void SetSoulLevel(int value)
         {
-            dsInterface.WriteInt32(charData2 + (int)DSOffsets.CharData2.SoulLevel, value);
+            dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.SoulLevel, value);
         }
 
         public int GetHumanity()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.Humanity);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Humanity);
         }
         public void SetHumanity(int value)
         {
-            dsInterface.WriteInt32(charData2 + (int)DSOffsets.CharData2.Humanity, value);
+            dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Humanity, value);
         }
 
         public long GetSouls()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.Souls);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Souls);
         }
         public void SetSouls(int value)
         {
-            dsInterface.WriteInt32(charData2 + (int)DSOffsets.CharData2.Souls, value);
+            dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Souls, value);
         }
 
         public long GetVitality()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.Vitality);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Vitality);
         }
         public void SetVitality(int value)
         {
-            dsInterface.WriteInt32(charData2 + (int)DSOffsets.CharData2.Vitality, value);
+            dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Vitality, value);
         }
 
         public long GetAttunement()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.Attunement);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Attunement);
         }
         public void SetAttunement(int value)
         {
-            dsInterface.WriteInt32(charData2 + (int)DSOffsets.CharData2.Attunement, value);
+            dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Attunement, value);
         }
 
         public long GetEndurance()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.Endurance);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Endurance);
         }
         public void SetEndurance(int value)
         {
-            dsInterface.WriteInt32(charData2 + (int)DSOffsets.CharData2.Endurance, value);
+            dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Endurance, value);
         }
 
         public long GetStrength()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.Strength);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Strength);
         }
         public void SetStrength(int value)
         {
-            dsInterface.WriteInt32(charData2 + (int)DSOffsets.CharData2.Strength, value);
+            dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Strength, value);
         }
 
         public long GetDexterity()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.Dexterity);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Dexterity);
         }
         public void SetDexterity(int value)
         {
-            dsInterface.WriteInt32(charData2 + (int)DSOffsets.CharData2.Dexterity, value);
+            dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Dexterity, value);
         }
 
         public long GetResistance()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.Resistance);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Resistance);
         }
         public void SetResistance(int value)
         {
-            dsInterface.WriteInt32(charData2 + (int)DSOffsets.CharData2.Resistance, value);
+            dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Resistance, value);
         }
 
         public long GetIntelligence()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.Intelligence);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Intelligence);
         }
         public void SetIntelligence(int value)
         {
-            dsInterface.WriteInt32(charData2 + (int)DSOffsets.CharData2.Intelligence, value);
+            dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Intelligence, value);
         }
 
         public long GetFaith()
         {
-            return dsInterface.ReadInt32(charData2 + (int)DSOffsets.CharData2.Faith);
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Faith);
         }
         public void SetFaith(int value)
         {
-            dsInterface.WriteInt32(charData2 + (int)DSOffsets.CharData2.Faith, value);
+            dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Faith, value);
+        }
+        #endregion
+
+        #region Items Tab
+        public void DropItem(int category, int itemID, int count)
+        {
+            string asm = String.Format(
+                "mov ebp, 0x{0:X}\n" +
+                "mov ebx, 0x{1:X}\n" +
+                "mov ecx, 0xFFFFFFFF\n" +
+                "mov edx, 0x{2:X}\n" +
+                "mov eax, [0x13786D0]\n" +
+                "mov [eax + 0x828], ebp\n" +
+                "mov [eax + 0x82C], ebx\n" +
+                "mov [eax + 0x830], ecx\n" +
+                "mov [eax + 0x834], edx\n" +
+                "mov eax, [0x137D6BC]\n" +
+                "push eax\n" +
+                "call 0xDC8C60\n" +
+                "ret",
+                category, itemID, count);
+
+            dsInterface.AsmExecute(asm);
+        }
+        #endregion
+
+        #region Graphics Tab
+        public void DrawBounding(bool enable)
+        {
+            dsInterface.WriteBool(pointers.GraphicsData + (int)DSOffsets.GraphicsData.DrawBoundingBoxes, enable);
+        }
+
+        public void DrawSpriteMasks(bool enable)
+        {
+            dsInterface.WriteBool(pointers.GraphicsData + (int)DSOffsets.GraphicsData.DepthDraw_DepthTexEdge, enable);
+        }
+
+        public void DrawTextures(bool enable)
+        {
+            dsInterface.WriteBool(pointers.GraphicsData + (int)DSOffsets.GraphicsData.DrawTextures, enable);
+        }
+
+        public void DrawSprites(bool enable)
+        {
+            dsInterface.WriteBool(pointers.GraphicsData + (int)DSOffsets.GraphicsData.NormalDraw_TexEdge, enable);
+        }
+
+        public void DrawTrans(bool enable)
+        {
+            dsInterface.WriteBool(pointers.GraphicsData + (int)DSOffsets.GraphicsData.NormalDraw_Trans, enable);
+        }
+
+        public void DrawShadows(bool enable)
+        {
+            dsInterface.WriteBool(pointers.GraphicsData + (int)DSOffsets.GraphicsData.DrawShadows, enable);
+        }
+
+        public void DrawSpriteShadows(bool enable)
+        {
+            dsInterface.WriteBool(pointers.GraphicsData + (int)DSOffsets.GraphicsData.DrawSpriteShadows, enable);
+        }
+
+        public void DrawMap(bool enable)
+        {
+            dsInterface.WriteBool(DSOffsets.DrawMap, enable);
+        }
+
+        public void DrawCreatures(bool enable)
+        {
+            dsInterface.WriteBool(DSOffsets.DrawCreatures, enable);
+        }
+
+        public void DrawObjects(bool enable)
+        {
+            dsInterface.WriteBool(DSOffsets.DrawObjects, enable);
+        }
+
+        public void DrawSFX(bool enable)
+        {
+            dsInterface.WriteBool(DSOffsets.DrawSFX, enable);
+        }
+
+        public void DrawCompassLarge(bool enable)
+        {
+            dsInterface.WriteBool(DSOffsets.CompassLarge, enable);
+        }
+
+        public void DrawCompassSmall(bool enable)
+        {
+            dsInterface.WriteBool(DSOffsets.CompassSmall, enable);
+        }
+
+        public void DrawAltimeter(bool enable)
+        {
+            dsInterface.WriteBool(DSOffsets.Altimeter, enable);
+        }
+
+        public void DrawNodes(bool enable)
+        {
+            dsInterface.WriteBool(DSOffsets.NodeGraph, enable);
+        }
+
+        public void OverrideFilter(bool enable)
+        {
+            dsInterface.WriteBool(pointers.GraphicsData + (int)DSOffsets.GraphicsData.EnableFilter, enable);
+        }
+
+        public void SetBrightness(float brightnessR, float brightnessG, float brightnessB)
+        {
+            dsInterface.WriteFloat(pointers.GraphicsData + (int)DSOffsets.GraphicsData.BrightnessR, brightnessR);
+            dsInterface.WriteFloat(pointers.GraphicsData + (int)DSOffsets.GraphicsData.BrightnessG, brightnessG);
+            dsInterface.WriteFloat(pointers.GraphicsData + (int)DSOffsets.GraphicsData.BrightnessB, brightnessB);
+        }
+
+        public void SetContrast(float contrastR, float contrastG, float contrastB)
+        {
+            dsInterface.WriteFloat(pointers.GraphicsData + (int)DSOffsets.GraphicsData.ContrastR, contrastR);
+            dsInterface.WriteFloat(pointers.GraphicsData + (int)DSOffsets.GraphicsData.ContrastG, contrastG);
+            dsInterface.WriteFloat(pointers.GraphicsData + (int)DSOffsets.GraphicsData.ContrastB, contrastB);
+        }
+
+        public void SetSaturation(float saturation)
+        {
+            dsInterface.WriteFloat(pointers.GraphicsData + (int)DSOffsets.GraphicsData.Saturation, saturation);
+        }
+
+        public void SetHue(float hue)
+        {
+            dsInterface.WriteFloat(pointers.GraphicsData + (int)DSOffsets.GraphicsData.Hue, hue);
         }
         #endregion
 
         #region Cheats Tab
         public void SetPlayerDeadMode(bool enable)
         {
-            dsInterface.WriteFlag32(charData1 + (int)DSOffsets.CharData1.CharFlags1, (uint)DSOffsets.CharFlags1.SetDeadMode, enable);
+            dsInterface.WriteFlag32(pointers.CharData1 + (int)DSOffsets.CharData1.CharFlags1, (uint)DSOffsets.CharFlags1.SetDeadMode, enable);
         }
 
         public void SetPlayerNoDamage(bool enable)
         {
-            dsInterface.WriteFlag32(charData1 + (int)DSOffsets.CharData1.CharFlags2, (uint)DSOffsets.CharFlags2.NoDamage, enable);
+            dsInterface.WriteFlag32(pointers.CharData1 + (int)DSOffsets.CharData1.CharFlags2, (uint)DSOffsets.CharFlags2.NoDamage, enable);
         }
 
         public void SetPlayerNoHit(bool enable)
         {
-            dsInterface.WriteFlag32(charData1 + (int)DSOffsets.CharData1.CharFlags2, (uint)DSOffsets.CharFlags2.NoHit, enable);
+            dsInterface.WriteFlag32(pointers.CharData1 + (int)DSOffsets.CharData1.CharFlags2, (uint)DSOffsets.CharFlags2.NoHit, enable);
         }
 
         public void SetPlayerNoStamina(bool enable)
         {
-            dsInterface.WriteFlag32(charData1 + (int)DSOffsets.CharData1.CharFlags2, (uint)DSOffsets.CharFlags2.NoStamConsume, enable);
+            dsInterface.WriteFlag32(pointers.CharData1 + (int)DSOffsets.CharData1.CharFlags2, (uint)DSOffsets.CharFlags2.NoStamConsume, enable);
         }
 
         public void SetPlayerSuperArmor(bool enable)
         {
-            dsInterface.WriteFlag32(charData1 + (int)DSOffsets.CharData1.CharFlags1, (uint)DSOffsets.CharFlags1.SetSuperArmor, enable);
+            dsInterface.WriteFlag32(pointers.CharData1 + (int)DSOffsets.CharData1.CharFlags1, (uint)DSOffsets.CharFlags1.SetSuperArmor, enable);
         }
 
         public void SetPlayerNoGoods(bool enable)
         {
-            dsInterface.WriteFlag32(charData1 + (int)DSOffsets.CharData1.CharFlags2, (uint)DSOffsets.CharFlags2.NoGoodsConsume, enable);
+            dsInterface.WriteFlag32(pointers.CharData1 + (int)DSOffsets.CharData1.CharFlags2, (uint)DSOffsets.CharFlags2.NoGoodsConsume, enable);
         }
 
         public void SetAllNoMagic(bool enable)
@@ -531,149 +658,89 @@ namespace DS_Gadget
         }
         #endregion
 
-        #region Graphics Tab
-        public void DrawBounding(bool enable)
+        #region Misc Tab
+        private static Dictionary<string, int> eventFlagGroups = new Dictionary<string, int>()
         {
-            dsInterface.WriteBool(graphicsData + (int)DSOffsets.GraphicsData.DrawBoundingBoxes, enable);
+            {"0", 0x00000},
+            {"1", 0x00500},
+            {"5", 0x05F00},
+            {"6", 0x0B900},
+            {"7", 0x11300},
+        };
+
+        private static Dictionary<string, int> eventFlagAreas = new Dictionary<string, int>()
+        {
+            {"000", 00},
+            {"100", 01},
+            {"101", 02},
+            {"102", 03},
+            {"110", 04},
+            {"120", 05},
+            {"121", 06},
+            {"130", 07},
+            {"131", 08},
+            {"132", 09},
+            {"140", 10},
+            {"141", 11},
+            {"150", 12},
+            {"151", 13},
+            {"160", 14},
+            {"170", 15},
+            {"180", 16},
+            {"181", 17},
+        };
+
+        private int getEventFlagAddress(int ID, out uint mask)
+        {
+            string idString = ID.ToString("D8");
+            if (idString.Length == 8)
+            {
+                string group = idString.Substring(0, 1);
+                string area = idString.Substring(1, 3);
+                int section = Int32.Parse(idString.Substring(4, 1));
+                int number = Int32.Parse(idString.Substring(5, 3));
+
+                if (eventFlagGroups.ContainsKey(group) && eventFlagAreas.ContainsKey(area))
+                {
+                    int offset = eventFlagGroups[group];
+                    offset += eventFlagAreas[area] * 0x500;
+                    offset += section * 128;
+                    offset += (number - (number % 32)) / 8;
+
+                    mask = 0x80000000 >> (number % 32);
+                    return pointers.EventFlags + offset; ;
+                }
+            }
+            throw new ArgumentException("Unknown event flag ID: " + ID);
         }
 
-        public void DrawSpriteMasks(bool enable)
+        public bool ReadEventFlag(int ID)
         {
-            dsInterface.WriteBool(graphicsData + (int)DSOffsets.GraphicsData.DepthDraw_DepthTexEdge, enable);
+            int address = getEventFlagAddress(ID, out uint mask);
+            return dsInterface.ReadFlag32(address, mask);
         }
 
-        public void DrawTextures(bool enable)
+        public void WriteEventFlag(int ID, bool value)
         {
-            dsInterface.WriteBool(graphicsData + (int)DSOffsets.GraphicsData.DrawTextures, enable);
-        }
-
-        public void DrawSprites(bool enable)
-        {
-            dsInterface.WriteBool(graphicsData + (int)DSOffsets.GraphicsData.NormalDraw_TexEdge, enable);
-        }
-
-        public void DrawTrans(bool enable)
-        {
-            dsInterface.WriteBool(graphicsData + (int)DSOffsets.GraphicsData.NormalDraw_Trans, enable);
-        }
-
-        public void DrawShadows(bool enable)
-        {
-            dsInterface.WriteBool(graphicsData + (int)DSOffsets.GraphicsData.DrawShadows, enable);
-        }
-
-        public void DrawSpriteShadows(bool enable)
-        {
-            dsInterface.WriteBool(graphicsData + (int)DSOffsets.GraphicsData.DrawSpriteShadows, enable);
-        }
-
-        public void DrawMap(bool enable)
-        {
-            dsInterface.WriteBool(DSOffsets.DrawMap, enable);
-        }
-
-        public void DrawCreatures(bool enable)
-        {
-            dsInterface.WriteBool(DSOffsets.DrawCreatures, enable);
-        }
-
-        public void DrawObjects(bool enable)
-        {
-            dsInterface.WriteBool(DSOffsets.DrawObjects, enable);
-        }
-
-        public void DrawSFX(bool enable)
-        {
-            dsInterface.WriteBool(DSOffsets.DrawSFX, enable);
-        }
-
-        public void DrawCompassLarge(bool enable)
-        {
-            dsInterface.WriteBool(DSOffsets.CompassLarge, enable);
-        }
-
-        public void DrawCompassSmall(bool enable)
-        {
-            dsInterface.WriteBool(DSOffsets.CompassSmall, enable);
-        }
-
-        public void DrawAltimeter(bool enable)
-        {
-            dsInterface.WriteBool(DSOffsets.Altimeter, enable);
-        }
-
-        public void DrawNodes(bool enable)
-        {
-            dsInterface.WriteBool(DSOffsets.NodeGraph, enable);
-        }
-
-        public void OverrideFilter(bool enable)
-        {
-            dsInterface.WriteBool(graphicsData + (int)DSOffsets.GraphicsData.EnableFilter, enable);
-        }
-
-        public void SetBrightness(float brightnessR, float brightnessG, float brightnessB)
-        {
-            dsInterface.WriteFloat(graphicsData + (int)DSOffsets.GraphicsData.BrightnessR, brightnessR);
-            dsInterface.WriteFloat(graphicsData + (int)DSOffsets.GraphicsData.BrightnessG, brightnessG);
-            dsInterface.WriteFloat(graphicsData + (int)DSOffsets.GraphicsData.BrightnessB, brightnessB);
-        }
-
-        public void SetContrast(float contrastR, float contrastG, float contrastB)
-        {
-            dsInterface.WriteFloat(graphicsData + (int)DSOffsets.GraphicsData.ContrastR, contrastR);
-            dsInterface.WriteFloat(graphicsData + (int)DSOffsets.GraphicsData.ContrastG, contrastG);
-            dsInterface.WriteFloat(graphicsData + (int)DSOffsets.GraphicsData.ContrastB, contrastB);
-        }
-
-        public void SetSaturation(float saturation)
-        {
-            dsInterface.WriteFloat(graphicsData + (int)DSOffsets.GraphicsData.Saturation, saturation);
-        }
-
-        public void SetHue(float hue)
-        {
-            dsInterface.WriteFloat(graphicsData + (int)DSOffsets.GraphicsData.Hue, hue);
-        }
-        #endregion
-
-        #region Items Tab
-        public void DropItem(int category, int itemID, int count)
-        {
-            string asm = String.Format(
-                "mov ebp, 0x{0:X}\n" +
-                "mov ebx, 0x{1:X}\n" +
-                "mov ecx, 0xFFFFFFFF\n" +
-                "mov edx, 0x{2:X}\n" +
-                "mov eax, [0x13786D0]\n" +
-                "mov [eax + 0x828], ebp\n" +
-                "mov [eax + 0x82C], ebx\n" +
-                "mov [eax + 0x830], ecx\n" +
-                "mov [eax + 0x834], edx\n" +
-                "mov eax, [0x137D6BC]\n" +
-                "push eax\n" +
-                "call 0xDC8C60\n" +
-                "ret",
-                category, itemID, count);
-
-            dsInterface.AsmExecute(asm);
+            int address = getEventFlagAddress(ID, out uint mask);
+            dsInterface.WriteFlag32(address, mask, value);
         }
         #endregion
 
         #region Hotkeys Tab
         public void MenuKick()
         {
-            dsInterface.WriteInt32(unknown3 + (int)DSOffsets.Unknown3.MenuKick, 2);
+            dsInterface.WriteInt32(pointers.Unknown3 + (int)DSOffsets.Unknown3.MenuKick, 2);
         }
 
         public void MoveSwap()
         {
-            dsInterface.WriteInt64(charData2 + (int)DSOffsets.CharData2.Stance, 2);
+            dsInterface.WriteInt64(pointers.CharData2 + (int)DSOffsets.CharData2.Stance, 2);
         }
 
         public void ResetAnim()
         {
-            dsInterface.WriteInt32(charData1 + (int)DSOffsets.CharData1.ForcePlayAnimation1, 0);
+            dsInterface.WriteInt32(pointers.CharData1 + (int)DSOffsets.CharData1.ForcePlayAnimation1, 0);
         }
 
         public void HotkeyTest1()

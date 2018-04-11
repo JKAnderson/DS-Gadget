@@ -193,6 +193,9 @@ namespace DS_Gadget
             TargetRotZ = 0x158,
         }
 
+        public const int EventFlagsPtr = 0x137D7D4;
+        public const int EventFlagsPtr2 = 0x0;
+
         public const int Unknown1Ptr = 0x137E204;
         public enum Unknown1
         {

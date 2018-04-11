@@ -187,7 +187,12 @@
             this.checkBoxPlayerSilence = new System.Windows.Forms.CheckBox();
             this.checkBoxAllNoArrow = new System.Windows.Forms.CheckBox();
             this.tabPageMisc = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.groupBoxEventFlags = new System.Windows.Forms.GroupBox();
+            this.buttonEventFlagRead = new System.Windows.Forms.Button();
+            this.buttonEventFlagWrite = new System.Windows.Forms.Button();
+            this.checkBoxEventFlagValue = new System.Windows.Forms.CheckBox();
+            this.textBoxEventFlagID = new System.Windows.Forms.TextBox();
+            this.labelEventFlagsID = new System.Windows.Forms.Label();
             this.tabPageHotkeys = new System.Windows.Forms.TabPage();
             this.labelHotkeyDeath = new System.Windows.Forms.Label();
             this.textBoxHotkeyDeath = new System.Windows.Forms.TextBox();
@@ -280,6 +285,7 @@
             this.groupBoxCheatAll.SuspendLayout();
             this.groupBoxCheatPlayer.SuspendLayout();
             this.tabPageMisc.SuspendLayout();
+            this.groupBoxEventFlags.SuspendLayout();
             this.tabPageHotkeys.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -2429,7 +2435,7 @@
             // 
             // tabPageMisc
             // 
-            this.tabPageMisc.Controls.Add(this.label1);
+            this.tabPageMisc.Controls.Add(this.groupBoxEventFlags);
             this.tabPageMisc.Location = new System.Drawing.Point(4, 22);
             this.tabPageMisc.Name = "tabPageMisc";
             this.tabPageMisc.Padding = new System.Windows.Forms.Padding(3);
@@ -2438,14 +2444,66 @@
             this.tabPageMisc.Text = "Misc";
             this.tabPageMisc.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // groupBoxEventFlags
             // 
-            this.label1.Location = new System.Drawing.Point(6, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(322, 509);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "This tab intentionally left blank.";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.groupBoxEventFlags.AutoSize = true;
+            this.groupBoxEventFlags.Controls.Add(this.buttonEventFlagRead);
+            this.groupBoxEventFlags.Controls.Add(this.buttonEventFlagWrite);
+            this.groupBoxEventFlags.Controls.Add(this.checkBoxEventFlagValue);
+            this.groupBoxEventFlags.Controls.Add(this.textBoxEventFlagID);
+            this.groupBoxEventFlags.Controls.Add(this.labelEventFlagsID);
+            this.groupBoxEventFlags.Location = new System.Drawing.Point(6, 6);
+            this.groupBoxEventFlags.Name = "groupBoxEventFlags";
+            this.groupBoxEventFlags.Size = new System.Drawing.Size(322, 99);
+            this.groupBoxEventFlags.TabIndex = 0;
+            this.groupBoxEventFlags.TabStop = false;
+            this.groupBoxEventFlags.Text = "Event Flags";
+            // 
+            // buttonEventFlagRead
+            // 
+            this.buttonEventFlagRead.Location = new System.Drawing.Point(160, 57);
+            this.buttonEventFlagRead.Name = "buttonEventFlagRead";
+            this.buttonEventFlagRead.Size = new System.Drawing.Size(75, 23);
+            this.buttonEventFlagRead.TabIndex = 4;
+            this.buttonEventFlagRead.Text = "Read";
+            this.buttonEventFlagRead.UseVisualStyleBackColor = true;
+            this.buttonEventFlagRead.Click += new System.EventHandler(this.buttonEventFlagRead_Click);
+            // 
+            // buttonEventFlagWrite
+            // 
+            this.buttonEventFlagWrite.Location = new System.Drawing.Point(241, 57);
+            this.buttonEventFlagWrite.Name = "buttonEventFlagWrite";
+            this.buttonEventFlagWrite.Size = new System.Drawing.Size(75, 23);
+            this.buttonEventFlagWrite.TabIndex = 3;
+            this.buttonEventFlagWrite.Text = "Write";
+            this.buttonEventFlagWrite.UseVisualStyleBackColor = true;
+            this.buttonEventFlagWrite.Click += new System.EventHandler(this.buttonEventFlagWrite_Click);
+            // 
+            // checkBoxEventFlagValue
+            // 
+            this.checkBoxEventFlagValue.AutoSize = true;
+            this.checkBoxEventFlagValue.Location = new System.Drawing.Point(241, 34);
+            this.checkBoxEventFlagValue.Name = "checkBoxEventFlagValue";
+            this.checkBoxEventFlagValue.Size = new System.Drawing.Size(65, 17);
+            this.checkBoxEventFlagValue.TabIndex = 2;
+            this.checkBoxEventFlagValue.Text = "Enabled";
+            this.checkBoxEventFlagValue.UseVisualStyleBackColor = true;
+            // 
+            // textBoxEventFlagID
+            // 
+            this.textBoxEventFlagID.Location = new System.Drawing.Point(6, 32);
+            this.textBoxEventFlagID.Name = "textBoxEventFlagID";
+            this.textBoxEventFlagID.Size = new System.Drawing.Size(229, 20);
+            this.textBoxEventFlagID.TabIndex = 1;
+            // 
+            // labelEventFlagsID
+            // 
+            this.labelEventFlagsID.AutoSize = true;
+            this.labelEventFlagsID.Location = new System.Drawing.Point(6, 16);
+            this.labelEventFlagsID.Name = "labelEventFlagsID";
+            this.labelEventFlagsID.Size = new System.Drawing.Size(18, 13);
+            this.labelEventFlagsID.TabIndex = 0;
+            this.labelEventFlagsID.Text = "ID";
             // 
             // tabPageHotkeys
             // 
@@ -2898,6 +2956,9 @@
             this.groupBoxCheatPlayer.ResumeLayout(false);
             this.groupBoxCheatPlayer.PerformLayout();
             this.tabPageMisc.ResumeLayout(false);
+            this.tabPageMisc.PerformLayout();
+            this.groupBoxEventFlags.ResumeLayout(false);
+            this.groupBoxEventFlags.PerformLayout();
             this.tabPageHotkeys.ResumeLayout(false);
             this.tabPageHotkeys.PerformLayout();
             this.ResumeLayout(false);
@@ -3091,7 +3152,6 @@
         private System.Windows.Forms.Label labelHotkeyTest2;
         private System.Windows.Forms.TextBox textBoxHotkeyTest2;
         private System.Windows.Forms.CheckBox checkBoxStoreState;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelHotkeyDeath;
         private System.Windows.Forms.TextBox textBoxHotkeyDeath;
         private System.Windows.Forms.Label labelHotkeyDown;
@@ -3100,6 +3160,12 @@
         private System.Windows.Forms.TextBox textBoxHotkeyUp;
         private System.Windows.Forms.Label labelHotkeyMenu;
         private System.Windows.Forms.TextBox textBoxHotkeyMenu;
+        private System.Windows.Forms.GroupBox groupBoxEventFlags;
+        private System.Windows.Forms.Button buttonEventFlagRead;
+        private System.Windows.Forms.Button buttonEventFlagWrite;
+        private System.Windows.Forms.CheckBox checkBoxEventFlagValue;
+        private System.Windows.Forms.TextBox textBoxEventFlagID;
+        private System.Windows.Forms.Label labelEventFlagsID;
     }
 }
 

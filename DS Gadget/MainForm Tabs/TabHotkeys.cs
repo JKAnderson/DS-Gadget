@@ -92,13 +92,10 @@ namespace DS_Gadget
 #if DEBUG
             hotkeys.Add(new GadgetHotkey("HotkeyTest1", textBoxHotkeyTest1, tabPageHotkeys, () =>
             {
-                posStore();
                 dsProcess.HotkeyTest1();
             }));
             hotkeys.Add(new GadgetHotkey("HotkeyTest2", textBoxHotkeyTest2, tabPageHotkeys, () =>
             {
-                posRestore();
-                //System.Threading.Thread.Sleep(1000 / 15);
                 dsProcess.HotkeyTest2();
             }));
 #else

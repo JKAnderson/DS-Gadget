@@ -6,9 +6,7 @@ namespace DS_Gadget
 {
     public partial class MainForm : Form
     {
-
         private GlobalKeyboardHook keyboardHook = new GlobalKeyboardHook();
-        private KeysConverter keyConverter = new KeysConverter();
         private List<GadgetHotkey> hotkeys = new List<GadgetHotkey>();
 
         private void initHotkeys()

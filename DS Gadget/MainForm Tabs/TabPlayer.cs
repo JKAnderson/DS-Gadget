@@ -97,6 +97,10 @@ namespace DS_Gadget
                     MessageBox.Show("Unknown bonfire ID, please report me: " + bonfireID, "Unknown Bonfire");
                 }
             }
+
+            // Backstabbing resets speed, so reapply it 24/7
+            if (checkBoxSpeed.Checked)
+                dsProcess.SetSpeed((float)numericUpDownSpeed.Value);
         }
 
         private void numericUpDownHP_ValueChanged(object sender, EventArgs e)

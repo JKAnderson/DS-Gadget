@@ -346,5 +346,53 @@ namespace DS_Gadget.Properties {
                 this["HotkeyTest2"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("106")]
+        public int HotkeyMenu {
+            get {
+                return ((int)(this["HotkeyMenu"]));
+            }
+            set {
+                this["HotkeyMenu"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("107")]
+        public int HotkeyUp {
+            get {
+                return ((int)(this["HotkeyUp"]));
+            }
+            set {
+                this["HotkeyUp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("109")]
+        public int HotkeyDown {
+            get {
+                return ((int)(this["HotkeyDown"]));
+            }
+            set {
+                this["HotkeyDown"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("111")]
+        public int HotkeyDeath {
+            get {
+                return ((int)(this["HotkeyDeath"]));
+            }
+            set {
+                this["HotkeyDeath"] = value;
+            }
+        }
     }
 }

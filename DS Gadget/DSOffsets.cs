@@ -205,5 +205,11 @@ namespace DS_Gadget
         {
             DeathCam = 0x40,
         }
+
+        public const int Unknown3Ptr = 0x13784A4;
+        public enum Unknown3
+        {
+            MenuKick = 0x0,
+        }
     }
 }

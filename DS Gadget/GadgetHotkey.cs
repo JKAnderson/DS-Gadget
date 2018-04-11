@@ -35,7 +35,7 @@ namespace DS_Gadget
 
         private void leave(object sender, EventArgs e)
         {
-            hotkeyTextBox.BackColor = Color.White;
+            hotkeyTextBox.BackColor = SystemColors.Window;
         }
 
         private void keyUp(object sender, KeyEventArgs e)

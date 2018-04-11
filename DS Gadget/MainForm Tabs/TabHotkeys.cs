@@ -54,6 +54,41 @@ namespace DS_Gadget
                 checkBoxSpeed.Checked = !checkBoxSpeed.Checked;
             }));
 
+            hotkeys.Add(new GadgetHotkey("HotkeyMenu", textBoxHotkeyMenu, tabPageHotkeys, () =>
+            {
+                dsProcess.MenuKick();
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyUp", textBoxHotkeyUp, tabPageHotkeys, () =>
+            {
+                float x = dsProcess.GetPosX();
+                float y = dsProcess.GetPosY();
+                float z = dsProcess.GetPosZ();
+                float angle = dsProcess.GetPosAngle();
+                dsProcess.PosWarp(x, y + 5, z, angle);
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyDown", textBoxHotkeyDown, tabPageHotkeys, () =>
+            {
+                float x = dsProcess.GetPosX();
+                float y = dsProcess.GetPosY();
+                float z = dsProcess.GetPosZ();
+                float angle = dsProcess.GetPosAngle();
+                dsProcess.PosWarp(x, y - 5, z, angle);
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyDeath", textBoxHotkeyDeath, tabPageHotkeys, () =>
+            {
+                checkBoxPlayerDeadMode.Checked = !checkBoxPlayerDeadMode.Checked;
+            }));
+
+            /*
+            hotkeys.Add(new GadgetHotkey("Hotkey", textBoxHotkey, tabPageHotkeys, () =>
+            {
+
+            }));
+            */
+
 #if DEBUG
             hotkeys.Add(new GadgetHotkey("HotkeyTest1", textBoxHotkeyTest1, tabPageHotkeys, () =>
             {

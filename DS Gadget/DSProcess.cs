@@ -96,7 +96,7 @@ namespace DS_Gadget
         }
 
         #region Pointer loading
-        private int charData1, charMapData, animData, charPosData, charData2, graphicsData, worldState, chrFollowCam, unknown1, unknown2;
+        private int charData1, charMapData, animData, charPosData, charData2, graphicsData, worldState, chrFollowCam, unknown1, unknown2, unknown3;
 
         public void LoadPointers()
         {
@@ -123,6 +123,8 @@ namespace DS_Gadget
             unknown1 = dsInterface.ReadInt32(DSOffsets.Unknown1Ptr);
 
             unknown2 = dsInterface.ReadInt32(DSOffsets.Unknown2Ptr);
+
+            unknown3 = dsInterface.ReadInt32(DSOffsets.Unknown3Ptr);
         }
 
         // Also used to check if game is loaded
@@ -659,6 +661,11 @@ namespace DS_Gadget
         #endregion
 
         #region Hotkeys Tab
+        public void MenuKick()
+        {
+            dsInterface.WriteInt32(unknown3 + (int)DSOffsets.Unknown3.MenuKick, 2);
+        }
+
         public void MoveSwap()
         {
             dsInterface.WriteInt64(charData2 + (int)DSOffsets.CharData2.Stance, 2);

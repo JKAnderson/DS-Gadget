@@ -83,5 +83,17 @@
     <Setting Name="HotkeyTest2" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">221</Value>
     </Setting>
+    <Setting Name="HotkeyMenu" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">106</Value>
+    </Setting>
+    <Setting Name="HotkeyUp" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">107</Value>
+    </Setting>
+    <Setting Name="HotkeyDown" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">109</Value>
+    </Setting>
+    <Setting Name="HotkeyDeath" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">111</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

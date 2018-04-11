@@ -65,6 +65,7 @@
             this.numericUpDownHPMax = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownHP = new System.Windows.Forms.NumericUpDown();
             this.groupBoxPosition = new System.Windows.Forms.GroupBox();
+            this.checkBoxStoreState = new System.Windows.Forms.CheckBox();
             this.checkBoxPosLock = new System.Windows.Forms.CheckBox();
             this.labelPosAngle = new System.Windows.Forms.Label();
             this.numericUpDownPosZ = new System.Windows.Forms.NumericUpDown();
@@ -186,7 +187,16 @@
             this.checkBoxPlayerSilence = new System.Windows.Forms.CheckBox();
             this.checkBoxAllNoArrow = new System.Windows.Forms.CheckBox();
             this.tabPageMisc = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPageHotkeys = new System.Windows.Forms.TabPage();
+            this.labelHotkeyDeath = new System.Windows.Forms.Label();
+            this.textBoxHotkeyDeath = new System.Windows.Forms.TextBox();
+            this.labelHotkeyDown = new System.Windows.Forms.Label();
+            this.textBoxHotkeyDown = new System.Windows.Forms.TextBox();
+            this.labelHotkeyUp = new System.Windows.Forms.Label();
+            this.textBoxHotkeyUp = new System.Windows.Forms.TextBox();
+            this.labelHotkeyMenu = new System.Windows.Forms.Label();
+            this.textBoxHotkeyMenu = new System.Windows.Forms.TextBox();
             this.labelHotkeyTest1 = new System.Windows.Forms.Label();
             this.textBoxHotkeyTest1 = new System.Windows.Forms.TextBox();
             this.labelHotkeyTest2 = new System.Windows.Forms.Label();
@@ -213,8 +223,6 @@
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.checkBoxStoreState = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -702,6 +710,17 @@
             this.groupBoxPosition.TabIndex = 1;
             this.groupBoxPosition.TabStop = false;
             this.groupBoxPosition.Text = "Position";
+            // 
+            // checkBoxStoreState
+            // 
+            this.checkBoxStoreState.AutoSize = true;
+            this.checkBoxStoreState.Location = new System.Drawing.Point(219, 204);
+            this.checkBoxStoreState.Name = "checkBoxStoreState";
+            this.checkBoxStoreState.Size = new System.Drawing.Size(87, 17);
+            this.checkBoxStoreState.TabIndex = 24;
+            this.checkBoxStoreState.Text = "Include state";
+            this.toolTip1.SetToolTip(this.checkBoxStoreState, "Restoring position will also restore health, stamina, and death cam status");
+            this.checkBoxStoreState.UseVisualStyleBackColor = true;
             // 
             // checkBoxPosLock
             // 
@@ -2419,8 +2438,25 @@
             this.tabPageMisc.Text = "Misc";
             this.tabPageMisc.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(6, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(322, 509);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "This tab intentionally left blank.";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tabPageHotkeys
             // 
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeyDeath);
+            this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyDeath);
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeyDown);
+            this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyDown);
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeyUp);
+            this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyUp);
+            this.tabPageHotkeys.Controls.Add(this.labelHotkeyMenu);
+            this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyMenu);
             this.tabPageHotkeys.Controls.Add(this.labelHotkeyTest1);
             this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyTest1);
             this.tabPageHotkeys.Controls.Add(this.labelHotkeyTest2);
@@ -2452,6 +2488,78 @@
             this.tabPageHotkeys.Text = "Hotkeys";
             this.tabPageHotkeys.UseVisualStyleBackColor = true;
             // 
+            // labelHotkeyDeath
+            // 
+            this.labelHotkeyDeath.AutoSize = true;
+            this.labelHotkeyDeath.Location = new System.Drawing.Point(112, 276);
+            this.labelHotkeyDeath.Name = "labelHotkeyDeath";
+            this.labelHotkeyDeath.Size = new System.Drawing.Size(89, 13);
+            this.labelHotkeyDeath.TabIndex = 30;
+            this.labelHotkeyDeath.Text = "Toggle No Death";
+            // 
+            // textBoxHotkeyDeath
+            // 
+            this.textBoxHotkeyDeath.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBoxHotkeyDeath.Location = new System.Drawing.Point(6, 273);
+            this.textBoxHotkeyDeath.Name = "textBoxHotkeyDeath";
+            this.textBoxHotkeyDeath.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHotkeyDeath.TabIndex = 29;
+            this.textBoxHotkeyDeath.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelHotkeyDown
+            // 
+            this.labelHotkeyDown.AutoSize = true;
+            this.labelHotkeyDown.Location = new System.Drawing.Point(112, 172);
+            this.labelHotkeyDown.Name = "labelHotkeyDown";
+            this.labelHotkeyDown.Size = new System.Drawing.Size(65, 13);
+            this.labelHotkeyDown.TabIndex = 28;
+            this.labelHotkeyDown.Text = "Move Down";
+            // 
+            // textBoxHotkeyDown
+            // 
+            this.textBoxHotkeyDown.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBoxHotkeyDown.Location = new System.Drawing.Point(6, 169);
+            this.textBoxHotkeyDown.Name = "textBoxHotkeyDown";
+            this.textBoxHotkeyDown.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHotkeyDown.TabIndex = 27;
+            this.textBoxHotkeyDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelHotkeyUp
+            // 
+            this.labelHotkeyUp.AutoSize = true;
+            this.labelHotkeyUp.Location = new System.Drawing.Point(112, 146);
+            this.labelHotkeyUp.Name = "labelHotkeyUp";
+            this.labelHotkeyUp.Size = new System.Drawing.Size(51, 13);
+            this.labelHotkeyUp.TabIndex = 26;
+            this.labelHotkeyUp.Text = "Move Up";
+            // 
+            // textBoxHotkeyUp
+            // 
+            this.textBoxHotkeyUp.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBoxHotkeyUp.Location = new System.Drawing.Point(6, 143);
+            this.textBoxHotkeyUp.Name = "textBoxHotkeyUp";
+            this.textBoxHotkeyUp.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHotkeyUp.TabIndex = 25;
+            this.textBoxHotkeyUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelHotkeyMenu
+            // 
+            this.labelHotkeyMenu.AutoSize = true;
+            this.labelHotkeyMenu.Location = new System.Drawing.Point(112, 68);
+            this.labelHotkeyMenu.Name = "labelHotkeyMenu";
+            this.labelHotkeyMenu.Size = new System.Drawing.Size(68, 13);
+            this.labelHotkeyMenu.TabIndex = 24;
+            this.labelHotkeyMenu.Text = "Quit to Menu";
+            // 
+            // textBoxHotkeyMenu
+            // 
+            this.textBoxHotkeyMenu.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBoxHotkeyMenu.Location = new System.Drawing.Point(6, 65);
+            this.textBoxHotkeyMenu.Name = "textBoxHotkeyMenu";
+            this.textBoxHotkeyMenu.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHotkeyMenu.TabIndex = 23;
+            this.textBoxHotkeyMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // labelHotkeyTest1
             // 
             this.labelHotkeyTest1.AutoSize = true;
@@ -2463,6 +2571,7 @@
             // 
             // textBoxHotkeyTest1
             // 
+            this.textBoxHotkeyTest1.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBoxHotkeyTest1.Location = new System.Drawing.Point(6, 463);
             this.textBoxHotkeyTest1.Name = "textBoxHotkeyTest1";
             this.textBoxHotkeyTest1.Size = new System.Drawing.Size(100, 20);
@@ -2480,6 +2589,7 @@
             // 
             // textBoxHotkeyTest2
             // 
+            this.textBoxHotkeyTest2.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBoxHotkeyTest2.Location = new System.Drawing.Point(6, 489);
             this.textBoxHotkeyTest2.Name = "textBoxHotkeyTest2";
             this.textBoxHotkeyTest2.Size = new System.Drawing.Size(100, 20);
@@ -2531,6 +2641,7 @@
             // 
             // textBoxHotkeySpeed
             // 
+            this.textBoxHotkeySpeed.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBoxHotkeySpeed.Location = new System.Drawing.Point(6, 247);
             this.textBoxHotkeySpeed.Name = "textBoxHotkeySpeed";
             this.textBoxHotkeySpeed.Size = new System.Drawing.Size(100, 20);
@@ -2548,6 +2659,7 @@
             // 
             // textBoxHotkeyCollision
             // 
+            this.textBoxHotkeyCollision.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBoxHotkeyCollision.Location = new System.Drawing.Point(6, 221);
             this.textBoxHotkeyCollision.Name = "textBoxHotkeyCollision";
             this.textBoxHotkeyCollision.Size = new System.Drawing.Size(100, 20);
@@ -2565,6 +2677,7 @@
             // 
             // textBoxHotkeyGravity
             // 
+            this.textBoxHotkeyGravity.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBoxHotkeyGravity.Location = new System.Drawing.Point(6, 195);
             this.textBoxHotkeyGravity.Name = "textBoxHotkeyGravity";
             this.textBoxHotkeyGravity.Size = new System.Drawing.Size(100, 20);
@@ -2574,7 +2687,7 @@
             // labelHotkeyAnim
             // 
             this.labelHotkeyAnim.AutoSize = true;
-            this.labelHotkeyAnim.Location = new System.Drawing.Point(112, 172);
+            this.labelHotkeyAnim.Location = new System.Drawing.Point(112, 354);
             this.labelHotkeyAnim.Name = "labelHotkeyAnim";
             this.labelHotkeyAnim.Size = new System.Drawing.Size(52, 13);
             this.labelHotkeyAnim.TabIndex = 9;
@@ -2582,7 +2695,8 @@
             // 
             // textBoxHotkeyAnim
             // 
-            this.textBoxHotkeyAnim.Location = new System.Drawing.Point(6, 169);
+            this.textBoxHotkeyAnim.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBoxHotkeyAnim.Location = new System.Drawing.Point(6, 351);
             this.textBoxHotkeyAnim.Name = "textBoxHotkeyAnim";
             this.textBoxHotkeyAnim.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyAnim.TabIndex = 8;
@@ -2591,7 +2705,7 @@
             // labelHotkeyMoveswap
             // 
             this.labelHotkeyMoveswap.AutoSize = true;
-            this.labelHotkeyMoveswap.Location = new System.Drawing.Point(112, 146);
+            this.labelHotkeyMoveswap.Location = new System.Drawing.Point(112, 328);
             this.labelHotkeyMoveswap.Name = "labelHotkeyMoveswap";
             this.labelHotkeyMoveswap.Size = new System.Drawing.Size(59, 13);
             this.labelHotkeyMoveswap.TabIndex = 7;
@@ -2599,7 +2713,8 @@
             // 
             // textBoxHotkeyMoveswap
             // 
-            this.textBoxHotkeyMoveswap.Location = new System.Drawing.Point(6, 143);
+            this.textBoxHotkeyMoveswap.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBoxHotkeyMoveswap.Location = new System.Drawing.Point(6, 325);
             this.textBoxHotkeyMoveswap.Name = "textBoxHotkeyMoveswap";
             this.textBoxHotkeyMoveswap.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyMoveswap.TabIndex = 6;
@@ -2608,7 +2723,7 @@
             // labelHotkeyFilter
             // 
             this.labelHotkeyFilter.AutoSize = true;
-            this.labelHotkeyFilter.Location = new System.Drawing.Point(112, 120);
+            this.labelHotkeyFilter.Location = new System.Drawing.Point(112, 302);
             this.labelHotkeyFilter.Name = "labelHotkeyFilter";
             this.labelHotkeyFilter.Size = new System.Drawing.Size(65, 13);
             this.labelHotkeyFilter.TabIndex = 5;
@@ -2616,7 +2731,8 @@
             // 
             // textBoxHotkeyFilter
             // 
-            this.textBoxHotkeyFilter.Location = new System.Drawing.Point(6, 117);
+            this.textBoxHotkeyFilter.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBoxHotkeyFilter.Location = new System.Drawing.Point(6, 299);
             this.textBoxHotkeyFilter.Name = "textBoxHotkeyFilter";
             this.textBoxHotkeyFilter.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyFilter.TabIndex = 4;
@@ -2625,7 +2741,7 @@
             // labelHotkeyRestore
             // 
             this.labelHotkeyRestore.AutoSize = true;
-            this.labelHotkeyRestore.Location = new System.Drawing.Point(112, 94);
+            this.labelHotkeyRestore.Location = new System.Drawing.Point(112, 120);
             this.labelHotkeyRestore.Name = "labelHotkeyRestore";
             this.labelHotkeyRestore.Size = new System.Drawing.Size(84, 13);
             this.labelHotkeyRestore.TabIndex = 3;
@@ -2633,7 +2749,8 @@
             // 
             // textBoxHotkeyRestore
             // 
-            this.textBoxHotkeyRestore.Location = new System.Drawing.Point(6, 91);
+            this.textBoxHotkeyRestore.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBoxHotkeyRestore.Location = new System.Drawing.Point(6, 117);
             this.textBoxHotkeyRestore.Name = "textBoxHotkeyRestore";
             this.textBoxHotkeyRestore.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyRestore.TabIndex = 2;
@@ -2642,7 +2759,7 @@
             // textBoxHotkeyStore
             // 
             this.textBoxHotkeyStore.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxHotkeyStore.Location = new System.Drawing.Point(6, 65);
+            this.textBoxHotkeyStore.Location = new System.Drawing.Point(6, 91);
             this.textBoxHotkeyStore.Name = "textBoxHotkeyStore";
             this.textBoxHotkeyStore.Size = new System.Drawing.Size(100, 20);
             this.textBoxHotkeyStore.TabIndex = 1;
@@ -2651,7 +2768,7 @@
             // labelHotkeyStore
             // 
             this.labelHotkeyStore.AutoSize = true;
-            this.labelHotkeyStore.Location = new System.Drawing.Point(112, 68);
+            this.labelHotkeyStore.Location = new System.Drawing.Point(112, 94);
             this.labelHotkeyStore.Name = "labelHotkeyStore";
             this.labelHotkeyStore.Size = new System.Drawing.Size(72, 13);
             this.labelHotkeyStore.TabIndex = 0;
@@ -2677,26 +2794,6 @@
             this.linkLabelNewVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
-            // 
-            // checkBoxStoreState
-            // 
-            this.checkBoxStoreState.AutoSize = true;
-            this.checkBoxStoreState.Location = new System.Drawing.Point(219, 204);
-            this.checkBoxStoreState.Name = "checkBoxStoreState";
-            this.checkBoxStoreState.Size = new System.Drawing.Size(87, 17);
-            this.checkBoxStoreState.TabIndex = 24;
-            this.checkBoxStoreState.Text = "Include state";
-            this.toolTip1.SetToolTip(this.checkBoxStoreState, "Restoring position will also restore health, stamina, and death cam status");
-            this.checkBoxStoreState.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(6, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(322, 509);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "This tab intentionally left blank.";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -2987,6 +3084,14 @@
         private System.Windows.Forms.TextBox textBoxHotkeyTest2;
         private System.Windows.Forms.CheckBox checkBoxStoreState;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelHotkeyDeath;
+        private System.Windows.Forms.TextBox textBoxHotkeyDeath;
+        private System.Windows.Forms.Label labelHotkeyDown;
+        private System.Windows.Forms.TextBox textBoxHotkeyDown;
+        private System.Windows.Forms.Label labelHotkeyUp;
+        private System.Windows.Forms.TextBox textBoxHotkeyUp;
+        private System.Windows.Forms.Label labelHotkeyMenu;
+        private System.Windows.Forms.TextBox textBoxHotkeyMenu;
     }
 }
 

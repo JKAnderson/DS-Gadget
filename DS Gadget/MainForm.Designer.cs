@@ -1905,9 +1905,9 @@
             this.checkBoxFilter.AutoSize = true;
             this.checkBoxFilter.Location = new System.Drawing.Point(6, 19);
             this.checkBoxFilter.Name = "checkBoxFilter";
-            this.checkBoxFilter.Size = new System.Drawing.Size(84, 17);
+            this.checkBoxFilter.Size = new System.Drawing.Size(91, 17);
             this.checkBoxFilter.TabIndex = 0;
-            this.checkBoxFilter.Text = "Enable Filter";
+            this.checkBoxFilter.Text = "Override Filter";
             this.checkBoxFilter.UseVisualStyleBackColor = true;
             this.checkBoxFilter.CheckedChanged += new System.EventHandler(this.checkBoxFilter_CheckedChanged);
             // 
@@ -2514,6 +2514,7 @@
             this.labelHotkeyDown.Size = new System.Drawing.Size(65, 13);
             this.labelHotkeyDown.TabIndex = 28;
             this.labelHotkeyDown.Text = "Move Down";
+            this.toolTip1.SetToolTip(this.labelHotkeyDown, "Teleport downwards 5 Miyazaki Units");
             // 
             // textBoxHotkeyDown
             // 
@@ -2532,6 +2533,7 @@
             this.labelHotkeyUp.Size = new System.Drawing.Size(51, 13);
             this.labelHotkeyUp.TabIndex = 26;
             this.labelHotkeyUp.Text = "Move Up";
+            this.toolTip1.SetToolTip(this.labelHotkeyUp, "Teleport upwards 5 Miyazaki Units");
             // 
             // textBoxHotkeyUp
             // 
@@ -2550,6 +2552,7 @@
             this.labelHotkeyMenu.Size = new System.Drawing.Size(68, 13);
             this.labelHotkeyMenu.TabIndex = 24;
             this.labelHotkeyMenu.Text = "Quit to Menu";
+            this.toolTip1.SetToolTip(this.labelHotkeyMenu, "Immediately quit to menu, even while dead");
             // 
             // textBoxHotkeyMenu
             // 
@@ -2638,6 +2641,7 @@
             this.labelHotkeySpeed.Size = new System.Drawing.Size(74, 13);
             this.labelHotkeySpeed.TabIndex = 15;
             this.labelHotkeySpeed.Text = "Toggle Speed";
+            this.toolTip1.SetToolTip(this.labelHotkeySpeed, "Toggle speed modification in Player");
             // 
             // textBoxHotkeySpeed
             // 
@@ -2692,6 +2696,7 @@
             this.labelHotkeyAnim.Size = new System.Drawing.Size(52, 13);
             this.labelHotkeyAnim.TabIndex = 9;
             this.labelHotkeyAnim.Text = "Stand Up";
+            this.toolTip1.SetToolTip(this.labelHotkeyAnim, "Escape sitting bonfire animation without leaving bonfire");
             // 
             // textBoxHotkeyAnim
             // 
@@ -2710,6 +2715,7 @@
             this.labelHotkeyMoveswap.Size = new System.Drawing.Size(59, 13);
             this.labelHotkeyMoveswap.TabIndex = 7;
             this.labelHotkeyMoveswap.Text = "Moveswap";
+            this.toolTip1.SetToolTip(this.labelHotkeyMoveswap, "Two-hand your offhand weapon");
             // 
             // textBoxHotkeyMoveswap
             // 
@@ -2746,6 +2752,7 @@
             this.labelHotkeyRestore.Size = new System.Drawing.Size(84, 13);
             this.labelHotkeyRestore.TabIndex = 3;
             this.labelHotkeyRestore.Text = "Restore Position";
+            this.toolTip1.SetToolTip(this.labelHotkeyRestore, "Restore position (and state, if enabled in Player)");
             // 
             // textBoxHotkeyRestore
             // 
@@ -2773,6 +2780,7 @@
             this.labelHotkeyStore.Size = new System.Drawing.Size(72, 13);
             this.labelHotkeyStore.TabIndex = 0;
             this.labelHotkeyStore.Text = "Store Position";
+            this.toolTip1.SetToolTip(this.labelHotkeyStore, "Store position and state");
             // 
             // labelCheckVersion
             // 

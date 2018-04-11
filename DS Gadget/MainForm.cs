@@ -161,17 +161,5 @@ namespace DS_Gadget
         {
             Process.Start(e.Link.LinkData.ToString());
         }
-
-        private void buttonRunMode_Click(object sender, EventArgs e)
-        {
-            checkBoxEnableHotkeys.Checked = false;
-            resetPlayer();
-            resetStats();
-            resetItems();
-            resetGraphics();
-            resetCheats();
-            resetMisc();
-            resetHotkeys();
-        }
     }
 }

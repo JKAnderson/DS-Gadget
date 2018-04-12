@@ -2,39 +2,40 @@
 
 namespace DS_Gadget
 {
-    static class DSOffsets
+    class DSOffsets
     {
         public const int CheckVersion = 0x400080;
-        public const int PosLock1 = 0xEBDBCF;
-        public const int PosLock2 = 0xEBDBE0;
 
-        public const int AllNoMagicQtyConsume = 0x1376EE7;
-        public const int PlayerNoDead = 0x13784D2;
-        public const int PlayerExterminate = 0x13784D3;
-        public const int AllNoStaminaConsume = 0x13784E4;
-        public const int AllNoMPConsume = 0x13784E5;
-        public const int AllNoArrowConsume = 0x13784E6;
-        public const int PlayerHide = 0x13784E7;
-        public const int PlayerSilence = 0x13784E8;
-        public const int AllNoDead = 0x13784E9;
-        public const int AllNoDamage = 0x13784EA;
-        public const int AllNoHit = 0x13784EB;
-        public const int AllNoAttack = 0x13784EC;
-        public const int AllNoMove = 0x13784ED;
-        public const int AllNoUpdateAI = 0x13784EE;
+        public int PosLock1 = 0xEBDBCF;
+        public int PosLock2 = 0xEBDBE0;
 
-        public const int CompassLarge = 0x1378525;
-        public const int CompassSmall = 0x137851B;
-        public const int Altimeter = 0x1378524;
-        public const int DrawMap = 0x12DEFEB;
-        public const int DrawObjects = 0x12DF241;
-        public const int DrawCreatures = 0x12DF242;
-        public const int DrawSFX = 0x12DF243;
-        public const int NodeGraph = 0xFA256C;
+        public int AllNoMagicQtyConsume = 0x1376EE7;
+        public int PlayerNoDead = 0x13784D2;
+        public int PlayerExterminate = 0x13784D3;
+        public int AllNoStaminaConsume = 0x13784E4;
+        public int AllNoMPConsume = 0x13784E5;
+        public int AllNoArrowConsume = 0x13784E6;
+        public int PlayerHide = 0x13784E7;
+        public int PlayerSilence = 0x13784E8;
+        public int AllNoDead = 0x13784E9;
+        public int AllNoDamage = 0x13784EA;
+        public int AllNoHit = 0x13784EB;
+        public int AllNoAttack = 0x13784EC;
+        public int AllNoMove = 0x13784ED;
+        public int AllNoUpdateAI = 0x13784EE;
 
-        public const int CharData1Ptr = 0x137DC70;
-        public const int CharData1Ptr2 = 0x4;
-        public const int CharData1Ptr3 = 0x0;
+        public int CompassLarge = 0x1378525;
+        public int CompassSmall = 0x137851B;
+        public int Altimeter = 0x1378524;
+        public int DrawMap = 0x12DEFEB;
+        public int DrawObjects = 0x12DF241;
+        public int DrawCreatures = 0x12DF242;
+        public int DrawSFX = 0x12DF243;
+        public int NodeGraph = 0xFA256C;
+
+        public int CharData1Ptr = 0x137DC70;
+        public int CharData1Ptr2 = 0x4;
+        public int CharData1Ptr3 = 0x0;
         public enum CharData1
         {
             CharMapDataPtr = 0x28,
@@ -117,8 +118,8 @@ namespace DS_Gadget
             PosZ = 0x18,
         }
 
-        public const int CharData2Ptr = 0x1378700;
-        public const int CharData2Ptr2 = 0x8;
+        public int CharData2Ptr = 0x1378700;
+        public int CharData2Ptr2 = 0x8;
         public enum CharData2
         {
             HP = 0xC,
@@ -142,8 +143,8 @@ namespace DS_Gadget
             Stance = 0x230,
         }
 
-        public const int GraphicsDataPtr = 0x1378520;
-        public const int GraphicsDataPtr2 = 0x10;
+        public int GraphicsDataPtr = 0x1378520;
+        public int GraphicsDataPtr2 = 0x10;
         public enum GraphicsData
         {
             DepthDraw_DepthTexEdge = 0x23F,
@@ -164,7 +165,7 @@ namespace DS_Gadget
             Hue = 0x28C,
         }
 
-        public const int WorldStatePtr = 0x13784A0;
+        public int WorldStatePtr = 0x13784A0;
         public enum WorldState
         {
             LastBonfire = 0xB04,
@@ -174,9 +175,9 @@ namespace DS_Gadget
             PosStableAngle = 0xB84,
         }
 
-        public const int ChrFollowCamPtr = 0x137D6DC;
-        public const int ChrFollowCamPtr2 = 0x3C;
-        public const int ChrFollowCamPtr3 = 0x60;
+        public int ChrFollowCamPtr = 0x137D6DC;
+        public int ChrFollowCamPtr2 = 0x3C;
+        public int ChrFollowCamPtr3 = 0x60;
         public enum ChrFollowCam
         {
             RotX = 0xE0,
@@ -193,26 +194,67 @@ namespace DS_Gadget
             TargetRotZ = 0x158,
         }
 
-        public const int EventFlagsPtr = 0x137D7D4;
-        public const int EventFlagsPtr2 = 0x0;
+        public int EventFlagsPtr = 0x137D7D4;
+        public int EventFlagsPtr2 = 0x0;
 
-        public const int Unknown1Ptr = 0x137E204;
+        public int Unknown1Ptr = 0x137E204;
         public enum Unknown1
         {
             Area = 0xA12,
             World = 0xA13,
         }
 
-        public const int Unknown2Ptr = 0x137D644;
+        public int Unknown2Ptr = 0x137D644;
         public enum Unknown2
         {
             DeathCam = 0x40,
         }
 
-        public const int Unknown3Ptr = 0x13784A4;
+        public int Unknown3Ptr = 0x13784A4;
         public enum Unknown3
         {
             MenuKick = 0x0,
         }
+
+        public static DSOffsets Release = new DSOffsets();
+        public static DSOffsets Debug = new DSOffsets()
+        {
+            PosLock1 = 0xEC0A8F,
+            PosLock2 = 0xEC0AA0,
+
+            AllNoMagicQtyConsume = 0x137B0A8,
+            PlayerNoDead = 0x137C693,
+            PlayerExterminate = 0x137C694,
+            AllNoStaminaConsume = 0x137C6A5,
+            AllNoMPConsume = 0x137C6A6,
+            AllNoArrowConsume = 0x137C6A7,
+            PlayerHide = 0x137C6A8,
+            PlayerSilence = 0x137C6A9,
+            AllNoDead = 0x137C6AA,
+            AllNoDamage = 0x137C6AB,
+            AllNoHit = 0x137C6AC,
+            AllNoAttack = 0x137C6AD,
+            AllNoMove = 0x137C6AE,
+            AllNoUpdateAI = 0x137C6AF,
+
+            CompassLarge = 0x137C6E6,
+            CompassSmall = 0x137C6E4,
+            Altimeter = 0x137C6E5,
+            DrawMap = 0x12E2FEB,
+            DrawObjects = 0x12E3241,
+            DrawCreatures = 0x12E3242,
+            DrawSFX = 0x12E3243,
+            NodeGraph = 0xFA618C,
+
+            CharData1Ptr = 0x1381E30,
+            CharData2Ptr = 0x137C8C0,
+            GraphicsDataPtr = 0x137C6E0,
+            WorldStatePtr = 0x137C660,
+            ChrFollowCamPtr = 0x138189C,
+            EventFlagsPtr = 0x1381994,
+            Unknown1Ptr = 0x13823C4,
+            Unknown2Ptr = 0x1381804,
+            Unknown3Ptr = 0x137C664,
+        };
     }
 }

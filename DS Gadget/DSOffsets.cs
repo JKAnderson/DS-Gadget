@@ -8,6 +8,7 @@ namespace DS_Gadget
 
         public int PosLock1 = 0xEBDBCF;
         public int PosLock2 = 0xEBDBE0;
+        public int NodeGraph = 0xFA256C;
 
         public int AllNoMagicQtyConsume = 0x1376EE7;
         public int PlayerNoDead = 0x13784D2;
@@ -23,15 +24,14 @@ namespace DS_Gadget
         public int AllNoAttack = 0x13784EC;
         public int AllNoMove = 0x13784ED;
         public int AllNoUpdateAI = 0x13784EE;
-
-        public int CompassLarge = 0x1378525;
+        
         public int CompassSmall = 0x137851B;
         public int Altimeter = 0x1378524;
+        public int CompassLarge = 0x1378525;
         public int DrawMap = 0x12DEFEB;
         public int DrawObjects = 0x12DF241;
         public int DrawCreatures = 0x12DF242;
         public int DrawSFX = 0x12DF243;
-        public int NodeGraph = 0xFA256C;
 
         public int CharData1Ptr = 0x137DC70;
         public int CharData1Ptr2 = 0x4;
@@ -221,6 +221,7 @@ namespace DS_Gadget
         {
             PosLock1 = 0xEC0A8F,
             PosLock2 = 0xEC0AA0,
+            NodeGraph = 0xFA618C,
 
             AllNoMagicQtyConsume = 0x137B0A8,
             PlayerNoDead = 0x137C693,
@@ -236,15 +237,14 @@ namespace DS_Gadget
             AllNoAttack = 0x137C6AD,
             AllNoMove = 0x137C6AE,
             AllNoUpdateAI = 0x137C6AF,
-
-            CompassLarge = 0x137C6E6,
+            
             CompassSmall = 0x137C6E4,
             Altimeter = 0x137C6E5,
+            CompassLarge = 0x137C6E6,
             DrawMap = 0x12E2FEB,
             DrawObjects = 0x12E3241,
             DrawCreatures = 0x12E3242,
             DrawSFX = 0x12E3243,
-            NodeGraph = 0xFA618C,
 
             CharData1Ptr = 0x1381E30,
             CharData2Ptr = 0x137C8C0,

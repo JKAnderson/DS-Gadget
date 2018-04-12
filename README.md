@@ -1,7 +1,8 @@
 
 # DS Gadget
-A multi-purpose testing tool for Dark Souls 1. This program is only compatible with the current Steam version of DS1.
-Requires [.NET 4.6.2](https://www.microsoft.com/net/download/thank-you/net462)
+A multi-purpose testing tool for Dark Souls 1. This program is only compatible with the current Steam version of DS1.  
+Requires [.NET 4.6.2](https://www.microsoft.com/net/download/thank-you/net462) and [VC Redist 2012 x86](https://my.visualstudio.com/Downloads?pid=1452)  
+You probably already have both.
 
 # Changelog
 ### 1.6

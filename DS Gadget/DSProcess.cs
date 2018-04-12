@@ -447,16 +447,16 @@ namespace DS_Gadget
                 "mov ebx, 0x{1:X}\n" +
                 "mov ecx, 0xFFFFFFFF\n" +
                 "mov edx, 0x{2:X}\n" +
-                "mov eax, [0x13786D0]\n" +
+                "mov eax, [0x{3:X}]\n" +
                 "mov [eax + 0x828], ebp\n" +
                 "mov [eax + 0x82C], ebx\n" +
                 "mov [eax + 0x830], ecx\n" +
                 "mov [eax + 0x834], edx\n" +
-                "mov eax, [0x137D6BC]\n" +
+                "mov eax, [0x{4:X}]\n" +
                 "push eax\n" +
-                "call 0xDC8C60\n" +
+                "call 0x{5:X}\n" +
                 "ret",
-                category, itemID, count);
+                category, itemID, count, offsets.ItemDropUnknown1, offsets.ItemDropUnknown2, offsets.ItemDropFunctionPtr);
 
             dsInterface.AsmExecute(asm);
         }

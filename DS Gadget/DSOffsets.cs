@@ -216,6 +216,10 @@ namespace DS_Gadget
             MenuKick = 0x0,
         }
 
+        public int ItemDropUnknown1 = 0x13786D0;
+        public int ItemDropUnknown2 = 0x137D6BC;
+        public int ItemDropFunctionPtr = 0xDC8C60;
+
         public static DSOffsets Release = new DSOffsets();
         public static DSOffsets Debug = new DSOffsets()
         {
@@ -255,6 +259,10 @@ namespace DS_Gadget
             Unknown1Ptr = 0x13823C4,
             Unknown2Ptr = 0x1381804,
             Unknown3Ptr = 0x137C664,
-        };
+
+            ItemDropUnknown1 = 0x137C890,
+            ItemDropUnknown2 = 0x138187C,
+            ItemDropFunctionPtr = 0xDCB550,
+    };
     }
 }

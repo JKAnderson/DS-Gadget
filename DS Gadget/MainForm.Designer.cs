@@ -440,7 +440,7 @@
             this.tabControlMain.Location = new System.Drawing.Point(12, 51);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(373, 541);
+            this.tabControlMain.Size = new System.Drawing.Size(379, 541);
             this.tabControlMain.TabIndex = 0;
             // 
             // tabPagePlayer
@@ -450,7 +450,7 @@
             this.tabPagePlayer.Controls.Add(this.groupBoxPosition);
             this.tabPagePlayer.Location = new System.Drawing.Point(4, 22);
             this.tabPagePlayer.Name = "tabPagePlayer";
-            this.tabPagePlayer.Size = new System.Drawing.Size(365, 515);
+            this.tabPagePlayer.Size = new System.Drawing.Size(371, 515);
             this.tabPagePlayer.TabIndex = 2;
             this.tabPagePlayer.Text = "Player";
             this.tabPagePlayer.UseVisualStyleBackColor = true;
@@ -470,7 +470,7 @@
             this.groupBoxOther.Controls.Add(this.checkBoxCollision);
             this.groupBoxOther.Location = new System.Drawing.Point(3, 391);
             this.groupBoxOther.Name = "groupBoxOther";
-            this.groupBoxOther.Size = new System.Drawing.Size(359, 121);
+            this.groupBoxOther.Size = new System.Drawing.Size(365, 121);
             this.groupBoxOther.TabIndex = 2;
             this.groupBoxOther.TabStop = false;
             this.groupBoxOther.Text = "Other";
@@ -538,7 +538,7 @@
             this.comboBoxBonfire.FormattingEnabled = true;
             this.comboBoxBonfire.Location = new System.Drawing.Point(6, 55);
             this.comboBoxBonfire.Name = "comboBoxBonfire";
-            this.comboBoxBonfire.Size = new System.Drawing.Size(347, 21);
+            this.comboBoxBonfire.Size = new System.Drawing.Size(353, 21);
             this.comboBoxBonfire.TabIndex = 3;
             this.comboBoxBonfire.SelectedIndexChanged += new System.EventHandler(this.comboBoxBonfire_SelectedIndexChanged);
             // 
@@ -586,7 +586,7 @@
             this.groupBoxStatus.Controls.Add(this.numericUpDownHP);
             this.groupBoxStatus.Location = new System.Drawing.Point(3, 3);
             this.groupBoxStatus.Name = "groupBoxStatus";
-            this.groupBoxStatus.Size = new System.Drawing.Size(359, 136);
+            this.groupBoxStatus.Size = new System.Drawing.Size(365, 136);
             this.groupBoxStatus.TabIndex = 0;
             this.groupBoxStatus.TabStop = false;
             this.groupBoxStatus.Text = "Status";
@@ -787,7 +787,7 @@
             this.groupBoxPosition.Controls.Add(this.buttonPosRestore);
             this.groupBoxPosition.Location = new System.Drawing.Point(3, 145);
             this.groupBoxPosition.Name = "groupBoxPosition";
-            this.groupBoxPosition.Size = new System.Drawing.Size(359, 240);
+            this.groupBoxPosition.Size = new System.Drawing.Size(365, 240);
             this.groupBoxPosition.TabIndex = 1;
             this.groupBoxPosition.TabStop = false;
             this.groupBoxPosition.Text = "Position";
@@ -1198,7 +1198,7 @@
             this.tabPageStats.Controls.Add(this.comboBoxClass);
             this.tabPageStats.Location = new System.Drawing.Point(4, 22);
             this.tabPageStats.Name = "tabPageStats";
-            this.tabPageStats.Size = new System.Drawing.Size(365, 515);
+            this.tabPageStats.Size = new System.Drawing.Size(371, 515);
             this.tabPageStats.TabIndex = 3;
             this.tabPageStats.Text = "Stats";
             this.tabPageStats.UseVisualStyleBackColor = true;
@@ -1447,7 +1447,7 @@
             // 
             this.labelSouls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSouls.AutoSize = true;
-            this.labelSouls.Location = new System.Drawing.Point(282, 6);
+            this.labelSouls.Location = new System.Drawing.Point(288, 6);
             this.labelSouls.Name = "labelSouls";
             this.labelSouls.Size = new System.Drawing.Size(33, 13);
             this.labelSouls.TabIndex = 9;
@@ -1457,7 +1457,7 @@
             // 
             this.numericUpDownSouls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDownSouls.AutoSize = true;
-            this.numericUpDownSouls.Location = new System.Drawing.Point(285, 22);
+            this.numericUpDownSouls.Location = new System.Drawing.Point(291, 22);
             this.numericUpDownSouls.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -1501,7 +1501,7 @@
             // 
             this.labelSoulLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSoulLevel.AutoSize = true;
-            this.labelSoulLevel.Location = new System.Drawing.Point(162, 6);
+            this.labelSoulLevel.Location = new System.Drawing.Point(168, 6);
             this.labelSoulLevel.Name = "labelSoulLevel";
             this.labelSoulLevel.Size = new System.Drawing.Size(57, 13);
             this.labelSoulLevel.TabIndex = 6;
@@ -1510,7 +1510,7 @@
             // textBoxSoulLevel
             // 
             this.textBoxSoulLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSoulLevel.Location = new System.Drawing.Point(165, 22);
+            this.textBoxSoulLevel.Location = new System.Drawing.Point(171, 22);
             this.textBoxSoulLevel.Name = "textBoxSoulLevel";
             this.textBoxSoulLevel.ReadOnly = true;
             this.textBoxSoulLevel.Size = new System.Drawing.Size(54, 20);
@@ -1520,7 +1520,7 @@
             // 
             this.labelHumanity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelHumanity.AutoSize = true;
-            this.labelHumanity.Location = new System.Drawing.Point(222, 6);
+            this.labelHumanity.Location = new System.Drawing.Point(228, 6);
             this.labelHumanity.Name = "labelHumanity";
             this.labelHumanity.Size = new System.Drawing.Size(51, 13);
             this.labelHumanity.TabIndex = 4;
@@ -1529,7 +1529,7 @@
             // numericUpDownHumanity
             // 
             this.numericUpDownHumanity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDownHumanity.Location = new System.Drawing.Point(225, 22);
+            this.numericUpDownHumanity.Location = new System.Drawing.Point(231, 22);
             this.numericUpDownHumanity.Maximum = new decimal(new int[] {
             0,
             0,
@@ -1557,7 +1557,7 @@
             this.comboBoxClass.FormattingEnabled = true;
             this.comboBoxClass.Location = new System.Drawing.Point(3, 22);
             this.comboBoxClass.Name = "comboBoxClass";
-            this.comboBoxClass.Size = new System.Drawing.Size(156, 21);
+            this.comboBoxClass.Size = new System.Drawing.Size(162, 21);
             this.comboBoxClass.TabIndex = 1;
             this.comboBoxClass.SelectedIndexChanged += new System.EventHandler(this.comboBoxClass_SelectedIndexChanged);
             // 
@@ -1576,7 +1576,7 @@
             this.tabPageItems.Controls.Add(this.labelCategory);
             this.tabPageItems.Location = new System.Drawing.Point(4, 22);
             this.tabPageItems.Name = "tabPageItems";
-            this.tabPageItems.Size = new System.Drawing.Size(365, 515);
+            this.tabPageItems.Size = new System.Drawing.Size(371, 515);
             this.tabPageItems.TabIndex = 5;
             this.tabPageItems.Text = "Items";
             this.tabPageItems.UseVisualStyleBackColor = true;
@@ -1590,7 +1590,7 @@
             this.listBoxItems.Location = new System.Drawing.Point(3, 90);
             this.listBoxItems.Name = "listBoxItems";
             this.listBoxItems.ScrollAlwaysVisible = true;
-            this.listBoxItems.Size = new System.Drawing.Size(359, 407);
+            this.listBoxItems.Size = new System.Drawing.Size(365, 407);
             this.listBoxItems.TabIndex = 13;
             this.listBoxItems.SelectedIndexChanged += new System.EventHandler(this.listBoxItems_SelectedIndexChanged);
             this.listBoxItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxItems_MouseDoubleClick);
@@ -1598,7 +1598,7 @@
             // buttonCreate
             // 
             this.buttonCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCreate.Location = new System.Drawing.Point(287, 61);
+            this.buttonCreate.Location = new System.Drawing.Point(293, 61);
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(75, 23);
             this.buttonCreate.TabIndex = 12;
@@ -1610,7 +1610,7 @@
             // 
             this.numericUpDownUpgrade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDownUpgrade.Enabled = false;
-            this.numericUpDownUpgrade.Location = new System.Drawing.Point(218, 62);
+            this.numericUpDownUpgrade.Location = new System.Drawing.Point(224, 62);
             this.numericUpDownUpgrade.Maximum = new decimal(new int[] {
             15,
             0,
@@ -1624,7 +1624,7 @@
             // 
             this.labelUpgrade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelUpgrade.AutoSize = true;
-            this.labelUpgrade.Location = new System.Drawing.Point(215, 46);
+            this.labelUpgrade.Location = new System.Drawing.Point(221, 46);
             this.labelUpgrade.Name = "labelUpgrade";
             this.labelUpgrade.Size = new System.Drawing.Size(48, 13);
             this.labelUpgrade.TabIndex = 9;
@@ -1640,7 +1640,7 @@
             this.comboBoxInfusion.Location = new System.Drawing.Point(3, 62);
             this.comboBoxInfusion.MaxDropDownItems = 100;
             this.comboBoxInfusion.Name = "comboBoxInfusion";
-            this.comboBoxInfusion.Size = new System.Drawing.Size(209, 21);
+            this.comboBoxInfusion.Size = new System.Drawing.Size(215, 21);
             this.comboBoxInfusion.TabIndex = 8;
             this.comboBoxInfusion.SelectedIndexChanged += new System.EventHandler(this.comboBoxInfusion_SelectedIndexChanged);
             // 
@@ -1657,7 +1657,7 @@
             // 
             this.numericUpDownQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDownQuantity.Enabled = false;
-            this.numericUpDownQuantity.Location = new System.Drawing.Point(218, 19);
+            this.numericUpDownQuantity.Location = new System.Drawing.Point(224, 19);
             this.numericUpDownQuantity.Maximum = new decimal(new int[] {
             999,
             0,
@@ -1683,7 +1683,7 @@
             this.checkBoxRestrictQuantity.AutoSize = true;
             this.checkBoxRestrictQuantity.Checked = true;
             this.checkBoxRestrictQuantity.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxRestrictQuantity.Location = new System.Drawing.Point(287, 21);
+            this.checkBoxRestrictQuantity.Location = new System.Drawing.Point(293, 21);
             this.checkBoxRestrictQuantity.Name = "checkBoxRestrictQuantity";
             this.checkBoxRestrictQuantity.Size = new System.Drawing.Size(62, 17);
             this.checkBoxRestrictQuantity.TabIndex = 4;
@@ -1695,7 +1695,7 @@
             // 
             this.labelQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelQuantity.AutoSize = true;
-            this.labelQuantity.Location = new System.Drawing.Point(217, 3);
+            this.labelQuantity.Location = new System.Drawing.Point(223, 3);
             this.labelQuantity.Name = "labelQuantity";
             this.labelQuantity.Size = new System.Drawing.Size(46, 13);
             this.labelQuantity.TabIndex = 3;
@@ -1710,7 +1710,7 @@
             this.comboBoxCategory.Location = new System.Drawing.Point(3, 19);
             this.comboBoxCategory.MaxDropDownItems = 100;
             this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(209, 21);
+            this.comboBoxCategory.Size = new System.Drawing.Size(215, 21);
             this.comboBoxCategory.TabIndex = 1;
             this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategory_SelectedIndexChanged);
             // 
@@ -1731,7 +1731,7 @@
             this.tabPageGraphics.Location = new System.Drawing.Point(4, 22);
             this.tabPageGraphics.Name = "tabPageGraphics";
             this.tabPageGraphics.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGraphics.Size = new System.Drawing.Size(365, 515);
+            this.tabPageGraphics.Size = new System.Drawing.Size(371, 515);
             this.tabPageGraphics.TabIndex = 0;
             this.tabPageGraphics.Text = "Graphics";
             this.tabPageGraphics.UseVisualStyleBackColor = true;
@@ -1758,7 +1758,7 @@
             this.groupBoxFilter.Controls.Add(this.checkBoxFilter);
             this.groupBoxFilter.Location = new System.Drawing.Point(6, 289);
             this.groupBoxFilter.Name = "groupBoxFilter";
-            this.groupBoxFilter.Size = new System.Drawing.Size(352, 202);
+            this.groupBoxFilter.Size = new System.Drawing.Size(358, 202);
             this.groupBoxFilter.TabIndex = 8;
             this.groupBoxFilter.TabStop = false;
             this.groupBoxFilter.Text = "Filter";
@@ -2004,7 +2004,7 @@
             this.groupBoxHUD.Controls.Add(this.checkBoxCompassSmall);
             this.groupBoxHUD.Location = new System.Drawing.Point(6, 182);
             this.groupBoxHUD.Name = "groupBoxHUD";
-            this.groupBoxHUD.Size = new System.Drawing.Size(352, 101);
+            this.groupBoxHUD.Size = new System.Drawing.Size(358, 101);
             this.groupBoxHUD.TabIndex = 7;
             this.groupBoxHUD.TabStop = false;
             this.groupBoxHUD.Text = "Debug";
@@ -2081,7 +2081,7 @@
             this.groupBoxRender.Controls.Add(this.checkBoxSprites);
             this.groupBoxRender.Location = new System.Drawing.Point(6, 6);
             this.groupBoxRender.Name = "groupBoxRender";
-            this.groupBoxRender.Size = new System.Drawing.Size(352, 170);
+            this.groupBoxRender.Size = new System.Drawing.Size(358, 170);
             this.groupBoxRender.TabIndex = 6;
             this.groupBoxRender.TabStop = false;
             this.groupBoxRender.Text = "Render";
@@ -2224,7 +2224,7 @@
             this.tabPageCheats.Location = new System.Drawing.Point(4, 22);
             this.tabPageCheats.Name = "tabPageCheats";
             this.tabPageCheats.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCheats.Size = new System.Drawing.Size(365, 515);
+            this.tabPageCheats.Size = new System.Drawing.Size(371, 515);
             this.tabPageCheats.TabIndex = 6;
             this.tabPageCheats.Text = "Cheats";
             this.tabPageCheats.UseVisualStyleBackColor = true;
@@ -2239,7 +2239,7 @@
             this.groupBoxCheatEnemy.Controls.Add(this.checkBoxAllNoUpdateAI);
             this.groupBoxCheatEnemy.Location = new System.Drawing.Point(6, 266);
             this.groupBoxCheatEnemy.Name = "groupBoxCheatEnemy";
-            this.groupBoxCheatEnemy.Size = new System.Drawing.Size(353, 78);
+            this.groupBoxCheatEnemy.Size = new System.Drawing.Size(359, 78);
             this.groupBoxCheatEnemy.TabIndex = 16;
             this.groupBoxCheatEnemy.TabStop = false;
             this.groupBoxCheatEnemy.Text = "Enemies";
@@ -2291,7 +2291,7 @@
             this.groupBoxCheatAll.Controls.Add(this.checkBoxAllNoStamina);
             this.groupBoxCheatAll.Location = new System.Drawing.Point(6, 182);
             this.groupBoxCheatAll.Name = "groupBoxCheatAll";
-            this.groupBoxCheatAll.Size = new System.Drawing.Size(353, 78);
+            this.groupBoxCheatAll.Size = new System.Drawing.Size(359, 78);
             this.groupBoxCheatAll.TabIndex = 15;
             this.groupBoxCheatAll.TabStop = false;
             this.groupBoxCheatAll.Text = "Player + Enemies";
@@ -2363,7 +2363,7 @@
             this.groupBoxCheatPlayer.Controls.Add(this.checkBoxAllNoArrow);
             this.groupBoxCheatPlayer.Location = new System.Drawing.Point(6, 6);
             this.groupBoxCheatPlayer.Name = "groupBoxCheatPlayer";
-            this.groupBoxCheatPlayer.Size = new System.Drawing.Size(353, 170);
+            this.groupBoxCheatPlayer.Size = new System.Drawing.Size(359, 170);
             this.groupBoxCheatPlayer.TabIndex = 14;
             this.groupBoxCheatPlayer.TabStop = false;
             this.groupBoxCheatPlayer.Text = "Player";
@@ -2523,7 +2523,7 @@
             this.tabPageInternals.Controls.Add(this.textBoxStoredItem);
             this.tabPageInternals.Location = new System.Drawing.Point(4, 22);
             this.tabPageInternals.Name = "tabPageInternals";
-            this.tabPageInternals.Size = new System.Drawing.Size(365, 515);
+            this.tabPageInternals.Size = new System.Drawing.Size(371, 515);
             this.tabPageInternals.TabIndex = 9;
             this.tabPageInternals.Text = "Internals";
             this.tabPageInternals.UseVisualStyleBackColor = true;
@@ -2616,7 +2616,7 @@
             this.groupBoxEquipment.Controls.Add(this.textBoxEquipRight1Idx);
             this.groupBoxEquipment.Location = new System.Drawing.Point(3, 3);
             this.groupBoxEquipment.Name = "groupBoxEquipment";
-            this.groupBoxEquipment.Size = new System.Drawing.Size(359, 331);
+            this.groupBoxEquipment.Size = new System.Drawing.Size(365, 331);
             this.groupBoxEquipment.TabIndex = 5;
             this.groupBoxEquipment.TabStop = false;
             this.groupBoxEquipment.Text = "Equipment";
@@ -3260,7 +3260,7 @@
             this.tabPageMisc.Location = new System.Drawing.Point(4, 22);
             this.tabPageMisc.Name = "tabPageMisc";
             this.tabPageMisc.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMisc.Size = new System.Drawing.Size(365, 515);
+            this.tabPageMisc.Size = new System.Drawing.Size(371, 515);
             this.tabPageMisc.TabIndex = 8;
             this.tabPageMisc.Text = "Misc";
             this.tabPageMisc.UseVisualStyleBackColor = true;
@@ -3277,7 +3277,7 @@
             this.groupBoxEventFlags.Controls.Add(this.labelEventFlagsID);
             this.groupBoxEventFlags.Location = new System.Drawing.Point(6, 6);
             this.groupBoxEventFlags.Name = "groupBoxEventFlags";
-            this.groupBoxEventFlags.Size = new System.Drawing.Size(353, 99);
+            this.groupBoxEventFlags.Size = new System.Drawing.Size(359, 99);
             this.groupBoxEventFlags.TabIndex = 0;
             this.groupBoxEventFlags.TabStop = false;
             this.groupBoxEventFlags.Text = "Event Flags";
@@ -3285,7 +3285,7 @@
             // buttonEventFlagRead
             // 
             this.buttonEventFlagRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonEventFlagRead.Location = new System.Drawing.Point(191, 57);
+            this.buttonEventFlagRead.Location = new System.Drawing.Point(197, 57);
             this.buttonEventFlagRead.Name = "buttonEventFlagRead";
             this.buttonEventFlagRead.Size = new System.Drawing.Size(75, 23);
             this.buttonEventFlagRead.TabIndex = 4;
@@ -3296,7 +3296,7 @@
             // buttonEventFlagWrite
             // 
             this.buttonEventFlagWrite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonEventFlagWrite.Location = new System.Drawing.Point(272, 57);
+            this.buttonEventFlagWrite.Location = new System.Drawing.Point(278, 57);
             this.buttonEventFlagWrite.Name = "buttonEventFlagWrite";
             this.buttonEventFlagWrite.Size = new System.Drawing.Size(75, 23);
             this.buttonEventFlagWrite.TabIndex = 3;
@@ -3308,7 +3308,7 @@
             // 
             this.checkBoxEventFlagValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxEventFlagValue.AutoSize = true;
-            this.checkBoxEventFlagValue.Location = new System.Drawing.Point(272, 34);
+            this.checkBoxEventFlagValue.Location = new System.Drawing.Point(278, 34);
             this.checkBoxEventFlagValue.Name = "checkBoxEventFlagValue";
             this.checkBoxEventFlagValue.Size = new System.Drawing.Size(65, 17);
             this.checkBoxEventFlagValue.TabIndex = 2;
@@ -3321,7 +3321,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxEventFlagID.Location = new System.Drawing.Point(6, 32);
             this.textBoxEventFlagID.Name = "textBoxEventFlagID";
-            this.textBoxEventFlagID.Size = new System.Drawing.Size(260, 20);
+            this.textBoxEventFlagID.Size = new System.Drawing.Size(266, 20);
             this.textBoxEventFlagID.TabIndex = 1;
             // 
             // labelEventFlagsID
@@ -3369,7 +3369,7 @@
             this.tabPageHotkeys.Location = new System.Drawing.Point(4, 22);
             this.tabPageHotkeys.Name = "tabPageHotkeys";
             this.tabPageHotkeys.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageHotkeys.Size = new System.Drawing.Size(365, 515);
+            this.tabPageHotkeys.Size = new System.Drawing.Size(371, 515);
             this.tabPageHotkeys.TabIndex = 7;
             this.tabPageHotkeys.Text = "Hotkeys";
             this.tabPageHotkeys.UseVisualStyleBackColor = true;
@@ -3694,7 +3694,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(398, 604);
+            this.ClientSize = new System.Drawing.Size(403, 604);
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.labelVersionStatic);

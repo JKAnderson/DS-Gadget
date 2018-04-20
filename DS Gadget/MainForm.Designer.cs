@@ -186,6 +186,76 @@
             this.checkBoxPlayerHide = new System.Windows.Forms.CheckBox();
             this.checkBoxPlayerSilence = new System.Windows.Forms.CheckBox();
             this.checkBoxAllNoArrow = new System.Windows.Forms.CheckBox();
+            this.tabPageInternals = new System.Windows.Forms.TabPage();
+            this.labelStoredMagic = new System.Windows.Forms.Label();
+            this.textBoxStoredMagic = new System.Windows.Forms.TextBox();
+            this.groupBoxEquipment = new System.Windows.Forms.GroupBox();
+            this.labeEquipItem5 = new System.Windows.Forms.Label();
+            this.textBoxEquipItem5ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipItem5Idx = new System.Windows.Forms.TextBox();
+            this.labeEquipItem4 = new System.Windows.Forms.Label();
+            this.labeEquipItem3 = new System.Windows.Forms.Label();
+            this.textBoxEquipItem4ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipItem4Idx = new System.Windows.Forms.TextBox();
+            this.textBoxEquipItem3ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipItem3Idx = new System.Windows.Forms.TextBox();
+            this.labeEquipItem2 = new System.Windows.Forms.Label();
+            this.labeEquipItem1 = new System.Windows.Forms.Label();
+            this.textBoxEquipItem2ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipItem2Idx = new System.Windows.Forms.TextBox();
+            this.textBoxEquipItem1ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipItem1Idx = new System.Windows.Forms.TextBox();
+            this.labeEquipRing2 = new System.Windows.Forms.Label();
+            this.labeEquipRing1 = new System.Windows.Forms.Label();
+            this.textBoxEquipRing2ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipRing2Idx = new System.Windows.Forms.TextBox();
+            this.textBoxEquipRing1ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipRing1Idx = new System.Windows.Forms.TextBox();
+            this.labeEquipHair = new System.Windows.Forms.Label();
+            this.textBoxEquipHairID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipHairIdx = new System.Windows.Forms.TextBox();
+            this.labeEquipPants = new System.Windows.Forms.Label();
+            this.labeEquipGlove = new System.Windows.Forms.Label();
+            this.textBoxEquipPantsID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipPantsIdx = new System.Windows.Forms.TextBox();
+            this.textBoxEquipGloveID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipGloveIdx = new System.Windows.Forms.TextBox();
+            this.labeEquipChest = new System.Windows.Forms.Label();
+            this.labelEquipHelmet = new System.Windows.Forms.Label();
+            this.textBoxEquipChestID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipChestIdx = new System.Windows.Forms.TextBox();
+            this.textBoxEquipHelmetID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipHelmetIdx = new System.Windows.Forms.TextBox();
+            this.labelEquipBolt2 = new System.Windows.Forms.Label();
+            this.labelEquipBolt1 = new System.Windows.Forms.Label();
+            this.textBoxEquipBolt2ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipBolt2Idx = new System.Windows.Forms.TextBox();
+            this.textBoxEquipBolt1ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipBolt1Idx = new System.Windows.Forms.TextBox();
+            this.labelEquipArrow2 = new System.Windows.Forms.Label();
+            this.labelEquipArrow1 = new System.Windows.Forms.Label();
+            this.textBoxEquipArrow2ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipArrow2Idx = new System.Windows.Forms.TextBox();
+            this.textBoxEquipArrow1ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipArrow1Idx = new System.Windows.Forms.TextBox();
+            this.labelEquipLeft2 = new System.Windows.Forms.Label();
+            this.labelEquipLeft1 = new System.Windows.Forms.Label();
+            this.textBoxEquipLeft2ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipLeft2Idx = new System.Windows.Forms.TextBox();
+            this.textBoxEquipLeft1ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipLeft1Idx = new System.Windows.Forms.TextBox();
+            this.labelEquipRight2 = new System.Windows.Forms.Label();
+            this.labelEquipID2 = new System.Windows.Forms.Label();
+            this.labelEquipIndex2 = new System.Windows.Forms.Label();
+            this.labelEquipRight1 = new System.Windows.Forms.Label();
+            this.labelEquipID1 = new System.Windows.Forms.Label();
+            this.labelEquipIndex1 = new System.Windows.Forms.Label();
+            this.textBoxEquipRight2ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipRight2Idx = new System.Windows.Forms.TextBox();
+            this.textBoxEquipRight1ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipRight1Idx = new System.Windows.Forms.TextBox();
+            this.labelStoredItem = new System.Windows.Forms.Label();
+            this.textBoxStoredItem = new System.Windows.Forms.TextBox();
             this.tabPageMisc = new System.Windows.Forms.TabPage();
             this.groupBoxEventFlags = new System.Windows.Forms.GroupBox();
             this.buttonEventFlagRead = new System.Windows.Forms.Button();
@@ -228,76 +298,6 @@
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tabPageInternals = new System.Windows.Forms.TabPage();
-            this.labelStoredItem = new System.Windows.Forms.Label();
-            this.textBoxStoredItem = new System.Windows.Forms.TextBox();
-            this.groupBoxEquipment = new System.Windows.Forms.GroupBox();
-            this.textBoxEquipRight1Idx = new System.Windows.Forms.TextBox();
-            this.textBoxEquipRight1ID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipRight2Idx = new System.Windows.Forms.TextBox();
-            this.textBoxEquipRight2ID = new System.Windows.Forms.TextBox();
-            this.labelEquipIndex1 = new System.Windows.Forms.Label();
-            this.labelEquipID1 = new System.Windows.Forms.Label();
-            this.labelEquipRight1 = new System.Windows.Forms.Label();
-            this.labelEquipID2 = new System.Windows.Forms.Label();
-            this.labelEquipIndex2 = new System.Windows.Forms.Label();
-            this.labelEquipRight2 = new System.Windows.Forms.Label();
-            this.labelEquipLeft2 = new System.Windows.Forms.Label();
-            this.labelEquipLeft1 = new System.Windows.Forms.Label();
-            this.textBoxEquipLeft2ID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipLeft2Idx = new System.Windows.Forms.TextBox();
-            this.textBoxEquipLeft1ID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipLeft1Idx = new System.Windows.Forms.TextBox();
-            this.labelEquipArrow2 = new System.Windows.Forms.Label();
-            this.labelEquipArrow1 = new System.Windows.Forms.Label();
-            this.textBoxEquipArrow2ID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipArrow2Idx = new System.Windows.Forms.TextBox();
-            this.textBoxEquipArrow1ID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipArrow1Idx = new System.Windows.Forms.TextBox();
-            this.labelEquipBolt2 = new System.Windows.Forms.Label();
-            this.labelEquipBolt1 = new System.Windows.Forms.Label();
-            this.textBoxEquipBolt2ID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipBolt2Idx = new System.Windows.Forms.TextBox();
-            this.textBoxEquipBolt1ID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipBolt1Idx = new System.Windows.Forms.TextBox();
-            this.labelEquipHelmet = new System.Windows.Forms.Label();
-            this.textBoxEquipHelmetID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipHelmetIdx = new System.Windows.Forms.TextBox();
-            this.labeEquipPants = new System.Windows.Forms.Label();
-            this.labeEquipGlove = new System.Windows.Forms.Label();
-            this.textBoxEquipPantsID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipPantsIdx = new System.Windows.Forms.TextBox();
-            this.textBoxEquipGloveID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipGloveIdx = new System.Windows.Forms.TextBox();
-            this.labeEquipHair = new System.Windows.Forms.Label();
-            this.textBoxEquipHairID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipHairIdx = new System.Windows.Forms.TextBox();
-            this.labeEquipRing2 = new System.Windows.Forms.Label();
-            this.labeEquipRing1 = new System.Windows.Forms.Label();
-            this.textBoxEquipRing2ID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipRing2Idx = new System.Windows.Forms.TextBox();
-            this.textBoxEquipRing1ID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipRing1Idx = new System.Windows.Forms.TextBox();
-            this.textBoxEquipChestID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipChestIdx = new System.Windows.Forms.TextBox();
-            this.labeEquipChest = new System.Windows.Forms.Label();
-            this.labeEquipItem2 = new System.Windows.Forms.Label();
-            this.labeEquipItem1 = new System.Windows.Forms.Label();
-            this.textBoxEquipItem2ID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipItem2Idx = new System.Windows.Forms.TextBox();
-            this.textBoxEquipItem1ID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipItem1Idx = new System.Windows.Forms.TextBox();
-            this.labeEquipItem4 = new System.Windows.Forms.Label();
-            this.labeEquipItem3 = new System.Windows.Forms.Label();
-            this.textBoxEquipItem4ID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipItem4Idx = new System.Windows.Forms.TextBox();
-            this.textBoxEquipItem3ID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipItem3Idx = new System.Windows.Forms.TextBox();
-            this.labeEquipItem5 = new System.Windows.Forms.Label();
-            this.textBoxEquipItem5ID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipItem5Idx = new System.Windows.Forms.TextBox();
-            this.labelStoredMagic = new System.Windows.Forms.Label();
-            this.textBoxStoredMagic = new System.Windows.Forms.TextBox();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -354,11 +354,11 @@
             this.groupBoxCheatEnemy.SuspendLayout();
             this.groupBoxCheatAll.SuspendLayout();
             this.groupBoxCheatPlayer.SuspendLayout();
+            this.tabPageInternals.SuspendLayout();
+            this.groupBoxEquipment.SuspendLayout();
             this.tabPageMisc.SuspendLayout();
             this.groupBoxEventFlags.SuspendLayout();
             this.tabPageHotkeys.SuspendLayout();
-            this.tabPageInternals.SuspendLayout();
-            this.groupBoxEquipment.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerCheckProcess
@@ -2514,6 +2514,746 @@
             this.checkBoxAllNoArrow.UseVisualStyleBackColor = true;
             this.checkBoxAllNoArrow.CheckedChanged += new System.EventHandler(this.checkBoxAllNoArrow_CheckedChanged);
             // 
+            // tabPageInternals
+            // 
+            this.tabPageInternals.Controls.Add(this.labelStoredMagic);
+            this.tabPageInternals.Controls.Add(this.textBoxStoredMagic);
+            this.tabPageInternals.Controls.Add(this.groupBoxEquipment);
+            this.tabPageInternals.Controls.Add(this.labelStoredItem);
+            this.tabPageInternals.Controls.Add(this.textBoxStoredItem);
+            this.tabPageInternals.Location = new System.Drawing.Point(4, 22);
+            this.tabPageInternals.Name = "tabPageInternals";
+            this.tabPageInternals.Size = new System.Drawing.Size(365, 515);
+            this.tabPageInternals.TabIndex = 9;
+            this.tabPageInternals.Text = "Internals";
+            this.tabPageInternals.UseVisualStyleBackColor = true;
+            // 
+            // labelStoredMagic
+            // 
+            this.labelStoredMagic.AutoSize = true;
+            this.labelStoredMagic.Location = new System.Drawing.Point(109, 337);
+            this.labelStoredMagic.Name = "labelStoredMagic";
+            this.labelStoredMagic.Size = new System.Drawing.Size(84, 13);
+            this.labelStoredMagic.TabIndex = 7;
+            this.labelStoredMagic.Text = "Stored Magic ID";
+            // 
+            // textBoxStoredMagic
+            // 
+            this.textBoxStoredMagic.Location = new System.Drawing.Point(109, 353);
+            this.textBoxStoredMagic.Name = "textBoxStoredMagic";
+            this.textBoxStoredMagic.ReadOnly = true;
+            this.textBoxStoredMagic.Size = new System.Drawing.Size(100, 20);
+            this.textBoxStoredMagic.TabIndex = 6;
+            // 
+            // groupBoxEquipment
+            // 
+            this.groupBoxEquipment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxEquipment.AutoSize = true;
+            this.groupBoxEquipment.Controls.Add(this.labeEquipItem5);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem5ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem5Idx);
+            this.groupBoxEquipment.Controls.Add(this.labeEquipItem4);
+            this.groupBoxEquipment.Controls.Add(this.labeEquipItem3);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem4ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem4Idx);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem3ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem3Idx);
+            this.groupBoxEquipment.Controls.Add(this.labeEquipItem2);
+            this.groupBoxEquipment.Controls.Add(this.labeEquipItem1);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem2ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem2Idx);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem1ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem1Idx);
+            this.groupBoxEquipment.Controls.Add(this.labeEquipRing2);
+            this.groupBoxEquipment.Controls.Add(this.labeEquipRing1);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRing2ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRing2Idx);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRing1ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRing1Idx);
+            this.groupBoxEquipment.Controls.Add(this.labeEquipHair);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipHairID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipHairIdx);
+            this.groupBoxEquipment.Controls.Add(this.labeEquipPants);
+            this.groupBoxEquipment.Controls.Add(this.labeEquipGlove);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipPantsID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipPantsIdx);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipGloveID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipGloveIdx);
+            this.groupBoxEquipment.Controls.Add(this.labeEquipChest);
+            this.groupBoxEquipment.Controls.Add(this.labelEquipHelmet);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipChestID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipChestIdx);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipHelmetID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipHelmetIdx);
+            this.groupBoxEquipment.Controls.Add(this.labelEquipBolt2);
+            this.groupBoxEquipment.Controls.Add(this.labelEquipBolt1);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipBolt2ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipBolt2Idx);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipBolt1ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipBolt1Idx);
+            this.groupBoxEquipment.Controls.Add(this.labelEquipArrow2);
+            this.groupBoxEquipment.Controls.Add(this.labelEquipArrow1);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipArrow2ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipArrow2Idx);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipArrow1ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipArrow1Idx);
+            this.groupBoxEquipment.Controls.Add(this.labelEquipLeft2);
+            this.groupBoxEquipment.Controls.Add(this.labelEquipLeft1);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipLeft2ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipLeft2Idx);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipLeft1ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipLeft1Idx);
+            this.groupBoxEquipment.Controls.Add(this.labelEquipRight2);
+            this.groupBoxEquipment.Controls.Add(this.labelEquipID2);
+            this.groupBoxEquipment.Controls.Add(this.labelEquipIndex2);
+            this.groupBoxEquipment.Controls.Add(this.labelEquipRight1);
+            this.groupBoxEquipment.Controls.Add(this.labelEquipID1);
+            this.groupBoxEquipment.Controls.Add(this.labelEquipIndex1);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRight2ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRight2Idx);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRight1ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRight1Idx);
+            this.groupBoxEquipment.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxEquipment.Name = "groupBoxEquipment";
+            this.groupBoxEquipment.Size = new System.Drawing.Size(359, 331);
+            this.groupBoxEquipment.TabIndex = 5;
+            this.groupBoxEquipment.TabStop = false;
+            this.groupBoxEquipment.Text = "Equipment";
+            // 
+            // labeEquipItem5
+            // 
+            this.labeEquipItem5.AutoSize = true;
+            this.labeEquipItem5.Location = new System.Drawing.Point(40, 295);
+            this.labeEquipItem5.Name = "labeEquipItem5";
+            this.labeEquipItem5.Size = new System.Drawing.Size(36, 13);
+            this.labeEquipItem5.TabIndex = 72;
+            this.labeEquipItem5.Text = "Item 5";
+            // 
+            // textBoxEquipItem5ID
+            // 
+            this.textBoxEquipItem5ID.Location = new System.Drawing.Point(138, 292);
+            this.textBoxEquipItem5ID.Name = "textBoxEquipItem5ID";
+            this.textBoxEquipItem5ID.ReadOnly = true;
+            this.textBoxEquipItem5ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipItem5ID.TabIndex = 69;
+            this.textBoxEquipItem5ID.Text = "888888";
+            this.textBoxEquipItem5ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipItem5Idx
+            // 
+            this.textBoxEquipItem5Idx.Location = new System.Drawing.Point(82, 292);
+            this.textBoxEquipItem5Idx.Name = "textBoxEquipItem5Idx";
+            this.textBoxEquipItem5Idx.ReadOnly = true;
+            this.textBoxEquipItem5Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipItem5Idx.TabIndex = 68;
+            this.textBoxEquipItem5Idx.Text = "888888";
+            this.textBoxEquipItem5Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labeEquipItem4
+            // 
+            this.labeEquipItem4.AutoSize = true;
+            this.labeEquipItem4.Location = new System.Drawing.Point(228, 269);
+            this.labeEquipItem4.Name = "labeEquipItem4";
+            this.labeEquipItem4.Size = new System.Drawing.Size(13, 13);
+            this.labeEquipItem4.TabIndex = 67;
+            this.labeEquipItem4.Text = "4";
+            // 
+            // labeEquipItem3
+            // 
+            this.labeEquipItem3.AutoSize = true;
+            this.labeEquipItem3.Location = new System.Drawing.Point(40, 269);
+            this.labeEquipItem3.Name = "labeEquipItem3";
+            this.labeEquipItem3.Size = new System.Drawing.Size(36, 13);
+            this.labeEquipItem3.TabIndex = 66;
+            this.labeEquipItem3.Text = "Item 3";
+            // 
+            // textBoxEquipItem4ID
+            // 
+            this.textBoxEquipItem4ID.Location = new System.Drawing.Point(303, 266);
+            this.textBoxEquipItem4ID.Name = "textBoxEquipItem4ID";
+            this.textBoxEquipItem4ID.ReadOnly = true;
+            this.textBoxEquipItem4ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipItem4ID.TabIndex = 65;
+            this.textBoxEquipItem4ID.Text = "888888";
+            this.textBoxEquipItem4ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipItem4Idx
+            // 
+            this.textBoxEquipItem4Idx.Location = new System.Drawing.Point(247, 266);
+            this.textBoxEquipItem4Idx.Name = "textBoxEquipItem4Idx";
+            this.textBoxEquipItem4Idx.ReadOnly = true;
+            this.textBoxEquipItem4Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipItem4Idx.TabIndex = 64;
+            this.textBoxEquipItem4Idx.Text = "888888";
+            this.textBoxEquipItem4Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipItem3ID
+            // 
+            this.textBoxEquipItem3ID.Location = new System.Drawing.Point(138, 266);
+            this.textBoxEquipItem3ID.Name = "textBoxEquipItem3ID";
+            this.textBoxEquipItem3ID.ReadOnly = true;
+            this.textBoxEquipItem3ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipItem3ID.TabIndex = 63;
+            this.textBoxEquipItem3ID.Text = "888888";
+            this.textBoxEquipItem3ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipItem3Idx
+            // 
+            this.textBoxEquipItem3Idx.Location = new System.Drawing.Point(82, 266);
+            this.textBoxEquipItem3Idx.Name = "textBoxEquipItem3Idx";
+            this.textBoxEquipItem3Idx.ReadOnly = true;
+            this.textBoxEquipItem3Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipItem3Idx.TabIndex = 62;
+            this.textBoxEquipItem3Idx.Text = "888888";
+            this.textBoxEquipItem3Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labeEquipItem2
+            // 
+            this.labeEquipItem2.AutoSize = true;
+            this.labeEquipItem2.Location = new System.Drawing.Point(228, 243);
+            this.labeEquipItem2.Name = "labeEquipItem2";
+            this.labeEquipItem2.Size = new System.Drawing.Size(13, 13);
+            this.labeEquipItem2.TabIndex = 61;
+            this.labeEquipItem2.Text = "2";
+            // 
+            // labeEquipItem1
+            // 
+            this.labeEquipItem1.AutoSize = true;
+            this.labeEquipItem1.Location = new System.Drawing.Point(40, 243);
+            this.labeEquipItem1.Name = "labeEquipItem1";
+            this.labeEquipItem1.Size = new System.Drawing.Size(36, 13);
+            this.labeEquipItem1.TabIndex = 60;
+            this.labeEquipItem1.Text = "Item 1";
+            // 
+            // textBoxEquipItem2ID
+            // 
+            this.textBoxEquipItem2ID.Location = new System.Drawing.Point(303, 240);
+            this.textBoxEquipItem2ID.Name = "textBoxEquipItem2ID";
+            this.textBoxEquipItem2ID.ReadOnly = true;
+            this.textBoxEquipItem2ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipItem2ID.TabIndex = 59;
+            this.textBoxEquipItem2ID.Text = "888888";
+            this.textBoxEquipItem2ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipItem2Idx
+            // 
+            this.textBoxEquipItem2Idx.Location = new System.Drawing.Point(247, 240);
+            this.textBoxEquipItem2Idx.Name = "textBoxEquipItem2Idx";
+            this.textBoxEquipItem2Idx.ReadOnly = true;
+            this.textBoxEquipItem2Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipItem2Idx.TabIndex = 58;
+            this.textBoxEquipItem2Idx.Text = "888888";
+            this.textBoxEquipItem2Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipItem1ID
+            // 
+            this.textBoxEquipItem1ID.Location = new System.Drawing.Point(138, 240);
+            this.textBoxEquipItem1ID.Name = "textBoxEquipItem1ID";
+            this.textBoxEquipItem1ID.ReadOnly = true;
+            this.textBoxEquipItem1ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipItem1ID.TabIndex = 57;
+            this.textBoxEquipItem1ID.Text = "888888";
+            this.textBoxEquipItem1ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipItem1Idx
+            // 
+            this.textBoxEquipItem1Idx.Location = new System.Drawing.Point(82, 240);
+            this.textBoxEquipItem1Idx.Name = "textBoxEquipItem1Idx";
+            this.textBoxEquipItem1Idx.ReadOnly = true;
+            this.textBoxEquipItem1Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipItem1Idx.TabIndex = 56;
+            this.textBoxEquipItem1Idx.Text = "888888";
+            this.textBoxEquipItem1Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labeEquipRing2
+            // 
+            this.labeEquipRing2.AutoSize = true;
+            this.labeEquipRing2.Location = new System.Drawing.Point(228, 217);
+            this.labeEquipRing2.Name = "labeEquipRing2";
+            this.labeEquipRing2.Size = new System.Drawing.Size(13, 13);
+            this.labeEquipRing2.TabIndex = 55;
+            this.labeEquipRing2.Text = "2";
+            // 
+            // labeEquipRing1
+            // 
+            this.labeEquipRing1.AutoSize = true;
+            this.labeEquipRing1.Location = new System.Drawing.Point(38, 217);
+            this.labeEquipRing1.Name = "labeEquipRing1";
+            this.labeEquipRing1.Size = new System.Drawing.Size(38, 13);
+            this.labeEquipRing1.TabIndex = 54;
+            this.labeEquipRing1.Text = "Ring 1";
+            // 
+            // textBoxEquipRing2ID
+            // 
+            this.textBoxEquipRing2ID.Location = new System.Drawing.Point(303, 214);
+            this.textBoxEquipRing2ID.Name = "textBoxEquipRing2ID";
+            this.textBoxEquipRing2ID.ReadOnly = true;
+            this.textBoxEquipRing2ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipRing2ID.TabIndex = 53;
+            this.textBoxEquipRing2ID.Text = "888888";
+            this.textBoxEquipRing2ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipRing2Idx
+            // 
+            this.textBoxEquipRing2Idx.Location = new System.Drawing.Point(247, 214);
+            this.textBoxEquipRing2Idx.Name = "textBoxEquipRing2Idx";
+            this.textBoxEquipRing2Idx.ReadOnly = true;
+            this.textBoxEquipRing2Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipRing2Idx.TabIndex = 52;
+            this.textBoxEquipRing2Idx.Text = "888888";
+            this.textBoxEquipRing2Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipRing1ID
+            // 
+            this.textBoxEquipRing1ID.Location = new System.Drawing.Point(138, 214);
+            this.textBoxEquipRing1ID.Name = "textBoxEquipRing1ID";
+            this.textBoxEquipRing1ID.ReadOnly = true;
+            this.textBoxEquipRing1ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipRing1ID.TabIndex = 51;
+            this.textBoxEquipRing1ID.Text = "888888";
+            this.textBoxEquipRing1ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipRing1Idx
+            // 
+            this.textBoxEquipRing1Idx.Location = new System.Drawing.Point(82, 214);
+            this.textBoxEquipRing1Idx.Name = "textBoxEquipRing1Idx";
+            this.textBoxEquipRing1Idx.ReadOnly = true;
+            this.textBoxEquipRing1Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipRing1Idx.TabIndex = 50;
+            this.textBoxEquipRing1Idx.Text = "888888";
+            this.textBoxEquipRing1Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labeEquipHair
+            // 
+            this.labeEquipHair.AutoSize = true;
+            this.labeEquipHair.Location = new System.Drawing.Point(50, 191);
+            this.labeEquipHair.Name = "labeEquipHair";
+            this.labeEquipHair.Size = new System.Drawing.Size(26, 13);
+            this.labeEquipHair.TabIndex = 48;
+            this.labeEquipHair.Text = "Hair";
+            // 
+            // textBoxEquipHairID
+            // 
+            this.textBoxEquipHairID.Location = new System.Drawing.Point(138, 188);
+            this.textBoxEquipHairID.Name = "textBoxEquipHairID";
+            this.textBoxEquipHairID.ReadOnly = true;
+            this.textBoxEquipHairID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipHairID.TabIndex = 45;
+            this.textBoxEquipHairID.Text = "888888";
+            this.textBoxEquipHairID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipHairIdx
+            // 
+            this.textBoxEquipHairIdx.Location = new System.Drawing.Point(82, 188);
+            this.textBoxEquipHairIdx.Name = "textBoxEquipHairIdx";
+            this.textBoxEquipHairIdx.ReadOnly = true;
+            this.textBoxEquipHairIdx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipHairIdx.TabIndex = 44;
+            this.textBoxEquipHairIdx.Text = "888888";
+            this.textBoxEquipHairIdx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labeEquipPants
+            // 
+            this.labeEquipPants.AutoSize = true;
+            this.labeEquipPants.Location = new System.Drawing.Point(228, 165);
+            this.labeEquipPants.Name = "labeEquipPants";
+            this.labeEquipPants.Size = new System.Drawing.Size(13, 13);
+            this.labeEquipPants.TabIndex = 43;
+            this.labeEquipPants.Text = "4";
+            // 
+            // labeEquipGlove
+            // 
+            this.labeEquipGlove.AutoSize = true;
+            this.labeEquipGlove.Location = new System.Drawing.Point(33, 165);
+            this.labeEquipGlove.Name = "labeEquipGlove";
+            this.labeEquipGlove.Size = new System.Drawing.Size(43, 13);
+            this.labeEquipGlove.TabIndex = 42;
+            this.labeEquipGlove.Text = "Armor 3";
+            // 
+            // textBoxEquipPantsID
+            // 
+            this.textBoxEquipPantsID.Location = new System.Drawing.Point(303, 162);
+            this.textBoxEquipPantsID.Name = "textBoxEquipPantsID";
+            this.textBoxEquipPantsID.ReadOnly = true;
+            this.textBoxEquipPantsID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipPantsID.TabIndex = 41;
+            this.textBoxEquipPantsID.Text = "888888";
+            this.textBoxEquipPantsID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipPantsIdx
+            // 
+            this.textBoxEquipPantsIdx.Location = new System.Drawing.Point(247, 162);
+            this.textBoxEquipPantsIdx.Name = "textBoxEquipPantsIdx";
+            this.textBoxEquipPantsIdx.ReadOnly = true;
+            this.textBoxEquipPantsIdx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipPantsIdx.TabIndex = 40;
+            this.textBoxEquipPantsIdx.Text = "888888";
+            this.textBoxEquipPantsIdx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipGloveID
+            // 
+            this.textBoxEquipGloveID.Location = new System.Drawing.Point(138, 162);
+            this.textBoxEquipGloveID.Name = "textBoxEquipGloveID";
+            this.textBoxEquipGloveID.ReadOnly = true;
+            this.textBoxEquipGloveID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipGloveID.TabIndex = 39;
+            this.textBoxEquipGloveID.Text = "888888";
+            this.textBoxEquipGloveID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipGloveIdx
+            // 
+            this.textBoxEquipGloveIdx.Location = new System.Drawing.Point(82, 162);
+            this.textBoxEquipGloveIdx.Name = "textBoxEquipGloveIdx";
+            this.textBoxEquipGloveIdx.ReadOnly = true;
+            this.textBoxEquipGloveIdx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipGloveIdx.TabIndex = 38;
+            this.textBoxEquipGloveIdx.Text = "888888";
+            this.textBoxEquipGloveIdx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labeEquipChest
+            // 
+            this.labeEquipChest.AutoSize = true;
+            this.labeEquipChest.Location = new System.Drawing.Point(228, 139);
+            this.labeEquipChest.Name = "labeEquipChest";
+            this.labeEquipChest.Size = new System.Drawing.Size(13, 13);
+            this.labeEquipChest.TabIndex = 37;
+            this.labeEquipChest.Text = "2";
+            // 
+            // labelEquipHelmet
+            // 
+            this.labelEquipHelmet.AutoSize = true;
+            this.labelEquipHelmet.Location = new System.Drawing.Point(33, 139);
+            this.labelEquipHelmet.Name = "labelEquipHelmet";
+            this.labelEquipHelmet.Size = new System.Drawing.Size(43, 13);
+            this.labelEquipHelmet.TabIndex = 36;
+            this.labelEquipHelmet.Text = "Armor 1";
+            // 
+            // textBoxEquipChestID
+            // 
+            this.textBoxEquipChestID.Location = new System.Drawing.Point(303, 136);
+            this.textBoxEquipChestID.Name = "textBoxEquipChestID";
+            this.textBoxEquipChestID.ReadOnly = true;
+            this.textBoxEquipChestID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipChestID.TabIndex = 35;
+            this.textBoxEquipChestID.Text = "888888";
+            this.textBoxEquipChestID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipChestIdx
+            // 
+            this.textBoxEquipChestIdx.Location = new System.Drawing.Point(247, 136);
+            this.textBoxEquipChestIdx.Name = "textBoxEquipChestIdx";
+            this.textBoxEquipChestIdx.ReadOnly = true;
+            this.textBoxEquipChestIdx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipChestIdx.TabIndex = 34;
+            this.textBoxEquipChestIdx.Text = "888888";
+            this.textBoxEquipChestIdx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipHelmetID
+            // 
+            this.textBoxEquipHelmetID.Location = new System.Drawing.Point(138, 136);
+            this.textBoxEquipHelmetID.Name = "textBoxEquipHelmetID";
+            this.textBoxEquipHelmetID.ReadOnly = true;
+            this.textBoxEquipHelmetID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipHelmetID.TabIndex = 33;
+            this.textBoxEquipHelmetID.Text = "888888";
+            this.textBoxEquipHelmetID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipHelmetIdx
+            // 
+            this.textBoxEquipHelmetIdx.Location = new System.Drawing.Point(82, 136);
+            this.textBoxEquipHelmetIdx.Name = "textBoxEquipHelmetIdx";
+            this.textBoxEquipHelmetIdx.ReadOnly = true;
+            this.textBoxEquipHelmetIdx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipHelmetIdx.TabIndex = 32;
+            this.textBoxEquipHelmetIdx.Text = "888888";
+            this.textBoxEquipHelmetIdx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelEquipBolt2
+            // 
+            this.labelEquipBolt2.AutoSize = true;
+            this.labelEquipBolt2.Location = new System.Drawing.Point(228, 113);
+            this.labelEquipBolt2.Name = "labelEquipBolt2";
+            this.labelEquipBolt2.Size = new System.Drawing.Size(13, 13);
+            this.labelEquipBolt2.TabIndex = 31;
+            this.labelEquipBolt2.Text = "2";
+            // 
+            // labelEquipBolt1
+            // 
+            this.labelEquipBolt1.AutoSize = true;
+            this.labelEquipBolt1.Location = new System.Drawing.Point(42, 113);
+            this.labelEquipBolt1.Name = "labelEquipBolt1";
+            this.labelEquipBolt1.Size = new System.Drawing.Size(34, 13);
+            this.labelEquipBolt1.TabIndex = 30;
+            this.labelEquipBolt1.Text = "Bolt 1";
+            // 
+            // textBoxEquipBolt2ID
+            // 
+            this.textBoxEquipBolt2ID.Location = new System.Drawing.Point(303, 110);
+            this.textBoxEquipBolt2ID.Name = "textBoxEquipBolt2ID";
+            this.textBoxEquipBolt2ID.ReadOnly = true;
+            this.textBoxEquipBolt2ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipBolt2ID.TabIndex = 29;
+            this.textBoxEquipBolt2ID.Text = "888888";
+            this.textBoxEquipBolt2ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipBolt2Idx
+            // 
+            this.textBoxEquipBolt2Idx.Location = new System.Drawing.Point(247, 110);
+            this.textBoxEquipBolt2Idx.Name = "textBoxEquipBolt2Idx";
+            this.textBoxEquipBolt2Idx.ReadOnly = true;
+            this.textBoxEquipBolt2Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipBolt2Idx.TabIndex = 28;
+            this.textBoxEquipBolt2Idx.Text = "888888";
+            this.textBoxEquipBolt2Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipBolt1ID
+            // 
+            this.textBoxEquipBolt1ID.Location = new System.Drawing.Point(138, 110);
+            this.textBoxEquipBolt1ID.Name = "textBoxEquipBolt1ID";
+            this.textBoxEquipBolt1ID.ReadOnly = true;
+            this.textBoxEquipBolt1ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipBolt1ID.TabIndex = 27;
+            this.textBoxEquipBolt1ID.Text = "888888";
+            this.textBoxEquipBolt1ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipBolt1Idx
+            // 
+            this.textBoxEquipBolt1Idx.Location = new System.Drawing.Point(82, 110);
+            this.textBoxEquipBolt1Idx.Name = "textBoxEquipBolt1Idx";
+            this.textBoxEquipBolt1Idx.ReadOnly = true;
+            this.textBoxEquipBolt1Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipBolt1Idx.TabIndex = 26;
+            this.textBoxEquipBolt1Idx.Text = "888888";
+            this.textBoxEquipBolt1Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelEquipArrow2
+            // 
+            this.labelEquipArrow2.AutoSize = true;
+            this.labelEquipArrow2.Location = new System.Drawing.Point(228, 87);
+            this.labelEquipArrow2.Name = "labelEquipArrow2";
+            this.labelEquipArrow2.Size = new System.Drawing.Size(13, 13);
+            this.labelEquipArrow2.TabIndex = 25;
+            this.labelEquipArrow2.Text = "2";
+            // 
+            // labelEquipArrow1
+            // 
+            this.labelEquipArrow1.AutoSize = true;
+            this.labelEquipArrow1.Location = new System.Drawing.Point(33, 87);
+            this.labelEquipArrow1.Name = "labelEquipArrow1";
+            this.labelEquipArrow1.Size = new System.Drawing.Size(43, 13);
+            this.labelEquipArrow1.TabIndex = 24;
+            this.labelEquipArrow1.Text = "Arrow 1";
+            // 
+            // textBoxEquipArrow2ID
+            // 
+            this.textBoxEquipArrow2ID.Location = new System.Drawing.Point(303, 84);
+            this.textBoxEquipArrow2ID.Name = "textBoxEquipArrow2ID";
+            this.textBoxEquipArrow2ID.ReadOnly = true;
+            this.textBoxEquipArrow2ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipArrow2ID.TabIndex = 23;
+            this.textBoxEquipArrow2ID.Text = "888888";
+            this.textBoxEquipArrow2ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipArrow2Idx
+            // 
+            this.textBoxEquipArrow2Idx.Location = new System.Drawing.Point(247, 84);
+            this.textBoxEquipArrow2Idx.Name = "textBoxEquipArrow2Idx";
+            this.textBoxEquipArrow2Idx.ReadOnly = true;
+            this.textBoxEquipArrow2Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipArrow2Idx.TabIndex = 22;
+            this.textBoxEquipArrow2Idx.Text = "888888";
+            this.textBoxEquipArrow2Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipArrow1ID
+            // 
+            this.textBoxEquipArrow1ID.Location = new System.Drawing.Point(138, 84);
+            this.textBoxEquipArrow1ID.Name = "textBoxEquipArrow1ID";
+            this.textBoxEquipArrow1ID.ReadOnly = true;
+            this.textBoxEquipArrow1ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipArrow1ID.TabIndex = 21;
+            this.textBoxEquipArrow1ID.Text = "888888";
+            this.textBoxEquipArrow1ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipArrow1Idx
+            // 
+            this.textBoxEquipArrow1Idx.Location = new System.Drawing.Point(82, 84);
+            this.textBoxEquipArrow1Idx.Name = "textBoxEquipArrow1Idx";
+            this.textBoxEquipArrow1Idx.ReadOnly = true;
+            this.textBoxEquipArrow1Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipArrow1Idx.TabIndex = 20;
+            this.textBoxEquipArrow1Idx.Text = "888888";
+            this.textBoxEquipArrow1Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelEquipLeft2
+            // 
+            this.labelEquipLeft2.AutoSize = true;
+            this.labelEquipLeft2.Location = new System.Drawing.Point(228, 61);
+            this.labelEquipLeft2.Name = "labelEquipLeft2";
+            this.labelEquipLeft2.Size = new System.Drawing.Size(13, 13);
+            this.labelEquipLeft2.TabIndex = 19;
+            this.labelEquipLeft2.Text = "2";
+            // 
+            // labelEquipLeft1
+            // 
+            this.labelEquipLeft1.AutoSize = true;
+            this.labelEquipLeft1.Location = new System.Drawing.Point(13, 61);
+            this.labelEquipLeft1.Name = "labelEquipLeft1";
+            this.labelEquipLeft1.Size = new System.Drawing.Size(63, 13);
+            this.labelEquipLeft1.TabIndex = 16;
+            this.labelEquipLeft1.Text = "Left Hand 1";
+            // 
+            // textBoxEquipLeft2ID
+            // 
+            this.textBoxEquipLeft2ID.Location = new System.Drawing.Point(303, 58);
+            this.textBoxEquipLeft2ID.Name = "textBoxEquipLeft2ID";
+            this.textBoxEquipLeft2ID.ReadOnly = true;
+            this.textBoxEquipLeft2ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipLeft2ID.TabIndex = 13;
+            this.textBoxEquipLeft2ID.Text = "888888";
+            this.textBoxEquipLeft2ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipLeft2Idx
+            // 
+            this.textBoxEquipLeft2Idx.Location = new System.Drawing.Point(247, 58);
+            this.textBoxEquipLeft2Idx.Name = "textBoxEquipLeft2Idx";
+            this.textBoxEquipLeft2Idx.ReadOnly = true;
+            this.textBoxEquipLeft2Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipLeft2Idx.TabIndex = 12;
+            this.textBoxEquipLeft2Idx.Text = "888888";
+            this.textBoxEquipLeft2Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipLeft1ID
+            // 
+            this.textBoxEquipLeft1ID.Location = new System.Drawing.Point(138, 58);
+            this.textBoxEquipLeft1ID.Name = "textBoxEquipLeft1ID";
+            this.textBoxEquipLeft1ID.ReadOnly = true;
+            this.textBoxEquipLeft1ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipLeft1ID.TabIndex = 11;
+            this.textBoxEquipLeft1ID.Text = "888888";
+            this.textBoxEquipLeft1ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipLeft1Idx
+            // 
+            this.textBoxEquipLeft1Idx.Location = new System.Drawing.Point(82, 58);
+            this.textBoxEquipLeft1Idx.Name = "textBoxEquipLeft1Idx";
+            this.textBoxEquipLeft1Idx.ReadOnly = true;
+            this.textBoxEquipLeft1Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipLeft1Idx.TabIndex = 10;
+            this.textBoxEquipLeft1Idx.Text = "888888";
+            this.textBoxEquipLeft1Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelEquipRight2
+            // 
+            this.labelEquipRight2.AutoSize = true;
+            this.labelEquipRight2.Location = new System.Drawing.Point(228, 35);
+            this.labelEquipRight2.Name = "labelEquipRight2";
+            this.labelEquipRight2.Size = new System.Drawing.Size(13, 13);
+            this.labelEquipRight2.TabIndex = 9;
+            this.labelEquipRight2.Text = "2";
+            // 
+            // labelEquipID2
+            // 
+            this.labelEquipID2.AutoSize = true;
+            this.labelEquipID2.Location = new System.Drawing.Point(335, 16);
+            this.labelEquipID2.Name = "labelEquipID2";
+            this.labelEquipID2.Size = new System.Drawing.Size(18, 13);
+            this.labelEquipID2.TabIndex = 8;
+            this.labelEquipID2.Text = "ID";
+            // 
+            // labelEquipIndex2
+            // 
+            this.labelEquipIndex2.AutoSize = true;
+            this.labelEquipIndex2.Location = new System.Drawing.Point(264, 16);
+            this.labelEquipIndex2.Name = "labelEquipIndex2";
+            this.labelEquipIndex2.Size = new System.Drawing.Size(33, 13);
+            this.labelEquipIndex2.TabIndex = 7;
+            this.labelEquipIndex2.Text = "Index";
+            // 
+            // labelEquipRight1
+            // 
+            this.labelEquipRight1.AutoSize = true;
+            this.labelEquipRight1.Location = new System.Drawing.Point(6, 35);
+            this.labelEquipRight1.Name = "labelEquipRight1";
+            this.labelEquipRight1.Size = new System.Drawing.Size(70, 13);
+            this.labelEquipRight1.TabIndex = 6;
+            this.labelEquipRight1.Text = "Right Hand 1";
+            // 
+            // labelEquipID1
+            // 
+            this.labelEquipID1.AutoSize = true;
+            this.labelEquipID1.Location = new System.Drawing.Point(170, 16);
+            this.labelEquipID1.Name = "labelEquipID1";
+            this.labelEquipID1.Size = new System.Drawing.Size(18, 13);
+            this.labelEquipID1.TabIndex = 5;
+            this.labelEquipID1.Text = "ID";
+            // 
+            // labelEquipIndex1
+            // 
+            this.labelEquipIndex1.AutoSize = true;
+            this.labelEquipIndex1.Location = new System.Drawing.Point(99, 16);
+            this.labelEquipIndex1.Name = "labelEquipIndex1";
+            this.labelEquipIndex1.Size = new System.Drawing.Size(33, 13);
+            this.labelEquipIndex1.TabIndex = 4;
+            this.labelEquipIndex1.Text = "Index";
+            // 
+            // textBoxEquipRight2ID
+            // 
+            this.textBoxEquipRight2ID.Location = new System.Drawing.Point(303, 32);
+            this.textBoxEquipRight2ID.Name = "textBoxEquipRight2ID";
+            this.textBoxEquipRight2ID.ReadOnly = true;
+            this.textBoxEquipRight2ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipRight2ID.TabIndex = 3;
+            this.textBoxEquipRight2ID.Text = "888888";
+            this.textBoxEquipRight2ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipRight2Idx
+            // 
+            this.textBoxEquipRight2Idx.Location = new System.Drawing.Point(247, 32);
+            this.textBoxEquipRight2Idx.Name = "textBoxEquipRight2Idx";
+            this.textBoxEquipRight2Idx.ReadOnly = true;
+            this.textBoxEquipRight2Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipRight2Idx.TabIndex = 2;
+            this.textBoxEquipRight2Idx.Text = "888888";
+            this.textBoxEquipRight2Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipRight1ID
+            // 
+            this.textBoxEquipRight1ID.Location = new System.Drawing.Point(138, 32);
+            this.textBoxEquipRight1ID.Name = "textBoxEquipRight1ID";
+            this.textBoxEquipRight1ID.ReadOnly = true;
+            this.textBoxEquipRight1ID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipRight1ID.TabIndex = 1;
+            this.textBoxEquipRight1ID.Text = "888888";
+            this.textBoxEquipRight1ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxEquipRight1Idx
+            // 
+            this.textBoxEquipRight1Idx.Location = new System.Drawing.Point(82, 32);
+            this.textBoxEquipRight1Idx.Name = "textBoxEquipRight1Idx";
+            this.textBoxEquipRight1Idx.ReadOnly = true;
+            this.textBoxEquipRight1Idx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipRight1Idx.TabIndex = 0;
+            this.textBoxEquipRight1Idx.Text = "888888";
+            this.textBoxEquipRight1Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelStoredItem
+            // 
+            this.labelStoredItem.AutoSize = true;
+            this.labelStoredItem.Location = new System.Drawing.Point(3, 337);
+            this.labelStoredItem.Name = "labelStoredItem";
+            this.labelStoredItem.Size = new System.Drawing.Size(75, 13);
+            this.labelStoredItem.TabIndex = 4;
+            this.labelStoredItem.Text = "Stored Item ID";
+            // 
+            // textBoxStoredItem
+            // 
+            this.textBoxStoredItem.Location = new System.Drawing.Point(3, 353);
+            this.textBoxStoredItem.Name = "textBoxStoredItem";
+            this.textBoxStoredItem.ReadOnly = true;
+            this.textBoxStoredItem.Size = new System.Drawing.Size(100, 20);
+            this.textBoxStoredItem.TabIndex = 3;
+            // 
             // tabPageMisc
             // 
             this.tabPageMisc.Controls.Add(this.groupBoxEventFlags);
@@ -2949,746 +3689,6 @@
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
             // 
-            // tabPageInternals
-            // 
-            this.tabPageInternals.Controls.Add(this.labelStoredMagic);
-            this.tabPageInternals.Controls.Add(this.textBoxStoredMagic);
-            this.tabPageInternals.Controls.Add(this.groupBoxEquipment);
-            this.tabPageInternals.Controls.Add(this.labelStoredItem);
-            this.tabPageInternals.Controls.Add(this.textBoxStoredItem);
-            this.tabPageInternals.Location = new System.Drawing.Point(4, 22);
-            this.tabPageInternals.Name = "tabPageInternals";
-            this.tabPageInternals.Size = new System.Drawing.Size(365, 515);
-            this.tabPageInternals.TabIndex = 9;
-            this.tabPageInternals.Text = "Internals";
-            this.tabPageInternals.UseVisualStyleBackColor = true;
-            // 
-            // labelStoredItem
-            // 
-            this.labelStoredItem.AutoSize = true;
-            this.labelStoredItem.Location = new System.Drawing.Point(3, 337);
-            this.labelStoredItem.Name = "labelStoredItem";
-            this.labelStoredItem.Size = new System.Drawing.Size(75, 13);
-            this.labelStoredItem.TabIndex = 4;
-            this.labelStoredItem.Text = "Stored Item ID";
-            // 
-            // textBoxStoredItem
-            // 
-            this.textBoxStoredItem.Location = new System.Drawing.Point(3, 353);
-            this.textBoxStoredItem.Name = "textBoxStoredItem";
-            this.textBoxStoredItem.ReadOnly = true;
-            this.textBoxStoredItem.Size = new System.Drawing.Size(100, 20);
-            this.textBoxStoredItem.TabIndex = 3;
-            // 
-            // groupBoxEquipment
-            // 
-            this.groupBoxEquipment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxEquipment.AutoSize = true;
-            this.groupBoxEquipment.Controls.Add(this.labeEquipItem5);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem5ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem5Idx);
-            this.groupBoxEquipment.Controls.Add(this.labeEquipItem4);
-            this.groupBoxEquipment.Controls.Add(this.labeEquipItem3);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem4ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem4Idx);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem3ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem3Idx);
-            this.groupBoxEquipment.Controls.Add(this.labeEquipItem2);
-            this.groupBoxEquipment.Controls.Add(this.labeEquipItem1);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem2ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem2Idx);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem1ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem1Idx);
-            this.groupBoxEquipment.Controls.Add(this.labeEquipRing2);
-            this.groupBoxEquipment.Controls.Add(this.labeEquipRing1);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRing2ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRing2Idx);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRing1ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRing1Idx);
-            this.groupBoxEquipment.Controls.Add(this.labeEquipHair);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipHairID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipHairIdx);
-            this.groupBoxEquipment.Controls.Add(this.labeEquipPants);
-            this.groupBoxEquipment.Controls.Add(this.labeEquipGlove);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipPantsID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipPantsIdx);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipGloveID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipGloveIdx);
-            this.groupBoxEquipment.Controls.Add(this.labeEquipChest);
-            this.groupBoxEquipment.Controls.Add(this.labelEquipHelmet);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipChestID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipChestIdx);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipHelmetID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipHelmetIdx);
-            this.groupBoxEquipment.Controls.Add(this.labelEquipBolt2);
-            this.groupBoxEquipment.Controls.Add(this.labelEquipBolt1);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipBolt2ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipBolt2Idx);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipBolt1ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipBolt1Idx);
-            this.groupBoxEquipment.Controls.Add(this.labelEquipArrow2);
-            this.groupBoxEquipment.Controls.Add(this.labelEquipArrow1);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipArrow2ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipArrow2Idx);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipArrow1ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipArrow1Idx);
-            this.groupBoxEquipment.Controls.Add(this.labelEquipLeft2);
-            this.groupBoxEquipment.Controls.Add(this.labelEquipLeft1);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipLeft2ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipLeft2Idx);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipLeft1ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipLeft1Idx);
-            this.groupBoxEquipment.Controls.Add(this.labelEquipRight2);
-            this.groupBoxEquipment.Controls.Add(this.labelEquipID2);
-            this.groupBoxEquipment.Controls.Add(this.labelEquipIndex2);
-            this.groupBoxEquipment.Controls.Add(this.labelEquipRight1);
-            this.groupBoxEquipment.Controls.Add(this.labelEquipID1);
-            this.groupBoxEquipment.Controls.Add(this.labelEquipIndex1);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRight2ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRight2Idx);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRight1ID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipRight1Idx);
-            this.groupBoxEquipment.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxEquipment.Name = "groupBoxEquipment";
-            this.groupBoxEquipment.Size = new System.Drawing.Size(359, 331);
-            this.groupBoxEquipment.TabIndex = 5;
-            this.groupBoxEquipment.TabStop = false;
-            this.groupBoxEquipment.Text = "Equipment";
-            // 
-            // textBoxEquipRight1Idx
-            // 
-            this.textBoxEquipRight1Idx.Location = new System.Drawing.Point(82, 32);
-            this.textBoxEquipRight1Idx.Name = "textBoxEquipRight1Idx";
-            this.textBoxEquipRight1Idx.ReadOnly = true;
-            this.textBoxEquipRight1Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipRight1Idx.TabIndex = 0;
-            this.textBoxEquipRight1Idx.Text = "888888";
-            this.textBoxEquipRight1Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipRight1ID
-            // 
-            this.textBoxEquipRight1ID.Location = new System.Drawing.Point(138, 32);
-            this.textBoxEquipRight1ID.Name = "textBoxEquipRight1ID";
-            this.textBoxEquipRight1ID.ReadOnly = true;
-            this.textBoxEquipRight1ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipRight1ID.TabIndex = 1;
-            this.textBoxEquipRight1ID.Text = "888888";
-            this.textBoxEquipRight1ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipRight2Idx
-            // 
-            this.textBoxEquipRight2Idx.Location = new System.Drawing.Point(247, 32);
-            this.textBoxEquipRight2Idx.Name = "textBoxEquipRight2Idx";
-            this.textBoxEquipRight2Idx.ReadOnly = true;
-            this.textBoxEquipRight2Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipRight2Idx.TabIndex = 2;
-            this.textBoxEquipRight2Idx.Text = "888888";
-            this.textBoxEquipRight2Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipRight2ID
-            // 
-            this.textBoxEquipRight2ID.Location = new System.Drawing.Point(303, 32);
-            this.textBoxEquipRight2ID.Name = "textBoxEquipRight2ID";
-            this.textBoxEquipRight2ID.ReadOnly = true;
-            this.textBoxEquipRight2ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipRight2ID.TabIndex = 3;
-            this.textBoxEquipRight2ID.Text = "888888";
-            this.textBoxEquipRight2ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelEquipIndex1
-            // 
-            this.labelEquipIndex1.AutoSize = true;
-            this.labelEquipIndex1.Location = new System.Drawing.Point(99, 16);
-            this.labelEquipIndex1.Name = "labelEquipIndex1";
-            this.labelEquipIndex1.Size = new System.Drawing.Size(33, 13);
-            this.labelEquipIndex1.TabIndex = 4;
-            this.labelEquipIndex1.Text = "Index";
-            // 
-            // labelEquipID1
-            // 
-            this.labelEquipID1.AutoSize = true;
-            this.labelEquipID1.Location = new System.Drawing.Point(170, 16);
-            this.labelEquipID1.Name = "labelEquipID1";
-            this.labelEquipID1.Size = new System.Drawing.Size(18, 13);
-            this.labelEquipID1.TabIndex = 5;
-            this.labelEquipID1.Text = "ID";
-            // 
-            // labelEquipRight1
-            // 
-            this.labelEquipRight1.AutoSize = true;
-            this.labelEquipRight1.Location = new System.Drawing.Point(6, 35);
-            this.labelEquipRight1.Name = "labelEquipRight1";
-            this.labelEquipRight1.Size = new System.Drawing.Size(70, 13);
-            this.labelEquipRight1.TabIndex = 6;
-            this.labelEquipRight1.Text = "Right Hand 1";
-            // 
-            // labelEquipID2
-            // 
-            this.labelEquipID2.AutoSize = true;
-            this.labelEquipID2.Location = new System.Drawing.Point(335, 16);
-            this.labelEquipID2.Name = "labelEquipID2";
-            this.labelEquipID2.Size = new System.Drawing.Size(18, 13);
-            this.labelEquipID2.TabIndex = 8;
-            this.labelEquipID2.Text = "ID";
-            // 
-            // labelEquipIndex2
-            // 
-            this.labelEquipIndex2.AutoSize = true;
-            this.labelEquipIndex2.Location = new System.Drawing.Point(264, 16);
-            this.labelEquipIndex2.Name = "labelEquipIndex2";
-            this.labelEquipIndex2.Size = new System.Drawing.Size(33, 13);
-            this.labelEquipIndex2.TabIndex = 7;
-            this.labelEquipIndex2.Text = "Index";
-            // 
-            // labelEquipRight2
-            // 
-            this.labelEquipRight2.AutoSize = true;
-            this.labelEquipRight2.Location = new System.Drawing.Point(228, 35);
-            this.labelEquipRight2.Name = "labelEquipRight2";
-            this.labelEquipRight2.Size = new System.Drawing.Size(13, 13);
-            this.labelEquipRight2.TabIndex = 9;
-            this.labelEquipRight2.Text = "2";
-            // 
-            // labelEquipLeft2
-            // 
-            this.labelEquipLeft2.AutoSize = true;
-            this.labelEquipLeft2.Location = new System.Drawing.Point(228, 61);
-            this.labelEquipLeft2.Name = "labelEquipLeft2";
-            this.labelEquipLeft2.Size = new System.Drawing.Size(13, 13);
-            this.labelEquipLeft2.TabIndex = 19;
-            this.labelEquipLeft2.Text = "2";
-            // 
-            // labelEquipLeft1
-            // 
-            this.labelEquipLeft1.AutoSize = true;
-            this.labelEquipLeft1.Location = new System.Drawing.Point(13, 61);
-            this.labelEquipLeft1.Name = "labelEquipLeft1";
-            this.labelEquipLeft1.Size = new System.Drawing.Size(63, 13);
-            this.labelEquipLeft1.TabIndex = 16;
-            this.labelEquipLeft1.Text = "Left Hand 1";
-            // 
-            // textBoxEquipLeft2ID
-            // 
-            this.textBoxEquipLeft2ID.Location = new System.Drawing.Point(303, 58);
-            this.textBoxEquipLeft2ID.Name = "textBoxEquipLeft2ID";
-            this.textBoxEquipLeft2ID.ReadOnly = true;
-            this.textBoxEquipLeft2ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipLeft2ID.TabIndex = 13;
-            this.textBoxEquipLeft2ID.Text = "888888";
-            this.textBoxEquipLeft2ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipLeft2Idx
-            // 
-            this.textBoxEquipLeft2Idx.Location = new System.Drawing.Point(247, 58);
-            this.textBoxEquipLeft2Idx.Name = "textBoxEquipLeft2Idx";
-            this.textBoxEquipLeft2Idx.ReadOnly = true;
-            this.textBoxEquipLeft2Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipLeft2Idx.TabIndex = 12;
-            this.textBoxEquipLeft2Idx.Text = "888888";
-            this.textBoxEquipLeft2Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipLeft1ID
-            // 
-            this.textBoxEquipLeft1ID.Location = new System.Drawing.Point(138, 58);
-            this.textBoxEquipLeft1ID.Name = "textBoxEquipLeft1ID";
-            this.textBoxEquipLeft1ID.ReadOnly = true;
-            this.textBoxEquipLeft1ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipLeft1ID.TabIndex = 11;
-            this.textBoxEquipLeft1ID.Text = "888888";
-            this.textBoxEquipLeft1ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipLeft1Idx
-            // 
-            this.textBoxEquipLeft1Idx.Location = new System.Drawing.Point(82, 58);
-            this.textBoxEquipLeft1Idx.Name = "textBoxEquipLeft1Idx";
-            this.textBoxEquipLeft1Idx.ReadOnly = true;
-            this.textBoxEquipLeft1Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipLeft1Idx.TabIndex = 10;
-            this.textBoxEquipLeft1Idx.Text = "888888";
-            this.textBoxEquipLeft1Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelEquipArrow2
-            // 
-            this.labelEquipArrow2.AutoSize = true;
-            this.labelEquipArrow2.Location = new System.Drawing.Point(228, 87);
-            this.labelEquipArrow2.Name = "labelEquipArrow2";
-            this.labelEquipArrow2.Size = new System.Drawing.Size(13, 13);
-            this.labelEquipArrow2.TabIndex = 25;
-            this.labelEquipArrow2.Text = "2";
-            // 
-            // labelEquipArrow1
-            // 
-            this.labelEquipArrow1.AutoSize = true;
-            this.labelEquipArrow1.Location = new System.Drawing.Point(33, 87);
-            this.labelEquipArrow1.Name = "labelEquipArrow1";
-            this.labelEquipArrow1.Size = new System.Drawing.Size(43, 13);
-            this.labelEquipArrow1.TabIndex = 24;
-            this.labelEquipArrow1.Text = "Arrow 1";
-            // 
-            // textBoxEquipArrow2ID
-            // 
-            this.textBoxEquipArrow2ID.Location = new System.Drawing.Point(303, 84);
-            this.textBoxEquipArrow2ID.Name = "textBoxEquipArrow2ID";
-            this.textBoxEquipArrow2ID.ReadOnly = true;
-            this.textBoxEquipArrow2ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipArrow2ID.TabIndex = 23;
-            this.textBoxEquipArrow2ID.Text = "888888";
-            this.textBoxEquipArrow2ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipArrow2Idx
-            // 
-            this.textBoxEquipArrow2Idx.Location = new System.Drawing.Point(247, 84);
-            this.textBoxEquipArrow2Idx.Name = "textBoxEquipArrow2Idx";
-            this.textBoxEquipArrow2Idx.ReadOnly = true;
-            this.textBoxEquipArrow2Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipArrow2Idx.TabIndex = 22;
-            this.textBoxEquipArrow2Idx.Text = "888888";
-            this.textBoxEquipArrow2Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipArrow1ID
-            // 
-            this.textBoxEquipArrow1ID.Location = new System.Drawing.Point(138, 84);
-            this.textBoxEquipArrow1ID.Name = "textBoxEquipArrow1ID";
-            this.textBoxEquipArrow1ID.ReadOnly = true;
-            this.textBoxEquipArrow1ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipArrow1ID.TabIndex = 21;
-            this.textBoxEquipArrow1ID.Text = "888888";
-            this.textBoxEquipArrow1ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipArrow1Idx
-            // 
-            this.textBoxEquipArrow1Idx.Location = new System.Drawing.Point(82, 84);
-            this.textBoxEquipArrow1Idx.Name = "textBoxEquipArrow1Idx";
-            this.textBoxEquipArrow1Idx.ReadOnly = true;
-            this.textBoxEquipArrow1Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipArrow1Idx.TabIndex = 20;
-            this.textBoxEquipArrow1Idx.Text = "888888";
-            this.textBoxEquipArrow1Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelEquipBolt2
-            // 
-            this.labelEquipBolt2.AutoSize = true;
-            this.labelEquipBolt2.Location = new System.Drawing.Point(228, 113);
-            this.labelEquipBolt2.Name = "labelEquipBolt2";
-            this.labelEquipBolt2.Size = new System.Drawing.Size(13, 13);
-            this.labelEquipBolt2.TabIndex = 31;
-            this.labelEquipBolt2.Text = "2";
-            // 
-            // labelEquipBolt1
-            // 
-            this.labelEquipBolt1.AutoSize = true;
-            this.labelEquipBolt1.Location = new System.Drawing.Point(42, 113);
-            this.labelEquipBolt1.Name = "labelEquipBolt1";
-            this.labelEquipBolt1.Size = new System.Drawing.Size(34, 13);
-            this.labelEquipBolt1.TabIndex = 30;
-            this.labelEquipBolt1.Text = "Bolt 1";
-            // 
-            // textBoxEquipBolt2ID
-            // 
-            this.textBoxEquipBolt2ID.Location = new System.Drawing.Point(303, 110);
-            this.textBoxEquipBolt2ID.Name = "textBoxEquipBolt2ID";
-            this.textBoxEquipBolt2ID.ReadOnly = true;
-            this.textBoxEquipBolt2ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipBolt2ID.TabIndex = 29;
-            this.textBoxEquipBolt2ID.Text = "888888";
-            this.textBoxEquipBolt2ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipBolt2Idx
-            // 
-            this.textBoxEquipBolt2Idx.Location = new System.Drawing.Point(247, 110);
-            this.textBoxEquipBolt2Idx.Name = "textBoxEquipBolt2Idx";
-            this.textBoxEquipBolt2Idx.ReadOnly = true;
-            this.textBoxEquipBolt2Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipBolt2Idx.TabIndex = 28;
-            this.textBoxEquipBolt2Idx.Text = "888888";
-            this.textBoxEquipBolt2Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipBolt1ID
-            // 
-            this.textBoxEquipBolt1ID.Location = new System.Drawing.Point(138, 110);
-            this.textBoxEquipBolt1ID.Name = "textBoxEquipBolt1ID";
-            this.textBoxEquipBolt1ID.ReadOnly = true;
-            this.textBoxEquipBolt1ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipBolt1ID.TabIndex = 27;
-            this.textBoxEquipBolt1ID.Text = "888888";
-            this.textBoxEquipBolt1ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipBolt1Idx
-            // 
-            this.textBoxEquipBolt1Idx.Location = new System.Drawing.Point(82, 110);
-            this.textBoxEquipBolt1Idx.Name = "textBoxEquipBolt1Idx";
-            this.textBoxEquipBolt1Idx.ReadOnly = true;
-            this.textBoxEquipBolt1Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipBolt1Idx.TabIndex = 26;
-            this.textBoxEquipBolt1Idx.Text = "888888";
-            this.textBoxEquipBolt1Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelEquipHelmet
-            // 
-            this.labelEquipHelmet.AutoSize = true;
-            this.labelEquipHelmet.Location = new System.Drawing.Point(33, 139);
-            this.labelEquipHelmet.Name = "labelEquipHelmet";
-            this.labelEquipHelmet.Size = new System.Drawing.Size(43, 13);
-            this.labelEquipHelmet.TabIndex = 36;
-            this.labelEquipHelmet.Text = "Armor 1";
-            // 
-            // textBoxEquipHelmetID
-            // 
-            this.textBoxEquipHelmetID.Location = new System.Drawing.Point(138, 136);
-            this.textBoxEquipHelmetID.Name = "textBoxEquipHelmetID";
-            this.textBoxEquipHelmetID.ReadOnly = true;
-            this.textBoxEquipHelmetID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipHelmetID.TabIndex = 33;
-            this.textBoxEquipHelmetID.Text = "888888";
-            this.textBoxEquipHelmetID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipHelmetIdx
-            // 
-            this.textBoxEquipHelmetIdx.Location = new System.Drawing.Point(82, 136);
-            this.textBoxEquipHelmetIdx.Name = "textBoxEquipHelmetIdx";
-            this.textBoxEquipHelmetIdx.ReadOnly = true;
-            this.textBoxEquipHelmetIdx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipHelmetIdx.TabIndex = 32;
-            this.textBoxEquipHelmetIdx.Text = "888888";
-            this.textBoxEquipHelmetIdx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labeEquipPants
-            // 
-            this.labeEquipPants.AutoSize = true;
-            this.labeEquipPants.Location = new System.Drawing.Point(228, 165);
-            this.labeEquipPants.Name = "labeEquipPants";
-            this.labeEquipPants.Size = new System.Drawing.Size(13, 13);
-            this.labeEquipPants.TabIndex = 43;
-            this.labeEquipPants.Text = "4";
-            // 
-            // labeEquipGlove
-            // 
-            this.labeEquipGlove.AutoSize = true;
-            this.labeEquipGlove.Location = new System.Drawing.Point(33, 165);
-            this.labeEquipGlove.Name = "labeEquipGlove";
-            this.labeEquipGlove.Size = new System.Drawing.Size(43, 13);
-            this.labeEquipGlove.TabIndex = 42;
-            this.labeEquipGlove.Text = "Armor 3";
-            // 
-            // textBoxEquipPantsID
-            // 
-            this.textBoxEquipPantsID.Location = new System.Drawing.Point(303, 162);
-            this.textBoxEquipPantsID.Name = "textBoxEquipPantsID";
-            this.textBoxEquipPantsID.ReadOnly = true;
-            this.textBoxEquipPantsID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipPantsID.TabIndex = 41;
-            this.textBoxEquipPantsID.Text = "888888";
-            this.textBoxEquipPantsID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipPantsIdx
-            // 
-            this.textBoxEquipPantsIdx.Location = new System.Drawing.Point(247, 162);
-            this.textBoxEquipPantsIdx.Name = "textBoxEquipPantsIdx";
-            this.textBoxEquipPantsIdx.ReadOnly = true;
-            this.textBoxEquipPantsIdx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipPantsIdx.TabIndex = 40;
-            this.textBoxEquipPantsIdx.Text = "888888";
-            this.textBoxEquipPantsIdx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipGloveID
-            // 
-            this.textBoxEquipGloveID.Location = new System.Drawing.Point(138, 162);
-            this.textBoxEquipGloveID.Name = "textBoxEquipGloveID";
-            this.textBoxEquipGloveID.ReadOnly = true;
-            this.textBoxEquipGloveID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipGloveID.TabIndex = 39;
-            this.textBoxEquipGloveID.Text = "888888";
-            this.textBoxEquipGloveID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipGloveIdx
-            // 
-            this.textBoxEquipGloveIdx.Location = new System.Drawing.Point(82, 162);
-            this.textBoxEquipGloveIdx.Name = "textBoxEquipGloveIdx";
-            this.textBoxEquipGloveIdx.ReadOnly = true;
-            this.textBoxEquipGloveIdx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipGloveIdx.TabIndex = 38;
-            this.textBoxEquipGloveIdx.Text = "888888";
-            this.textBoxEquipGloveIdx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labeEquipHair
-            // 
-            this.labeEquipHair.AutoSize = true;
-            this.labeEquipHair.Location = new System.Drawing.Point(50, 191);
-            this.labeEquipHair.Name = "labeEquipHair";
-            this.labeEquipHair.Size = new System.Drawing.Size(26, 13);
-            this.labeEquipHair.TabIndex = 48;
-            this.labeEquipHair.Text = "Hair";
-            // 
-            // textBoxEquipHairID
-            // 
-            this.textBoxEquipHairID.Location = new System.Drawing.Point(138, 188);
-            this.textBoxEquipHairID.Name = "textBoxEquipHairID";
-            this.textBoxEquipHairID.ReadOnly = true;
-            this.textBoxEquipHairID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipHairID.TabIndex = 45;
-            this.textBoxEquipHairID.Text = "888888";
-            this.textBoxEquipHairID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipHairIdx
-            // 
-            this.textBoxEquipHairIdx.Location = new System.Drawing.Point(82, 188);
-            this.textBoxEquipHairIdx.Name = "textBoxEquipHairIdx";
-            this.textBoxEquipHairIdx.ReadOnly = true;
-            this.textBoxEquipHairIdx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipHairIdx.TabIndex = 44;
-            this.textBoxEquipHairIdx.Text = "888888";
-            this.textBoxEquipHairIdx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labeEquipRing2
-            // 
-            this.labeEquipRing2.AutoSize = true;
-            this.labeEquipRing2.Location = new System.Drawing.Point(228, 217);
-            this.labeEquipRing2.Name = "labeEquipRing2";
-            this.labeEquipRing2.Size = new System.Drawing.Size(13, 13);
-            this.labeEquipRing2.TabIndex = 55;
-            this.labeEquipRing2.Text = "2";
-            // 
-            // labeEquipRing1
-            // 
-            this.labeEquipRing1.AutoSize = true;
-            this.labeEquipRing1.Location = new System.Drawing.Point(38, 217);
-            this.labeEquipRing1.Name = "labeEquipRing1";
-            this.labeEquipRing1.Size = new System.Drawing.Size(38, 13);
-            this.labeEquipRing1.TabIndex = 54;
-            this.labeEquipRing1.Text = "Ring 1";
-            // 
-            // textBoxEquipRing2ID
-            // 
-            this.textBoxEquipRing2ID.Location = new System.Drawing.Point(303, 214);
-            this.textBoxEquipRing2ID.Name = "textBoxEquipRing2ID";
-            this.textBoxEquipRing2ID.ReadOnly = true;
-            this.textBoxEquipRing2ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipRing2ID.TabIndex = 53;
-            this.textBoxEquipRing2ID.Text = "888888";
-            this.textBoxEquipRing2ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipRing2Idx
-            // 
-            this.textBoxEquipRing2Idx.Location = new System.Drawing.Point(247, 214);
-            this.textBoxEquipRing2Idx.Name = "textBoxEquipRing2Idx";
-            this.textBoxEquipRing2Idx.ReadOnly = true;
-            this.textBoxEquipRing2Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipRing2Idx.TabIndex = 52;
-            this.textBoxEquipRing2Idx.Text = "888888";
-            this.textBoxEquipRing2Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipRing1ID
-            // 
-            this.textBoxEquipRing1ID.Location = new System.Drawing.Point(138, 214);
-            this.textBoxEquipRing1ID.Name = "textBoxEquipRing1ID";
-            this.textBoxEquipRing1ID.ReadOnly = true;
-            this.textBoxEquipRing1ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipRing1ID.TabIndex = 51;
-            this.textBoxEquipRing1ID.Text = "888888";
-            this.textBoxEquipRing1ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipRing1Idx
-            // 
-            this.textBoxEquipRing1Idx.Location = new System.Drawing.Point(82, 214);
-            this.textBoxEquipRing1Idx.Name = "textBoxEquipRing1Idx";
-            this.textBoxEquipRing1Idx.ReadOnly = true;
-            this.textBoxEquipRing1Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipRing1Idx.TabIndex = 50;
-            this.textBoxEquipRing1Idx.Text = "888888";
-            this.textBoxEquipRing1Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipChestID
-            // 
-            this.textBoxEquipChestID.Location = new System.Drawing.Point(303, 136);
-            this.textBoxEquipChestID.Name = "textBoxEquipChestID";
-            this.textBoxEquipChestID.ReadOnly = true;
-            this.textBoxEquipChestID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipChestID.TabIndex = 35;
-            this.textBoxEquipChestID.Text = "888888";
-            this.textBoxEquipChestID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipChestIdx
-            // 
-            this.textBoxEquipChestIdx.Location = new System.Drawing.Point(247, 136);
-            this.textBoxEquipChestIdx.Name = "textBoxEquipChestIdx";
-            this.textBoxEquipChestIdx.ReadOnly = true;
-            this.textBoxEquipChestIdx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipChestIdx.TabIndex = 34;
-            this.textBoxEquipChestIdx.Text = "888888";
-            this.textBoxEquipChestIdx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labeEquipChest
-            // 
-            this.labeEquipChest.AutoSize = true;
-            this.labeEquipChest.Location = new System.Drawing.Point(228, 139);
-            this.labeEquipChest.Name = "labeEquipChest";
-            this.labeEquipChest.Size = new System.Drawing.Size(13, 13);
-            this.labeEquipChest.TabIndex = 37;
-            this.labeEquipChest.Text = "2";
-            // 
-            // labeEquipItem2
-            // 
-            this.labeEquipItem2.AutoSize = true;
-            this.labeEquipItem2.Location = new System.Drawing.Point(228, 243);
-            this.labeEquipItem2.Name = "labeEquipItem2";
-            this.labeEquipItem2.Size = new System.Drawing.Size(13, 13);
-            this.labeEquipItem2.TabIndex = 61;
-            this.labeEquipItem2.Text = "2";
-            // 
-            // labeEquipItem1
-            // 
-            this.labeEquipItem1.AutoSize = true;
-            this.labeEquipItem1.Location = new System.Drawing.Point(40, 243);
-            this.labeEquipItem1.Name = "labeEquipItem1";
-            this.labeEquipItem1.Size = new System.Drawing.Size(36, 13);
-            this.labeEquipItem1.TabIndex = 60;
-            this.labeEquipItem1.Text = "Item 1";
-            // 
-            // textBoxEquipItem2ID
-            // 
-            this.textBoxEquipItem2ID.Location = new System.Drawing.Point(303, 240);
-            this.textBoxEquipItem2ID.Name = "textBoxEquipItem2ID";
-            this.textBoxEquipItem2ID.ReadOnly = true;
-            this.textBoxEquipItem2ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipItem2ID.TabIndex = 59;
-            this.textBoxEquipItem2ID.Text = "888888";
-            this.textBoxEquipItem2ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipItem2Idx
-            // 
-            this.textBoxEquipItem2Idx.Location = new System.Drawing.Point(247, 240);
-            this.textBoxEquipItem2Idx.Name = "textBoxEquipItem2Idx";
-            this.textBoxEquipItem2Idx.ReadOnly = true;
-            this.textBoxEquipItem2Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipItem2Idx.TabIndex = 58;
-            this.textBoxEquipItem2Idx.Text = "888888";
-            this.textBoxEquipItem2Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipItem1ID
-            // 
-            this.textBoxEquipItem1ID.Location = new System.Drawing.Point(138, 240);
-            this.textBoxEquipItem1ID.Name = "textBoxEquipItem1ID";
-            this.textBoxEquipItem1ID.ReadOnly = true;
-            this.textBoxEquipItem1ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipItem1ID.TabIndex = 57;
-            this.textBoxEquipItem1ID.Text = "888888";
-            this.textBoxEquipItem1ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipItem1Idx
-            // 
-            this.textBoxEquipItem1Idx.Location = new System.Drawing.Point(82, 240);
-            this.textBoxEquipItem1Idx.Name = "textBoxEquipItem1Idx";
-            this.textBoxEquipItem1Idx.ReadOnly = true;
-            this.textBoxEquipItem1Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipItem1Idx.TabIndex = 56;
-            this.textBoxEquipItem1Idx.Text = "888888";
-            this.textBoxEquipItem1Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labeEquipItem4
-            // 
-            this.labeEquipItem4.AutoSize = true;
-            this.labeEquipItem4.Location = new System.Drawing.Point(228, 269);
-            this.labeEquipItem4.Name = "labeEquipItem4";
-            this.labeEquipItem4.Size = new System.Drawing.Size(13, 13);
-            this.labeEquipItem4.TabIndex = 67;
-            this.labeEquipItem4.Text = "4";
-            // 
-            // labeEquipItem3
-            // 
-            this.labeEquipItem3.AutoSize = true;
-            this.labeEquipItem3.Location = new System.Drawing.Point(40, 269);
-            this.labeEquipItem3.Name = "labeEquipItem3";
-            this.labeEquipItem3.Size = new System.Drawing.Size(36, 13);
-            this.labeEquipItem3.TabIndex = 66;
-            this.labeEquipItem3.Text = "Item 3";
-            // 
-            // textBoxEquipItem4ID
-            // 
-            this.textBoxEquipItem4ID.Location = new System.Drawing.Point(303, 266);
-            this.textBoxEquipItem4ID.Name = "textBoxEquipItem4ID";
-            this.textBoxEquipItem4ID.ReadOnly = true;
-            this.textBoxEquipItem4ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipItem4ID.TabIndex = 65;
-            this.textBoxEquipItem4ID.Text = "888888";
-            this.textBoxEquipItem4ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipItem4Idx
-            // 
-            this.textBoxEquipItem4Idx.Location = new System.Drawing.Point(247, 266);
-            this.textBoxEquipItem4Idx.Name = "textBoxEquipItem4Idx";
-            this.textBoxEquipItem4Idx.ReadOnly = true;
-            this.textBoxEquipItem4Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipItem4Idx.TabIndex = 64;
-            this.textBoxEquipItem4Idx.Text = "888888";
-            this.textBoxEquipItem4Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipItem3ID
-            // 
-            this.textBoxEquipItem3ID.Location = new System.Drawing.Point(138, 266);
-            this.textBoxEquipItem3ID.Name = "textBoxEquipItem3ID";
-            this.textBoxEquipItem3ID.ReadOnly = true;
-            this.textBoxEquipItem3ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipItem3ID.TabIndex = 63;
-            this.textBoxEquipItem3ID.Text = "888888";
-            this.textBoxEquipItem3ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipItem3Idx
-            // 
-            this.textBoxEquipItem3Idx.Location = new System.Drawing.Point(82, 266);
-            this.textBoxEquipItem3Idx.Name = "textBoxEquipItem3Idx";
-            this.textBoxEquipItem3Idx.ReadOnly = true;
-            this.textBoxEquipItem3Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipItem3Idx.TabIndex = 62;
-            this.textBoxEquipItem3Idx.Text = "888888";
-            this.textBoxEquipItem3Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labeEquipItem5
-            // 
-            this.labeEquipItem5.AutoSize = true;
-            this.labeEquipItem5.Location = new System.Drawing.Point(40, 295);
-            this.labeEquipItem5.Name = "labeEquipItem5";
-            this.labeEquipItem5.Size = new System.Drawing.Size(36, 13);
-            this.labeEquipItem5.TabIndex = 72;
-            this.labeEquipItem5.Text = "Item 5";
-            // 
-            // textBoxEquipItem5ID
-            // 
-            this.textBoxEquipItem5ID.Location = new System.Drawing.Point(138, 292);
-            this.textBoxEquipItem5ID.Name = "textBoxEquipItem5ID";
-            this.textBoxEquipItem5ID.ReadOnly = true;
-            this.textBoxEquipItem5ID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipItem5ID.TabIndex = 69;
-            this.textBoxEquipItem5ID.Text = "888888";
-            this.textBoxEquipItem5ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipItem5Idx
-            // 
-            this.textBoxEquipItem5Idx.Location = new System.Drawing.Point(82, 292);
-            this.textBoxEquipItem5Idx.Name = "textBoxEquipItem5Idx";
-            this.textBoxEquipItem5Idx.ReadOnly = true;
-            this.textBoxEquipItem5Idx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipItem5Idx.TabIndex = 68;
-            this.textBoxEquipItem5Idx.Text = "888888";
-            this.textBoxEquipItem5Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelStoredMagic
-            // 
-            this.labelStoredMagic.AutoSize = true;
-            this.labelStoredMagic.Location = new System.Drawing.Point(109, 337);
-            this.labelStoredMagic.Name = "labelStoredMagic";
-            this.labelStoredMagic.Size = new System.Drawing.Size(84, 13);
-            this.labelStoredMagic.TabIndex = 7;
-            this.labelStoredMagic.Text = "Stored Magic ID";
-            // 
-            // textBoxStoredMagic
-            // 
-            this.textBoxStoredMagic.Location = new System.Drawing.Point(109, 353);
-            this.textBoxStoredMagic.Name = "textBoxStoredMagic";
-            this.textBoxStoredMagic.ReadOnly = true;
-            this.textBoxStoredMagic.Size = new System.Drawing.Size(100, 20);
-            this.textBoxStoredMagic.TabIndex = 6;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3704,13 +3704,13 @@
             this.Controls.Add(this.labelProcessStatic);
             this.Controls.Add(this.linkLabelNewVersion);
             this.Controls.Add(this.labelCheckVersion);
-            this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::DS_Gadget.Properties.Settings.Default, "WindowLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Location = global::DS_Gadget.Properties.Settings.Default.WindowLocation;
+            this.Location = new System.Drawing.Point(100, 100);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "DS Gadget <version>";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControlMain.ResumeLayout(false);
@@ -3783,16 +3783,16 @@
             this.groupBoxCheatAll.PerformLayout();
             this.groupBoxCheatPlayer.ResumeLayout(false);
             this.groupBoxCheatPlayer.PerformLayout();
+            this.tabPageInternals.ResumeLayout(false);
+            this.tabPageInternals.PerformLayout();
+            this.groupBoxEquipment.ResumeLayout(false);
+            this.groupBoxEquipment.PerformLayout();
             this.tabPageMisc.ResumeLayout(false);
             this.tabPageMisc.PerformLayout();
             this.groupBoxEventFlags.ResumeLayout(false);
             this.groupBoxEventFlags.PerformLayout();
             this.tabPageHotkeys.ResumeLayout(false);
             this.tabPageHotkeys.PerformLayout();
-            this.tabPageInternals.ResumeLayout(false);
-            this.tabPageInternals.PerformLayout();
-            this.groupBoxEquipment.ResumeLayout(false);
-            this.groupBoxEquipment.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

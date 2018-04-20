@@ -88,6 +88,15 @@ namespace DS_Gadget
             return result;
         }
 
+        public int Allocate(int size)
+        {
+            return (int)VirtualAllocEx(size);
+        }
+
+        public void Free(int address)
+        {
+            VirtualFreeEx((IntPtr)address);
+        }
 
         public void AsmExecute(string asm)
         {

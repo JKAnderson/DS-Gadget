@@ -264,9 +264,24 @@ namespace DS_Gadget
             StoredMagic = 0x1D4,
         }
 
-        public int ItemDropUnknown1 = 0x13786D0;
-        public int ItemDropUnknown2 = 0x137D6BC;
-        public int ItemDropFunctionPtr = 0xDC8C60;
+        public int FuncItemDropPtr = 0xDC8C60;
+        public int FuncItemDropUnknown1 = 0x13786D0;
+        public int FuncItemDropUnknown2 = 0x137D6BC;
+
+        public int FuncLevelUpPtr = 0xC75DD0;
+        public enum FuncLevelUp
+        {
+            Vitality = 0x0,
+            Attunement = 0x4,
+            Endurance = 0x8,
+            Strength = 0xC,
+            Dexterity = 0x10,
+            Resistance = 0x14,
+            Intelligence = 0x18,
+            Faith = 0x1C,
+            SoulLevel = 0x16C,
+            Souls = 0x178,
+        }
 
         public static DSOffsets Release = new DSOffsets();
         public static DSOffsets Debug = new DSOffsets()
@@ -309,9 +324,11 @@ namespace DS_Gadget
             Unknown3Ptr = 0x137C664,
             Unknown4Ptr = 0x12E69E8,
 
-            ItemDropUnknown1 = 0x137C890,
-            ItemDropUnknown2 = 0x138187C,
-            ItemDropFunctionPtr = 0xDCB550,
+            FuncItemDropUnknown1 = 0x137C890,
+            FuncItemDropUnknown2 = 0x138187C,
+            FuncItemDropPtr = 0xDCB550,
+
+            FuncLevelUpPtr = 0xC75850,
         };
     }
 }

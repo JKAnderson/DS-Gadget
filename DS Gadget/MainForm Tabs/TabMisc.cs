@@ -12,7 +12,7 @@ namespace DS_Gadget
 
         private void updateMisc()
         {
-            
+
         }
 
         private void buttonEventFlagRead_Click(object sender, EventArgs e)

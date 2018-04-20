@@ -43,25 +43,27 @@ namespace DS_Gadget
 
         private void recalculateStats()
         {
+            int vitality = (int)numericUpDownVit.Value;
+            int attunement = (int)numericUpDownAtt.Value;
+            int endurance = (int)numericUpDownEnd.Value;
+            int strength = (int)numericUpDownStr.Value;
+            int dexterity = (int)numericUpDownDex.Value;
+            int resistance = (int)numericUpDownRes.Value;
+            int intelligence = (int)numericUpDownInt.Value;
+            int faith = (int)numericUpDownFth.Value;
+
             DSClass charClass = comboBoxClass.SelectedItem as DSClass;
             int sl = charClass.SoulLevel;
-            sl += (int)numericUpDownVit.Value - charClass.Vitality;
-            dsProcess.SetVitality((int)numericUpDownVit.Value);
-            sl += (int)numericUpDownAtt.Value - charClass.Attunement;
-            dsProcess.SetAttunement((int)numericUpDownAtt.Value);
-            sl += (int)numericUpDownEnd.Value - charClass.Endurance;
-            dsProcess.SetEndurance((int)numericUpDownEnd.Value);
-            sl += (int)numericUpDownStr.Value - charClass.Strength;
-            dsProcess.SetStrength((int)numericUpDownStr.Value);
-            sl += (int)numericUpDownDex.Value - charClass.Dexterity;
-            dsProcess.SetDexterity((int)numericUpDownDex.Value);
-            sl += (int)numericUpDownRes.Value - charClass.Resistance;
-            dsProcess.SetResistance((int)numericUpDownRes.Value);
-            sl += (int)numericUpDownInt.Value - charClass.Intelligence;
-            dsProcess.SetIntelligence((int)numericUpDownInt.Value);
-            sl += (int)numericUpDownFth.Value - charClass.Faith;
-            dsProcess.SetFaith((int)numericUpDownFth.Value);
-            dsProcess.SetSoulLevel(sl);
+            sl += vitality - charClass.Vitality;
+            sl += attunement - charClass.Attunement;
+            sl += endurance - charClass.Endurance;
+            sl += strength - charClass.Strength;
+            sl += dexterity - charClass.Dexterity;
+            sl += resistance - charClass.Resistance;
+            sl += intelligence - charClass.Intelligence;
+            sl += faith - charClass.Faith;
+
+            dsProcess.LevelUp(vitality, attunement, endurance, strength, dexterity, resistance, intelligence, faith, sl);
         }
 
         private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)

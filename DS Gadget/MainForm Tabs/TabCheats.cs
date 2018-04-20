@@ -68,7 +68,7 @@ namespace DS_Gadget
             if (checkBoxPlayerDeadMode.Checked)
                 dsProcess.SetPlayerDeadMode(true);
         }
-        
+
 
         private void checkBoxPlayerDeadMode_CheckedChanged(object sender, EventArgs e)
         {

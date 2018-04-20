@@ -342,7 +342,7 @@ namespace DS_Gadget
             dsInterface.WriteByte(pointers.CharData2 + (int)DSOffsets.CharData2.Class, value);
         }
 
-        public long GetSoulLevel()
+        public int GetSoulLevel()
         {
             return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.SoulLevel);
         }
@@ -360,7 +360,7 @@ namespace DS_Gadget
             dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Humanity, value);
         }
 
-        public long GetSouls()
+        public int GetSouls()
         {
             return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Souls);
         }
@@ -369,7 +369,7 @@ namespace DS_Gadget
             dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Souls, value);
         }
 
-        public long GetVitality()
+        public int GetVitality()
         {
             return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Vitality);
         }
@@ -378,7 +378,7 @@ namespace DS_Gadget
             dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Vitality, value);
         }
 
-        public long GetAttunement()
+        public int GetAttunement()
         {
             return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Attunement);
         }
@@ -387,7 +387,7 @@ namespace DS_Gadget
             dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Attunement, value);
         }
 
-        public long GetEndurance()
+        public int GetEndurance()
         {
             return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Endurance);
         }
@@ -396,7 +396,7 @@ namespace DS_Gadget
             dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Endurance, value);
         }
 
-        public long GetStrength()
+        public int GetStrength()
         {
             return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Strength);
         }
@@ -405,7 +405,7 @@ namespace DS_Gadget
             dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Strength, value);
         }
 
-        public long GetDexterity()
+        public int GetDexterity()
         {
             return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Dexterity);
         }
@@ -414,7 +414,7 @@ namespace DS_Gadget
             dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Dexterity, value);
         }
 
-        public long GetResistance()
+        public int GetResistance()
         {
             return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Resistance);
         }
@@ -423,7 +423,7 @@ namespace DS_Gadget
             dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Resistance, value);
         }
 
-        public long GetIntelligence()
+        public int GetIntelligence()
         {
             return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Intelligence);
         }
@@ -432,13 +432,42 @@ namespace DS_Gadget
             dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Intelligence, value);
         }
 
-        public long GetFaith()
+        public int GetFaith()
         {
             return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Faith);
         }
         public void SetFaith(int value)
         {
             dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Faith, value);
+        }
+
+        public void LevelUp(int vitality, int attunement, int endurance, int strength, int dexterity, int resistance, int intelligence, int faith, int level)
+        {
+            int humanity = GetHumanity();
+
+            int stats = dsInterface.Allocate(2048);
+            dsInterface.WriteInt32(stats + (int)DSOffsets.FuncLevelUp.Vitality, vitality);
+            dsInterface.WriteInt32(stats + (int)DSOffsets.FuncLevelUp.Attunement, attunement);
+            dsInterface.WriteInt32(stats + (int)DSOffsets.FuncLevelUp.Endurance, endurance);
+            dsInterface.WriteInt32(stats + (int)DSOffsets.FuncLevelUp.Strength, strength);
+            dsInterface.WriteInt32(stats + (int)DSOffsets.FuncLevelUp.Dexterity, dexterity);
+            dsInterface.WriteInt32(stats + (int)DSOffsets.FuncLevelUp.Resistance, resistance);
+            dsInterface.WriteInt32(stats + (int)DSOffsets.FuncLevelUp.Intelligence, intelligence);
+            dsInterface.WriteInt32(stats + (int)DSOffsets.FuncLevelUp.Faith, faith);
+            dsInterface.WriteInt32(stats + (int)DSOffsets.FuncLevelUp.SoulLevel, level);
+            dsInterface.WriteInt32(stats + (int)DSOffsets.FuncLevelUp.Souls, GetSouls());
+
+            string asm = String.Format(
+                "mov eax, 0x{0:X}\n" +
+                "mov ecx, 0x{0:X}\n" +
+                "call 0x{1:X}\n" +
+                "ret",
+                stats, offsets.FuncLevelUpPtr);
+
+            dsInterface.AsmExecute(asm);
+            dsInterface.Free(stats);
+
+            SetHumanity(humanity);
         }
         #endregion
 
@@ -459,7 +488,7 @@ namespace DS_Gadget
                 "push eax\n" +
                 "call 0x{5:X}\n" +
                 "ret",
-                category, itemID, count, offsets.ItemDropUnknown1, offsets.ItemDropUnknown2, offsets.ItemDropFunctionPtr);
+                category, itemID, count, offsets.FuncItemDropUnknown1, offsets.FuncItemDropUnknown2, offsets.FuncItemDropPtr);
 
             dsInterface.AsmExecute(asm);
         }

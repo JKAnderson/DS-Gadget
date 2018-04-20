@@ -11,7 +11,7 @@ namespace DS_Gadget
     public partial class MainForm : Form
     {
         private static Properties.Settings settings = Properties.Settings.Default;
-        
+
         private DSProcess dsProcess = null;
         private bool loaded = false;
         private bool reading = false;
@@ -23,6 +23,7 @@ namespace DS_Gadget
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
+            Location = settings.WindowLocation;
             Text = "DS Gadget " + System.Windows.Forms.Application.ProductVersion;
             enableTabs(false);
             initPlayer();
@@ -55,6 +56,14 @@ namespace DS_Gadget
             {
                 labelCheckVersion.Text = "Current app version unknown";
             }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                settings.WindowLocation = Location;
+            else
+                settings.WindowLocation = RestoreBounds.Location;
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)

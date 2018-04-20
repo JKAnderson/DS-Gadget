@@ -276,8 +276,8 @@ namespace DS_Gadget
             NodeGraph = 0xFA618C,
 
             AllNoMagicQtyConsume = 0x137B0A8,
-            PlayerNoDead = 0x137C693,
-            PlayerExterminate = 0x137C694,
+            PlayerNoDead = 0x137C68B,
+            PlayerExterminate = 0x137C6A4,
             AllNoStaminaConsume = 0x137C6A5,
             AllNoMPConsume = 0x137C6A6,
             AllNoArrowConsume = 0x137C6A7,

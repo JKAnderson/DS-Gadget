@@ -88,6 +88,9 @@
     <Compile Include="DSOffsets.cs" />
     <Compile Include="DSProcess.cs" />
     <Compile Include="DSInterface.cs" />
+    <Compile Include="MainForm Tabs\TabInternals.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm Tabs\TabStats.cs">
       <SubType>Form</SubType>
     </Compile>

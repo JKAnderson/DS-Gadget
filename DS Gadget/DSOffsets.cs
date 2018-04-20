@@ -24,7 +24,7 @@ namespace DS_Gadget
         public int AllNoAttack = 0x13784EC;
         public int AllNoMove = 0x13784ED;
         public int AllNoUpdateAI = 0x13784EE;
-        
+
         public int CompassSmall = 0x137851B;
         public int Altimeter = 0x1378524;
         public int CompassLarge = 0x1378525;
@@ -45,6 +45,7 @@ namespace DS_Gadget
             CharFlags1 = 0x1FC,
             HP = 0x2D4,
             CharFlags2 = 0x3C4,
+            StoredItem = 0x628,
         }
 
         // Most of these are very much not verified.
@@ -140,7 +141,47 @@ namespace DS_Gadget
             SoulLevel = 0x88,
             Souls = 0x8C,
             Class = 0xC6,
+            EquipLeft1Idx = 0x1D4,
+            EquipRight1Idx = 0x1D8,
+            EquipLeft2Idx = 0x1DC,
+            EquipRight2Idx = 0x1E0,
+            EquipArrow1Idx = 0x1E4,
+            EquipBolt1Idx = 0x1E8,
+            EquipArrow2Idx = 0x1EC,
+            EquipBolt2Idx = 0x1F0,
+            EquipHelmetIdx = 0x1F4,
+            EquipChestIdx = 0x1F8,
+            EquipGloveIdx = 0x1FC,
+            EquipPantsIdx = 0x200,
+            EquipHairIdx = 0x204,
+            EquipRing1Idx = 0x208,
+            EquipRing2Idx = 0x20C,
+            EquipItem1Idx = 0x210,
+            EquipItem2Idx = 0x214,
+            EquipItem3Idx = 0x218,
+            EquipItem4Idx = 0x21C,
+            EquipItem5Idx = 0x220,
             Stance = 0x230,
+            EquipLeft1ID = 0x24C,
+            EquipRight1ID = 0x250,
+            EquipLeft2ID = 0x254,
+            EquipRight2ID = 0x258,
+            EquipArrow1ID = 0x25C,
+            EquipBolt1ID = 0x260,
+            EquipArrow2ID = 0x264,
+            EquipBolt2ID = 0x268,
+            EquipHelmetID = 0x26C,
+            EquipChestID = 0x270,
+            EquipGloveID = 0x274,
+            EquipPantsID = 0x278,
+            EquipHairID = 0x27C,
+            EquipRing1ID = 0x280,
+            EquipRing2ID = 0x284,
+            EquipItem1ID = 0x288,
+            EquipItem2ID = 0x28C,
+            EquipItem3ID = 0x290,
+            EquipItem4ID = 0x294,
+            EquipItem5ID = 0x298,
         }
 
         public int GraphicsDataPtr = 0x1378520;
@@ -216,6 +257,13 @@ namespace DS_Gadget
             MenuKick = 0x0,
         }
 
+        public int Unknown4Ptr = 0x12E29E8;
+        public int Unknown4Ptr2 = 0x0;
+        public enum Unknown4
+        {
+            StoredMagic = 0x1D4,
+        }
+
         public int ItemDropUnknown1 = 0x13786D0;
         public int ItemDropUnknown2 = 0x137D6BC;
         public int ItemDropFunctionPtr = 0xDC8C60;
@@ -241,7 +289,7 @@ namespace DS_Gadget
             AllNoAttack = 0x137C6AD,
             AllNoMove = 0x137C6AE,
             AllNoUpdateAI = 0x137C6AF,
-            
+
             CompassSmall = 0x137C6E4,
             Altimeter = 0x137C6E5,
             CompassLarge = 0x137C6E6,
@@ -259,10 +307,11 @@ namespace DS_Gadget
             Unknown1Ptr = 0x13823C4,
             Unknown2Ptr = 0x1381804,
             Unknown3Ptr = 0x137C664,
+            Unknown4Ptr = 0x12E69E8,
 
             ItemDropUnknown1 = 0x137C890,
             ItemDropUnknown2 = 0x138187C,
             ItemDropFunctionPtr = 0xDCB550,
-    };
+        };
     }
 }

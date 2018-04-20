@@ -101,7 +101,7 @@ namespace DS_Gadget
         private struct DSPointers
         {
             public int CharData1, CharMapData, AnimData, CharPosData, CharData2, GraphicsData,
-                WorldState, ChrFollowCam, EventFlags, Unknown1, Unknown2, Unknown3;
+                WorldState, ChrFollowCam, EventFlags, Unknown1, Unknown2, Unknown3, Unknown4;
         }
         private DSPointers pointers;
 
@@ -135,6 +135,9 @@ namespace DS_Gadget
             pointers.Unknown2 = dsInterface.ReadInt32(offsets.Unknown2Ptr);
 
             pointers.Unknown3 = dsInterface.ReadInt32(offsets.Unknown3Ptr);
+
+            pointer = dsInterface.ReadInt32(offsets.Unknown4Ptr);
+            pointers.Unknown4 = dsInterface.ReadInt32(pointer + offsets.Unknown4Ptr2);
         }
 
         // Also used to check if game is loaded
@@ -667,6 +670,218 @@ namespace DS_Gadget
         public void SetAllNoUpdateAI(bool enable)
         {
             dsInterface.WriteBool(offsets.AllNoUpdateAI, enable);
+        }
+        #endregion
+
+        #region Internals Tab
+        public int GetEquipRight1Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipRight1Idx);
+        }
+
+        public int GetEquipRight1ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipRight1ID);
+        }
+
+        public int GetEquipRight2Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipRight2Idx);
+        }
+
+        public int GetEquipRight2ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipRight2ID);
+        }
+
+        public int GetEquipLeft1Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipLeft1Idx);
+        }
+
+        public int GetEquipLeft1ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipLeft1ID);
+        }
+
+        public int GetEquipLeft2Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipLeft2Idx);
+        }
+
+        public int GetEquipLeft2ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipLeft2ID);
+        }
+
+        public int GetEquipArrow1Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipArrow1Idx);
+        }
+
+        public int GetEquipArrow1ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipArrow1ID);
+        }
+
+        public int GetEquipArrow2Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipArrow2Idx);
+        }
+
+        public int GetEquipArrow2ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipArrow2ID);
+        }
+
+        public int GetEquipBolt1Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipBolt1Idx);
+        }
+
+        public int GetEquipBolt1ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipBolt1ID);
+        }
+
+        public int GetEquipBolt2Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipBolt2Idx);
+        }
+
+        public int GetEquipBolt2ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipBolt2ID);
+        }
+
+        public int GetEquipHelmetIdx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipHelmetIdx);
+        }
+
+        public int GetEquipHelmetID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipHelmetID);
+        }
+
+        public int GetEquipChestIdx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipChestIdx);
+        }
+
+        public int GetEquipChestID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipChestID);
+        }
+
+        public int GetEquipGloveIdx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipGloveIdx);
+        }
+
+        public int GetEquipGloveID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipGloveID);
+        }
+
+        public int GetEquipPantsIdx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipPantsIdx);
+        }
+
+        public int GetEquipPantsID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipPantsID);
+        }
+
+        public int GetEquipHairIdx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipHairIdx);
+        }
+
+        public int GetEquipHairID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipHairID);
+        }
+
+        public int GetEquipRing1Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipRing1Idx);
+        }
+
+        public int GetEquipRing1ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipRing1ID);
+        }
+
+        public int GetEquipRing2Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipRing2Idx);
+        }
+
+        public int GetEquipRing2ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipRing2ID);
+        }
+
+        public int GetEquipItem1Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipItem1Idx);
+        }
+
+        public int GetEquipItem1ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipItem1ID);
+        }
+
+        public int GetEquipItem2Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipItem2Idx);
+        }
+
+        public int GetEquipItem2ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipItem2ID);
+        }
+
+        public int GetEquipItem3Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipItem3Idx);
+        }
+
+        public int GetEquipItem3ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipItem3ID);
+        }
+
+        public int GetEquipItem4Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipItem4Idx);
+        }
+
+        public int GetEquipItem4ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipItem4ID);
+        }
+
+        public int GetEquipItem5Idx()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipItem5Idx);
+        }
+
+        public int GetEquipItem5ID()
+        {
+            return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipItem5ID);
+        }
+
+        public int GetStoredMagic()
+        {
+            return dsInterface.ReadInt32(pointers.Unknown4 + (int)DSOffsets.Unknown4.StoredMagic);
+        }
+
+        public int GetStoredItem()
+        {
+            return dsInterface.ReadInt32(pointers.CharData1 + (int)DSOffsets.CharData1.StoredItem);
         }
         #endregion
 

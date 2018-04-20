@@ -30,6 +30,7 @@ namespace DS_Gadget
             initItems();
             initGraphics();
             initCheats();
+            initInternals();
             initMisc();
             initHotkeys();
 
@@ -63,6 +64,7 @@ namespace DS_Gadget
             saveItems();
             saveGraphics();
             saveCheats();
+            saveInternals();
             saveMisc();
             saveHotkeys();
 
@@ -71,6 +73,7 @@ namespace DS_Gadget
             resetItems();
             resetGraphics();
             resetCheats();
+            resetInternals();
             resetMisc();
             resetHotkeys();
 
@@ -118,6 +121,7 @@ namespace DS_Gadget
                             reloadItems();
                             reloadGraphics();
                             reloadCheats();
+                            reloadInternals();
                             reloadMisc();
                             reloadHotkeys();
                             reading = false;
@@ -131,6 +135,7 @@ namespace DS_Gadget
                             updateItems();
                             updateGraphics();
                             updateCheats();
+                            updateInternals();
                             updateMisc();
                             updateHotkeys();
                             reading = false;

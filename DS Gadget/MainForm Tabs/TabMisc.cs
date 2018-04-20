@@ -9,7 +9,11 @@ namespace DS_Gadget
         private void resetMisc() { }
         private void saveMisc() { }
         private void reloadMisc() { }
-        private void updateMisc() { }
+
+        private void updateMisc()
+        {
+            
+        }
 
         private void buttonEventFlagRead_Click(object sender, EventArgs e)
         {

@@ -1,10 +1,17 @@
 
 # DS Gadget
-A multi-purpose testing tool for Dark Souls 1. This program is only compatible with the current Steam version of DS1.  
+A multi-purpose testing tool for Dark Souls 1. Compatible with both the Steam and debug versions.  
 Requires [.NET 4.6.2](https://www.microsoft.com/net/download/thank-you/net462) and [VC Redist 2012 x86](https://my.visualstudio.com/Downloads?pid=1452)  
 You probably already have both.
 
 # Changelog
+### 2.0
+* Gadget now supports the debug version
+* Fixed window seemingly disappearing forever sometimes
+* Editing your stats will now update health and stamina properly
+* New tab: Internals, with readouts for some random technical things you don't care about
+* Added basic event flag reading and writing to the Misc tab
+
 ### 1.6
 * Added new hotkeys: Quit to Menu, Move Up, Move Down, Toggle No Death
 * Option to store HP with position now includes stamina and death cam state
@@ -45,8 +52,6 @@ You probably already have both.
 * Added missing Painted World respawn
 
 # Credits
-[Wulf's Dark Souls Gizmo](https://github.com/Wulf2k/DaS-PC-Overlay) by Wulf2k
-
 [Fasm.NET](https://github.com/ZenLulz/Fasm.NET) by Jämes Ménétrey
 
 [LowLevelHooking](https://github.com/jnm2/LowLevelHooking) by Joseph N. Musser II
@@ -54,3 +59,10 @@ You probably already have both.
 [Octokit](https://github.com/octokit/octokit.net) by GitHub
 
 [Semver](https://github.com/maxhauser/semver) by Max Hauser
+
+# Special Thanks
+**Wulf2k**, for writing Gizmo and memlocs.ods, without which I would be nothing.
+
+**AndrovT**, for figuring out how the heck event flags work.
+
+And all of the wonderful people in the SpeedSouls discord, for putting up with me.

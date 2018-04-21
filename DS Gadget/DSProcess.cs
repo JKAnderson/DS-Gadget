@@ -101,7 +101,7 @@ namespace DS_Gadget
         private struct DSPointers
         {
             public int CharData1, CharMapData, AnimData, CharPosData, CharData2, GraphicsData,
-                WorldState, ChrFollowCam, EventFlags, Unknown1, Unknown2, Unknown3, Unknown4;
+                WorldState, MenuManager, ChrFollowCam, EventFlags, Unknown1, Unknown2, Unknown3, Unknown4;
         }
         private DSPointers pointers;
 
@@ -122,6 +122,8 @@ namespace DS_Gadget
             pointers.GraphicsData = dsInterface.ReadInt32(pointer + offsets.GraphicsDataPtr2);
 
             pointers.WorldState = dsInterface.ReadInt32(offsets.WorldStatePtr);
+
+            pointers.MenuManager = dsInterface.ReadInt32(offsets.MenuManagerPtr);
 
             pointer = dsInterface.ReadInt32(offsets.ChrFollowCamPtr);
             pointer = dsInterface.ReadInt32(pointer + offsets.ChrFollowCamPtr2);
@@ -911,6 +913,11 @@ namespace DS_Gadget
         public int GetStoredItem()
         {
             return dsInterface.ReadInt32(pointers.CharData1 + (int)DSOffsets.CharData1.StoredItem);
+        }
+
+        public int GetStoredQuantity()
+        {
+            return dsInterface.ReadInt32(pointers.MenuManager + (int)DSOffsets.MenuManager.QuantityDefault);
         }
         #endregion
 

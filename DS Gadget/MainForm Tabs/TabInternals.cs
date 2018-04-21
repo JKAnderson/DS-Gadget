@@ -74,6 +74,7 @@ namespace DS_Gadget
 
             textBoxStoredMagic.Text = dsProcess.GetStoredMagic().ToString();
             textBoxStoredItem.Text = dsProcess.GetStoredItem().ToString();
+            textBoxStoredQuantity.Text = dsProcess.GetStoredQuantity().ToString();
         }
     }
 }

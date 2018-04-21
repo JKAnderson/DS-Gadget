@@ -216,6 +216,12 @@ namespace DS_Gadget
             PosStableAngle = 0xB84,
         }
 
+        public int MenuManagerPtr = 0x13786D0;
+        public enum MenuManager
+        {
+            QuantityDefault = 0x20C,
+        }
+
         public int ChrFollowCamPtr = 0x137D6DC;
         public int ChrFollowCamPtr2 = 0x3C;
         public int ChrFollowCamPtr3 = 0x60;
@@ -317,6 +323,7 @@ namespace DS_Gadget
             CharData2Ptr = 0x137C8C0,
             GraphicsDataPtr = 0x137C6E0,
             WorldStatePtr = 0x137C660,
+            MenuManagerPtr = 0x137C890,
             ChrFollowCamPtr = 0x138189C,
             EventFlagsPtr = 0x1381994,
             Unknown1Ptr = 0x13823C4,

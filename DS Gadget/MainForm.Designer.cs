@@ -298,6 +298,8 @@
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.labelStoredQuantity = new System.Windows.Forms.Label();
+            this.textBoxStoredQuantity = new System.Windows.Forms.TextBox();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -2516,6 +2518,8 @@
             // 
             // tabPageInternals
             // 
+            this.tabPageInternals.Controls.Add(this.labelStoredQuantity);
+            this.tabPageInternals.Controls.Add(this.textBoxStoredQuantity);
             this.tabPageInternals.Controls.Add(this.labelStoredMagic);
             this.tabPageInternals.Controls.Add(this.textBoxStoredMagic);
             this.tabPageInternals.Controls.Add(this.groupBoxEquipment);
@@ -3689,6 +3693,23 @@
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
             // 
+            // labelStoredQuantity
+            // 
+            this.labelStoredQuantity.AutoSize = true;
+            this.labelStoredQuantity.Location = new System.Drawing.Point(215, 337);
+            this.labelStoredQuantity.Name = "labelStoredQuantity";
+            this.labelStoredQuantity.Size = new System.Drawing.Size(80, 13);
+            this.labelStoredQuantity.TabIndex = 9;
+            this.labelStoredQuantity.Text = "Stored Quantity";
+            // 
+            // textBoxStoredQuantity
+            // 
+            this.textBoxStoredQuantity.Location = new System.Drawing.Point(215, 353);
+            this.textBoxStoredQuantity.Name = "textBoxStoredQuantity";
+            this.textBoxStoredQuantity.ReadOnly = true;
+            this.textBoxStoredQuantity.Size = new System.Drawing.Size(100, 20);
+            this.textBoxStoredQuantity.TabIndex = 8;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4068,6 +4089,8 @@
         private System.Windows.Forms.TextBox textBoxEquipRight1ID;
         private System.Windows.Forms.Label labelStoredMagic;
         private System.Windows.Forms.TextBox textBoxStoredMagic;
+        private System.Windows.Forms.Label labelStoredQuantity;
+        private System.Windows.Forms.TextBox textBoxStoredQuantity;
     }
 }
 

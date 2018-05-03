@@ -5,7 +5,7 @@ Requires [.NET 4.6.2](https://www.microsoft.com/net/download/thank-you/net462) a
 You probably already have both.
 
 # Changelog
-###2.1
+### 2.1
 * Added a button to unlock all gestures to Misc tab
 * Added a very awkwardly-placed button to reset your hair slot to Internals tab, because flexing permanently hecks it up
 * Added stored quantity (for quantity storage ^:) to Internals tab

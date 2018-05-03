@@ -187,9 +187,12 @@
             this.checkBoxPlayerSilence = new System.Windows.Forms.CheckBox();
             this.checkBoxAllNoArrow = new System.Windows.Forms.CheckBox();
             this.tabPageInternals = new System.Windows.Forms.TabPage();
+            this.labelStoredQuantity = new System.Windows.Forms.Label();
+            this.textBoxStoredQuantity = new System.Windows.Forms.TextBox();
             this.labelStoredMagic = new System.Windows.Forms.Label();
             this.textBoxStoredMagic = new System.Windows.Forms.TextBox();
             this.groupBoxEquipment = new System.Windows.Forms.GroupBox();
+            this.buttonHaircut = new System.Windows.Forms.Button();
             this.labeEquipItem5 = new System.Windows.Forms.Label();
             this.textBoxEquipItem5ID = new System.Windows.Forms.TextBox();
             this.textBoxEquipItem5Idx = new System.Windows.Forms.TextBox();
@@ -198,7 +201,10 @@
             this.textBoxEquipItem4ID = new System.Windows.Forms.TextBox();
             this.textBoxEquipItem4Idx = new System.Windows.Forms.TextBox();
             this.textBoxEquipItem3ID = new System.Windows.Forms.TextBox();
+            this.textBoxEquipHairIdx = new System.Windows.Forms.TextBox();
             this.textBoxEquipItem3Idx = new System.Windows.Forms.TextBox();
+            this.textBoxEquipHairID = new System.Windows.Forms.TextBox();
+            this.labeEquipHair = new System.Windows.Forms.Label();
             this.labeEquipItem2 = new System.Windows.Forms.Label();
             this.labeEquipItem1 = new System.Windows.Forms.Label();
             this.textBoxEquipItem2ID = new System.Windows.Forms.TextBox();
@@ -211,9 +217,6 @@
             this.textBoxEquipRing2Idx = new System.Windows.Forms.TextBox();
             this.textBoxEquipRing1ID = new System.Windows.Forms.TextBox();
             this.textBoxEquipRing1Idx = new System.Windows.Forms.TextBox();
-            this.labeEquipHair = new System.Windows.Forms.Label();
-            this.textBoxEquipHairID = new System.Windows.Forms.TextBox();
-            this.textBoxEquipHairIdx = new System.Windows.Forms.TextBox();
             this.labeEquipPants = new System.Windows.Forms.Label();
             this.labeEquipGlove = new System.Windows.Forms.Label();
             this.textBoxEquipPantsID = new System.Windows.Forms.TextBox();
@@ -257,6 +260,7 @@
             this.labelStoredItem = new System.Windows.Forms.Label();
             this.textBoxStoredItem = new System.Windows.Forms.TextBox();
             this.tabPageMisc = new System.Windows.Forms.TabPage();
+            this.buttonGestures = new System.Windows.Forms.Button();
             this.groupBoxEventFlags = new System.Windows.Forms.GroupBox();
             this.buttonEventFlagRead = new System.Windows.Forms.Button();
             this.buttonEventFlagWrite = new System.Windows.Forms.Button();
@@ -298,8 +302,6 @@
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.labelStoredQuantity = new System.Windows.Forms.Label();
-            this.textBoxStoredQuantity = new System.Windows.Forms.TextBox();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -2532,10 +2534,27 @@
             this.tabPageInternals.Text = "Internals";
             this.tabPageInternals.UseVisualStyleBackColor = true;
             // 
+            // labelStoredQuantity
+            // 
+            this.labelStoredQuantity.AutoSize = true;
+            this.labelStoredQuantity.Location = new System.Drawing.Point(215, 340);
+            this.labelStoredQuantity.Name = "labelStoredQuantity";
+            this.labelStoredQuantity.Size = new System.Drawing.Size(80, 13);
+            this.labelStoredQuantity.TabIndex = 9;
+            this.labelStoredQuantity.Text = "Stored Quantity";
+            // 
+            // textBoxStoredQuantity
+            // 
+            this.textBoxStoredQuantity.Location = new System.Drawing.Point(215, 356);
+            this.textBoxStoredQuantity.Name = "textBoxStoredQuantity";
+            this.textBoxStoredQuantity.ReadOnly = true;
+            this.textBoxStoredQuantity.Size = new System.Drawing.Size(100, 20);
+            this.textBoxStoredQuantity.TabIndex = 8;
+            // 
             // labelStoredMagic
             // 
             this.labelStoredMagic.AutoSize = true;
-            this.labelStoredMagic.Location = new System.Drawing.Point(109, 337);
+            this.labelStoredMagic.Location = new System.Drawing.Point(109, 340);
             this.labelStoredMagic.Name = "labelStoredMagic";
             this.labelStoredMagic.Size = new System.Drawing.Size(84, 13);
             this.labelStoredMagic.TabIndex = 7;
@@ -2543,7 +2562,7 @@
             // 
             // textBoxStoredMagic
             // 
-            this.textBoxStoredMagic.Location = new System.Drawing.Point(109, 353);
+            this.textBoxStoredMagic.Location = new System.Drawing.Point(109, 356);
             this.textBoxStoredMagic.Name = "textBoxStoredMagic";
             this.textBoxStoredMagic.ReadOnly = true;
             this.textBoxStoredMagic.Size = new System.Drawing.Size(100, 20);
@@ -2554,6 +2573,7 @@
             this.groupBoxEquipment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxEquipment.AutoSize = true;
+            this.groupBoxEquipment.Controls.Add(this.buttonHaircut);
             this.groupBoxEquipment.Controls.Add(this.labeEquipItem5);
             this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem5ID);
             this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem5Idx);
@@ -2562,7 +2582,10 @@
             this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem4ID);
             this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem4Idx);
             this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem3ID);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipHairIdx);
             this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem3Idx);
+            this.groupBoxEquipment.Controls.Add(this.textBoxEquipHairID);
+            this.groupBoxEquipment.Controls.Add(this.labeEquipHair);
             this.groupBoxEquipment.Controls.Add(this.labeEquipItem2);
             this.groupBoxEquipment.Controls.Add(this.labeEquipItem1);
             this.groupBoxEquipment.Controls.Add(this.textBoxEquipItem2ID);
@@ -2575,9 +2598,6 @@
             this.groupBoxEquipment.Controls.Add(this.textBoxEquipRing2Idx);
             this.groupBoxEquipment.Controls.Add(this.textBoxEquipRing1ID);
             this.groupBoxEquipment.Controls.Add(this.textBoxEquipRing1Idx);
-            this.groupBoxEquipment.Controls.Add(this.labeEquipHair);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipHairID);
-            this.groupBoxEquipment.Controls.Add(this.textBoxEquipHairIdx);
             this.groupBoxEquipment.Controls.Add(this.labeEquipPants);
             this.groupBoxEquipment.Controls.Add(this.labeEquipGlove);
             this.groupBoxEquipment.Controls.Add(this.textBoxEquipPantsID);
@@ -2620,15 +2640,26 @@
             this.groupBoxEquipment.Controls.Add(this.textBoxEquipRight1Idx);
             this.groupBoxEquipment.Location = new System.Drawing.Point(3, 3);
             this.groupBoxEquipment.Name = "groupBoxEquipment";
-            this.groupBoxEquipment.Size = new System.Drawing.Size(365, 331);
+            this.groupBoxEquipment.Size = new System.Drawing.Size(365, 334);
             this.groupBoxEquipment.TabIndex = 5;
             this.groupBoxEquipment.TabStop = false;
             this.groupBoxEquipment.Text = "Equipment";
             // 
+            // buttonHaircut
+            // 
+            this.buttonHaircut.Location = new System.Drawing.Point(278, 292);
+            this.buttonHaircut.Name = "buttonHaircut";
+            this.buttonHaircut.Size = new System.Drawing.Size(75, 23);
+            this.buttonHaircut.TabIndex = 10;
+            this.buttonHaircut.Text = "Haircut";
+            this.toolTip1.SetToolTip(this.buttonHaircut, "Resets the hair slot to no item, bald style");
+            this.buttonHaircut.UseVisualStyleBackColor = true;
+            this.buttonHaircut.Click += new System.EventHandler(this.buttonHaircut_Click);
+            // 
             // labeEquipItem5
             // 
             this.labeEquipItem5.AutoSize = true;
-            this.labeEquipItem5.Location = new System.Drawing.Point(40, 295);
+            this.labeEquipItem5.Location = new System.Drawing.Point(40, 269);
             this.labeEquipItem5.Name = "labeEquipItem5";
             this.labeEquipItem5.Size = new System.Drawing.Size(36, 13);
             this.labeEquipItem5.TabIndex = 72;
@@ -2636,7 +2667,7 @@
             // 
             // textBoxEquipItem5ID
             // 
-            this.textBoxEquipItem5ID.Location = new System.Drawing.Point(138, 292);
+            this.textBoxEquipItem5ID.Location = new System.Drawing.Point(138, 266);
             this.textBoxEquipItem5ID.Name = "textBoxEquipItem5ID";
             this.textBoxEquipItem5ID.ReadOnly = true;
             this.textBoxEquipItem5ID.Size = new System.Drawing.Size(50, 20);
@@ -2646,7 +2677,7 @@
             // 
             // textBoxEquipItem5Idx
             // 
-            this.textBoxEquipItem5Idx.Location = new System.Drawing.Point(82, 292);
+            this.textBoxEquipItem5Idx.Location = new System.Drawing.Point(82, 266);
             this.textBoxEquipItem5Idx.Name = "textBoxEquipItem5Idx";
             this.textBoxEquipItem5Idx.ReadOnly = true;
             this.textBoxEquipItem5Idx.Size = new System.Drawing.Size(50, 20);
@@ -2657,7 +2688,7 @@
             // labeEquipItem4
             // 
             this.labeEquipItem4.AutoSize = true;
-            this.labeEquipItem4.Location = new System.Drawing.Point(228, 269);
+            this.labeEquipItem4.Location = new System.Drawing.Point(228, 243);
             this.labeEquipItem4.Name = "labeEquipItem4";
             this.labeEquipItem4.Size = new System.Drawing.Size(13, 13);
             this.labeEquipItem4.TabIndex = 67;
@@ -2666,7 +2697,7 @@
             // labeEquipItem3
             // 
             this.labeEquipItem3.AutoSize = true;
-            this.labeEquipItem3.Location = new System.Drawing.Point(40, 269);
+            this.labeEquipItem3.Location = new System.Drawing.Point(40, 243);
             this.labeEquipItem3.Name = "labeEquipItem3";
             this.labeEquipItem3.Size = new System.Drawing.Size(36, 13);
             this.labeEquipItem3.TabIndex = 66;
@@ -2674,7 +2705,7 @@
             // 
             // textBoxEquipItem4ID
             // 
-            this.textBoxEquipItem4ID.Location = new System.Drawing.Point(303, 266);
+            this.textBoxEquipItem4ID.Location = new System.Drawing.Point(303, 240);
             this.textBoxEquipItem4ID.Name = "textBoxEquipItem4ID";
             this.textBoxEquipItem4ID.ReadOnly = true;
             this.textBoxEquipItem4ID.Size = new System.Drawing.Size(50, 20);
@@ -2684,7 +2715,7 @@
             // 
             // textBoxEquipItem4Idx
             // 
-            this.textBoxEquipItem4Idx.Location = new System.Drawing.Point(247, 266);
+            this.textBoxEquipItem4Idx.Location = new System.Drawing.Point(247, 240);
             this.textBoxEquipItem4Idx.Name = "textBoxEquipItem4Idx";
             this.textBoxEquipItem4Idx.ReadOnly = true;
             this.textBoxEquipItem4Idx.Size = new System.Drawing.Size(50, 20);
@@ -2694,7 +2725,7 @@
             // 
             // textBoxEquipItem3ID
             // 
-            this.textBoxEquipItem3ID.Location = new System.Drawing.Point(138, 266);
+            this.textBoxEquipItem3ID.Location = new System.Drawing.Point(138, 240);
             this.textBoxEquipItem3ID.Name = "textBoxEquipItem3ID";
             this.textBoxEquipItem3ID.ReadOnly = true;
             this.textBoxEquipItem3ID.Size = new System.Drawing.Size(50, 20);
@@ -2702,9 +2733,19 @@
             this.textBoxEquipItem3ID.Text = "888888";
             this.textBoxEquipItem3ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // textBoxEquipHairIdx
+            // 
+            this.textBoxEquipHairIdx.Location = new System.Drawing.Point(247, 266);
+            this.textBoxEquipHairIdx.Name = "textBoxEquipHairIdx";
+            this.textBoxEquipHairIdx.ReadOnly = true;
+            this.textBoxEquipHairIdx.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipHairIdx.TabIndex = 44;
+            this.textBoxEquipHairIdx.Text = "888888";
+            this.textBoxEquipHairIdx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // textBoxEquipItem3Idx
             // 
-            this.textBoxEquipItem3Idx.Location = new System.Drawing.Point(82, 266);
+            this.textBoxEquipItem3Idx.Location = new System.Drawing.Point(82, 240);
             this.textBoxEquipItem3Idx.Name = "textBoxEquipItem3Idx";
             this.textBoxEquipItem3Idx.ReadOnly = true;
             this.textBoxEquipItem3Idx.Size = new System.Drawing.Size(50, 20);
@@ -2712,10 +2753,29 @@
             this.textBoxEquipItem3Idx.Text = "888888";
             this.textBoxEquipItem3Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // textBoxEquipHairID
+            // 
+            this.textBoxEquipHairID.Location = new System.Drawing.Point(303, 266);
+            this.textBoxEquipHairID.Name = "textBoxEquipHairID";
+            this.textBoxEquipHairID.ReadOnly = true;
+            this.textBoxEquipHairID.Size = new System.Drawing.Size(50, 20);
+            this.textBoxEquipHairID.TabIndex = 45;
+            this.textBoxEquipHairID.Text = "888888";
+            this.textBoxEquipHairID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labeEquipHair
+            // 
+            this.labeEquipHair.AutoSize = true;
+            this.labeEquipHair.Location = new System.Drawing.Point(215, 269);
+            this.labeEquipHair.Name = "labeEquipHair";
+            this.labeEquipHair.Size = new System.Drawing.Size(26, 13);
+            this.labeEquipHair.TabIndex = 48;
+            this.labeEquipHair.Text = "Hair";
+            // 
             // labeEquipItem2
             // 
             this.labeEquipItem2.AutoSize = true;
-            this.labeEquipItem2.Location = new System.Drawing.Point(228, 243);
+            this.labeEquipItem2.Location = new System.Drawing.Point(228, 217);
             this.labeEquipItem2.Name = "labeEquipItem2";
             this.labeEquipItem2.Size = new System.Drawing.Size(13, 13);
             this.labeEquipItem2.TabIndex = 61;
@@ -2724,7 +2784,7 @@
             // labeEquipItem1
             // 
             this.labeEquipItem1.AutoSize = true;
-            this.labeEquipItem1.Location = new System.Drawing.Point(40, 243);
+            this.labeEquipItem1.Location = new System.Drawing.Point(40, 217);
             this.labeEquipItem1.Name = "labeEquipItem1";
             this.labeEquipItem1.Size = new System.Drawing.Size(36, 13);
             this.labeEquipItem1.TabIndex = 60;
@@ -2732,7 +2792,7 @@
             // 
             // textBoxEquipItem2ID
             // 
-            this.textBoxEquipItem2ID.Location = new System.Drawing.Point(303, 240);
+            this.textBoxEquipItem2ID.Location = new System.Drawing.Point(303, 214);
             this.textBoxEquipItem2ID.Name = "textBoxEquipItem2ID";
             this.textBoxEquipItem2ID.ReadOnly = true;
             this.textBoxEquipItem2ID.Size = new System.Drawing.Size(50, 20);
@@ -2742,7 +2802,7 @@
             // 
             // textBoxEquipItem2Idx
             // 
-            this.textBoxEquipItem2Idx.Location = new System.Drawing.Point(247, 240);
+            this.textBoxEquipItem2Idx.Location = new System.Drawing.Point(247, 214);
             this.textBoxEquipItem2Idx.Name = "textBoxEquipItem2Idx";
             this.textBoxEquipItem2Idx.ReadOnly = true;
             this.textBoxEquipItem2Idx.Size = new System.Drawing.Size(50, 20);
@@ -2752,7 +2812,7 @@
             // 
             // textBoxEquipItem1ID
             // 
-            this.textBoxEquipItem1ID.Location = new System.Drawing.Point(138, 240);
+            this.textBoxEquipItem1ID.Location = new System.Drawing.Point(138, 214);
             this.textBoxEquipItem1ID.Name = "textBoxEquipItem1ID";
             this.textBoxEquipItem1ID.ReadOnly = true;
             this.textBoxEquipItem1ID.Size = new System.Drawing.Size(50, 20);
@@ -2762,7 +2822,7 @@
             // 
             // textBoxEquipItem1Idx
             // 
-            this.textBoxEquipItem1Idx.Location = new System.Drawing.Point(82, 240);
+            this.textBoxEquipItem1Idx.Location = new System.Drawing.Point(82, 214);
             this.textBoxEquipItem1Idx.Name = "textBoxEquipItem1Idx";
             this.textBoxEquipItem1Idx.ReadOnly = true;
             this.textBoxEquipItem1Idx.Size = new System.Drawing.Size(50, 20);
@@ -2773,7 +2833,7 @@
             // labeEquipRing2
             // 
             this.labeEquipRing2.AutoSize = true;
-            this.labeEquipRing2.Location = new System.Drawing.Point(228, 217);
+            this.labeEquipRing2.Location = new System.Drawing.Point(228, 191);
             this.labeEquipRing2.Name = "labeEquipRing2";
             this.labeEquipRing2.Size = new System.Drawing.Size(13, 13);
             this.labeEquipRing2.TabIndex = 55;
@@ -2782,7 +2842,7 @@
             // labeEquipRing1
             // 
             this.labeEquipRing1.AutoSize = true;
-            this.labeEquipRing1.Location = new System.Drawing.Point(38, 217);
+            this.labeEquipRing1.Location = new System.Drawing.Point(38, 191);
             this.labeEquipRing1.Name = "labeEquipRing1";
             this.labeEquipRing1.Size = new System.Drawing.Size(38, 13);
             this.labeEquipRing1.TabIndex = 54;
@@ -2790,7 +2850,7 @@
             // 
             // textBoxEquipRing2ID
             // 
-            this.textBoxEquipRing2ID.Location = new System.Drawing.Point(303, 214);
+            this.textBoxEquipRing2ID.Location = new System.Drawing.Point(303, 188);
             this.textBoxEquipRing2ID.Name = "textBoxEquipRing2ID";
             this.textBoxEquipRing2ID.ReadOnly = true;
             this.textBoxEquipRing2ID.Size = new System.Drawing.Size(50, 20);
@@ -2800,7 +2860,7 @@
             // 
             // textBoxEquipRing2Idx
             // 
-            this.textBoxEquipRing2Idx.Location = new System.Drawing.Point(247, 214);
+            this.textBoxEquipRing2Idx.Location = new System.Drawing.Point(247, 188);
             this.textBoxEquipRing2Idx.Name = "textBoxEquipRing2Idx";
             this.textBoxEquipRing2Idx.ReadOnly = true;
             this.textBoxEquipRing2Idx.Size = new System.Drawing.Size(50, 20);
@@ -2810,7 +2870,7 @@
             // 
             // textBoxEquipRing1ID
             // 
-            this.textBoxEquipRing1ID.Location = new System.Drawing.Point(138, 214);
+            this.textBoxEquipRing1ID.Location = new System.Drawing.Point(138, 188);
             this.textBoxEquipRing1ID.Name = "textBoxEquipRing1ID";
             this.textBoxEquipRing1ID.ReadOnly = true;
             this.textBoxEquipRing1ID.Size = new System.Drawing.Size(50, 20);
@@ -2820,42 +2880,13 @@
             // 
             // textBoxEquipRing1Idx
             // 
-            this.textBoxEquipRing1Idx.Location = new System.Drawing.Point(82, 214);
+            this.textBoxEquipRing1Idx.Location = new System.Drawing.Point(82, 188);
             this.textBoxEquipRing1Idx.Name = "textBoxEquipRing1Idx";
             this.textBoxEquipRing1Idx.ReadOnly = true;
             this.textBoxEquipRing1Idx.Size = new System.Drawing.Size(50, 20);
             this.textBoxEquipRing1Idx.TabIndex = 50;
             this.textBoxEquipRing1Idx.Text = "888888";
             this.textBoxEquipRing1Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labeEquipHair
-            // 
-            this.labeEquipHair.AutoSize = true;
-            this.labeEquipHair.Location = new System.Drawing.Point(50, 191);
-            this.labeEquipHair.Name = "labeEquipHair";
-            this.labeEquipHair.Size = new System.Drawing.Size(26, 13);
-            this.labeEquipHair.TabIndex = 48;
-            this.labeEquipHair.Text = "Hair";
-            // 
-            // textBoxEquipHairID
-            // 
-            this.textBoxEquipHairID.Location = new System.Drawing.Point(138, 188);
-            this.textBoxEquipHairID.Name = "textBoxEquipHairID";
-            this.textBoxEquipHairID.ReadOnly = true;
-            this.textBoxEquipHairID.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipHairID.TabIndex = 45;
-            this.textBoxEquipHairID.Text = "888888";
-            this.textBoxEquipHairID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxEquipHairIdx
-            // 
-            this.textBoxEquipHairIdx.Location = new System.Drawing.Point(82, 188);
-            this.textBoxEquipHairIdx.Name = "textBoxEquipHairIdx";
-            this.textBoxEquipHairIdx.ReadOnly = true;
-            this.textBoxEquipHairIdx.Size = new System.Drawing.Size(50, 20);
-            this.textBoxEquipHairIdx.TabIndex = 44;
-            this.textBoxEquipHairIdx.Text = "888888";
-            this.textBoxEquipHairIdx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labeEquipPants
             // 
@@ -3244,7 +3275,7 @@
             // labelStoredItem
             // 
             this.labelStoredItem.AutoSize = true;
-            this.labelStoredItem.Location = new System.Drawing.Point(3, 337);
+            this.labelStoredItem.Location = new System.Drawing.Point(3, 340);
             this.labelStoredItem.Name = "labelStoredItem";
             this.labelStoredItem.Size = new System.Drawing.Size(75, 13);
             this.labelStoredItem.TabIndex = 4;
@@ -3252,7 +3283,7 @@
             // 
             // textBoxStoredItem
             // 
-            this.textBoxStoredItem.Location = new System.Drawing.Point(3, 353);
+            this.textBoxStoredItem.Location = new System.Drawing.Point(3, 356);
             this.textBoxStoredItem.Name = "textBoxStoredItem";
             this.textBoxStoredItem.ReadOnly = true;
             this.textBoxStoredItem.Size = new System.Drawing.Size(100, 20);
@@ -3260,6 +3291,7 @@
             // 
             // tabPageMisc
             // 
+            this.tabPageMisc.Controls.Add(this.buttonGestures);
             this.tabPageMisc.Controls.Add(this.groupBoxEventFlags);
             this.tabPageMisc.Location = new System.Drawing.Point(4, 22);
             this.tabPageMisc.Name = "tabPageMisc";
@@ -3268,6 +3300,16 @@
             this.tabPageMisc.TabIndex = 8;
             this.tabPageMisc.Text = "Misc";
             this.tabPageMisc.UseVisualStyleBackColor = true;
+            // 
+            // buttonGestures
+            // 
+            this.buttonGestures.Location = new System.Drawing.Point(6, 111);
+            this.buttonGestures.Name = "buttonGestures";
+            this.buttonGestures.Size = new System.Drawing.Size(108, 23);
+            this.buttonGestures.TabIndex = 1;
+            this.buttonGestures.Text = "Unlock Gestures";
+            this.buttonGestures.UseVisualStyleBackColor = true;
+            this.buttonGestures.Click += new System.EventHandler(this.buttonGestures_Click);
             // 
             // groupBoxEventFlags
             // 
@@ -3693,23 +3735,6 @@
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
             // 
-            // labelStoredQuantity
-            // 
-            this.labelStoredQuantity.AutoSize = true;
-            this.labelStoredQuantity.Location = new System.Drawing.Point(215, 337);
-            this.labelStoredQuantity.Name = "labelStoredQuantity";
-            this.labelStoredQuantity.Size = new System.Drawing.Size(80, 13);
-            this.labelStoredQuantity.TabIndex = 9;
-            this.labelStoredQuantity.Text = "Stored Quantity";
-            // 
-            // textBoxStoredQuantity
-            // 
-            this.textBoxStoredQuantity.Location = new System.Drawing.Point(215, 353);
-            this.textBoxStoredQuantity.Name = "textBoxStoredQuantity";
-            this.textBoxStoredQuantity.ReadOnly = true;
-            this.textBoxStoredQuantity.Size = new System.Drawing.Size(100, 20);
-            this.textBoxStoredQuantity.TabIndex = 8;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4091,6 +4116,8 @@
         private System.Windows.Forms.TextBox textBoxStoredMagic;
         private System.Windows.Forms.Label labelStoredQuantity;
         private System.Windows.Forms.TextBox textBoxStoredQuantity;
+        private System.Windows.Forms.Button buttonGestures;
+        private System.Windows.Forms.Button buttonHaircut;
     }
 }
 

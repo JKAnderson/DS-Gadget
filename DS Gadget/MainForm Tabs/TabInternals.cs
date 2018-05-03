@@ -76,5 +76,16 @@ namespace DS_Gadget
             textBoxStoredItem.Text = dsProcess.GetStoredItem().ToString();
             textBoxStoredQuantity.Text = dsProcess.GetStoredQuantity().ToString();
         }
+
+        private void buttonHaircut_Click(object sender, EventArgs e)
+        {
+            dsProcess.SetEquipHairIdx(-1);
+            // Female
+            if (dsProcess.GetGender() == 0)
+                dsProcess.SetEquipHairID(3000);
+            // Not female
+            else
+                dsProcess.SetEquipHairID(1000);
+        }
     }
 }

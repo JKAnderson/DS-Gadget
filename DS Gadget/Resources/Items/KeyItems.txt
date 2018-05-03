@@ -14,7 +14,6 @@
 2012 1 false 0 Undead Asylum F2 East Key
 2013 1 false 0 Key to the Seal
 2014 1 false 0 Key to Depths
-2015 1 false 0 Lift Chamber Key
 2016 1 false 0 Undead Asylum F2 West Key
 2017 1 false 0 Mystery Key
 2018 1 false 0 Sewer Chamber Key

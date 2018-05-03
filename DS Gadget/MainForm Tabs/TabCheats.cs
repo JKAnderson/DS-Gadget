@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Media;
 using System.Windows.Forms;
 
 namespace DS_Gadget
@@ -64,8 +65,10 @@ namespace DS_Gadget
 
         private void updateCheats()
         {
-            // The game sometimes sets and unsets this, for instance when dropping into Manus' arena
-            if (checkBoxPlayerDeadMode.Checked)
+            // The game sometimes sets and unsets this, for instance when dropping into Manus' or BoC's arena
+            // However for reasons I don't understand, constantly setting it causes issues with bow aiming for some users
+            // So only re-set it when it has actually been unset
+            if (checkBoxPlayerDeadMode.Checked && !dsProcess.GetPlayerDeadMode())
                 dsProcess.SetPlayerDeadMode(true);
         }
 

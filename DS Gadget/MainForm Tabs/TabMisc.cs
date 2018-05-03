@@ -26,5 +26,10 @@ namespace DS_Gadget
             if (Int32.TryParse(textBoxEventFlagID.Text, out int id))
                 dsProcess.WriteEventFlag(id, checkBoxEventFlagValue.Checked);
         }
+
+        private void buttonGestures_Click(object sender, EventArgs e)
+        {
+            dsProcess.UnlockAllGestures();
+        }
     }
 }

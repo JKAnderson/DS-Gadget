@@ -12,7 +12,7 @@
 206000 1 true 0 Sunlight Straight Sword
 207000 1 true 0 Barbed Straight Sword
 208000 1 false 5 Silver Knight Straight Sword
-209000 1 true 0 Astora's Straight Sword
+209000 1 false 5 Astora's Straight Sword
 210000 1 true 0 Darksword
 211000 1 false 5 Drake Sword
 212000 1 true 0 Straight Sword Hilt

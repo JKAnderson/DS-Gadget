@@ -64,15 +64,6 @@ namespace DS_Gadget
                     Valid = false;
                     break;
             }
-
-            /*
-            DSOffsets offsets;
-            if (some condition)
-                offsets = new DSOffsets();
-            else
-                offsets = new DSOffsetsDebug();
-            DoThing(offsets.SomeValue);
-            */
         }
 
         public void Close()
@@ -101,7 +92,7 @@ namespace DS_Gadget
         private struct DSPointers
         {
             public int CharData1, CharMapData, AnimData, CharPosData, CharData2, GraphicsData,
-                WorldState, MenuManager, ChrFollowCam, EventFlags, Unknown1, Unknown2, Unknown3, Unknown4;
+                WorldState, MenuManager, ChrFollowCam, EventFlags, Unknown1, Unknown2, Unknown3, Unknown4, Gestures;
         }
         private DSPointers pointers;
 
@@ -140,6 +131,9 @@ namespace DS_Gadget
 
             pointer = dsInterface.ReadInt32(offsets.Unknown4Ptr);
             pointers.Unknown4 = dsInterface.ReadInt32(pointer + offsets.Unknown4Ptr2);
+
+            pointer = dsInterface.ReadInt32(offsets.GesturesPtr);
+            pointers.Gestures = dsInterface.ReadInt32(pointer + offsets.GesturesPtr2);
         }
 
         // Also used to check if game is loaded
@@ -603,6 +597,11 @@ namespace DS_Gadget
         #endregion
 
         #region Cheats Tab
+        public bool GetPlayerDeadMode()
+        {
+            return dsInterface.ReadFlag32(pointers.CharData1 + (int)DSOffsets.CharData1.CharFlags1, (uint)DSOffsets.CharFlags1.SetDeadMode);
+        }
+
         public void SetPlayerDeadMode(bool enable)
         {
             dsInterface.WriteFlag32(pointers.CharData1 + (int)DSOffsets.CharData1.CharFlags1, (uint)DSOffsets.CharFlags1.SetDeadMode, enable);
@@ -705,6 +704,11 @@ namespace DS_Gadget
         #endregion
 
         #region Internals Tab
+        public int GetGender()
+        {
+            return dsInterface.ReadByte(pointers.CharData2 + (int)DSOffsets.CharData2.Gender);
+        }
+
         public int GetEquipRight1Idx()
         {
             return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipRight1Idx);
@@ -830,9 +834,19 @@ namespace DS_Gadget
             return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipHairIdx);
         }
 
+        public void SetEquipHairIdx(int value)
+        {
+            dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipHairIdx, value);
+        }
+
         public int GetEquipHairID()
         {
             return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipHairID);
+        }
+
+        public void SetEquipHairID(int value)
+        {
+            dsInterface.WriteInt32(pointers.CharData2 + (int)DSOffsets.CharData2.EquipHairID, value);
         }
 
         public int GetEquipRing1Idx()
@@ -988,6 +1002,16 @@ namespace DS_Gadget
             int address = getEventFlagAddress(ID, out uint mask);
             dsInterface.WriteFlag32(address, mask, value);
         }
+
+        public void UnlockAllGestures()
+        {
+            foreach (int offset in Enum.GetValues(typeof(DSOffsets.Gestures)))
+            {
+                // This is not, strictly speaking, the right way to do this
+                // But I don't, strictly speaking, really care
+                dsInterface.WriteFlag32(pointers.Gestures + offset, 1, true);
+            }
+        }
         #endregion
 
         #region Hotkeys Tab
@@ -1008,10 +1032,12 @@ namespace DS_Gadget
 
         public void HotkeyTest1()
         {
+
         }
 
         public void HotkeyTest2()
         {
+
         }
         #endregion
     }

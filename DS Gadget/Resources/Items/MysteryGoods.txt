@@ -16,6 +16,7 @@
 214 1 false 0 Estus Flask+7 (Empty)
 215 1 false 0 Estus Flask+7
 350 99 false 0 Humanity
+2015 1 false 0 Lift Chamber Key
 2200 1 false 0 Placeholder Key
 2504 1 false 0 Demon Flame 5
 2603 1 false 0 Blank Scroll

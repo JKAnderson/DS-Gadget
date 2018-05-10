@@ -24,27 +24,43 @@ namespace DS_Gadget
         {
             if (dsProcess != null)
             {
-                dsProcess.DrawMap(true);
-                dsProcess.DrawCreatures(true);
-                dsProcess.DrawObjects(true);
-                dsProcess.DrawSFX(true);
+                if (!checkBoxMap.Checked)
+                    dsProcess.DrawMap(true);
+                if (!checkBoxCreatures.Checked)
+                    dsProcess.DrawCreatures(true);
+                if (!checkBoxObjects.Checked)
+                    dsProcess.DrawObjects(true);
+                if (!checkBoxSFX.Checked)
+                    dsProcess.DrawSFX(true);
 
-                dsProcess.DrawSpriteMasks(true);
-                dsProcess.DrawSprites(true);
-                dsProcess.DrawTrans(true);
-                dsProcess.DrawShadows(true);
-                dsProcess.DrawSpriteShadows(true);
-                dsProcess.DrawTextures(true);
+                if (!checkBoxSpriteMasks.Checked)
+                    dsProcess.DrawSpriteMasks(true);
+                if (!checkBoxSprites.Checked)
+                    dsProcess.DrawSprites(true);
+                if (!checkBoxDrawTrans.Checked)
+                    dsProcess.DrawTrans(true);
+                if (!checkBoxShadows.Checked)
+                    dsProcess.DrawShadows(true);
+                if (!checkBoxSpriteShadows.Checked)
+                    dsProcess.DrawSpriteShadows(true);
+                if (!checkBoxTextures.Checked)
+                    dsProcess.DrawTextures(true);
 
-                dsProcess.DrawBounding(false);
-                dsProcess.DrawCompassLarge(false);
-                dsProcess.DrawCompassSmall(false);
-                dsProcess.DrawAltimeter(false);
-                dsProcess.DrawNodes(false);
+                if (checkBoxBounding.Checked)
+                    dsProcess.DrawBounding(false);
+                if (checkBoxCompassLarge.Checked)
+                    dsProcess.DrawCompassLarge(false);
+                if (checkBoxCompassSmall.Checked)
+                    dsProcess.DrawCompassSmall(false);
+                if (checkBoxAltimeter.Checked)
+                    dsProcess.DrawAltimeter(false);
+                if (checkBoxNodes.Checked)
+                    dsProcess.DrawNodes(false);
 
                 if (loaded)
                 {
-                    dsProcess.OverrideFilter(false);
+                    if (checkBoxFilter.Checked)
+                        dsProcess.OverrideFilter(false);
                 }
             }
         }
@@ -66,29 +82,47 @@ namespace DS_Gadget
 
         private void reloadGraphics()
         {
-            dsProcess.DrawMap(checkBoxMap.Checked);
-            dsProcess.DrawCreatures(checkBoxCreatures.Checked);
-            dsProcess.DrawObjects(checkBoxObjects.Checked);
-            dsProcess.DrawSFX(checkBoxSFX.Checked);
+            if (!checkBoxMap.Checked)
+                dsProcess.DrawMap(false);
+            if (!checkBoxCreatures.Checked)
+                dsProcess.DrawCreatures(false);
+            if (!checkBoxObjects.Checked)
+                dsProcess.DrawObjects(false);
+            if (!checkBoxSFX.Checked)
+                dsProcess.DrawSFX(false);
 
-            dsProcess.DrawSpriteMasks(checkBoxSpriteMasks.Checked);
-            dsProcess.DrawSprites(checkBoxSprites.Checked);
-            dsProcess.DrawTrans(checkBoxDrawTrans.Checked);
-            dsProcess.DrawShadows(checkBoxShadows.Checked);
-            dsProcess.DrawSpriteShadows(checkBoxSpriteShadows.Checked);
-            dsProcess.DrawTextures(checkBoxTextures.Checked);
+            if (!checkBoxSpriteMasks.Checked)
+                dsProcess.DrawSpriteMasks(false);
+            if (!checkBoxSprites.Checked)
+                dsProcess.DrawSprites(false);
+            if (!checkBoxDrawTrans.Checked)
+                dsProcess.DrawTrans(false);
+            if (!checkBoxShadows.Checked)
+                dsProcess.DrawShadows(false);
+            if (!checkBoxSpriteShadows.Checked)
+                dsProcess.DrawSpriteShadows(false);
+            if (!checkBoxTextures.Checked)
+                dsProcess.DrawTextures(false);
 
-            dsProcess.DrawBounding(checkBoxBounding.Checked);
-            dsProcess.DrawCompassLarge(checkBoxCompassLarge.Checked);
-            dsProcess.DrawCompassSmall(checkBoxCompassSmall.Checked);
-            dsProcess.DrawAltimeter(checkBoxAltimeter.Checked);
-            dsProcess.DrawNodes(checkBoxNodes.Checked);
+            if (checkBoxBounding.Checked)
+                dsProcess.DrawBounding(true);
+            if (checkBoxCompassLarge.Checked)
+                dsProcess.DrawCompassLarge(true);
+            if (checkBoxCompassSmall.Checked)
+                dsProcess.DrawCompassSmall(true);
+            if (checkBoxAltimeter.Checked)
+                dsProcess.DrawAltimeter(true);
+            if (checkBoxNodes.Checked)
+                dsProcess.DrawNodes(true);
 
-            dsProcess.OverrideFilter(checkBoxFilter.Checked);
-            updateBrightness();
-            updateContrast();
-            dsProcess.SetSaturation((float)numericUpDownSaturation.Value);
-            dsProcess.SetHue((float)numericUpDownHue.Value);
+            if (checkBoxFilter.Checked)
+            {
+                dsProcess.OverrideFilter(checkBoxFilter.Checked);
+                updateBrightness();
+                updateContrast();
+                dsProcess.SetSaturation((float)numericUpDownSaturation.Value);
+                dsProcess.SetHue((float)numericUpDownHue.Value);
+            }
         }
 
         private void updateGraphics() { }

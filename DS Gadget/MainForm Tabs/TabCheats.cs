@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Media;
 using System.Windows.Forms;
 
 namespace DS_Gadget
@@ -12,28 +11,47 @@ namespace DS_Gadget
         {
             if (dsProcess != null)
             {
-                dsProcess.SetAllNoMagic(false);
-                dsProcess.SetNoDead(false);
-                dsProcess.SetExterminate(false);
-                dsProcess.SetAllStamina(false);
-                dsProcess.SetAllAmmo(false);
-                dsProcess.SetHide(false);
-                dsProcess.SetSilence(false);
-                dsProcess.SetAllNoDead(false);
-                dsProcess.SetAllNoDamage(false);
-                dsProcess.SetAllNoHit(false);
-                dsProcess.SetAllNoAttack(false);
-                dsProcess.SetAllNoMove(false);
-                dsProcess.SetAllNoUpdateAI(false);
+                if (checkBoxAllNoMagic.Checked)
+                    dsProcess.SetAllNoMagic(false);
+                if (checkBoxPlayerNoDead.Checked)
+                    dsProcess.SetNoDead(false);
+                if (checkBoxPlayerExterminate.Checked)
+                    dsProcess.SetExterminate(false);
+                if (checkBoxAllNoStamina.Checked)
+                    dsProcess.SetAllStamina(false);
+                if (checkBoxAllNoArrow.Checked)
+                    dsProcess.SetAllAmmo(false);
+                if (checkBoxPlayerHide.Checked)
+                    dsProcess.SetHide(false);
+                if (checkBoxPlayerSilence.Checked)
+                    dsProcess.SetSilence(false);
+                if (checkBoxAllNoDead.Checked)
+                    dsProcess.SetAllNoDead(false);
+                if (checkBoxAllNoDamage.Checked)
+                    dsProcess.SetAllNoDamage(false);
+                if (checkBoxAllNoHit.Checked)
+                    dsProcess.SetAllNoHit(false);
+                if (checkBoxAllNoAttack.Checked)
+                    dsProcess.SetAllNoAttack(false);
+                if (checkBoxAllNoMove.Checked)
+                    dsProcess.SetAllNoMove(false);
+                if (checkBoxAllNoUpdateAI.Checked)
+                    dsProcess.SetAllNoUpdateAI(false);
 
                 if (loaded)
                 {
-                    dsProcess.SetPlayerDeadMode(false);
-                    dsProcess.SetPlayerNoDamage(false);
-                    dsProcess.SetPlayerNoHit(false);
-                    dsProcess.SetPlayerNoStamina(false);
-                    dsProcess.SetPlayerSuperArmor(false);
-                    dsProcess.SetPlayerNoGoods(false);
+                    if (checkBoxPlayerDeadMode.Checked)
+                        dsProcess.SetPlayerDeadMode(false);
+                    if (checkBoxPlayerNoDamage.Checked)
+                        dsProcess.SetPlayerNoDamage(false);
+                    if (checkBoxPlayerNoHit.Checked)
+                        dsProcess.SetPlayerNoHit(false);
+                    if (checkBoxPlayerNoStamina.Checked)
+                        dsProcess.SetPlayerNoStamina(false);
+                    if (checkBoxPlayerSuperArmor.Checked)
+                        dsProcess.SetPlayerSuperArmor(false);
+                    if (checkBoxPlayerNoGoods.Checked)
+                        dsProcess.SetPlayerNoGoods(false);
                 }
             }
         }
@@ -42,25 +60,44 @@ namespace DS_Gadget
 
         private void reloadCheats()
         {
-            dsProcess.SetPlayerDeadMode(checkBoxPlayerDeadMode.Checked);
-            dsProcess.SetPlayerNoDamage(checkBoxPlayerNoDamage.Checked);
-            dsProcess.SetPlayerNoHit(checkBoxPlayerNoHit.Checked);
-            dsProcess.SetPlayerNoStamina(checkBoxPlayerNoStamina.Checked);
-            dsProcess.SetPlayerSuperArmor(checkBoxPlayerSuperArmor.Checked);
-            dsProcess.SetPlayerNoGoods(checkBoxPlayerNoGoods.Checked);
-            dsProcess.SetAllNoMagic(checkBoxAllNoMagic.Checked);
-            dsProcess.SetNoDead(checkBoxPlayerNoDead.Checked);
-            dsProcess.SetExterminate(checkBoxPlayerExterminate.Checked);
-            dsProcess.SetAllStamina(checkBoxAllNoStamina.Checked);
-            dsProcess.SetAllAmmo(checkBoxAllNoArrow.Checked);
-            dsProcess.SetHide(checkBoxPlayerHide.Checked);
-            dsProcess.SetSilence(checkBoxPlayerSilence.Checked);
-            dsProcess.SetAllNoDead(checkBoxAllNoDead.Checked);
-            dsProcess.SetAllNoDamage(checkBoxAllNoDamage.Checked);
-            dsProcess.SetAllNoHit(checkBoxAllNoHit.Checked);
-            dsProcess.SetAllNoAttack(checkBoxAllNoAttack.Checked);
-            dsProcess.SetAllNoMove(checkBoxAllNoMove.Checked);
-            dsProcess.SetAllNoUpdateAI(checkBoxAllNoUpdateAI.Checked);
+            if (checkBoxPlayerDeadMode.Checked)
+                dsProcess.SetPlayerDeadMode(true);
+            if (checkBoxPlayerNoDamage.Checked)
+                dsProcess.SetPlayerNoDamage(true);
+            if (checkBoxPlayerNoHit.Checked)
+                dsProcess.SetPlayerNoHit(true);
+            if (checkBoxPlayerNoStamina.Checked)
+                dsProcess.SetPlayerNoStamina(true);
+            if (checkBoxPlayerSuperArmor.Checked)
+                dsProcess.SetPlayerSuperArmor(true);
+            if (checkBoxPlayerNoGoods.Checked)
+                dsProcess.SetPlayerNoGoods(true);
+            if (checkBoxAllNoMagic.Checked)
+                dsProcess.SetAllNoMagic(true);
+            if (checkBoxPlayerNoDead.Checked)
+                dsProcess.SetNoDead(true);
+            if (checkBoxPlayerExterminate.Checked)
+                dsProcess.SetExterminate(true);
+            if (checkBoxAllNoStamina.Checked)
+                dsProcess.SetAllStamina(true);
+            if (checkBoxAllNoArrow.Checked)
+                dsProcess.SetAllAmmo(true);
+            if (checkBoxPlayerHide.Checked)
+                dsProcess.SetHide(true);
+            if (checkBoxPlayerSilence.Checked)
+                dsProcess.SetSilence(true);
+            if (checkBoxAllNoDead.Checked)
+                dsProcess.SetAllNoDead(true);
+            if (checkBoxAllNoDamage.Checked)
+                dsProcess.SetAllNoDamage(true);
+            if (checkBoxAllNoHit.Checked)
+                dsProcess.SetAllNoHit(true);
+            if (checkBoxAllNoAttack.Checked)
+                dsProcess.SetAllNoAttack(true);
+            if (checkBoxAllNoMove.Checked)
+                dsProcess.SetAllNoMove(true);
+            if (checkBoxAllNoUpdateAI.Checked)
+                dsProcess.SetAllNoUpdateAI(true);
         }
 
         private void updateCheats()

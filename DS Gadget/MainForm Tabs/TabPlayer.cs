@@ -30,12 +30,16 @@ namespace DS_Gadget
         {
             if (dsProcess != null)
             {
-                dsProcess.SetPosLock(false);
+                if (checkBoxPosLock.Checked)
+                    dsProcess.SetPosLock(false);
                 if (loaded)
                 {
-                    dsProcess.SetGravity(true);
-                    dsProcess.SetCollision(true);
-                    dsProcess.SetSpeed(1);
+                    if (!checkBoxGravity.Checked)
+                        dsProcess.SetGravity(true);
+                    if (!checkBoxCollision.Checked)
+                        dsProcess.SetCollision(true);
+                    if (checkBoxSpeed.Checked)
+                        dsProcess.SetSpeed(1);
                 }
             }
         }
@@ -49,9 +53,12 @@ namespace DS_Gadget
 
         private void reloadPlayer()
         {
-            checkBoxPosLock.Checked = false;
-            dsProcess.SetGravity(checkBoxGravity.Checked);
-            checkBoxCollision.Checked = true;
+            if (checkBoxPosLock.Checked)
+                dsProcess.SetPosLock(true);
+            if (!checkBoxGravity.Checked)
+                dsProcess.SetGravity(false);
+            if (!checkBoxCollision.Checked)
+                dsProcess.SetCollision(false);
             if (checkBoxSpeed.Checked)
                 dsProcess.SetSpeed((float)numericUpDownSpeed.Value);
         }

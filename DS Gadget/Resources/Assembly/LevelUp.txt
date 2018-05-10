@@ -1,0 +1,4 @@
+﻿mov eax, 0x{0:X}
+mov ecx, 0x{0:X}
+call 0x{1:X}
+ret

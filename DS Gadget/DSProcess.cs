@@ -322,6 +322,12 @@ namespace DS_Gadget
             dsInterface.WriteInt32(pointers.WorldState + (int)DSOffsets.WorldState.LastBonfire, id);
         }
 
+        public void BonfireWarp()
+        {
+            string asm = Properties.Resources.BonfireWarp;
+            dsInterface.AsmExecute(asm);
+        }
+
         public void SetSpeed(float speed)
         {
             dsInterface.WriteFloat(pointers.AnimData + (int)DSOffsets.AnimData.PlaySpeed, speed);
@@ -453,11 +459,7 @@ namespace DS_Gadget
             dsInterface.WriteInt32(stats + (int)DSOffsets.FuncLevelUp.SoulLevel, level);
             dsInterface.WriteInt32(stats + (int)DSOffsets.FuncLevelUp.Souls, GetSouls());
 
-            string asm = String.Format(
-                "mov eax, 0x{0:X}\n" +
-                "mov ecx, 0x{0:X}\n" +
-                "call 0x{1:X}\n" +
-                "ret",
+            string asm = String.Format(Properties.Resources.LevelUp,
                 stats, offsets.FuncLevelUpPtr);
 
             dsInterface.AsmExecute(asm);
@@ -470,20 +472,7 @@ namespace DS_Gadget
         #region Items Tab
         public void DropItem(int category, int itemID, int count)
         {
-            string asm = String.Format(
-                "mov ebp, 0x{0:X}\n" +
-                "mov ebx, 0x{1:X}\n" +
-                "mov ecx, 0xFFFFFFFF\n" +
-                "mov edx, 0x{2:X}\n" +
-                "mov eax, [0x{3:X}]\n" +
-                "mov [eax + 0x828], ebp\n" +
-                "mov [eax + 0x82C], ebx\n" +
-                "mov [eax + 0x830], ecx\n" +
-                "mov [eax + 0x834], edx\n" +
-                "mov eax, [0x{4:X}]\n" +
-                "push eax\n" +
-                "call 0x{5:X}\n" +
-                "ret",
+            string asm = String.Format(Properties.Resources.ItemDrop,
                 category, itemID, count, offsets.FuncItemDropUnknown1, offsets.FuncItemDropUnknown2, offsets.FuncItemDropPtr);
 
             dsInterface.AsmExecute(asm);

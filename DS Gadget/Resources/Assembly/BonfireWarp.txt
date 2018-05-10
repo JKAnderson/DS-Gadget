@@ -1,0 +1,5 @@
+﻿mov esi, [0x137D790]
+mov edi, 0x1
+push edi
+call 0xD76390
+ret

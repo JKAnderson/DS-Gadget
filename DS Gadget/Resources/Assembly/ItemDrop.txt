@@ -1,0 +1,13 @@
+﻿mov ebp, 0x{0:X}
+mov ebx, 0x{1:X}
+mov ecx, 0xFFFFFFFF
+mov edx, 0x{2:X}
+mov eax, [0x{3:X}]
+mov [eax + 0x828], ebp
+mov [eax + 0x82C], ebx
+mov [eax + 0x830], ecx
+mov [eax + 0x834], edx
+mov eax, [0x{4:X}]
+push eax
+call 0x{5:X}
+ret

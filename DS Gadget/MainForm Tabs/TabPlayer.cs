@@ -228,6 +228,11 @@ namespace DS_Gadget
             dsProcess?.SetBonfire(bonfire.ID);
         }
 
+        private void buttonWarp_Click(object sender, EventArgs e)
+        {
+            dsProcess?.BonfireWarp();
+        }
+
         private void checkBoxSpeed_CheckedChanged(object sender, EventArgs e)
         {
             numericUpDownSpeed.Enabled = checkBoxSpeed.Checked;

@@ -166,4 +166,13 @@
   <data name="Bonfires" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bonfires.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="BonfireWarp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Assembly\BonfireWarp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ItemDrop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Assembly\ItemDrop.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="LevelUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Assembly\LevelUp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

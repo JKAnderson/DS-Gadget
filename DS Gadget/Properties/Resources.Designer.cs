@@ -85,7 +85,7 @@ namespace DS_Gadget.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to -1 None
+        ///   Looks up a localized string similar to -1 [None]
         ///1002900 Depths (Entrance)
         ///1002950 Depths (Gaping Dragon&apos;s Room)
         ///1002960 Depths (Bonfire)
@@ -99,11 +99,24 @@ namespace DS_Gadget.Properties {
         ///1022960 Firelink Shrine (Bonfire)
         ///1102511 Painted World of Ariamis (Rope Bridge)
         ///1102960 Painted World of Ariamis (Bonfire)
-        ///1102961 Painted Wor [rest of string was truncated]&quot;;.
+        ///1102961 Painted W [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Bonfires {
             get {
                 return ResourceManager.GetString("Bonfires", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mov esi, [137D790]
+        ///mov edi, 1
+        ///push edi
+        ///call D76390
+        ///ret.
+        /// </summary>
+        internal static string BonfireWarp {
+            get {
+                return ResourceManager.GetString("BonfireWarp", resourceCulture);
             }
         }
         
@@ -150,6 +163,27 @@ namespace DS_Gadget.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to mov ebp, {0:X}
+        ///mov ebx, {1:X}
+        ///mov ecx, FFFFFFFF
+        ///mov edx, {2:X}
+        ///mov eax, [{3:X}]
+        ///mov [eax + 828], ebp
+        ///mov [eax + 82C], ebx
+        ///mov [eax + 830], ecx
+        ///mov [eax + 834], edx
+        ///mov eax, [{4:X}]
+        ///push eax
+        ///call {5:X}
+        ///ret.
+        /// </summary>
+        internal static string ItemDrop {
+            get {
+                return ResourceManager.GetString("ItemDrop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 376 1 false 0 Pendant
         ///384 1 false 0 Peculiar Doll
         ///2001 1 false 0 Basement Key
@@ -174,6 +208,18 @@ namespace DS_Gadget.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to mov eax, {0:X}
+        ///mov ecx, {0:X}
+        ///call {1:X}
+        ///ret.
+        /// </summary>
+        internal static string LevelUp {
+            get {
+                return ResourceManager.GetString("LevelUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 100000 1 true 0 Dagger
         ///101000 1 true 0 Parrying Dagger
         ///102000 1 false 5 Ghost Blade
@@ -188,7 +234,7 @@ namespace DS_Gadget.Properties {
         ///206000 1 true 0 Sunlight Straight Sword
         ///207000 1 true 0 Barbed Straight Sword
         ///208000 1 false 5 Silver Knight Straight Sword
-        ///209000 1 true 0 Astora&apos;s Straig [rest of string was truncated]&quot;;.
+        ///209000 1 false 5 Astora&apos;s Strai [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string MeleeWeapons {
             get {
@@ -227,24 +273,22 @@ namespace DS_Gadget.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 200 1 false 0 Estus Flask
+        ///   Looks up a localized string similar to 116 1 false 0 Black Eye Orb (Shiva)
+        ///200 1 false 0 Estus Flask (Empty)
         ///201 1 false 0 Estus Flask
-        ///202 1 false 0 Estus Flask+1
+        ///202 1 false 0 Estus Flask+1 (Empty)
         ///203 1 false 0 Estus Flask+1
-        ///204 1 false 0 Estus Flask+2
+        ///204 1 false 0 Estus Flask+2 (Empty)
         ///205 1 false 0 Estus Flask+2
-        ///206 1 false 0 Estus Flask+3
+        ///206 1 false 0 Estus Flask+3 (Empty)
         ///207 1 false 0 Estus Flask+3
-        ///208 1 false 0 Estus Flask+4
+        ///208 1 false 0 Estus Flask+4 (Empty)
         ///209 1 false 0 Estus Flask+4
-        ///210 1 false 0 Estus Flask+5
+        ///210 1 false 0 Estus Flask+5 (Empty)
         ///211 1 false 0 Estus Flask+5
-        ///212 1 false 0 Estus Flask+6
+        ///212 1 false 0 Estus Flask+6 (Empty)
         ///213 1 false 0 Estus Flask+6
-        ///214 1 false 0 Estus Flask+7
-        ///215 1 false 0 Estus Flask+7
-        ///350 99 false 0 Humanity
-        ///2200 1 false 0 Placeholder  [rest of string was truncated]&quot;;.
+        ///214 1 false 0 Est [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string MysteryGoods {
             get {
@@ -256,8 +300,8 @@ namespace DS_Gadget.Properties {
         ///   Looks up a localized string similar to 199000 1 false 0 Ghost Dagger
         ///299000 1 false 0 Ghost Sword
         ///308000 1 false 5 Great Lord Greatsword
-        ///398000 1 false 0 Ghost Large Sword
-        ///399000 1 false 0 Ghost Large Sword
+        ///398000 1 false 0 Ghost Greatsword
+        ///399000 1 false 0 Ghost Ultra Greatsword
         ///454001 1 false 0 454001
         ///454002 1 false 0 454002
         ///454003 1 false 0 454003
@@ -269,7 +313,7 @@ namespace DS_Gadget.Properties {
         ///699000 1 false 0 Ghost Rapier
         ///798000 1 false 0 Ghost Axe
         ///799000 1 false 0 Ghost Greataxe
-        ///898000 1 fal [rest of string was truncated]&quot;;.
+        ///898000 1 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string MysteryWeapons {
             get {
@@ -425,13 +469,13 @@ namespace DS_Gadget.Properties {
         ///112 1 false 0 Servant Roster
         ///113 1 false 0 Blue Eye Orb
         ///114 1 false 0 Dragon Eye
-        ///115 1 false 0 Black Eye Orb (115)
-        ///116 1 false 0 Black Eye Orb (116)
+        ///115 1 false 0 Black Eye Orb (Lautrec)
         ///117 1 false 0 Darksign
         ///118 1 false 0 Purple Coward&apos;s Crystal
         ///220 1 false 0 Silver Pendant
         ///371 1 false 0 Binoculars
-        ///377 1 false 0 Dragon Head S [rest of string was truncated]&quot;;.
+        ///377 1 false 0 Dragon Head Stone
+        ///378 1 false 0 Dragon Tors [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string UsableItems {
             get {

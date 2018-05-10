@@ -302,6 +302,7 @@
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.buttonWarp = new System.Windows.Forms.Button();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -465,6 +466,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxOther.AutoSize = true;
+            this.groupBoxOther.Controls.Add(this.buttonWarp);
             this.groupBoxOther.Controls.Add(this.checkBoxSpeed);
             this.groupBoxOther.Controls.Add(this.numericUpDownSpeed);
             this.groupBoxOther.Controls.Add(this.checkBoxGravity);
@@ -542,7 +544,7 @@
             this.comboBoxBonfire.FormattingEnabled = true;
             this.comboBoxBonfire.Location = new System.Drawing.Point(6, 55);
             this.comboBoxBonfire.Name = "comboBoxBonfire";
-            this.comboBoxBonfire.Size = new System.Drawing.Size(353, 21);
+            this.comboBoxBonfire.Size = new System.Drawing.Size(272, 21);
             this.comboBoxBonfire.TabIndex = 3;
             this.comboBoxBonfire.SelectedIndexChanged += new System.EventHandler(this.comboBoxBonfire_SelectedIndexChanged);
             // 
@@ -3735,6 +3737,16 @@
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
             // 
+            // buttonWarp
+            // 
+            this.buttonWarp.Location = new System.Drawing.Point(284, 53);
+            this.buttonWarp.Name = "buttonWarp";
+            this.buttonWarp.Size = new System.Drawing.Size(75, 23);
+            this.buttonWarp.TabIndex = 6;
+            this.buttonWarp.Text = "Warp";
+            this.buttonWarp.UseVisualStyleBackColor = true;
+            this.buttonWarp.Click += new System.EventHandler(this.buttonWarp_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4118,6 +4130,7 @@
         private System.Windows.Forms.TextBox textBoxStoredQuantity;
         private System.Windows.Forms.Button buttonGestures;
         private System.Windows.Forms.Button buttonHaircut;
+        private System.Windows.Forms.Button buttonWarp;
     }
 }
 

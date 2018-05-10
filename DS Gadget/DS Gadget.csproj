@@ -155,6 +155,9 @@
     <Content Include="icon.ico" />
     <None Include="Resources\Classes.txt" />
     <None Include="Resources\Bonfires.txt" />
+    <Content Include="Resources\Assembly\BonfireWarp.txt" />
+    <Content Include="Resources\Assembly\ItemDrop.txt" />
+    <Content Include="Resources\Assembly\LevelUp.txt" />
     <Content Include="Resources\Items\MysteryWeapons.txt" />
     <Content Include="Resources\Items\RangedWeapons.txt" />
     <Content Include="Resources\Items\Shields.txt" />

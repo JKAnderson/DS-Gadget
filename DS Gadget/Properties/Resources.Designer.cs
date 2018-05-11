@@ -108,10 +108,10 @@ namespace DS_Gadget.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to mov esi, [137D790]
-        ///mov edi, 1
+        ///   Looks up a localized string similar to mov esi, [0x137D790]
+        ///mov edi, 0x1
         ///push edi
-        ///call D76390
+        ///call 0xD76390
         ///ret.
         /// </summary>
         internal static string BonfireWarp {
@@ -163,23 +163,46 @@ namespace DS_Gadget.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to mov ebp, {0:X}
-        ///mov ebx, {1:X}
-        ///mov ecx, FFFFFFFF
-        ///mov edx, {2:X}
-        ///mov eax, [{3:X}]
-        ///mov [eax + 828], ebp
-        ///mov [eax + 82C], ebx
-        ///mov [eax + 830], ecx
-        ///mov [eax + 834], edx
-        ///mov eax, [{4:X}]
+        ///   Looks up a localized string similar to mov ebp, 0x{0:X}
+        ///mov ebx, 0x{1:X}
+        ///mov ecx, 0xFFFFFFFF
+        ///mov edx, 0x{2:X}
+        ///mov eax, [0x{3:X}]
+        ///mov [eax + 0x828], ebp
+        ///mov [eax + 0x82C], ebx
+        ///mov [eax + 0x830], ecx
+        ///mov [eax + 0x834], edx
+        ///mov eax, [0x{4:X}]
         ///push eax
-        ///call {5:X}
+        ///call 0x{5:X}
         ///ret.
         /// </summary>
         internal static string ItemDrop {
             get {
                 return ResourceManager.GetString("ItemDrop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mov edx, [0x1378700]
+        ///mov edi, [edx + 0x8]
+        ///mov ecx, {0}
+        ///mov esi, {1}
+        ///mov ebp, {2}
+        ///mov ebx, 0xFFFFFFFF
+        ///push 0x0
+        ///push 0x1
+        ///push ebp
+        ///push esi
+        ///push ecx
+        ///add edi, 0x1B8
+        ///push edi
+        ///call 0xC0B700
+        ///ret.
+        /// </summary>
+        internal static string ItemGet {
+            get {
+                return ResourceManager.GetString("ItemGet", resourceCulture);
             }
         }
         
@@ -208,9 +231,9 @@ namespace DS_Gadget.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to mov eax, {0:X}
-        ///mov ecx, {0:X}
-        ///call {1:X}
+        ///   Looks up a localized string similar to mov eax, 0x{0:X}
+        ///mov ecx, 0x{0:X}
+        ///call 0x{1:X}
         ///ret.
         /// </summary>
         internal static string LevelUp {

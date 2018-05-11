@@ -101,7 +101,7 @@ namespace DS_Gadget
                 DSInfusion infusion = comboBoxInfusion.SelectedItem as DSInfusion;
                 id += infusion.Value;
             }
-            dsProcess.DropItem(category.ID, id, (int)numericUpDownQuantity.Value);
+            dsProcess.GetItem(category.ID, id, (int)numericUpDownQuantity.Value);
         }
     }
 }

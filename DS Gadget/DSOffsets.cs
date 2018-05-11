@@ -142,6 +142,7 @@ namespace DS_Gadget
             Souls = 0x8C,
             Gender = 0xC2,
             Class = 0xC6,
+            InventoryIndexStart = 0x1B8,
             EquipLeft1Idx = 0x1D4,
             EquipRight1Idx = 0x1D8,
             EquipLeft2Idx = 0x1DC,
@@ -292,9 +293,9 @@ namespace DS_Gadget
             PraiseTheSun = 0x44,
         }
 
-        public int FuncItemDropPtr = 0xDC8C60;
-        public int FuncItemDropUnknown1 = 0x13786D0;
-        public int FuncItemDropUnknown2 = 0x137D6BC;
+        
+
+        public int FuncItemGetPtr = 0xC0B700;
 
         public int FuncLevelUpPtr = 0xC75DD0;
         public enum FuncLevelUp
@@ -310,6 +311,13 @@ namespace DS_Gadget
             SoulLevel = 0x16C,
             Souls = 0x178,
         }
+
+        public int FuncBonfireWarpPtr = 0xD76390;
+        public int FuncBonfireWarpUnknown1 = 0x137D790;
+
+        public int FuncItemDropPtr = 0xDC8C60;
+        public int FuncItemDropUnknown1 = 0x13786D0;
+        public int FuncItemDropUnknown2 = 0x137D6BC;
 
         public static DSOffsets Release = new DSOffsets();
         public static DSOffsets Debug = new DSOffsets()
@@ -354,11 +362,13 @@ namespace DS_Gadget
             Unknown4Ptr = 0x12E69E8,
             GesturesPtr = 0x1807EFF0 + 0x8,
 
+            FuncItemGetPtr = 0xC0B180,
+            FuncLevelUpPtr = 0xC75850,
+            FuncBonfireWarpPtr = 0xD77930,
+            FuncBonfireWarpUnknown1 = 0x1381950,
+            FuncItemDropPtr = 0xDCB550,
             FuncItemDropUnknown1 = 0x137C890,
             FuncItemDropUnknown2 = 0x138187C,
-            FuncItemDropPtr = 0xDCB550,
-
-            FuncLevelUpPtr = 0xC75850,
         };
     }
 }

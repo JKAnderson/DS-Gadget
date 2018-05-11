@@ -324,7 +324,8 @@ namespace DS_Gadget
 
         public void BonfireWarp()
         {
-            string asm = Properties.Resources.BonfireWarp;
+            string asm = String.Format(Properties.Resources.BonfireWarp,
+                offsets.FuncBonfireWarpUnknown1, offsets.FuncBonfireWarpPtr);
             dsInterface.AsmExecute(asm);
         }
 
@@ -470,6 +471,14 @@ namespace DS_Gadget
         #endregion
 
         #region Items Tab
+        public void GetItem(int category, int itemID, int count)
+        {
+            string asm = String.Format(Properties.Resources.ItemGet,
+                pointers.CharData2 + (int)DSOffsets.CharData2.InventoryIndexStart, category, itemID, count, offsets.FuncItemGetPtr);
+
+            dsInterface.AsmExecute(asm);
+        }
+
         public void DropItem(int category, int itemID, int count)
         {
             string asm = String.Format(Properties.Resources.ItemDrop,

@@ -1,0 +1,13 @@
+﻿mov edi, 0x{0:X}
+mov ecx, 0x{1:X}
+mov esi, 0x{2:X}
+mov ebp, 0x{3:X}
+mov ebx, 0xFFFFFFFF
+push 0x0
+push 0x1
+push ebp
+push esi
+push ecx
+push edi
+call 0x{4:X}
+ret

@@ -4,7 +4,36 @@ A multi-purpose testing tool for Dark Souls 1. Compatible with both the Steam an
 Requires [.NET 4.6.2](https://www.microsoft.com/net/download/thank-you/net462) and [VC Redist 2012 x86](https://my.visualstudio.com/Downloads?pid=1452)  
 You probably already have both.
 
+# Credits
+[Fasm.NET](https://github.com/ZenLulz/Fasm.NET) by Jämes Ménétrey
+
+[LowLevelHooking](https://github.com/jnm2/LowLevelHooking) by Joseph N. Musser II
+
+[Octokit](https://github.com/octokit/octokit.net) by GitHub
+
+[Semver](https://github.com/maxhauser/semver) by Max Hauser
+
+# Special Thanks
+**Wulf2k**, for writing Gizmo and memlocs.ods, without which I would be nothing.
+
+**AndrovT**, for figuring out how the heck event flags work.
+
+**Meowmaritus**, for MeowDSIO, which was used to build the item lists.
+
+**Pav**, for spoonfeeding me so many function pointers.
+
+And all of the other wonderful people in the SpeedSouls discord.
+
 # Changelog
+### 2.2
+* Added a button to warp to last bonfire (like a bone, but a button)
+* Options will only be reapplied when they're not in the default state (so if you leave them off, they won't conflict with Debug)
+* Item spawner improvements
+	* Spawned items now go straight into your inventory
+	* You can spawn upgraded pyromancy flames
+	* You can no longer infuse shields and crossbows with infusions they can't be infused with
+	* Removed some items that didn't actually exist
+
 ### 2.1
 * Added a button to unlock all gestures to Misc tab
 * Added a very awkwardly-placed button to reset your hair slot to Internals tab, because flexing permanently hecks it up
@@ -57,19 +86,3 @@ You probably already have both.
 * Reorganized and expanded cheats
 * Added phantom and team type
 * Added missing Painted World respawn
-
-# Credits
-[Fasm.NET](https://github.com/ZenLulz/Fasm.NET) by Jämes Ménétrey
-
-[LowLevelHooking](https://github.com/jnm2/LowLevelHooking) by Joseph N. Musser II
-
-[Octokit](https://github.com/octokit/octokit.net) by GitHub
-
-[Semver](https://github.com/maxhauser/semver) by Max Hauser
-
-# Special Thanks
-**Wulf2k**, for writing Gizmo and memlocs.ods, without which I would be nothing.
-
-**AndrovT**, for figuring out how the heck event flags work.
-
-And all of the wonderful people in the SpeedSouls discord, for putting up with me.

@@ -8,9 +8,6 @@ namespace DS_Gadget
     {
         private void initItems()
         {
-            foreach (DSInfusion infusion in DSInfusion.All)
-                comboBoxInfusion.Items.Add(infusion);
-            comboBoxInfusion.SelectedIndex = 0;
             foreach (DSItemCategory category in DSItemCategory.All)
                 comboBoxCategory.Items.Add(category);
             comboBoxCategory.SelectedIndex = 0;
@@ -63,21 +60,55 @@ namespace DS_Gadget
                     numericUpDownQuantity.Enabled = true;
                 numericUpDownQuantity.Maximum = item.StackLimit;
             }
-            if (item.Infusable)
+            switch (item.UpgradeType)
             {
-                comboBoxInfusion.Enabled = true;
-                DSInfusion infusion = comboBoxInfusion.SelectedItem as DSInfusion;
-                numericUpDownUpgrade.Enabled = true;
-                numericUpDownUpgrade.Maximum = infusion.MaxUpgrade;
-            }
-            else
-            {
-                comboBoxInfusion.Enabled = false;
-                numericUpDownUpgrade.Maximum = item.MaxUpgrade;
-                if (item.MaxUpgrade > 0)
-                    numericUpDownUpgrade.Enabled = true;
-                else
+                case DSItem.Upgrade.None:
+                    comboBoxInfusion.Enabled = false;
+                    comboBoxInfusion.Items.Clear();
                     numericUpDownUpgrade.Enabled = false;
+                    numericUpDownUpgrade.Maximum = 0;
+                    break;
+                case DSItem.Upgrade.Unique:
+                    comboBoxInfusion.Enabled = false;
+                    comboBoxInfusion.Items.Clear();
+                    numericUpDownUpgrade.Maximum = 5;
+                    numericUpDownUpgrade.Enabled = true;
+                    break;
+                case DSItem.Upgrade.Armor:
+                    comboBoxInfusion.Enabled = false;
+                    comboBoxInfusion.Items.Clear();
+                    numericUpDownUpgrade.Maximum = 10;
+                    numericUpDownUpgrade.Enabled = true;
+                    break;
+                case DSItem.Upgrade.Infusable:
+                    comboBoxInfusion.Items.Clear();
+                    foreach (DSInfusion infusion in DSInfusion.All)
+                        comboBoxInfusion.Items.Add(infusion);
+                    comboBoxInfusion.SelectedIndex = 0;
+                    comboBoxInfusion.Enabled = true;
+                    numericUpDownUpgrade.Enabled = true;
+                    break;
+                case DSItem.Upgrade.InfusableRestricted:
+                    comboBoxInfusion.Items.Clear();
+                    foreach (DSInfusion infusion in DSInfusion.All)
+                        if (!infusion.Restricted)
+                            comboBoxInfusion.Items.Add(infusion);
+                    comboBoxInfusion.SelectedIndex = 0;
+                    comboBoxInfusion.Enabled = true;
+                    numericUpDownUpgrade.Enabled = true;
+                    break;
+                case DSItem.Upgrade.PyroFlame:
+                    comboBoxInfusion.Enabled = false;
+                    comboBoxInfusion.Items.Clear();
+                    numericUpDownUpgrade.Maximum = 15;
+                    numericUpDownUpgrade.Enabled = true;
+                    break;
+                case DSItem.Upgrade.PyroFlameAscended:
+                    comboBoxInfusion.Enabled = false;
+                    comboBoxInfusion.Items.Clear();
+                    numericUpDownUpgrade.Maximum = 5;
+                    numericUpDownUpgrade.Enabled = true;
+                    break;
             }
         }
 
@@ -95,8 +126,12 @@ namespace DS_Gadget
         {
             DSItemCategory category = comboBoxCategory.SelectedItem as DSItemCategory;
             DSItem item = listBoxItems.SelectedItem as DSItem;
-            int id = item.ID + (int)numericUpDownUpgrade.Value;
-            if (item.Infusable)
+            int id = item.ID;
+            if (item.UpgradeType == DSItem.Upgrade.PyroFlame || item.UpgradeType == DSItem.Upgrade.PyroFlameAscended)
+                id += (int)numericUpDownUpgrade.Value * 100;
+            else
+                id += (int)numericUpDownUpgrade.Value;
+            if (item.UpgradeType == DSItem.Upgrade.Infusable || item.UpgradeType == DSItem.Upgrade.InfusableRestricted)
             {
                 DSInfusion infusion = comboBoxInfusion.SelectedItem as DSInfusion;
                 id += infusion.Value;

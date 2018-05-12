@@ -7,12 +7,14 @@ namespace DS_Gadget
         public string Name;
         public int Value;
         public int MaxUpgrade;
+        public bool Restricted;
 
-        private DSInfusion(string name, int value, int maxUpgrade)
+        private DSInfusion(string name, int value, int maxUpgrade, bool restricted)
         {
             Name = name;
             Value = value;
             MaxUpgrade = maxUpgrade;
+            Restricted = restricted;
         }
 
         public override string ToString()
@@ -22,16 +24,16 @@ namespace DS_Gadget
 
         public static List<DSInfusion> All = new List<DSInfusion>()
         {
-            new DSInfusion("Normal", 000, 15),
-            new DSInfusion("Raw", 300, 5),
-            new DSInfusion("Lightning", 200, 5),
-            new DSInfusion("Crystal", 100, 5),
-            new DSInfusion("Divine", 600, 10),
-            new DSInfusion("Occult", 700, 5),
-            new DSInfusion("Magic", 400, 10),
-            new DSInfusion("Enchanted", 500, 5),
-            new DSInfusion("Fire", 800, 10),
-            new DSInfusion("Chaos", 900, 5),
+            new DSInfusion("Normal", 000, 15, false),
+            new DSInfusion("Chaos", 900, 5, true),
+            new DSInfusion("Crystal", 100, 5, false),
+            new DSInfusion("Divine", 600, 10, false),
+            new DSInfusion("Enchanted", 500, 5, true),
+            new DSInfusion("Fire", 800, 10, false),
+            new DSInfusion("Lightning", 200, 5, false),
+            new DSInfusion("Magic", 400, 10, false),
+            new DSInfusion("Occult", 700, 5, true),
+            new DSInfusion("Raw", 300, 5, true),
         };
     }
 }

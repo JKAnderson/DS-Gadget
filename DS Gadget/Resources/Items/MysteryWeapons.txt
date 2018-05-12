@@ -16,15 +16,15 @@
 1199000   1 0 Phantom Halberd
 1298000   1 0 Phantom Bow
 1299000   1 0 Phantom Crossbow
-1397000   1 0 [Unknown]
+1397000   1 0 Phantom Catalyst
 1398000   1 0 [Unknown]
 1399000   1 0 [Unknown]
 1498000   1 0 Phantom Small Shield
 1499000   1 0 Phantom Shield
 1599000   1 0 Phantom Greatshield
 1699000   1 0 Phantom Whip
-2099000 999 0 Arrow
-2199000 999 0 Bolt
+2099000 999 0 Phantom Arrow
+2199000 999 0 Phantom Bolt
 9004000   1 4 [Unknown]
 9005000   1 4 [Unknown]
 9006000   1 4 [Unknown]

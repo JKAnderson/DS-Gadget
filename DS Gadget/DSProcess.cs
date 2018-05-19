@@ -132,8 +132,7 @@ namespace DS_Gadget
             pointer = dsInterface.ReadInt32(offsets.Unknown4Ptr);
             pointers.Unknown4 = dsInterface.ReadInt32(pointer + offsets.Unknown4Ptr2);
 
-            pointer = dsInterface.ReadInt32(offsets.GesturesPtr);
-            pointers.Gestures = dsInterface.ReadInt32(pointer + offsets.GesturesPtr2);
+            pointers.Gestures = dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.GesturesPtr);
         }
 
         // Also used to check if game is loaded

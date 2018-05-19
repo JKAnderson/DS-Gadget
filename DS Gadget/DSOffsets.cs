@@ -184,6 +184,7 @@ namespace DS_Gadget
             EquipItem3ID = 0x290,
             EquipItem4ID = 0x294,
             EquipItem5ID = 0x298,
+            GesturesPtr = 0x424,
         }
 
         public int GraphicsDataPtr = 0x1378520;
@@ -271,9 +272,7 @@ namespace DS_Gadget
         {
             StoredMagic = 0x1D4,
         }
-
-        public int GesturesPtr = 0x1812D130 + 0x8;
-        public int GesturesPtr2 = 0x424;
+        
         public enum Gestures
         {
             PointForward = 0x8,
@@ -292,7 +291,6 @@ namespace DS_Gadget
             Prayer = 0x40,
             PraiseTheSun = 0x44,
         }
-
         
 
         public int FuncItemGetPtr = 0xC0B700;
@@ -360,7 +358,6 @@ namespace DS_Gadget
             Unknown2Ptr = 0x1381804,
             Unknown3Ptr = 0x137C664,
             Unknown4Ptr = 0x12E69E8,
-            GesturesPtr = 0x1807EFF0 + 0x8,
 
             FuncItemGetPtr = 0xC0B180,
             FuncLevelUpPtr = 0xC75850,

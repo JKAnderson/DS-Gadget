@@ -16,6 +16,7 @@
 1199000   1 0 Phantom Halberd
 1298000   1 0 Phantom Bow
 1299000   1 0 Phantom Crossbow
+1364000   1 0 Gwynevere's Talisman
 1397000   1 0 Phantom Catalyst
 1398000   1 0 [Unknown]
 1399000   1 0 [Unknown]

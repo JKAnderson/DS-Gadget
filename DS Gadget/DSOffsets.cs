@@ -287,9 +287,9 @@ namespace DS_Gadget
             Shrug = 0x2C,
             LookSkyward = 0x30,
             WellWhatIsIt = 0x34,
-            Prostration = 0x3C,
-            Prayer = 0x40,
-            PraiseTheSun = 0x44,
+            Prostration = 0x38,
+            Prayer = 0x3C,
+            PraiseTheSun = 0x40,
         }
         
 

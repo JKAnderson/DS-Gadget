@@ -44,6 +44,7 @@ namespace DS_Gadget
             ForcePlayAnimation1 = 0xFC,
             CharFlags1 = 0x1FC,
             HP = 0x2D4,
+            Stamina = 0x2E4,
             CharFlags2 = 0x3C4,
             StoredItem = 0x628,
         }
@@ -184,7 +185,8 @@ namespace DS_Gadget
             EquipItem3ID = 0x290,
             EquipItem4ID = 0x294,
             EquipItem5ID = 0x298,
-            GesturesPtr = 0x424,
+            GesturesEquippedPtr = 0x334,
+            GesturesUnlockedPtr = 0x424,
         }
 
         public int GraphicsDataPtr = 0x1378520;

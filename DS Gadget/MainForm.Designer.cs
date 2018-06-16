@@ -41,6 +41,7 @@
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPagePlayer = new System.Windows.Forms.TabPage();
             this.groupBoxOther = new System.Windows.Forms.GroupBox();
+            this.buttonWarp = new System.Windows.Forms.Button();
             this.checkBoxSpeed = new System.Windows.Forms.CheckBox();
             this.numericUpDownSpeed = new System.Windows.Forms.NumericUpDown();
             this.checkBoxGravity = new System.Windows.Forms.CheckBox();
@@ -302,7 +303,6 @@
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.buttonWarp = new System.Windows.Forms.Button();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -480,6 +480,16 @@
             this.groupBoxOther.TabIndex = 2;
             this.groupBoxOther.TabStop = false;
             this.groupBoxOther.Text = "Other";
+            // 
+            // buttonWarp
+            // 
+            this.buttonWarp.Location = new System.Drawing.Point(284, 53);
+            this.buttonWarp.Name = "buttonWarp";
+            this.buttonWarp.Size = new System.Drawing.Size(75, 23);
+            this.buttonWarp.TabIndex = 6;
+            this.buttonWarp.Text = "Warp";
+            this.buttonWarp.UseVisualStyleBackColor = true;
+            this.buttonWarp.Click += new System.EventHandler(this.buttonWarp_Click);
             // 
             // checkBoxSpeed
             // 
@@ -704,7 +714,6 @@
             // 
             // numericUpDownStam
             // 
-            this.numericUpDownStam.Enabled = false;
             this.numericUpDownStam.Location = new System.Drawing.Point(57, 58);
             this.numericUpDownStam.Maximum = new decimal(new int[] {
             10000,
@@ -719,6 +728,7 @@
             this.numericUpDownStam.Name = "numericUpDownStam";
             this.numericUpDownStam.Size = new System.Drawing.Size(75, 20);
             this.numericUpDownStam.TabIndex = 3;
+            this.numericUpDownStam.ValueChanged += new System.EventHandler(this.numericUpDownStam_ValueChanged);
             // 
             // numericUpDownHPModMax
             // 
@@ -3736,16 +3746,6 @@
             this.linkLabelNewVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
-            // 
-            // buttonWarp
-            // 
-            this.buttonWarp.Location = new System.Drawing.Point(284, 53);
-            this.buttonWarp.Name = "buttonWarp";
-            this.buttonWarp.Size = new System.Drawing.Size(75, 23);
-            this.buttonWarp.TabIndex = 6;
-            this.buttonWarp.Text = "Warp";
-            this.buttonWarp.UseVisualStyleBackColor = true;
-            this.buttonWarp.Click += new System.EventHandler(this.buttonWarp_Click);
             // 
             // MainForm
             // 

@@ -48,7 +48,6 @@ namespace DS_Gadget
         {
             settings.StoreHP = checkBoxStoreState.Checked;
             settings.Speed = numericUpDownSpeed.Value;
-            resetPlayer();
         }
 
         private void reloadPlayer()
@@ -114,6 +113,12 @@ namespace DS_Gadget
         {
             if (!reading)
                 dsProcess.SetHP((int)numericUpDownHP.Value);
+        }
+
+        private void numericUpDownStam_ValueChanged(object sender, EventArgs e)
+        {
+            if (!reading)
+                dsProcess.SetStamina((int)numericUpDownStam.Value);
         }
 
         private void numericUpDownPhantom_ValueChanged(object sender, EventArgs e)

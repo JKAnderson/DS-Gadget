@@ -983,7 +983,7 @@ namespace DS_Gadget
                     offset += (number - (number % 32)) / 8;
 
                     mask = 0x80000000 >> (number % 32);
-                    return pointers.EventFlags + offset; ;
+                    return pointers.EventFlags + offset;
                 }
             }
             throw new ArgumentException("Unknown event flag ID: " + ID);

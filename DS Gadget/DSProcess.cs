@@ -19,14 +19,13 @@ namespace DS_Gadget
 
         public static DSProcess GetProcess()
         {
-            DSProcess result = null;
-            Process[] candidates = Process.GetProcessesByName("DARKSOULS");
-            foreach (Process candidate in candidates)
+            foreach (Process candidate in Process.GetProcesses())
             {
-                if (result == null)
-                    result = new DSProcess(candidate);
+                if (candidate.MainWindowTitle == "DARK SOULS")
+                    return new DSProcess(candidate);
             }
-            return result;
+
+            return null;
         }
 
 

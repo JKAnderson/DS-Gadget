@@ -12,7 +12,7 @@ namespace DS_Gadget.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.6.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.8.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -157,7 +157,7 @@ namespace DS_Gadget.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("96")]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
         public int HotkeyFilter {
             get {
                 return ((int)(this["HotkeyFilter"]));
@@ -169,7 +169,7 @@ namespace DS_Gadget.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("97")]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
         public int HotkeyMoveswap {
             get {
                 return ((int)(this["HotkeyMoveswap"]));
@@ -181,7 +181,7 @@ namespace DS_Gadget.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("99")]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
         public int HotkeyAnim {
             get {
                 return ((int)(this["HotkeyAnim"]));
@@ -193,7 +193,7 @@ namespace DS_Gadget.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("104")]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
         public int HotkeyStore {
             get {
                 return ((int)(this["HotkeyStore"]));
@@ -205,7 +205,7 @@ namespace DS_Gadget.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("105")]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
         public int HotkeyRestore {
             get {
                 return ((int)(this["HotkeyRestore"]));
@@ -217,7 +217,7 @@ namespace DS_Gadget.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("98")]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
         public int HotkeyGravity {
             get {
                 return ((int)(this["HotkeyGravity"]));
@@ -229,7 +229,7 @@ namespace DS_Gadget.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("101")]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
         public int HotkeyCollision {
             get {
                 return ((int)(this["HotkeyCollision"]));
@@ -241,7 +241,7 @@ namespace DS_Gadget.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
         public int HotkeySpeed {
             get {
                 return ((int)(this["HotkeySpeed"]));
@@ -349,7 +349,7 @@ namespace DS_Gadget.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("106")]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
         public int HotkeyMenu {
             get {
                 return ((int)(this["HotkeyMenu"]));
@@ -361,7 +361,7 @@ namespace DS_Gadget.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("107")]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
         public int HotkeyUp {
             get {
                 return ((int)(this["HotkeyUp"]));
@@ -373,7 +373,7 @@ namespace DS_Gadget.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("109")]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
         public int HotkeyDown {
             get {
                 return ((int)(this["HotkeyDown"]));
@@ -385,13 +385,25 @@ namespace DS_Gadget.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("111")]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
         public int HotkeyDeath {
             get {
                 return ((int)(this["HotkeyDeath"]));
             }
             set {
                 this["HotkeyDeath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int HotkeyItem {
+            get {
+                return ((int)(this["HotkeyItem"]));
+            }
+            set {
+                this["HotkeyItem"] = value;
             }
         }
     }

@@ -82,6 +82,11 @@ namespace DS_Gadget
                 checkBoxPlayerDeadMode.Checked = !checkBoxPlayerDeadMode.Checked;
             }));
 
+            hotkeys.Add(new GadgetHotkey("HotkeyItem", txtHotkeyItem, tabPageHotkeys, () =>
+            {
+                createItem();
+            }));
+
             /* Template :^
             hotkeys.Add(new GadgetHotkey("Hotkey", textBoxHotkey, tabPageHotkeys, () =>
             {

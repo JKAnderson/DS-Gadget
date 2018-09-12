@@ -36,28 +36,28 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="HotkeyFilter" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">96</Value>
+      <Value Profile="(Default)">27</Value>
     </Setting>
     <Setting Name="HotkeyMoveswap" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">97</Value>
+      <Value Profile="(Default)">27</Value>
     </Setting>
     <Setting Name="HotkeyAnim" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">99</Value>
+      <Value Profile="(Default)">27</Value>
     </Setting>
     <Setting Name="HotkeyStore" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">104</Value>
+      <Value Profile="(Default)">27</Value>
     </Setting>
     <Setting Name="HotkeyRestore" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">105</Value>
+      <Value Profile="(Default)">27</Value>
     </Setting>
     <Setting Name="HotkeyGravity" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">98</Value>
+      <Value Profile="(Default)">27</Value>
     </Setting>
     <Setting Name="HotkeyCollision" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">101</Value>
+      <Value Profile="(Default)">27</Value>
     </Setting>
     <Setting Name="HotkeySpeed" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">100</Value>
+      <Value Profile="(Default)">27</Value>
     </Setting>
     <Setting Name="Speed" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">2</Value>
@@ -84,16 +84,19 @@
       <Value Profile="(Default)">221</Value>
     </Setting>
     <Setting Name="HotkeyMenu" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">106</Value>
+      <Value Profile="(Default)">27</Value>
     </Setting>
     <Setting Name="HotkeyUp" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">107</Value>
+      <Value Profile="(Default)">27</Value>
     </Setting>
     <Setting Name="HotkeyDown" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">109</Value>
+      <Value Profile="(Default)">27</Value>
     </Setting>
     <Setting Name="HotkeyDeath" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">111</Value>
+      <Value Profile="(Default)">27</Value>
+    </Setting>
+    <Setting Name="HotkeyItem" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">27</Value>
     </Setting>
   </Settings>
 </SettingsFile>

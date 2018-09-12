@@ -303,6 +303,8 @@
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblHotkeyItem = new System.Windows.Forms.Label();
+            this.txtHotkeyItem = new System.Windows.Forms.TextBox();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -3393,6 +3395,8 @@
             // 
             // tabPageHotkeys
             // 
+            this.tabPageHotkeys.Controls.Add(this.lblHotkeyItem);
+            this.tabPageHotkeys.Controls.Add(this.txtHotkeyItem);
             this.tabPageHotkeys.Controls.Add(this.labelHotkeyDeath);
             this.tabPageHotkeys.Controls.Add(this.textBoxHotkeyDeath);
             this.tabPageHotkeys.Controls.Add(this.labelHotkeyDown);
@@ -3746,6 +3750,25 @@
             this.linkLabelNewVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
+            // 
+            // lblHotkeyItem
+            // 
+            this.lblHotkeyItem.AutoSize = true;
+            this.lblHotkeyItem.Location = new System.Drawing.Point(112, 380);
+            this.lblHotkeyItem.Name = "lblHotkeyItem";
+            this.lblHotkeyItem.Size = new System.Drawing.Size(106, 13);
+            this.lblHotkeyItem.TabIndex = 32;
+            this.lblHotkeyItem.Text = "Create Selected Item";
+            this.toolTip1.SetToolTip(this.lblHotkeyItem, "Escape sitting bonfire animation without leaving bonfire");
+            // 
+            // txtHotkeyItem
+            // 
+            this.txtHotkeyItem.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtHotkeyItem.Location = new System.Drawing.Point(6, 377);
+            this.txtHotkeyItem.Name = "txtHotkeyItem";
+            this.txtHotkeyItem.Size = new System.Drawing.Size(100, 20);
+            this.txtHotkeyItem.TabIndex = 31;
+            this.txtHotkeyItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MainForm
             // 
@@ -4131,6 +4154,8 @@
         private System.Windows.Forms.Button buttonGestures;
         private System.Windows.Forms.Button buttonHaircut;
         private System.Windows.Forms.Button buttonWarp;
+        private System.Windows.Forms.Label lblHotkeyItem;
+        private System.Windows.Forms.TextBox txtHotkeyItem;
     }
 }
 

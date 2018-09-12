@@ -122,8 +122,8 @@ namespace DS_Gadget
                         if (!loaded)
                         {
                             labelLoaded.Text = "Yes";
-                            enableTabs(true);
                             dsProcess.LoadPointers();
+                            loaded = true;
                             reading = true;
                             reloadPlayer();
                             reloadStats();
@@ -134,7 +134,7 @@ namespace DS_Gadget
                             reloadMisc();
                             reloadHotkeys();
                             reading = false;
-                            loaded = true;
+                            enableTabs(true);
                         }
                         else
                         {

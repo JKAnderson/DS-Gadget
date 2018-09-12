@@ -22,7 +22,11 @@ namespace DS_Gadget
             hotkeyAction = setAction;
 
             Key = (VirtualKey)(int)Properties.Settings.Default[settingsName];
-            hotkeyTextBox.Text = Key.ToString();
+            if (Key == VirtualKey.Escape)
+                hotkeyTextBox.Text = "Unbound";
+            else
+                hotkeyTextBox.Text = Key.ToString();
+
             hotkeyTextBox.Enter += new EventHandler(enter);
             hotkeyTextBox.Leave += new EventHandler(leave);
             hotkeyTextBox.KeyUp += new KeyEventHandler(keyUp);

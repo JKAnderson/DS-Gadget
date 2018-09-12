@@ -716,7 +716,6 @@
             // 
             // numericUpDownStam
             // 
-            this.numericUpDownStam.Enabled = false;
             this.numericUpDownStam.Location = new System.Drawing.Point(57, 58);
             this.numericUpDownStam.Maximum = new decimal(new int[] {
             10000,
@@ -731,6 +730,7 @@
             this.numericUpDownStam.Name = "numericUpDownStam";
             this.numericUpDownStam.Size = new System.Drawing.Size(75, 20);
             this.numericUpDownStam.TabIndex = 3;
+            this.numericUpDownStam.ValueChanged += new System.EventHandler(this.numericUpDownStam_ValueChanged);
             // 
             // numericUpDownHPModMax
             // 

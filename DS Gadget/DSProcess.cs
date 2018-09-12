@@ -131,8 +131,7 @@ namespace DS_Gadget
             pointer = dsInterface.ReadInt32(offsets.Unknown4Ptr);
             pointers.Unknown4 = dsInterface.ReadInt32(pointer + offsets.Unknown4Ptr2);
 
-            pointer = dsInterface.ReadInt32(offsets.GesturesPtr);
-            pointers.Gestures = dsInterface.ReadInt32(pointer + offsets.GesturesPtr2);
+            pointers.Gestures = dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.GesturesUnlockedPtr);
         }
 
         // Also used to check if game is loaded
@@ -169,6 +168,11 @@ namespace DS_Gadget
         public float GetStam()
         {
             return dsInterface.ReadInt32(pointers.CharData2 + (int)DSOffsets.CharData2.Stamina);
+        }
+
+        public void SetStamina(int value)
+        {
+            dsInterface.WriteInt32(pointers.CharData1 + (int)DSOffsets.CharData1.Stamina, value);
         }
 
         public float GetStamMax()
@@ -1026,15 +1030,15 @@ namespace DS_Gadget
         {
             dsInterface.WriteInt32(pointers.CharData1 + (int)DSOffsets.CharData1.ForcePlayAnimation1, 0);
         }
-
+        
         public void HotkeyTest1()
         {
-
+            SetStamina(0);
         }
 
         public void HotkeyTest2()
         {
-
+            
         }
         #endregion
     }

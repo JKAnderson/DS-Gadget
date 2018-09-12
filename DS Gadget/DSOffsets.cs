@@ -44,6 +44,7 @@ namespace DS_Gadget
             ForcePlayAnimation1 = 0xFC,
             CharFlags1 = 0x1FC,
             HP = 0x2D4,
+            Stamina = 0x2E4,
             CharFlags2 = 0x3C4,
             StoredItem = 0x628,
         }
@@ -184,6 +185,8 @@ namespace DS_Gadget
             EquipItem3ID = 0x290,
             EquipItem4ID = 0x294,
             EquipItem5ID = 0x298,
+            GesturesEquippedPtr = 0x334,
+            GesturesUnlockedPtr = 0x424,
         }
 
         public int GraphicsDataPtr = 0x1378520;
@@ -271,9 +274,7 @@ namespace DS_Gadget
         {
             StoredMagic = 0x1D4,
         }
-
-        public int GesturesPtr = 0x1812D130 + 0x8;
-        public int GesturesPtr2 = 0x424;
+        
         public enum Gestures
         {
             PointForward = 0x8,
@@ -288,11 +289,10 @@ namespace DS_Gadget
             Shrug = 0x2C,
             LookSkyward = 0x30,
             WellWhatIsIt = 0x34,
-            Prostration = 0x3C,
-            Prayer = 0x40,
-            PraiseTheSun = 0x44,
+            Prostration = 0x38,
+            Prayer = 0x3C,
+            PraiseTheSun = 0x40,
         }
-
         
 
         public int FuncItemGetPtr = 0xC0B700;
@@ -360,7 +360,6 @@ namespace DS_Gadget
             Unknown2Ptr = 0x1381804,
             Unknown3Ptr = 0x137C664,
             Unknown4Ptr = 0x12E69E8,
-            GesturesPtr = 0x1807EFF0 + 0x8,
 
             FuncItemGetPtr = 0xC0B180,
             FuncLevelUpPtr = 0xC75850,

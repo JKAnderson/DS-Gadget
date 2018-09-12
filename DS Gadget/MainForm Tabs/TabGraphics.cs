@@ -205,6 +205,13 @@ namespace DS_Gadget
         private void checkBoxFilter_CheckedChanged(object sender, EventArgs e)
         {
             dsProcess?.OverrideFilter(checkBoxFilter.Checked);
+            if (checkBoxFilter.Checked)
+            {
+                updateBrightness();
+                updateContrast();
+                dsProcess?.SetSaturation((float)numericUpDownSaturation.Value);
+                dsProcess?.SetHue((float)numericUpDownHue.Value);
+            }
         }
 
         private void updateBrightness()

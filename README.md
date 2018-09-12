@@ -1,5 +1,5 @@
 
-# DS Gadget
+# DS Gadget 2.3
 A multi-purpose testing tool for Dark Souls 1. Compatible with both the Steam and debug versions.  
 Requires [.NET 4.6.2](https://www.microsoft.com/net/download/thank-you/net462) and [VC Redist 2012 x86](https://my.visualstudio.com/Downloads?pid=1452)  
 You probably already have both.
@@ -25,6 +25,13 @@ You probably already have both.
 And all of the other wonderful people in the SpeedSouls discord.
 
 # Changelog
+### 2.3
+* Add create item hotkey
+* Search for game by window title, not filename
+* Allow stamina editing
+* Fix gestures button
+* Fix filters
+
 ### 2.2
 * Added a button to warp to last bonfire (like a bone, but a button)
 * Options will only be reapplied when they're not in the default state (so if you leave them off, they won't conflict with Debug)

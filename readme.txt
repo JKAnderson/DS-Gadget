@@ -1,5 +1,5 @@
 
---| DS Gadget 2.2
+--| DS Gadget 2.3
 --| https://github.com/JKAnderson/DS-Gadget
 
 A multi-purpose testing tool for Dark Souls 1. Compatible with both the Steam and debug versions.
@@ -37,6 +37,13 @@ And all of the other wonderful people in the SpeedSouls discord.
 
 
 --| Changelog
+
+2.3
+	Add create item hotkey
+	Search for game by window title, not filename
+	Allow stamina editing
+	Fix gestures button
+	Fix filters
 
 2.2
 	Added a button to warp to last bonfire (like a bone, but a button)

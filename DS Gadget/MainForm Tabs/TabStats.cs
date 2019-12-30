@@ -9,8 +9,8 @@ namespace DS_Gadget
         {
             foreach (DSClass charClass in DSClass.All)
                 comboBoxClass.Items.Add(charClass);
-            numericUpDownHumanity.Maximum = Int32.MaxValue;
-            numericUpDownHumanity.Minimum = Int32.MinValue;
+            numericUpDownHumanity.Maximum = int.MaxValue;
+            numericUpDownHumanity.Minimum = int.MinValue;
         }
 
         private void resetStats() { }
@@ -18,24 +18,24 @@ namespace DS_Gadget
 
         private void reloadStats()
         {
-            comboBoxClass.SelectedIndex = dsProcess.GetClass();
+            comboBoxClass.SelectedIndex = Hook.Class;
         }
 
         private void updateStats()
         {
-            textBoxSoulLevel.Text = dsProcess.GetSoulLevel().ToString();
-            numericUpDownHumanity.Value = dsProcess.GetHumanity();
-            numericUpDownSouls.Value = dsProcess.GetSouls();
+            textBoxSoulLevel.Text = Hook.SoulLevel.ToString();
+            numericUpDownHumanity.Value = Hook.Humanity;
+            numericUpDownSouls.Value = Hook.Souls;
             try
             {
-                numericUpDownVit.Value = dsProcess.GetVitality();
-                numericUpDownAtt.Value = dsProcess.GetAttunement();
-                numericUpDownEnd.Value = dsProcess.GetEndurance();
-                numericUpDownStr.Value = dsProcess.GetStrength();
-                numericUpDownDex.Value = dsProcess.GetDexterity();
-                numericUpDownRes.Value = dsProcess.GetResistance();
-                numericUpDownInt.Value = dsProcess.GetIntelligence();
-                numericUpDownFth.Value = dsProcess.GetFaith();
+                numericUpDownVit.Value = Hook.Vitality;
+                numericUpDownAtt.Value = Hook.Attunement;
+                numericUpDownEnd.Value = Hook.Endurance;
+                numericUpDownStr.Value = Hook.Strength;
+                numericUpDownDex.Value = Hook.Dexterity;
+                numericUpDownRes.Value = Hook.Resistance;
+                numericUpDownInt.Value = Hook.Intelligence;
+                numericUpDownFth.Value = Hook.Faith;
             }
             // Race condition when checking if the game is still loaded; doesn't really matter
             catch (ArgumentOutOfRangeException) { return; }
@@ -63,7 +63,7 @@ namespace DS_Gadget
             sl += intelligence - charClass.Intelligence;
             sl += faith - charClass.Faith;
 
-            dsProcess.LevelUp(vitality, attunement, endurance, strength, dexterity, resistance, intelligence, faith, sl);
+            Hook.LevelUp(vitality, attunement, endurance, strength, dexterity, resistance, intelligence, faith, sl);
         }
 
         private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,7 +79,7 @@ namespace DS_Gadget
             numericUpDownFth.Minimum = charClass.Faith;
             if (!reading)
             {
-                dsProcess.SetClass(charClass.ID);
+                Hook.Class = charClass.ID;
                 recalculateStats();
             }
         }
@@ -93,13 +93,13 @@ namespace DS_Gadget
         private void numericUpDownHumanity_ValueChanged(object sender, EventArgs e)
         {
             if (!reading)
-                dsProcess?.SetHumanity((int)numericUpDownHumanity.Value);
+                Hook.Humanity = (int)numericUpDownHumanity.Value;
         }
 
         private void numericUpDownSouls_ValueChanged(object sender, EventArgs e)
         {
             if (!reading)
-                dsProcess?.SetSouls((int)numericUpDownSouls.Value);
+                Hook.Souls = (int)numericUpDownSouls.Value;
         }
     }
 }

@@ -22,45 +22,45 @@ namespace DS_Gadget
 
         private void resetGraphics()
         {
-            if (dsProcess != null)
+            if (Hook.Valid)
             {
                 if (!checkBoxMap.Checked)
-                    dsProcess.DrawMap(true);
+                    Hook.DrawMap(true);
                 if (!checkBoxCreatures.Checked)
-                    dsProcess.DrawCreatures(true);
+                    Hook.DrawCreatures(true);
                 if (!checkBoxObjects.Checked)
-                    dsProcess.DrawObjects(true);
+                    Hook.DrawObjects(true);
                 if (!checkBoxSFX.Checked)
-                    dsProcess.DrawSFX(true);
+                    Hook.DrawSFX(true);
 
                 if (!checkBoxSpriteMasks.Checked)
-                    dsProcess.DrawSpriteMasks(true);
+                    Hook.DrawSpriteMasks(true);
                 if (!checkBoxSprites.Checked)
-                    dsProcess.DrawSprites(true);
+                    Hook.DrawSprites(true);
                 if (!checkBoxDrawTrans.Checked)
-                    dsProcess.DrawTrans(true);
+                    Hook.DrawTrans(true);
                 if (!checkBoxShadows.Checked)
-                    dsProcess.DrawShadows(true);
+                    Hook.DrawShadows(true);
                 if (!checkBoxSpriteShadows.Checked)
-                    dsProcess.DrawSpriteShadows(true);
+                    Hook.DrawSpriteShadows(true);
                 if (!checkBoxTextures.Checked)
-                    dsProcess.DrawTextures(true);
+                    Hook.DrawTextures(true);
 
                 if (checkBoxBounding.Checked)
-                    dsProcess.DrawBounding(false);
+                    Hook.DrawBounding(false);
                 if (checkBoxCompassLarge.Checked)
-                    dsProcess.DrawCompassLarge(false);
+                    Hook.DrawCompassLarge(false);
                 if (checkBoxCompassSmall.Checked)
-                    dsProcess.DrawCompassSmall(false);
+                    Hook.DrawCompassSmall(false);
                 if (checkBoxAltimeter.Checked)
-                    dsProcess.DrawAltimeter(false);
+                    Hook.DrawAltimeter(false);
                 if (checkBoxNodes.Checked)
-                    dsProcess.DrawNodes(false);
+                    Hook.DrawNodes(false);
 
                 if (loaded)
                 {
                     if (checkBoxFilter.Checked)
-                        dsProcess.OverrideFilter(false);
+                        Hook.OverrideFilter(false);
                 }
             }
         }
@@ -83,45 +83,45 @@ namespace DS_Gadget
         private void reloadGraphics()
         {
             if (!checkBoxMap.Checked)
-                dsProcess.DrawMap(false);
+                Hook.DrawMap(false);
             if (!checkBoxCreatures.Checked)
-                dsProcess.DrawCreatures(false);
+                Hook.DrawCreatures(false);
             if (!checkBoxObjects.Checked)
-                dsProcess.DrawObjects(false);
+                Hook.DrawObjects(false);
             if (!checkBoxSFX.Checked)
-                dsProcess.DrawSFX(false);
+                Hook.DrawSFX(false);
 
             if (!checkBoxSpriteMasks.Checked)
-                dsProcess.DrawSpriteMasks(false);
+                Hook.DrawSpriteMasks(false);
             if (!checkBoxSprites.Checked)
-                dsProcess.DrawSprites(false);
+                Hook.DrawSprites(false);
             if (!checkBoxDrawTrans.Checked)
-                dsProcess.DrawTrans(false);
+                Hook.DrawTrans(false);
             if (!checkBoxShadows.Checked)
-                dsProcess.DrawShadows(false);
+                Hook.DrawShadows(false);
             if (!checkBoxSpriteShadows.Checked)
-                dsProcess.DrawSpriteShadows(false);
+                Hook.DrawSpriteShadows(false);
             if (!checkBoxTextures.Checked)
-                dsProcess.DrawTextures(false);
+                Hook.DrawTextures(false);
 
             if (checkBoxBounding.Checked)
-                dsProcess.DrawBounding(true);
+                Hook.DrawBounding(true);
             if (checkBoxCompassLarge.Checked)
-                dsProcess.DrawCompassLarge(true);
+                Hook.DrawCompassLarge(true);
             if (checkBoxCompassSmall.Checked)
-                dsProcess.DrawCompassSmall(true);
+                Hook.DrawCompassSmall(true);
             if (checkBoxAltimeter.Checked)
-                dsProcess.DrawAltimeter(true);
+                Hook.DrawAltimeter(true);
             if (checkBoxNodes.Checked)
-                dsProcess.DrawNodes(true);
+                Hook.DrawNodes(true);
 
             if (checkBoxFilter.Checked)
             {
-                dsProcess.OverrideFilter(checkBoxFilter.Checked);
+                Hook.OverrideFilter(checkBoxFilter.Checked);
                 updateBrightness();
                 updateContrast();
-                dsProcess.SetSaturation((float)numericUpDownSaturation.Value);
-                dsProcess.SetHue((float)numericUpDownHue.Value);
+                Hook.SetSaturation((float)numericUpDownSaturation.Value);
+                Hook.SetHue((float)numericUpDownHue.Value);
             }
         }
 
@@ -129,88 +129,88 @@ namespace DS_Gadget
 
         private void checkBoxBounding_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawBounding(checkBoxBounding.Checked);
+            Hook.DrawBounding(checkBoxBounding.Checked);
         }
 
         private void checkBoxSpriteMasks_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawSpriteMasks(checkBoxSpriteMasks.Checked);
+            Hook.DrawSpriteMasks(checkBoxSpriteMasks.Checked);
         }
 
         private void checkBoxSprites_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawSprites(checkBoxSprites.Checked);
+            Hook.DrawSprites(checkBoxSprites.Checked);
         }
 
         private void checkBoxDrawTrans_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawTrans(checkBoxDrawTrans.Checked);
+            Hook.DrawTrans(checkBoxDrawTrans.Checked);
         }
 
         private void checkBoxShadows_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawShadows(checkBoxShadows.Checked);
+            Hook.DrawShadows(checkBoxShadows.Checked);
         }
 
         private void checkBoxSpriteShadows_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawSpriteShadows(checkBoxSpriteShadows.Checked);
+            Hook.DrawSpriteShadows(checkBoxSpriteShadows.Checked);
         }
 
         private void checkBoxTextures_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawTextures(checkBoxTextures.Checked);
+            Hook.DrawTextures(checkBoxTextures.Checked);
         }
 
         private void checkBoxMap_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawMap(checkBoxMap.Checked);
+            Hook.DrawMap(checkBoxMap.Checked);
         }
 
         private void checkBoxCreatures_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawCreatures(checkBoxCreatures.Checked);
+            Hook.DrawCreatures(checkBoxCreatures.Checked);
         }
 
         private void checkBoxObjects_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawObjects(checkBoxObjects.Checked);
+            Hook.DrawObjects(checkBoxObjects.Checked);
         }
 
         private void checkBoxSFX_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawSFX(checkBoxSFX.Checked);
+            Hook.DrawSFX(checkBoxSFX.Checked);
         }
 
         private void checkBoxCompassLarge_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawCompassLarge(checkBoxCompassLarge.Checked);
+            Hook.DrawCompassLarge(checkBoxCompassLarge.Checked);
         }
 
         private void checkBoxCompassSmall_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawCompassSmall(checkBoxCompassSmall.Checked);
+            Hook.DrawCompassSmall(checkBoxCompassSmall.Checked);
         }
 
         private void checkBoxAltimeter_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawAltimeter(checkBoxAltimeter.Checked);
+            Hook.DrawAltimeter(checkBoxAltimeter.Checked);
         }
 
         private void checkBoxNodes_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.DrawNodes(checkBoxNodes.Checked);
+            Hook.DrawNodes(checkBoxNodes.Checked);
         }
 
         private void checkBoxFilter_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.OverrideFilter(checkBoxFilter.Checked);
+            Hook.OverrideFilter(checkBoxFilter.Checked);
             if (checkBoxFilter.Checked)
             {
                 updateBrightness();
                 updateContrast();
-                dsProcess?.SetSaturation((float)numericUpDownSaturation.Value);
-                dsProcess?.SetHue((float)numericUpDownHue.Value);
+                Hook.SetSaturation((float)numericUpDownSaturation.Value);
+                Hook.SetHue((float)numericUpDownHue.Value);
             }
         }
 
@@ -219,7 +219,7 @@ namespace DS_Gadget
             float brightnessR = (float)numericUpDownBrightnessR.Value;
             float brightnessG = (float)numericUpDownBrightnessG.Value;
             float brightnessB = (float)numericUpDownBrightnessB.Value;
-            dsProcess?.SetBrightness(brightnessR, brightnessG, brightnessB);
+            Hook.SetBrightness(brightnessR, brightnessG, brightnessB);
         }
 
         private void checkBoxBrightnessSync_CheckedChanged(object sender, EventArgs e)
@@ -254,7 +254,7 @@ namespace DS_Gadget
             float contrastR = (float)numericUpDownContrastR.Value;
             float contrastG = (float)numericUpDownContrastG.Value;
             float contrastB = (float)numericUpDownContrastB.Value;
-            dsProcess?.SetContrast(contrastR, contrastG, contrastB);
+            Hook.SetContrast(contrastR, contrastG, contrastB);
         }
 
         private void checkBoxContrastSync_CheckedChanged(object sender, EventArgs e)
@@ -285,12 +285,12 @@ namespace DS_Gadget
 
         private void numericUpDownSaturation_ValueChanged(object sender, EventArgs e)
         {
-            dsProcess?.SetSaturation((float)numericUpDownSaturation.Value);
+            Hook.SetSaturation((float)numericUpDownSaturation.Value);
         }
 
         private void numericUpDownHue_ValueChanged(object sender, EventArgs e)
         {
-            dsProcess?.SetHue((float)numericUpDownHue.Value);
+            Hook.SetHue((float)numericUpDownHue.Value);
         }
     }
 }

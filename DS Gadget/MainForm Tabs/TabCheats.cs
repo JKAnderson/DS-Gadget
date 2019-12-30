@@ -9,49 +9,49 @@ namespace DS_Gadget
 
         private void resetCheats()
         {
-            if (dsProcess != null)
+            if (Hook.Valid)
             {
                 if (checkBoxAllNoMagic.Checked)
-                    dsProcess.SetAllNoMagic(false);
+                    Hook.SetAllNoMagic(false);
                 if (checkBoxPlayerNoDead.Checked)
-                    dsProcess.SetNoDead(false);
+                    Hook.SetNoDead(false);
                 if (checkBoxPlayerExterminate.Checked)
-                    dsProcess.SetExterminate(false);
+                    Hook.SetExterminate(false);
                 if (checkBoxAllNoStamina.Checked)
-                    dsProcess.SetAllStamina(false);
+                    Hook.SetAllStamina(false);
                 if (checkBoxAllNoArrow.Checked)
-                    dsProcess.SetAllAmmo(false);
+                    Hook.SetAllAmmo(false);
                 if (checkBoxPlayerHide.Checked)
-                    dsProcess.SetHide(false);
+                    Hook.SetHide(false);
                 if (checkBoxPlayerSilence.Checked)
-                    dsProcess.SetSilence(false);
+                    Hook.SetSilence(false);
                 if (checkBoxAllNoDead.Checked)
-                    dsProcess.SetAllNoDead(false);
+                    Hook.SetAllNoDead(false);
                 if (checkBoxAllNoDamage.Checked)
-                    dsProcess.SetAllNoDamage(false);
+                    Hook.SetAllNoDamage(false);
                 if (checkBoxAllNoHit.Checked)
-                    dsProcess.SetAllNoHit(false);
+                    Hook.SetAllNoHit(false);
                 if (checkBoxAllNoAttack.Checked)
-                    dsProcess.SetAllNoAttack(false);
+                    Hook.SetAllNoAttack(false);
                 if (checkBoxAllNoMove.Checked)
-                    dsProcess.SetAllNoMove(false);
+                    Hook.SetAllNoMove(false);
                 if (checkBoxAllNoUpdateAI.Checked)
-                    dsProcess.SetAllNoUpdateAI(false);
+                    Hook.SetAllNoUpdateAI(false);
 
                 if (loaded)
                 {
                     if (checkBoxPlayerDeadMode.Checked)
-                        dsProcess.SetPlayerDeadMode(false);
+                        Hook.PlayerDeadMode = false;
                     if (checkBoxPlayerNoDamage.Checked)
-                        dsProcess.SetPlayerNoDamage(false);
+                        Hook.SetPlayerNoDamage(false);
                     if (checkBoxPlayerNoHit.Checked)
-                        dsProcess.SetPlayerNoHit(false);
+                        Hook.SetPlayerNoHit(false);
                     if (checkBoxPlayerNoStamina.Checked)
-                        dsProcess.SetPlayerNoStamina(false);
+                        Hook.SetPlayerNoStamina(false);
                     if (checkBoxPlayerSuperArmor.Checked)
-                        dsProcess.SetPlayerSuperArmor(false);
+                        Hook.SetPlayerSuperArmor(false);
                     if (checkBoxPlayerNoGoods.Checked)
-                        dsProcess.SetPlayerNoGoods(false);
+                        Hook.SetPlayerNoGoods(false);
                 }
             }
         }
@@ -61,43 +61,43 @@ namespace DS_Gadget
         private void reloadCheats()
         {
             if (checkBoxPlayerDeadMode.Checked)
-                dsProcess.SetPlayerDeadMode(true);
+                Hook.PlayerDeadMode = true;
             if (checkBoxPlayerNoDamage.Checked)
-                dsProcess.SetPlayerNoDamage(true);
+                Hook.SetPlayerNoDamage(true);
             if (checkBoxPlayerNoHit.Checked)
-                dsProcess.SetPlayerNoHit(true);
+                Hook.SetPlayerNoHit(true);
             if (checkBoxPlayerNoStamina.Checked)
-                dsProcess.SetPlayerNoStamina(true);
+                Hook.SetPlayerNoStamina(true);
             if (checkBoxPlayerSuperArmor.Checked)
-                dsProcess.SetPlayerSuperArmor(true);
+                Hook.SetPlayerSuperArmor(true);
             if (checkBoxPlayerNoGoods.Checked)
-                dsProcess.SetPlayerNoGoods(true);
+                Hook.SetPlayerNoGoods(true);
             if (checkBoxAllNoMagic.Checked)
-                dsProcess.SetAllNoMagic(true);
+                Hook.SetAllNoMagic(true);
             if (checkBoxPlayerNoDead.Checked)
-                dsProcess.SetNoDead(true);
+                Hook.SetNoDead(true);
             if (checkBoxPlayerExterminate.Checked)
-                dsProcess.SetExterminate(true);
+                Hook.SetExterminate(true);
             if (checkBoxAllNoStamina.Checked)
-                dsProcess.SetAllStamina(true);
+                Hook.SetAllStamina(true);
             if (checkBoxAllNoArrow.Checked)
-                dsProcess.SetAllAmmo(true);
+                Hook.SetAllAmmo(true);
             if (checkBoxPlayerHide.Checked)
-                dsProcess.SetHide(true);
+                Hook.SetHide(true);
             if (checkBoxPlayerSilence.Checked)
-                dsProcess.SetSilence(true);
+                Hook.SetSilence(true);
             if (checkBoxAllNoDead.Checked)
-                dsProcess.SetAllNoDead(true);
+                Hook.SetAllNoDead(true);
             if (checkBoxAllNoDamage.Checked)
-                dsProcess.SetAllNoDamage(true);
+                Hook.SetAllNoDamage(true);
             if (checkBoxAllNoHit.Checked)
-                dsProcess.SetAllNoHit(true);
+                Hook.SetAllNoHit(true);
             if (checkBoxAllNoAttack.Checked)
-                dsProcess.SetAllNoAttack(true);
+                Hook.SetAllNoAttack(true);
             if (checkBoxAllNoMove.Checked)
-                dsProcess.SetAllNoMove(true);
+                Hook.SetAllNoMove(true);
             if (checkBoxAllNoUpdateAI.Checked)
-                dsProcess.SetAllNoUpdateAI(true);
+                Hook.SetAllNoUpdateAI(true);
         }
 
         private void updateCheats()
@@ -105,104 +105,104 @@ namespace DS_Gadget
             // The game sometimes sets and unsets this, for instance when dropping into Manus' or BoC's arena
             // However for reasons I don't understand, constantly setting it causes issues with bow aiming for some users
             // So only re-set it when it has actually been unset
-            if (checkBoxPlayerDeadMode.Checked && !dsProcess.GetPlayerDeadMode())
-                dsProcess.SetPlayerDeadMode(true);
+            if (checkBoxPlayerDeadMode.Checked && !Hook.PlayerDeadMode)
+                Hook.PlayerDeadMode = true;
         }
 
 
         private void checkBoxPlayerDeadMode_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.SetPlayerDeadMode(checkBoxPlayerDeadMode.Checked);
+            Hook.PlayerDeadMode = checkBoxPlayerDeadMode.Checked;
         }
 
         private void checkBoxPlayerNoDamage_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.SetPlayerNoDamage(checkBoxPlayerNoDamage.Checked);
+            Hook.SetPlayerNoDamage(checkBoxPlayerNoDamage.Checked);
         }
 
         private void checkBoxPlayerNoHit_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.SetPlayerNoHit(checkBoxPlayerNoHit.Checked);
+            Hook.SetPlayerNoHit(checkBoxPlayerNoHit.Checked);
         }
 
         private void checkBoxPlayerNoStamina_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.SetPlayerNoStamina(checkBoxPlayerNoStamina.Checked);
+            Hook.SetPlayerNoStamina(checkBoxPlayerNoStamina.Checked);
         }
 
         private void checkBoxPlayerSuperArmor_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.SetPlayerSuperArmor(checkBoxPlayerSuperArmor.Checked);
+            Hook.SetPlayerSuperArmor(checkBoxPlayerSuperArmor.Checked);
         }
 
         private void checkBoxPlayerNoGoods_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.SetPlayerNoGoods(checkBoxPlayerNoGoods.Checked);
+            Hook.SetPlayerNoGoods(checkBoxPlayerNoGoods.Checked);
         }
 
         private void checkBoxAllNoMagic_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess.SetAllNoMagic(checkBoxAllNoMagic.Checked);
+            Hook.SetAllNoMagic(checkBoxAllNoMagic.Checked);
         }
 
         private void checkBoxPlayerNoDead_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess.SetNoDead(checkBoxPlayerNoDead.Checked);
+            Hook.SetNoDead(checkBoxPlayerNoDead.Checked);
         }
 
         private void checkBoxPlayerExterminate_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess.SetExterminate(checkBoxPlayerExterminate.Checked);
+            Hook.SetExterminate(checkBoxPlayerExterminate.Checked);
         }
 
         private void checkBoxAllNoStamina_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess.SetAllStamina(checkBoxAllNoStamina.Checked);
+            Hook.SetAllStamina(checkBoxAllNoStamina.Checked);
         }
 
         private void checkBoxAllNoArrow_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess.SetAllAmmo(checkBoxAllNoArrow.Checked);
+            Hook.SetAllAmmo(checkBoxAllNoArrow.Checked);
         }
 
         private void checkBoxPlayerHide_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess.SetHide(checkBoxPlayerHide.Checked);
+            Hook.SetHide(checkBoxPlayerHide.Checked);
         }
 
         private void checkBoxPlayerSilence_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess.SetSilence(checkBoxPlayerSilence.Checked);
+            Hook.SetSilence(checkBoxPlayerSilence.Checked);
         }
 
         private void checkBoxAllNoDead_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess.SetAllNoDead(checkBoxAllNoDead.Checked);
+            Hook.SetAllNoDead(checkBoxAllNoDead.Checked);
         }
 
         private void checkBoxAllNoDamage_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess.SetAllNoDamage(checkBoxAllNoDamage.Checked);
+            Hook.SetAllNoDamage(checkBoxAllNoDamage.Checked);
         }
 
         private void checkBoxAllNoHit_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess.SetAllNoHit(checkBoxAllNoHit.Checked);
+            Hook.SetAllNoHit(checkBoxAllNoHit.Checked);
         }
 
         private void checkBoxAllNoAttack_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess.SetAllNoAttack(checkBoxAllNoAttack.Checked);
+            Hook.SetAllNoAttack(checkBoxAllNoAttack.Checked);
         }
 
         private void checkBoxAllNoMove_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess.SetAllNoMove(checkBoxAllNoMove.Checked);
+            Hook.SetAllNoMove(checkBoxAllNoMove.Checked);
         }
 
         private void checkBoxAllNoUpdateAI_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess.SetAllNoUpdateAI(checkBoxAllNoUpdateAI.Checked);
+            Hook.SetAllNoUpdateAI(checkBoxAllNoUpdateAI.Checked);
         }
     }
 }

@@ -28,18 +28,18 @@ namespace DS_Gadget
 
         private void resetPlayer()
         {
-            if (dsProcess != null)
+            if (Hook.Valid)
             {
                 if (checkBoxPosLock.Checked)
-                    dsProcess.SetPosLock(false);
+                    Hook.SetPosLock(false);
                 if (loaded)
                 {
                     if (!checkBoxGravity.Checked)
-                        dsProcess.SetGravity(true);
+                        Hook.SetGravity(true);
                     if (!checkBoxCollision.Checked)
-                        dsProcess.SetCollision(true);
+                        Hook.SetCollision(true);
                     if (checkBoxSpeed.Checked)
-                        dsProcess.SetSpeed(1);
+                        Hook.SetSpeed(1);
                 }
             }
         }
@@ -53,40 +53,40 @@ namespace DS_Gadget
         private void reloadPlayer()
         {
             if (checkBoxPosLock.Checked)
-                dsProcess.SetPosLock(true);
+                Hook.SetPosLock(true);
             if (!checkBoxGravity.Checked)
-                dsProcess.SetGravity(false);
+                Hook.SetGravity(false);
             if (!checkBoxCollision.Checked)
-                dsProcess.SetCollision(false);
+                Hook.SetCollision(false);
             if (checkBoxSpeed.Checked)
-                dsProcess.SetSpeed((float)numericUpDownSpeed.Value);
+                Hook.SetSpeed((float)numericUpDownSpeed.Value);
         }
 
         private void updatePlayer()
         {
-            numericUpDownHP.Value = (decimal)dsProcess.GetHP();
-            numericUpDownHPMax.Value = (decimal)dsProcess.GetHPMax();
-            numericUpDownHPModMax.Value = (decimal)dsProcess.GetHPModMax();
-            numericUpDownStam.Value = (decimal)dsProcess.GetStam();
-            numericUpDownStamMax.Value = (decimal)dsProcess.GetStamMax();
-            numericUpDownStamModMax.Value = (decimal)dsProcess.GetStamModMax();
-            numericUpDownPhantom.Value = dsProcess.GetPhantomType();
-            numericUpDownTeam.Value = dsProcess.GetTeamType();
+            numericUpDownHP.Value = Hook.Health;
+            numericUpDownHPMax.Value = Hook.HealthMax;
+            numericUpDownHPModMax.Value = Hook.HealthModMax;
+            numericUpDownStam.Value = Hook.Stamina;
+            numericUpDownStamMax.Value = Hook.StaminaMax;
+            numericUpDownStamModMax.Value = Hook.StaminaModMax;
+            numericUpDownPhantom.Value = Hook.PhantomType;
+            numericUpDownTeam.Value = Hook.TeamType;
 
-            textBoxWorld.Text = dsProcess.GetWorld().ToString();
-            textBoxArea.Text = dsProcess.GetArea().ToString();
-            numericUpDownPosX.Value = (decimal)dsProcess.GetPosX();
-            numericUpDownPosY.Value = (decimal)dsProcess.GetPosY();
-            numericUpDownPosZ.Value = (decimal)dsProcess.GetPosZ();
-            numericUpDownPosAngle.Value = (decimal)((dsProcess.GetPosAngle() + Math.PI) / (Math.PI * 2) * 360);
-            numericUpDownPosStableX.Value = (decimal)dsProcess.GetPosStableX();
-            numericUpDownPosStableY.Value = (decimal)dsProcess.GetPosStableY();
-            numericUpDownPosStableZ.Value = (decimal)dsProcess.GetPosStableZ();
-            numericUpDownPosStableAngle.Value = (decimal)((dsProcess.GetPosStableAngle() + Math.PI) / (Math.PI * 2) * 360);
+            textBoxWorld.Text = Hook.World.ToString();
+            textBoxArea.Text = Hook.Area.ToString();
+            numericUpDownPosX.Value = (decimal)Hook.PosX;
+            numericUpDownPosY.Value = (decimal)Hook.PosY;
+            numericUpDownPosZ.Value = (decimal)Hook.PosZ;
+            numericUpDownPosAngle.Value = (decimal)((Hook.PosAngle + Math.PI) / (Math.PI * 2) * 360);
+            numericUpDownPosStableX.Value = (decimal)Hook.PosStableX;
+            numericUpDownPosStableY.Value = (decimal)Hook.PosStableY;
+            numericUpDownPosStableZ.Value = (decimal)Hook.PosStableZ;
+            numericUpDownPosStableAngle.Value = (decimal)((Hook.PosStableAngle + Math.PI) / (Math.PI * 2) * 360);
 
-            checkBoxDeathCam.Checked = dsProcess.GetDeathCam();
+            checkBoxDeathCam.Checked = Hook.DeathCam;
 
-            int bonfireID = dsProcess.GetBonfire();
+            int bonfireID = Hook.LastBonfire;
             if (bonfireID != skipBonfire && !comboBoxBonfire.DroppedDown && bonfireID != (comboBoxBonfire.SelectedItem as DSBonfire).ID)
             {
                 object result = null;
@@ -106,36 +106,36 @@ namespace DS_Gadget
 
             // Backstabbing resets speed, so reapply it 24/7
             if (checkBoxSpeed.Checked)
-                dsProcess.SetSpeed((float)numericUpDownSpeed.Value);
+                Hook.SetSpeed((float)numericUpDownSpeed.Value);
         }
 
         private void numericUpDownHP_ValueChanged(object sender, EventArgs e)
         {
             if (!reading)
-                dsProcess.SetHP((int)numericUpDownHP.Value);
+                Hook.Health = (int)numericUpDownHP.Value;
         }
 
         private void numericUpDownStam_ValueChanged(object sender, EventArgs e)
         {
             if (!reading)
-                dsProcess.SetStamina((int)numericUpDownStam.Value);
+                Hook.Stamina = (int)numericUpDownStam.Value;
         }
 
         private void numericUpDownPhantom_ValueChanged(object sender, EventArgs e)
         {
             if (!reading)
-                dsProcess.SetPhantomType((int)numericUpDownPhantom.Value);
+                Hook.PhantomType = (int)numericUpDownPhantom.Value;
         }
 
         private void numericUpDownTeam_ValueChanged(object sender, EventArgs e)
         {
             if (!reading)
-                dsProcess.SetTeamType((int)numericUpDownTeam.Value);
+                Hook.TeamType = (int)numericUpDownTeam.Value;
         }
 
         private void checkBoxPosLock_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.SetPosLock(checkBoxPosLock.Checked);
+            Hook?.SetPosLock(checkBoxPosLock.Checked);
             numericUpDownPosX.Enabled = checkBoxPosLock.Checked;
             numericUpDownPosY.Enabled = checkBoxPosLock.Checked;
             numericUpDownPosZ.Enabled = checkBoxPosLock.Checked;
@@ -163,7 +163,7 @@ namespace DS_Gadget
                 float x = (float)numericUpDownPosX.Value;
                 float y = (float)numericUpDownPosY.Value;
                 float z = (float)numericUpDownPosZ.Value;
-                dsProcess?.SetPos(x, y, z);
+                Hook?.SetPos(x, y, z);
             }
         }
 
@@ -180,8 +180,8 @@ namespace DS_Gadget
             numericUpDownPosStoredAngle.Value = numericUpDownPosAngle.Value;
             playerState.HP = (int)numericUpDownHP.Value;
             playerState.Stamina = (int)numericUpDownStam.Value;
-            playerState.FollowCam = dsProcess.DumpFollowCam();
-            playerState.DeathCam = dsProcess.GetDeathCam();
+            playerState.FollowCam = Hook.DumpFollowCam();
+            playerState.DeathCam = Hook.DeathCam;
             playerState.Set = true;
         }
 
@@ -196,12 +196,12 @@ namespace DS_Gadget
             float y = (float)numericUpDownPosStoredY.Value;
             float z = (float)numericUpDownPosStoredZ.Value;
             float angle = (float)((double)numericUpDownPosStoredAngle.Value / 360 * (Math.PI * 2) - Math.PI);
-            dsProcess?.PosWarp(x, y, z, angle);
+            Hook?.PosWarp(x, y, z, angle);
             if (playerState.Set)
             {
                 // Two frames for safety, wait until after warp
                 System.Threading.Thread.Sleep(1000 / 15);
-                dsProcess.UndumpFollowCam(playerState.FollowCam);
+                Hook.UndumpFollowCam(playerState.FollowCam);
 
                 if (checkBoxStoreState.Checked)
                 {
@@ -214,39 +214,39 @@ namespace DS_Gadget
 
         private void checkBoxGravity_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.SetGravity(checkBoxGravity.Checked);
+            Hook.SetGravity(checkBoxGravity.Checked);
         }
 
         private void checkBoxCollision_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.SetCollision(checkBoxCollision.Checked);
+            Hook.SetCollision(checkBoxCollision.Checked);
         }
 
         private void checkBoxDeathCam_CheckedChanged(object sender, EventArgs e)
         {
-            dsProcess?.SetDeathCam(checkBoxDeathCam.Checked);
+            Hook.DeathCam = checkBoxDeathCam.Checked;
         }
 
         private void comboBoxBonfire_SelectedIndexChanged(object sender, EventArgs e)
         {
             DSBonfire bonfire = comboBoxBonfire.SelectedItem as DSBonfire;
-            dsProcess?.SetBonfire(bonfire.ID);
+            Hook.LastBonfire = bonfire.ID;
         }
 
         private void buttonWarp_Click(object sender, EventArgs e)
         {
-            dsProcess?.BonfireWarp();
+            Hook.BonfireWarp();
         }
 
         private void checkBoxSpeed_CheckedChanged(object sender, EventArgs e)
         {
             numericUpDownSpeed.Enabled = checkBoxSpeed.Checked;
-            dsProcess?.SetSpeed(checkBoxSpeed.Checked ? (float)numericUpDownSpeed.Value : 1);
+            Hook.SetSpeed(checkBoxSpeed.Checked ? (float)numericUpDownSpeed.Value : 1);
         }
 
         private void numericUpDownSpeed_ValueChanged(object sender, EventArgs e)
         {
-            dsProcess?.SetSpeed((float)numericUpDownSpeed.Value);
+            Hook.SetSpeed((float)numericUpDownSpeed.Value);
         }
     }
 }

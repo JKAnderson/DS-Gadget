@@ -21,12 +21,12 @@ namespace DS_Gadget
 
             hotkeys.Add(new GadgetHotkey("HotkeyMoveswap", textBoxHotkeyMoveswap, tabPageHotkeys, () =>
             {
-                dsProcess.MoveSwap();
+                Hook.MoveSwap();
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyAnim", textBoxHotkeyAnim, tabPageHotkeys, () =>
             {
-                dsProcess.ResetAnim();
+                Hook.ResetAnim();
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyStore", textBoxHotkeyStore, tabPageHotkeys, () =>
@@ -56,25 +56,25 @@ namespace DS_Gadget
 
             hotkeys.Add(new GadgetHotkey("HotkeyMenu", textBoxHotkeyMenu, tabPageHotkeys, () =>
             {
-                dsProcess.MenuKick();
+                Hook.MenuKick();
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyUp", textBoxHotkeyUp, tabPageHotkeys, () =>
             {
-                float x = dsProcess.GetPosX();
-                float y = dsProcess.GetPosY();
-                float z = dsProcess.GetPosZ();
-                float angle = dsProcess.GetPosAngle();
-                dsProcess.PosWarp(x, y + 5, z, angle);
+                float x = Hook.PosX;
+                float y = Hook.PosY;
+                float z = Hook.PosZ;
+                float angle = Hook.PosAngle;
+                Hook.PosWarp(x, y + 5, z, angle);
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyDown", textBoxHotkeyDown, tabPageHotkeys, () =>
             {
-                float x = dsProcess.GetPosX();
-                float y = dsProcess.GetPosY();
-                float z = dsProcess.GetPosZ();
-                float angle = dsProcess.GetPosAngle();
-                dsProcess.PosWarp(x, y - 5, z, angle);
+                float x = Hook.PosX;
+                float y = Hook.PosY;
+                float z = Hook.PosZ;
+                float angle = Hook.PosAngle;
+                Hook.PosWarp(x, y - 5, z, angle);
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyDeath", textBoxHotkeyDeath, tabPageHotkeys, () =>
@@ -97,11 +97,11 @@ namespace DS_Gadget
 #if DEBUG
             hotkeys.Add(new GadgetHotkey("HotkeyTest1", textBoxHotkeyTest1, tabPageHotkeys, () =>
             {
-                dsProcess.HotkeyTest1();
+                Hook.HotkeyTest1();
             }));
             hotkeys.Add(new GadgetHotkey("HotkeyTest2", textBoxHotkeyTest2, tabPageHotkeys, () =>
             {
-                dsProcess.HotkeyTest2();
+                Hook.HotkeyTest2();
             }));
 #else
             textBoxHotkeyTest1.Visible = false;
@@ -129,7 +129,7 @@ namespace DS_Gadget
 
         private void GlobalKeyboardHook_KeyDownOrUp(object sender, GlobalKeyboardHookEventArgs e)
         {
-            if (checkBoxEnableHotkeys.Checked && loaded && dsProcess.Focused() && !e.IsUp)
+            if (checkBoxEnableHotkeys.Checked && loaded && Hook.Focused && !e.IsUp)
             {
                 foreach (GadgetHotkey hotkey in hotkeys)
                 {

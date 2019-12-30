@@ -12,13 +12,40 @@ namespace DS_Gadget
     {
         private static Properties.Settings settings = Properties.Settings.Default;
 
-        private DSProcess dsProcess = null;
+        private DSHook Hook = null;
         private bool loaded = false;
         private bool reading = false;
 
         public MainForm()
         {
             InitializeComponent();
+            Hook = new DSHook(5000, 5000);
+            Hook.OnHooked += Hook_OnHooked;
+            Hook.OnUnhooked += Hook_OnUnhooked;
+            Hook.Start();
+        }
+
+        private void Hook_OnHooked(object sender, PropertyHook.PHEventArgs e)
+        {
+            Invoke(new Action(() =>
+            {
+                labelProcess.Text = Hook.ID.ToString();
+                labelVersion.Text = Hook.Version;
+                labelVersion.ForeColor = Hook.Valid ? Color.DarkGreen : Color.DarkRed;
+            }));
+        }
+
+        private void Hook_OnUnhooked(object sender, PropertyHook.PHEventArgs e)
+        {
+            Invoke(new Action(() =>
+            {
+                labelProcess.Text = "None";
+                labelVersion.Text = "None";
+                labelVersion.ForeColor = Color.Black;
+                labelLoaded.Text = "No";
+                enableTabs(false);
+                loaded = false;
+            }));
         }
 
         private async void MainForm_Load(object sender, EventArgs e)
@@ -26,14 +53,7 @@ namespace DS_Gadget
             Location = settings.WindowLocation;
             Text = "DS Gadget " + System.Windows.Forms.Application.ProductVersion;
             enableTabs(false);
-            initPlayer();
-            initStats();
-            initItems();
-            initGraphics();
-            initCheats();
-            initInternals();
-            initMisc();
-            initHotkeys();
+            InitAllTabs();
 
             GitHubClient gitHubClient = new GitHubClient(new ProductHeaderValue("DS-Gadget"));
             try
@@ -68,26 +88,8 @@ namespace DS_Gadget
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            savePlayer();
-            saveStats();
-            saveItems();
-            saveGraphics();
-            saveCheats();
-            saveInternals();
-            saveMisc();
-            saveHotkeys();
-
-            resetPlayer();
-            resetStats();
-            resetItems();
-            resetGraphics();
-            resetCheats();
-            resetInternals();
-            resetMisc();
-            resetHotkeys();
-
-            if (dsProcess != null)
-                dsProcess.Close();
+            SaveAllTabs();
+            ResetAllTabs();
         }
 
         private void enableTabs(bool enable)
@@ -96,79 +98,95 @@ namespace DS_Gadget
                 tab.Enabled = enable;
         }
 
-        private void timerCheckProcess_Tick(object sender, EventArgs e)
-        {
-            if (dsProcess == null)
-            {
-                DSProcess result = DSProcess.GetProcess();
-                if (result != null)
-                {
-                    labelProcess.Text = result.ID.ToString();
-                    labelVersion.Text = result.Version;
-                    labelVersion.ForeColor = result.Valid ? Color.DarkGreen : Color.DarkRed;
-                    dsProcess = result;
-                }
-            }
-        }
-
         private void timerUpdateProcess_Tick(object sender, EventArgs e)
         {
-            if (dsProcess != null)
+            if (Hook.Hooked)
             {
-                if (dsProcess.Alive())
+                if (Hook.Loaded)
                 {
-                    if (dsProcess.Loaded())
+                    if (!loaded)
                     {
-                        if (!loaded)
-                        {
-                            labelLoaded.Text = "Yes";
-                            dsProcess.LoadPointers();
-                            loaded = true;
-                            reading = true;
-                            reloadPlayer();
-                            reloadStats();
-                            reloadItems();
-                            reloadGraphics();
-                            reloadCheats();
-                            reloadInternals();
-                            reloadMisc();
-                            reloadHotkeys();
-                            reading = false;
-                            enableTabs(true);
-                        }
-                        else
-                        {
-                            reading = true;
-                            updatePlayer();
-                            updateStats();
-                            updateItems();
-                            updateGraphics();
-                            updateCheats();
-                            updateInternals();
-                            updateMisc();
-                            updateHotkeys();
-                            reading = false;
-                        }
+                        labelLoaded.Text = "Yes";
+                        loaded = true;
+                        reading = true;
+                        ReloadAllTabs();
+                        reading = false;
+                        enableTabs(true);
                     }
-                    else if (loaded && !dsProcess.Loaded())
+                    else
                     {
-                        labelLoaded.Text = "No";
-                        enableTabs(false);
-                        loaded = false;
+                        reading = true;
+                        UpdateAllTabs();
+                        reading = false;
                     }
                 }
-                else
+                else if (loaded)
                 {
-                    dsProcess.Close();
-                    dsProcess = null;
-                    labelProcess.Text = "None";
-                    labelVersion.Text = "None";
-                    labelVersion.ForeColor = Color.Black;
                     labelLoaded.Text = "No";
                     enableTabs(false);
                     loaded = false;
                 }
             }
+        }
+
+        private void InitAllTabs()
+        {
+            initPlayer();
+            initStats();
+            initItems();
+            initGraphics();
+            initCheats();
+            initInternals();
+            initMisc();
+            initHotkeys();
+        }
+
+        private void ReloadAllTabs()
+        {
+            reloadPlayer();
+            reloadStats();
+            reloadItems();
+            reloadGraphics();
+            reloadCheats();
+            reloadInternals();
+            reloadMisc();
+            reloadHotkeys();
+        }
+
+        private void UpdateAllTabs()
+        {
+            updatePlayer();
+            updateStats();
+            updateItems();
+            updateGraphics();
+            updateCheats();
+            updateInternals();
+            updateMisc();
+            updateHotkeys();
+        }
+
+        private void SaveAllTabs()
+        {
+            savePlayer();
+            saveStats();
+            saveItems();
+            saveGraphics();
+            saveCheats();
+            saveInternals();
+            saveMisc();
+            saveHotkeys();
+        }
+
+        private void ResetAllTabs()
+        {
+            resetPlayer();
+            resetStats();
+            resetItems();
+            resetGraphics();
+            resetCheats();
+            resetInternals();
+            resetMisc();
+            resetHotkeys();
         }
 
         private void linkLabelNewVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

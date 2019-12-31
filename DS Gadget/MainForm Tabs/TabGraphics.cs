@@ -22,7 +22,7 @@ namespace DS_Gadget
 
         private void resetGraphics()
         {
-            if (Hook.Valid)
+            if (Hook.Hooked)
             {
                 if (!checkBoxMap.Checked)
                     Hook.DrawMap(true);

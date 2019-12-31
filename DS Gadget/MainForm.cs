@@ -12,7 +12,7 @@ namespace DS_Gadget
     {
         private static Properties.Settings settings = Properties.Settings.Default;
 
-        private DSHook Hook = null;
+        private DSHook Hook;
         private bool loaded = false;
         private bool reading = false;
 
@@ -31,7 +31,7 @@ namespace DS_Gadget
             {
                 labelProcess.Text = Hook.ID.ToString();
                 labelVersion.Text = Hook.Version;
-                labelVersion.ForeColor = Hook.Valid ? Color.DarkGreen : Color.DarkRed;
+                labelVersion.ForeColor = Hook.Valid ? Color.DarkGreen : Color.DarkOrange;
             }));
         }
 

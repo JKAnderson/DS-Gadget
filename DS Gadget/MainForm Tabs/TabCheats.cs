@@ -9,7 +9,7 @@ namespace DS_Gadget
 
         private void resetCheats()
         {
-            if (Hook.Valid)
+            if (Hook.Hooked)
             {
                 if (checkBoxAllNoMagic.Checked)
                     Hook.SetAllNoMagic(false);

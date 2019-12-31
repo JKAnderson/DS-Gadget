@@ -28,7 +28,7 @@ namespace DS_Gadget
 
         private void resetPlayer()
         {
-            if (Hook.Valid)
+            if (Hook.Hooked)
             {
                 if (checkBoxPosLock.Checked)
                     Hook.SetPosLock(false);

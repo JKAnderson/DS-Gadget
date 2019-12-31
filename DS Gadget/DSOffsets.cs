@@ -143,8 +143,8 @@ namespace DS_Gadget
             PosZ = 0x18,
         }
 
-        public const string CharData2AOB = "00 43 76 F7 00 CC CC CC CC A1 ? ? ? ? 8B 40 34 53 32 DB 85 C0";
-        public const int CharData2AOBOffset = 0xA;
+        public const string CharData2AOB = "A1 ? ? ? ? 8B 40 34 53 32 DB 85 C0";
+        public const int CharData2AOBOffset = 1;
         public const int CharData2Offset1 = 0;
         public const int CharData2Offset2 = 8;
         public enum CharData2

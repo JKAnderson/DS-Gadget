@@ -11,8 +11,6 @@ namespace DS_Gadget
         private const uint VERSION_DEBUG = 0xCE9634B4;
         private const uint VERSION_BETA = 0xE91B11E2;
 
-        private DSOffsets Offsets;
-
         private PHPointer CheckVersion;
 
         private PHPointer PosLock;
@@ -105,7 +103,8 @@ namespace DS_Gadget
 
         private void DSHook_OnHooked(object sender, PHEventArgs e)
         {
-            switch (CheckVersion.ReadUInt32(0))
+            uint version = CheckVersion.ReadUInt32(0);
+            switch (version)
             {
                 case VERSION_RELEASE:
                     Version = "Steam";
@@ -118,12 +117,12 @@ namespace DS_Gadget
                     break;
 
                 case VERSION_BETA:
-                    Version = "Beta";
+                    Version = "Steamworks Beta";
                     Valid = false;
                     break;
 
                 default:
-                    Version = "Unknown";
+                    Version = $"Unknown 0x{version:X8}";
                     Valid = false;
                     break;
             }
@@ -133,7 +132,6 @@ namespace DS_Gadget
         {
             Version = "None";
             Valid = false;
-            Offsets = null;
         }
 
         public bool Loaded => ChrFollowCam.Resolve() != IntPtr.Zero;

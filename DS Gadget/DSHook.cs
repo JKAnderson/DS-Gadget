@@ -14,11 +14,25 @@ namespace DS_Gadget
         private DSOffsets Offsets;
 
         private PHPointer CheckVersion;
+
+        private PHPointer PosLock;
+        private PHPointer NodeGraph;
+        private PHPointer AllNoMagicQtyConsume;
+        private PHPointer PlayerNoDead;
+        private PHPointer PlayerExterminate;
+        private PHPointer AllNoStaminaConsume;
+        private PHPointer Compasses;
+        private PHPointer CompassSmall;
+        private PHPointer Altimeter;
+        private PHPointer CompassLarge;
+        private PHPointer DrawMapPtr;
+
         private PHPointer CharData1;
         private PHPointer CharMapData;
         private PHPointer AnimData;
         private PHPointer CharPosData;
         private PHPointer CharData2;
+        private PHPointer Gestures;
         private PHPointer GraphicsData;
         private PHPointer WorldState;
         private PHPointer MenuManager;
@@ -28,35 +42,62 @@ namespace DS_Gadget
         private PHPointer Unknown2;
         private PHPointer Unknown3;
         private PHPointer Unknown4;
-        private PHPointer Gestures;
 
-        public int ID { get; private set; }
+        private PHPointer FuncItemGet;
+        private PHPointer FuncLevelUp;
+        private PHPointer FuncBonfireWarp;
+        private PHPointer FuncBonfireWarpUnknown1;
+        private PHPointer FuncItemDrop;
+        private PHPointer FuncItemDropUnknown1;
+        private PHPointer FuncItemDropUnknown2;
+
+        public int ID => Process?.Id ?? -1;
         public string Version { get; private set; }
         public bool Valid { get; private set; }
 
         public DSHook(int refreshInterval, int minLifetime) :
             base(refreshInterval, minLifetime, p => p.MainWindowTitle == "DARK SOULS")
         {
-            ID = -1;
             Version = "None";
             Valid = false;
 
             CheckVersion = CreateBasePointer((IntPtr)DSOffsets.CheckVersion);
-            CharData1 = CreateBasePointer(IntPtr.Zero);
-            CharMapData = CreateBasePointer(IntPtr.Zero);
-            AnimData = CreateBasePointer(IntPtr.Zero);
-            CharPosData = CreateBasePointer(IntPtr.Zero);
-            CharData2 = CreateBasePointer(IntPtr.Zero);
-            GraphicsData = CreateBasePointer(IntPtr.Zero);
-            WorldState = CreateBasePointer(IntPtr.Zero);
-            MenuManager = CreateBasePointer(IntPtr.Zero);
-            ChrFollowCam = CreateBasePointer(IntPtr.Zero);
-            EventFlags = CreateBasePointer(IntPtr.Zero);
-            Unknown1 = CreateBasePointer(IntPtr.Zero);
-            Unknown2 = CreateBasePointer(IntPtr.Zero);
-            Unknown3 = CreateBasePointer(IntPtr.Zero);
-            Unknown4 = CreateBasePointer(IntPtr.Zero);
-            Gestures = CreateBasePointer(IntPtr.Zero);
+
+            PosLock = RegisterAbsoluteAOB(DSOffsets.PosLockAOB);
+            NodeGraph = RegisterAbsoluteAOB(DSOffsets.NodeGraphAOB);
+            AllNoMagicQtyConsume = RegisterAbsoluteAOB(DSOffsets.AllNoMagicQtyConsumeAOB, DSOffsets.AllNoMagicQtyConsumeAOBOffset);
+            PlayerNoDead = RegisterAbsoluteAOB(DSOffsets.PlayerNoDeadAOB, DSOffsets.PlayerNoDeadAOBOffset);
+            PlayerExterminate = RegisterAbsoluteAOB(DSOffsets.PlayerExterminateAOB, DSOffsets.PlayerExterminateAOBOffset);
+            AllNoStaminaConsume = RegisterAbsoluteAOB(DSOffsets.AllNoStaminaConsumeAOB, DSOffsets.AllNoStaminaConsumeAOBOffset);
+            Compasses = RegisterAbsoluteAOB(DSOffsets.CompassAOB);
+            CompassSmall = CreateChildPointer(Compasses, DSOffsets.CompassSmallAOBOffset);
+            Altimeter = CreateChildPointer(Compasses, DSOffsets.AltimeterAOBOffset);
+            CompassLarge = CreateChildPointer(Compasses, DSOffsets.CompassLargeAOBOffset);
+            DrawMapPtr = RegisterAbsoluteAOB(DSOffsets.DrawMapAOB, DSOffsets.DrawMapAOBOffset);
+
+            CharData1 = RegisterAbsoluteAOB(DSOffsets.CharData1AOB, DSOffsets.CharData1AOBOffset, DSOffsets.CharData1Offset1, DSOffsets.CharData1Offset2, DSOffsets.CharData1Offset3);
+            CharMapData = CreateChildPointer(CharData1, (int)DSOffsets.CharData1.CharMapDataPtr);
+            AnimData = CreateChildPointer(CharMapData, (int)DSOffsets.CharMapData.AnimDataPtr);
+            CharPosData = CreateChildPointer(CharMapData, (int)DSOffsets.CharMapData.CharPosDataPtr);
+            CharData2 = RegisterAbsoluteAOB(DSOffsets.CharData2AOB, DSOffsets.CharData2AOBOffset, DSOffsets.CharData2Offset1, DSOffsets.CharData2Offset2);
+            Gestures = CreateChildPointer(CharData2, (int)DSOffsets.CharData2.GesturesUnlockedPtr);
+            GraphicsData = RegisterAbsoluteAOB(DSOffsets.GraphicsDataAOB, DSOffsets.GraphicsDataAOBOffset, DSOffsets.GraphicsDataOffset1, DSOffsets.GraphicsDataOffset2);
+            WorldState = RegisterAbsoluteAOB(DSOffsets.WorldStateAOB, DSOffsets.WorldStateAOBOffset, DSOffsets.WorldStateOffset1);
+            MenuManager = RegisterAbsoluteAOB(DSOffsets.MenuManagerAOB, DSOffsets.MenuManagerAOBOffset, DSOffsets.MenuManagerOffset1);
+            ChrFollowCam = RegisterAbsoluteAOB(DSOffsets.ChrFollowCamAOB, DSOffsets.ChrFollowCamAOBOffset, DSOffsets.ChrFollowCamOffset1, DSOffsets.ChrFollowCamOffset2, DSOffsets.ChrFollowCamOffset3);
+            EventFlags = RegisterAbsoluteAOB(DSOffsets.EventFlagsAOB, DSOffsets.EventFlagsAOBOffset, DSOffsets.EventFlagsOffset1, DSOffsets.EventFlagsOffset2);
+            Unknown1 = RegisterAbsoluteAOB(DSOffsets.Unknown1AOB, DSOffsets.Unknown1AOBOffset, DSOffsets.Unknown1Offset1);
+            Unknown2 = RegisterAbsoluteAOB(DSOffsets.Unknown2AOB, DSOffsets.Unknown2AOBOffset, DSOffsets.Unknown2Offset1);
+            Unknown3 = RegisterAbsoluteAOB(DSOffsets.Unknown3AOB, DSOffsets.Unknown3AOBOffset, DSOffsets.Unknown3Offset1);
+            Unknown4 = RegisterAbsoluteAOB(DSOffsets.Unknown4AOB, DSOffsets.Unknown4AOBOffset, DSOffsets.Unknown4Offset1, DSOffsets.Unknown4Offset2);
+
+            FuncItemGet = RegisterAbsoluteAOB(DSOffsets.FuncItemGetAOB);
+            FuncLevelUp = RegisterAbsoluteAOB(DSOffsets.FuncLevelUpAOB);
+            FuncBonfireWarp = RegisterAbsoluteAOB(DSOffsets.FuncBonfireWarpAOB);
+            FuncBonfireWarpUnknown1 = RegisterAbsoluteAOB(DSOffsets.FuncBonfireWarpUnknown1AOB, DSOffsets.FuncBonfireWarpUnknown1AOBOffset);
+            FuncItemDrop = RegisterAbsoluteAOB(DSOffsets.FuncItemDropAOB);
+            FuncItemDropUnknown1 = RegisterAbsoluteAOB(DSOffsets.FuncItemDropUnknown1AOB, DSOffsets.FuncItemDropUnknown1AOBOffset);
+            FuncItemDropUnknown2 = RegisterAbsoluteAOB(DSOffsets.FuncItemDropUnknown2AOB, DSOffsets.FuncItemDropUnknown2AOBOffset);
 
             OnHooked += DSHook_OnHooked;
             OnUnhooked += DSHook_OnUnhooked;
@@ -64,18 +105,15 @@ namespace DS_Gadget
 
         private void DSHook_OnHooked(object sender, PHEventArgs e)
         {
-            ID = Process.Id;
             switch (CheckVersion.ReadUInt32(0))
             {
                 case VERSION_RELEASE:
                     Version = "Steam";
-                    Offsets = DSOffsets.Release;
                     Valid = true;
                     break;
 
                 case VERSION_DEBUG:
                     Version = "Debug";
-                    Offsets = DSOffsets.Debug;
                     Valid = true;
                     break;
 
@@ -89,48 +127,10 @@ namespace DS_Gadget
                     Valid = false;
                     break;
             }
-
-            if (Valid)
-            {
-                CharData1 = CreateBasePointer((IntPtr)Offsets.CharData1Ptr, 0, Offsets.CharData1Ptr2, Offsets.CharData1Ptr3);
-                CharMapData = CreateChildPointer(CharData1, (int)DSOffsets.CharData1.CharMapDataPtr);
-                AnimData = CreateChildPointer(CharMapData, (int)DSOffsets.CharMapData.AnimDataPtr);
-                CharPosData = CreateChildPointer(CharMapData, (int)DSOffsets.CharMapData.CharPosDataPtr);
-                CharData2 = CreateBasePointer((IntPtr)Offsets.CharData2Ptr, 0, Offsets.CharData2Ptr2);
-                GraphicsData = CreateBasePointer((IntPtr)Offsets.GraphicsDataPtr, 0, Offsets.GraphicsDataPtr2);
-                WorldState = CreateBasePointer((IntPtr)Offsets.WorldStatePtr, 0);
-                MenuManager = CreateBasePointer((IntPtr)Offsets.MenuManagerPtr, 0);
-                ChrFollowCam = CreateBasePointer((IntPtr)Offsets.ChrFollowCamPtr, 0, Offsets.ChrFollowCamPtr2, Offsets.ChrFollowCamPtr3);
-                EventFlags = CreateBasePointer((IntPtr)Offsets.EventFlagsPtr, 0, Offsets.EventFlagsPtr2);
-                Unknown1 = CreateBasePointer((IntPtr)Offsets.Unknown1Ptr, 0);
-                Unknown2 = CreateBasePointer((IntPtr)Offsets.Unknown2Ptr, 0);
-                Unknown3 = CreateBasePointer((IntPtr)Offsets.Unknown3Ptr, 0);
-                Unknown4 = CreateBasePointer((IntPtr)Offsets.Unknown4Ptr, 0, Offsets.Unknown4Ptr2);
-                Gestures = CreateChildPointer(CharData2, (int)DSOffsets.CharData2.GesturesUnlockedPtr);
-            }
-            else
-            {
-                CharData1 = CreateBasePointer(IntPtr.Zero);
-                CharMapData = CreateBasePointer(IntPtr.Zero);
-                AnimData = CreateBasePointer(IntPtr.Zero);
-                CharPosData = CreateBasePointer(IntPtr.Zero);
-                CharData2 = CreateBasePointer(IntPtr.Zero);
-                GraphicsData = CreateBasePointer(IntPtr.Zero);
-                WorldState = CreateBasePointer(IntPtr.Zero);
-                MenuManager = CreateBasePointer(IntPtr.Zero);
-                ChrFollowCam = CreateBasePointer(IntPtr.Zero);
-                EventFlags = CreateBasePointer(IntPtr.Zero);
-                Unknown1 = CreateBasePointer(IntPtr.Zero);
-                Unknown2 = CreateBasePointer(IntPtr.Zero);
-                Unknown3 = CreateBasePointer(IntPtr.Zero);
-                Unknown4 = CreateBasePointer(IntPtr.Zero);
-                Gestures = CreateBasePointer(IntPtr.Zero);
-            }
         }
 
         private void DSHook_OnUnhooked(object sender, PHEventArgs e)
         {
-            ID = -1;
             Version = "None";
             Valid = false;
             Offsets = null;
@@ -191,13 +191,13 @@ namespace DS_Gadget
         {
             if (enable)
             {
-                Kernel32.WriteBytes(Handle, (IntPtr)Offsets.PosLock1, new byte[] { 0x90, 0x90, 0x90, 0x90, 0x90 });
-                Kernel32.WriteBytes(Handle, (IntPtr)Offsets.PosLock2, new byte[] { 0x90, 0x90, 0x90, 0x90, 0x90 });
+                PosLock.WriteBytes(DSOffsets.PosLock1AOBOffset, new byte[] { 0x90, 0x90, 0x90, 0x90, 0x90 });
+                PosLock.WriteBytes(DSOffsets.PosLock2AOBOffset, new byte[] { 0x90, 0x90, 0x90, 0x90, 0x90 });
             }
             else
             {
-                Kernel32.WriteBytes(Handle, (IntPtr)Offsets.PosLock1, new byte[] { 0x66, 0x0F, 0xD6, 0x46, 0x10 });
-                Kernel32.WriteBytes(Handle, (IntPtr)Offsets.PosLock2, new byte[] { 0x66, 0x0F, 0xD6, 0x46, 0x18 });
+                PosLock.WriteBytes(DSOffsets.PosLock1AOBOffset, new byte[] { 0x66, 0x0F, 0xD6, 0x46, 0x10 });
+                PosLock.WriteBytes(DSOffsets.PosLock2AOBOffset, new byte[] { 0x66, 0x0F, 0xD6, 0x46, 0x18 });
             }
         }
 
@@ -281,7 +281,7 @@ namespace DS_Gadget
         public void BonfireWarp()
         {
             string asm = string.Format(Properties.Resources.BonfireWarp,
-                Offsets.FuncBonfireWarpUnknown1, Offsets.FuncBonfireWarpPtr);
+                (int)FuncBonfireWarpUnknown1.Resolve(), (int)FuncBonfireWarp.Resolve());
             AsmExecute(asm);
         }
 
@@ -381,7 +381,7 @@ namespace DS_Gadget
             Kernel32.WriteInt32(Handle, stats + (int)DSOffsets.FuncLevelUp.Souls, Souls);
 
             string asm = string.Format(Properties.Resources.LevelUp,
-                (int)stats, Offsets.FuncLevelUpPtr);
+                (int)stats, (int)FuncLevelUp.Resolve());
 
             AsmExecute(asm);
             Free(stats);
@@ -394,7 +394,7 @@ namespace DS_Gadget
         public void GetItem(int category, int itemID, int count)
         {
             string asm = string.Format(Properties.Resources.ItemGet,
-                (int)CharData2.Resolve() + (int)DSOffsets.CharData2.InventoryIndexStart, category, itemID, count, Offsets.FuncItemGetPtr);
+                (int)CharData2.Resolve() + (int)DSOffsets.CharData2.InventoryIndexStart, category, itemID, count, (int)FuncItemGet.Resolve());
 
             AsmExecute(asm);
         }
@@ -402,7 +402,7 @@ namespace DS_Gadget
         public void DropItem(int category, int itemID, int count)
         {
             string asm = string.Format(Properties.Resources.ItemDrop,
-                category, itemID, count, Offsets.FuncItemDropUnknown1, Offsets.FuncItemDropUnknown2, Offsets.FuncItemDropPtr);
+                category, itemID, count, (int)FuncItemDropUnknown1.Resolve(), (int)FuncItemDropUnknown2.Resolve(), (int)FuncItemDrop.Resolve());
 
             AsmExecute(asm);
         }
@@ -446,42 +446,43 @@ namespace DS_Gadget
 
         public void DrawMap(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.DrawMap, enable);
+            DrawMapPtr.WriteBoolean((int)DSOffsets.DrawMap.DrawMap, enable);
         }
 
         public void DrawCreatures(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.DrawCreatures, enable);
+            DrawMapPtr.WriteBoolean((int)DSOffsets.DrawMap.DrawCreatures, enable);
         }
 
         public void DrawObjects(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.DrawObjects, enable);
+            DrawMapPtr.WriteBoolean((int)DSOffsets.DrawMap.DrawObjects, enable);
         }
 
         public void DrawSFX(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.DrawSFX, enable);
+            DrawMapPtr.WriteBoolean((int)DSOffsets.DrawMap.DrawSFX, enable);
         }
 
         public void DrawCompassLarge(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.CompassLarge, enable);
+            CompassLarge.WriteBoolean(0, enable);
         }
 
         public void DrawCompassSmall(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.CompassSmall, enable);
+            CompassSmall.WriteBoolean(0, enable);
         }
 
         public void DrawAltimeter(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.Altimeter, enable);
+            Altimeter.WriteBoolean(0, enable);
         }
 
         public void DrawNodes(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.NodeGraph, enable);
+            // Code edit, yikes
+            NodeGraph.WriteBoolean(DSOffsets.NodeGraphAOBOffset, enable);
         }
 
         public void OverrideFilter(bool enable)
@@ -548,72 +549,72 @@ namespace DS_Gadget
 
         public void SetAllNoMagic(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.AllNoMagicQtyConsume, enable);
+            AllNoMagicQtyConsume.WriteBoolean(0, enable);
         }
 
         public void SetNoDead(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.PlayerNoDead, enable);
+            PlayerNoDead.WriteBoolean(0, enable);
         }
 
         public void SetExterminate(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.PlayerExterminate, enable);
+            PlayerExterminate.WriteBoolean(0, enable);
         }
 
         public void SetAllStamina(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.AllNoStaminaConsume, enable);
+            AllNoStaminaConsume.WriteBoolean((int)DSOffsets.ChrDbg.AllNoStaminaConsume, enable);
         }
 
         public void SetAllMP(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.AllNoMPConsume, enable);
+            AllNoStaminaConsume.WriteBoolean((int)DSOffsets.ChrDbg.AllNoMPConsume, enable);
         }
 
         public void SetAllAmmo(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.AllNoArrowConsume, enable);
+            AllNoStaminaConsume.WriteBoolean((int)DSOffsets.ChrDbg.AllNoArrowConsume, enable);
         }
 
         public void SetHide(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.PlayerHide, enable);
+            AllNoStaminaConsume.WriteBoolean((int)DSOffsets.ChrDbg.PlayerHide, enable);
         }
 
         public void SetSilence(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.PlayerSilence, enable);
+            AllNoStaminaConsume.WriteBoolean((int)DSOffsets.ChrDbg.PlayerSilence, enable);
         }
 
         public void SetAllNoDead(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.AllNoDead, enable);
+            AllNoStaminaConsume.WriteBoolean((int)DSOffsets.ChrDbg.AllNoDead, enable);
         }
 
         public void SetAllNoDamage(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.AllNoDamage, enable);
+            AllNoStaminaConsume.WriteBoolean((int)DSOffsets.ChrDbg.AllNoDamage, enable);
         }
 
         public void SetAllNoHit(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.AllNoHit, enable);
+            AllNoStaminaConsume.WriteBoolean((int)DSOffsets.ChrDbg.AllNoHit, enable);
         }
 
         public void SetAllNoAttack(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.AllNoAttack, enable);
+            AllNoStaminaConsume.WriteBoolean((int)DSOffsets.ChrDbg.AllNoAttack, enable);
         }
 
         public void SetAllNoMove(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.AllNoMove, enable);
+            AllNoStaminaConsume.WriteBoolean((int)DSOffsets.ChrDbg.AllNoMove, enable);
         }
 
         public void SetAllNoUpdateAI(bool enable)
         {
-            Kernel32.WriteBoolean(Handle, (IntPtr)Offsets.AllNoUpdateAI, enable);
+            AllNoStaminaConsume.WriteBoolean((int)DSOffsets.ChrDbg.AllNoUpdateAI, enable);
         }
         #endregion
 

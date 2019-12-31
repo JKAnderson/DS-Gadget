@@ -6,36 +6,59 @@ namespace DS_Gadget
     {
         public const int CheckVersion = 0x400080;
 
-        public int PosLock1 = 0xEBDBCF;
-        public int PosLock2 = 0xEBDBE0;
-        public int NodeGraph = 0xFA256C;
+        public const string PosLockAOB = "F3 0F 11 44 24 08 F3 0F 11 0C 24 F3 0F 11 54 24 04 F3 0F 7E 04 24";
+        public const int PosLock1AOBOffset = 0x16;
+        public const int PosLock2AOBOffset = 0x27;
 
-        public int AllNoMagicQtyConsume = 0x1376EE7;
-        public int PlayerNoDead = 0x13784D2;
-        public int PlayerExterminate = 0x13784D3;
-        public int AllNoStaminaConsume = 0x13784E4;
-        public int AllNoMPConsume = 0x13784E5;
-        public int AllNoArrowConsume = 0x13784E6;
-        public int PlayerHide = 0x13784E7;
-        public int PlayerSilence = 0x13784E8;
-        public int AllNoDead = 0x13784E9;
-        public int AllNoDamage = 0x13784EA;
-        public int AllNoHit = 0x13784EB;
-        public int AllNoAttack = 0x13784EC;
-        public int AllNoMove = 0x13784ED;
-        public int AllNoUpdateAI = 0x13784EE;
+        public const string NodeGraphAOB = "8B 4C 24 5C 8B 11 50 8B 42 34 FF D0 80 BB 90 00 00 00 ?";
+        public const int NodeGraphAOBOffset = 0x12;
 
-        public int CompassSmall = 0x137851B;
-        public int Altimeter = 0x1378524;
-        public int CompassLarge = 0x1378525;
-        public int DrawMap = 0x12DEFEB;
-        public int DrawObjects = 0x12DF241;
-        public int DrawCreatures = 0x12DF242;
-        public int DrawSFX = 0x12DF243;
+        public const string AllNoMagicQtyConsumeAOB = "38 1D ? ? ? ? 0F 94 C1 3A CB";
+        public const int AllNoMagicQtyConsumeAOBOffset = 2;
 
-        public int CharData1Ptr = 0x137DC70;
-        public int CharData1Ptr2 = 0x4;
-        public int CharData1Ptr3 = 0x0;
+        public const string PlayerNoDeadAOB = "53 56 8B F0 8A 9E C4 03 00 00 8B 06 8B 90 A4 00 00 00 C0 EB 05 8B CE 80 E3 01 FF D2 84 C0 ? ? 80 3D ? ? ? ? 00";
+        public const int PlayerNoDeadAOBOffset = 0x22;
+
+        public const string PlayerExterminateAOB = "8B 11 8B 82 A4 00 00 00 FF D0 84 C0 ? ? 80 3D ? ? ? ? 00";
+        public const int PlayerExterminateAOBOffset = 0x10;
+
+        public const string AllNoStaminaConsumeAOB = "51 8B 4C 24 08 3B 8A E4 02 00 00 ? ? F6 82 C5 03 00 00 04 ? ? 80 3D ? ? ? ? 00";
+        public const int AllNoStaminaConsumeAOBOffset = 0x18;
+        public enum ChrDbg
+        {
+            AllNoStaminaConsume = 0,
+            AllNoMPConsume = 1,
+            AllNoArrowConsume = 2,
+            PlayerHide = 3,
+            PlayerSilence = 4,
+            AllNoDead = 5,
+            AllNoDamage = 6,
+            AllNoHit = 7,
+            AllNoAttack = 8,
+            AllNoMove = 9,
+            AllNoUpdateAI = 0xA,
+        }
+
+        public const string CompassAOB = "33 FF 85 FF 0F 84 ? ? ? ? 80 3D ? ? ? ? 00";
+        public const int CompassSmallAOBOffset = 0xC;
+        public const int AltimeterAOBOffset = 0x15;
+        public const int CompassLargeAOBOffset = 0x1E;
+
+        public const string DrawMapAOB = "80 3D ? ? ? ? 00 A1 ? ? ? ? 8B 48 08 8B 11 56 8B 72 28 B8 00 00 00 80";
+        public const int DrawMapAOBOffset = 2;
+        public enum DrawMap
+        {
+            DrawMap = 0,
+            DrawObjects = 0x256,
+            DrawCreatures = 0x257,
+            DrawSFX = 0x258,
+        }
+
+        public const string CharData1AOB = "8B 15 ? ? ? ? F3 0F 10 44 24 30 52";
+        public const int CharData1AOBOffset = 2;
+        public const int CharData1Offset1 = 0;
+        public const int CharData1Offset2 = 4;
+        public const int CharData1Offset3 = 0;
         public enum CharData1
         {
             CharMapDataPtr = 0x28,
@@ -120,8 +143,10 @@ namespace DS_Gadget
             PosZ = 0x18,
         }
 
-        public int CharData2Ptr = 0x1378700;
-        public int CharData2Ptr2 = 0x8;
+        public const string CharData2AOB = "00 43 76 F7 00 CC CC CC CC A1 ? ? ? ? 8B 40 34 53 32 DB 85 C0";
+        public const int CharData2AOBOffset = 0xA;
+        public const int CharData2Offset1 = 0;
+        public const int CharData2Offset2 = 8;
         public enum CharData2
         {
             HP = 0xC,
@@ -189,8 +214,10 @@ namespace DS_Gadget
             GesturesUnlockedPtr = 0x424,
         }
 
-        public int GraphicsDataPtr = 0x1378520;
-        public int GraphicsDataPtr2 = 0x10;
+        public const string GraphicsDataAOB = "89 9C 24 A0 01 00 00 A1 ? ? ? ? 8B 48 14 89 8C 24 A0 00 00 00 8B 4F 3C 8B 41 28 8B 40 1C F3 0F 7E 40 10 66 0F D6 84 24 84 00 00 00 F3 0F 7E 40 18 8D 84 24 E4 00 00 00 66 0F D6 84 24 8C 00 00 00";
+        public const int GraphicsDataAOBOffset = 8;
+        public const int GraphicsDataOffset1 = 0;
+        public const int GraphicsDataOffset2 = 0x10;
         public enum GraphicsData
         {
             DepthDraw_DepthTexEdge = 0x23F,
@@ -211,7 +238,9 @@ namespace DS_Gadget
             Hue = 0x28C,
         }
 
-        public int WorldStatePtr = 0x13784A0;
+        public const string WorldStateAOB = "8B 54 24 10 8B C8 F7 D9 39 8A B8 0E 00 00 B3 01 0F 95 C2 8B 0D ? ? ? ? 80 B9 A5 0B 00 00 00";
+        public const int WorldStateAOBOffset = 0x15;
+        public const int WorldStateOffset1 = 0;
         public enum WorldState
         {
             LastBonfire = 0xB04,
@@ -221,15 +250,19 @@ namespace DS_Gadget
             PosStableAngle = 0xB84,
         }
 
-        public int MenuManagerPtr = 0x13786D0;
+        public const string MenuManagerAOB = "C6 47 18 01 F3 0F 11 4F 1C 8B 0D ? ? ? ? 83 B9 9C 00 00 00 00";
+        public const int MenuManagerAOBOffset = 0xB;
+        public const int MenuManagerOffset1 = 0;
         public enum MenuManager
         {
             QuantityDefault = 0x20C,
         }
 
-        public int ChrFollowCamPtr = 0x137D6DC;
-        public int ChrFollowCamPtr2 = 0x3C;
-        public int ChrFollowCamPtr3 = 0x60;
+        public const string ChrFollowCamAOB = "D9 45 08 A1 ? ? ? ? 51 D9 1C 24 50";
+        public const int ChrFollowCamAOBOffset = 4;
+        public const int ChrFollowCamOffset1 = 0;
+        public const int ChrFollowCamOffset2 = 0x3C;
+        public const int ChrFollowCamOffset3 = 0x60;
         public enum ChrFollowCam
         {
             RotX = 0xE0,
@@ -246,30 +279,40 @@ namespace DS_Gadget
             TargetRotZ = 0x158,
         }
 
-        public int EventFlagsPtr = 0x137D7D4;
-        public int EventFlagsPtr2 = 0x0;
+        public const string EventFlagsAOB = "56 8B F1 8B 46 1C 50 A1 ? ? ? ? 32 C9";
+        public const int EventFlagsAOBOffset = 8;
+        public const int EventFlagsOffset1 = 0;
+        public const int EventFlagsOffset2 = 0;
 
-        public int Unknown1Ptr = 0x137E204;
+        public const string Unknown1AOB = "8B 48 04 8B 11 50 8B 42 34 FF D0 C7 46 2C 00 00 00 00 C3 8B 0D ? ? ? ? 8B 89 50 0B 00 00 32 C0 83 79 28 00";
+        public const int Unknown1AOBOffset = 0x15;
+        public const int Unknown1Offset1 = 0;
         public enum Unknown1
         {
             Area = 0xA12,
             World = 0xA13,
         }
 
-        public int Unknown2Ptr = 0x137D644;
+        public const string Unknown2AOB = "88 5D 15 88 5D 16 88 5D 17 A1 ? ? ? ? 3B C3";
+        public const int Unknown2AOBOffset = 0xA;
+        public const int Unknown2Offset1 = 0;
         public enum Unknown2
         {
             DeathCam = 0x40,
         }
 
-        public int Unknown3Ptr = 0x13784A4;
+        public const string Unknown3AOB = "8B 70 3C 8B 2D ? ? ? ? 8B 45 00 8B 8E 48 01 00 00 89 4C 24 34 83 F8 01";
+        public const int Unknown3AOBOffset = 5;
+        public const int Unknown3Offset1 = 0;
         public enum Unknown3
         {
             MenuKick = 0x0,
         }
 
-        public int Unknown4Ptr = 0x12E29E8;
-        public int Unknown4Ptr2 = 0x0;
+        public const string Unknown4AOB = "8B 76 3C 8B 76 0C 89 35 ? ? ? ? 33 C0 8D 72 9C 57 89 44 24 08 83 FE 14";
+        public const int Unknown4AOBOffset = 8;
+        public const int Unknown4Offset1 = 0;
+        public const int Unknown4Offset2 = 0;
         public enum Unknown4
         {
             StoredMagic = 0x1D4,
@@ -293,11 +336,11 @@ namespace DS_Gadget
             Prayer = 0x3C,
             PraiseTheSun = 0x40,
         }
-        
 
-        public int FuncItemGetPtr = 0xC0B700;
 
-        public int FuncLevelUpPtr = 0xC75DD0;
+        public const string FuncItemGetAOB = "55 8B EC 83 E4 F8 83 EC 34 8B 4D 0C 53 8B 5D 08 56 83 C8 FF 33 F6 81 F9 00 00 00 20 57 89 44 24 1C 89 74 24 20 89 B3 8C 01 00 00 89 44 24 18";
+
+        public const string FuncLevelUpAOB = "83 EC 08 8B 15 ? ? ? ? 56 57 8B 7A 08";
         public enum FuncLevelUp
         {
             Vitality = 0x0,
@@ -312,62 +355,14 @@ namespace DS_Gadget
             Souls = 0x178,
         }
 
-        public int FuncBonfireWarpPtr = 0xD76390;
-        public int FuncBonfireWarpUnknown1 = 0x137D790;
+        public const string FuncBonfireWarpAOB = "33 C0 39 46 04 ? ? 8B 0D ? ? ? ? 8B 15 ? ? ? ? C6 41 44 01";
+        public const string FuncBonfireWarpUnknown1AOB = "89 73 44 C6 44 24 2C 00 C7 82 84 00 00 00 06 00 00 00 8B 3D ? ? ? ? 85 FF";
+        public const int FuncBonfireWarpUnknown1AOBOffset = 0x14;
 
-        public int FuncItemDropPtr = 0xDC8C60;
-        public int FuncItemDropUnknown1 = 0x13786D0;
-        public int FuncItemDropUnknown2 = 0x137D6BC;
-
-        public static DSOffsets Release = new DSOffsets();
-        public static DSOffsets Debug = new DSOffsets()
-        {
-            PosLock1 = 0xEC0A8F,
-            PosLock2 = 0xEC0AA0,
-            NodeGraph = 0xFA618C,
-
-            AllNoMagicQtyConsume = 0x137B0A8,
-            PlayerNoDead = 0x137C68B,
-            PlayerExterminate = 0x137C6A4,
-            AllNoStaminaConsume = 0x137C6A5,
-            AllNoMPConsume = 0x137C6A6,
-            AllNoArrowConsume = 0x137C6A7,
-            PlayerHide = 0x137C6A8,
-            PlayerSilence = 0x137C6A9,
-            AllNoDead = 0x137C6AA,
-            AllNoDamage = 0x137C6AB,
-            AllNoHit = 0x137C6AC,
-            AllNoAttack = 0x137C6AD,
-            AllNoMove = 0x137C6AE,
-            AllNoUpdateAI = 0x137C6AF,
-
-            CompassSmall = 0x137C6E4,
-            Altimeter = 0x137C6E5,
-            CompassLarge = 0x137C6E6,
-            DrawMap = 0x12E2FEB,
-            DrawObjects = 0x12E3241,
-            DrawCreatures = 0x12E3242,
-            DrawSFX = 0x12E3243,
-
-            CharData1Ptr = 0x1381E30,
-            CharData2Ptr = 0x137C8C0,
-            GraphicsDataPtr = 0x137C6E0,
-            WorldStatePtr = 0x137C660,
-            MenuManagerPtr = 0x137C890,
-            ChrFollowCamPtr = 0x138189C,
-            EventFlagsPtr = 0x1381994,
-            Unknown1Ptr = 0x13823C4,
-            Unknown2Ptr = 0x1381804,
-            Unknown3Ptr = 0x137C664,
-            Unknown4Ptr = 0x12E69E8,
-
-            FuncItemGetPtr = 0xC0B180,
-            FuncLevelUpPtr = 0xC75850,
-            FuncBonfireWarpPtr = 0xD77930,
-            FuncBonfireWarpUnknown1 = 0x1381950,
-            FuncItemDropPtr = 0xDCB550,
-            FuncItemDropUnknown1 = 0x137C890,
-            FuncItemDropUnknown2 = 0x138187C,
-        };
+        public const string FuncItemDropAOB = "8B 0D ? ? ? ? 83 EC 68 81 C1 28 08 00 00";
+        public const string FuncItemDropUnknown1AOB = "88 5D 3C 88 5D 3D F3 0F 10 61 08 F3 0F 11 65 40 39 1D ? ? ? ?";
+        public const int FuncItemDropUnknown1AOBOffset = 0x12;
+        public const string FuncItemDropUnknown2AOB = "D9 E8 8B 1D ? ? ? ? 83 EC 08 D9 54 24 04 D9 1C 24 8D 44 24 20 6A 03 8B D3";
+        public const int FuncItemDropUnknown2AOBOffset = 4;
     }
 }

@@ -129,7 +129,7 @@ namespace DS_Gadget
 
         private void GlobalKeyboardHook_KeyDownOrUp(object sender, GlobalKeyboardHookEventArgs e)
         {
-            if (checkBoxEnableHotkeys.Checked && loaded && Hook.Focused && !e.IsUp)
+            if (!e.IsUp && loaded && checkBoxEnableHotkeys.Checked && Hook.Focused)
             {
                 foreach (GadgetHotkey hotkey in hotkeys)
                 {

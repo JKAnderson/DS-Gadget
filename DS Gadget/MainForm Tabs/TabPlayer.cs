@@ -70,8 +70,13 @@ namespace DS_Gadget
             numericUpDownStam.Value = Hook.Stamina;
             numericUpDownStamMax.Value = Hook.StaminaMax;
             numericUpDownStamModMax.Value = Hook.StaminaModMax;
-            numericUpDownPhantom.Value = Hook.PhantomType;
-            numericUpDownTeam.Value = Hook.TeamType;
+            nudChrType.Value = Hook.ChrType;
+            nudTeamType.Value = Hook.TeamType;
+
+            if (cbxForcePlayRegion.Checked)
+                Hook.PlayRegion = (int)nudPlayRegion.Value;
+            else
+                nudPlayRegion.Value = Hook.PlayRegion;
 
             textBoxWorld.Text = Hook.World.ToString();
             textBoxArea.Text = Hook.Area.ToString();
@@ -121,21 +126,27 @@ namespace DS_Gadget
                 Hook.Stamina = (int)numericUpDownStam.Value;
         }
 
-        private void numericUpDownPhantom_ValueChanged(object sender, EventArgs e)
+        private void nudChrType_ValueChanged(object sender, EventArgs e)
         {
             if (!reading)
-                Hook.PhantomType = (int)numericUpDownPhantom.Value;
+                Hook.ChrType = (int)nudChrType.Value;
         }
 
-        private void numericUpDownTeam_ValueChanged(object sender, EventArgs e)
+        private void nudTeamType_ValueChanged(object sender, EventArgs e)
         {
             if (!reading)
-                Hook.TeamType = (int)numericUpDownTeam.Value;
+                Hook.TeamType = (int)nudTeamType.Value;
+        }
+
+        private void nudPlayRegion_ValueChanged(object sender, EventArgs e)
+        {
+            if (!reading)
+                Hook.PlayRegion = (int)nudPlayRegion.Value;
         }
 
         private void checkBoxPosLock_CheckedChanged(object sender, EventArgs e)
         {
-            Hook?.SetPosLock(checkBoxPosLock.Checked);
+            Hook.SetPosLock(checkBoxPosLock.Checked);
             numericUpDownPosX.Enabled = checkBoxPosLock.Checked;
             numericUpDownPosY.Enabled = checkBoxPosLock.Checked;
             numericUpDownPosZ.Enabled = checkBoxPosLock.Checked;
@@ -163,7 +174,7 @@ namespace DS_Gadget
                 float x = (float)numericUpDownPosX.Value;
                 float y = (float)numericUpDownPosY.Value;
                 float z = (float)numericUpDownPosZ.Value;
-                Hook?.SetPos(x, y, z);
+                Hook.SetPos(x, y, z);
             }
         }
 
@@ -196,7 +207,8 @@ namespace DS_Gadget
             float y = (float)numericUpDownPosStoredY.Value;
             float z = (float)numericUpDownPosStoredZ.Value;
             float angle = (float)((double)numericUpDownPosStoredAngle.Value / 360 * (Math.PI * 2) - Math.PI);
-            Hook?.PosWarp(x, y, z, angle);
+
+            Hook.PosWarp(x, y, z, angle);
             if (playerState.Set)
             {
                 // Two frames for safety, wait until after warp

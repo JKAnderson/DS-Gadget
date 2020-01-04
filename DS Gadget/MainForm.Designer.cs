@@ -49,10 +49,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.checkBoxCollision = new System.Windows.Forms.CheckBox();
             this.groupBoxStatus = new System.Windows.Forms.GroupBox();
-            this.numericUpDownTeam = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownPhantom = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.nudPlayRegion = new System.Windows.Forms.NumericUpDown();
+            this.lblPlayRegion = new System.Windows.Forms.Label();
+            this.nudTeamType = new System.Windows.Forms.NumericUpDown();
+            this.nudChrType = new System.Windows.Forms.NumericUpDown();
+            this.lblTeamType = new System.Windows.Forms.Label();
+            this.lblChrType = new System.Windows.Forms.Label();
             this.labelStam = new System.Windows.Forms.Label();
             this.labelHP = new System.Windows.Forms.Label();
             this.labelStatusModMax = new System.Windows.Forms.Label();
@@ -304,13 +306,15 @@
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cbxForcePlayRegion = new System.Windows.Forms.CheckBox();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpeed)).BeginInit();
             this.groupBoxStatus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTeam)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPhantom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPlayRegion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTeamType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChrType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStamModMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStamMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStam)).BeginInit();
@@ -598,10 +602,13 @@
             this.groupBoxStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxStatus.AutoSize = true;
-            this.groupBoxStatus.Controls.Add(this.numericUpDownTeam);
-            this.groupBoxStatus.Controls.Add(this.numericUpDownPhantom);
-            this.groupBoxStatus.Controls.Add(this.label11);
-            this.groupBoxStatus.Controls.Add(this.label10);
+            this.groupBoxStatus.Controls.Add(this.cbxForcePlayRegion);
+            this.groupBoxStatus.Controls.Add(this.nudPlayRegion);
+            this.groupBoxStatus.Controls.Add(this.lblPlayRegion);
+            this.groupBoxStatus.Controls.Add(this.nudTeamType);
+            this.groupBoxStatus.Controls.Add(this.nudChrType);
+            this.groupBoxStatus.Controls.Add(this.lblTeamType);
+            this.groupBoxStatus.Controls.Add(this.lblChrType);
             this.groupBoxStatus.Controls.Add(this.labelStam);
             this.groupBoxStatus.Controls.Add(this.labelHP);
             this.groupBoxStatus.Controls.Add(this.labelStatusModMax);
@@ -622,43 +629,82 @@
             this.groupBoxStatus.TabStop = false;
             this.groupBoxStatus.Text = "Status";
             // 
-            // numericUpDownTeam
+            // nudPlayRegion
             // 
-            this.numericUpDownTeam.Location = new System.Drawing.Point(184, 119);
-            this.numericUpDownTeam.Margin = new System.Windows.Forms.Padding(4);
-            this.numericUpDownTeam.Name = "numericUpDownTeam";
-            this.numericUpDownTeam.Size = new System.Drawing.Size(100, 22);
-            this.numericUpDownTeam.TabIndex = 1;
-            this.numericUpDownTeam.ValueChanged += new System.EventHandler(this.numericUpDownTeam_ValueChanged);
+            this.nudPlayRegion.Location = new System.Drawing.Point(292, 119);
+            this.nudPlayRegion.Margin = new System.Windows.Forms.Padding(4);
+            this.nudPlayRegion.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.nudPlayRegion.Minimum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            -2147483648});
+            this.nudPlayRegion.Name = "nudPlayRegion";
+            this.nudPlayRegion.Size = new System.Drawing.Size(100, 22);
+            this.nudPlayRegion.TabIndex = 13;
+            this.nudPlayRegion.ValueChanged += new System.EventHandler(this.nudPlayRegion_ValueChanged);
             // 
-            // numericUpDownPhantom
+            // lblPlayRegion
             // 
-            this.numericUpDownPhantom.Location = new System.Drawing.Point(76, 119);
-            this.numericUpDownPhantom.Margin = new System.Windows.Forms.Padding(4);
-            this.numericUpDownPhantom.Name = "numericUpDownPhantom";
-            this.numericUpDownPhantom.Size = new System.Drawing.Size(100, 22);
-            this.numericUpDownPhantom.TabIndex = 0;
-            this.numericUpDownPhantom.ValueChanged += new System.EventHandler(this.numericUpDownPhantom_ValueChanged);
+            this.lblPlayRegion.AutoSize = true;
+            this.lblPlayRegion.Location = new System.Drawing.Point(289, 100);
+            this.lblPlayRegion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPlayRegion.Name = "lblPlayRegion";
+            this.lblPlayRegion.Size = new System.Drawing.Size(84, 17);
+            this.lblPlayRegion.TabIndex = 14;
+            this.lblPlayRegion.Text = "Play Region";
             // 
-            // label11
+            // nudTeamType
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(180, 100);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 17);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Team Type";
+            this.nudTeamType.Location = new System.Drawing.Point(184, 119);
+            this.nudTeamType.Margin = new System.Windows.Forms.Padding(4);
+            this.nudTeamType.Maximum = new decimal(new int[] {
+            18,
+            0,
+            0,
+            0});
+            this.nudTeamType.Name = "nudTeamType";
+            this.nudTeamType.Size = new System.Drawing.Size(100, 22);
+            this.nudTeamType.TabIndex = 1;
+            this.nudTeamType.ValueChanged += new System.EventHandler(this.nudTeamType_ValueChanged);
             // 
-            // label10
+            // nudChrType
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(72, 100);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 17);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Phantom Type";
+            this.nudChrType.Location = new System.Drawing.Point(76, 119);
+            this.nudChrType.Margin = new System.Windows.Forms.Padding(4);
+            this.nudChrType.Maximum = new decimal(new int[] {
+            13,
+            0,
+            0,
+            0});
+            this.nudChrType.Name = "nudChrType";
+            this.nudChrType.Size = new System.Drawing.Size(100, 22);
+            this.nudChrType.TabIndex = 0;
+            this.nudChrType.ValueChanged += new System.EventHandler(this.nudChrType_ValueChanged);
+            // 
+            // lblTeamType
+            // 
+            this.lblTeamType.AutoSize = true;
+            this.lblTeamType.Location = new System.Drawing.Point(181, 100);
+            this.lblTeamType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTeamType.Name = "lblTeamType";
+            this.lblTeamType.Size = new System.Drawing.Size(80, 17);
+            this.lblTeamType.TabIndex = 12;
+            this.lblTeamType.Text = "Team Type";
+            // 
+            // lblChrType
+            // 
+            this.lblChrType.AutoSize = true;
+            this.lblChrType.Location = new System.Drawing.Point(72, 100);
+            this.lblChrType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblChrType.Name = "lblChrType";
+            this.lblChrType.Size = new System.Drawing.Size(66, 17);
+            this.lblChrType.TabIndex = 11;
+            this.lblChrType.Text = "Chr Type";
             // 
             // labelStam
             // 
@@ -4046,6 +4092,17 @@
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
             // 
+            // cbxForcePlayRegion
+            // 
+            this.cbxForcePlayRegion.AutoSize = true;
+            this.cbxForcePlayRegion.Location = new System.Drawing.Point(399, 120);
+            this.cbxForcePlayRegion.Name = "cbxForcePlayRegion";
+            this.cbxForcePlayRegion.Size = new System.Drawing.Size(60, 21);
+            this.cbxForcePlayRegion.TabIndex = 15;
+            this.cbxForcePlayRegion.Text = "Lock";
+            this.toolTip1.SetToolTip(this.cbxForcePlayRegion, "Continuously reapply the entered play region");
+            this.cbxForcePlayRegion.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -4079,8 +4136,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpeed)).EndInit();
             this.groupBoxStatus.ResumeLayout(false);
             this.groupBoxStatus.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTeam)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPhantom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPlayRegion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTeamType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChrType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStamModMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStamMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStam)).EndInit();
@@ -4324,10 +4382,10 @@
         private System.Windows.Forms.CheckBox checkBoxPlayerNoGoods;
         private System.Windows.Forms.CheckBox checkBoxPlayerSuperArmor;
         private System.Windows.Forms.CheckBox checkBoxPlayerDeadMode;
-        private System.Windows.Forms.NumericUpDown numericUpDownTeam;
-        private System.Windows.Forms.NumericUpDown numericUpDownPhantom;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown nudTeamType;
+        private System.Windows.Forms.NumericUpDown nudChrType;
+        private System.Windows.Forms.Label lblTeamType;
+        private System.Windows.Forms.Label lblChrType;
         private System.Windows.Forms.Label labelCheckVersion;
         private System.Windows.Forms.LinkLabel linkLabelNewVersion;
         private System.Windows.Forms.Label labelHotkeyInstruction;
@@ -4431,6 +4489,9 @@
         private System.Windows.Forms.Button buttonWarp;
         private System.Windows.Forms.Label lblHotkeyItem;
         private System.Windows.Forms.TextBox txtHotkeyItem;
+        private System.Windows.Forms.NumericUpDown nudPlayRegion;
+        private System.Windows.Forms.Label lblPlayRegion;
+        private System.Windows.Forms.CheckBox cbxForcePlayRegion;
     }
 }
 

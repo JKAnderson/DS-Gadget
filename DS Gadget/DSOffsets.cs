@@ -62,10 +62,11 @@ namespace DS_Gadget
         public enum CharData1
         {
             CharMapDataPtr = 0x28,
-            PhantomType = 0x70,
+            ChrType = 0x70,
             TeamType = 0x74,
             ForcePlayAnimation1 = 0xFC,
             CharFlags1 = 0x1FC,
+            PlayRegion = 0x284,
             HP = 0x2D4,
             Stamina = 0x2E4,
             CharFlags2 = 0x3C4,

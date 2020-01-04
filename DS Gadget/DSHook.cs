@@ -170,16 +170,22 @@ namespace DS_Gadget
         public int StaminaMax => CharData2.ReadInt32((int)DSOffsets.CharData2.StaminaMax);
         public int StaminaModMax => CharData2.ReadInt32((int)DSOffsets.CharData2.StaminaModMax);
 
-        public int PhantomType
+        public int ChrType
         {
-            get => CharData1.ReadInt32((int)DSOffsets.CharData1.PhantomType);
-            set => CharData1.WriteInt32((int)DSOffsets.CharData1.PhantomType, value);
+            get => CharData1.ReadInt32((int)DSOffsets.CharData1.ChrType);
+            set => CharData1.WriteInt32((int)DSOffsets.CharData1.ChrType, value);
         }
 
         public int TeamType
         {
             get => CharData1.ReadInt32((int)DSOffsets.CharData1.TeamType);
             set => CharData1.WriteInt32((int)DSOffsets.CharData1.TeamType, value);
+        }
+
+        public int PlayRegion
+        {
+            get => CharData1.ReadInt32((int)DSOffsets.CharData1.PlayRegion);
+            set => CharData1.WriteInt32((int)DSOffsets.CharData1.PlayRegion, value);
         }
 
         public byte World => Unknown1.ReadByte((int)DSOffsets.Unknown1.World);

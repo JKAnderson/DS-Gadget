@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace DS_Gadget
@@ -13,7 +14,6 @@ namespace DS_Gadget
             public byte[] FollowCam;
         }
 
-        private int skipBonfire = 0;
         private PlayerState playerState;
 
         private void initPlayer()
@@ -22,7 +22,6 @@ namespace DS_Gadget
             checkBoxStoreState.Checked = settings.StoreHP;
             foreach (DSBonfire bonfire in DSBonfire.All)
                 comboBoxBonfire.Items.Add(bonfire);
-            comboBoxBonfire.SelectedIndex = 0;
             numericUpDownSpeed.Value = settings.Speed;
         }
 
@@ -92,21 +91,15 @@ namespace DS_Gadget
             checkBoxDeathCam.Checked = Hook.DeathCam;
 
             int bonfireID = Hook.LastBonfire;
-            if (bonfireID != skipBonfire && !comboBoxBonfire.DroppedDown && bonfireID != (comboBoxBonfire.SelectedItem as DSBonfire).ID)
+            if (!comboBoxBonfire.DroppedDown && bonfireID != (comboBoxBonfire.SelectedItem as DSBonfire)?.ID)
             {
-                object result = null;
-                foreach (object bonfire in comboBoxBonfire.Items)
+                DSBonfire result = comboBoxBonfire.Items.Cast<DSBonfire>().FirstOrDefault(b => b.ID == bonfireID);
+                if (result == null)
                 {
-                    if (bonfireID == (bonfire as DSBonfire).ID)
-                        result = bonfire;
+                    result = new DSBonfire(bonfireID, $"Unknown: {bonfireID}");
+                    comboBoxBonfire.Items.Add(result);
                 }
-                if (result != null)
-                    comboBoxBonfire.SelectedItem = result;
-                else
-                {
-                    skipBonfire = bonfireID;
-                    MessageBox.Show("Unknown bonfire ID, please report me: " + bonfireID, "Unknown Bonfire");
-                }
+                comboBoxBonfire.SelectedItem = result;
             }
 
             // Backstabbing resets speed, so reapply it 24/7

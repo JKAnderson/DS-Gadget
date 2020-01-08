@@ -49,6 +49,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.checkBoxCollision = new System.Windows.Forms.CheckBox();
             this.groupBoxStatus = new System.Windows.Forms.GroupBox();
+            this.cbxForcePlayRegion = new System.Windows.Forms.CheckBox();
             this.nudPlayRegion = new System.Windows.Forms.NumericUpDown();
             this.lblPlayRegion = new System.Windows.Forms.Label();
             this.nudTeamType = new System.Windows.Forms.NumericUpDown();
@@ -306,7 +307,6 @@
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.cbxForcePlayRegion = new System.Windows.Forms.CheckBox();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.groupBoxOther.SuspendLayout();
@@ -629,17 +629,28 @@
             this.groupBoxStatus.TabStop = false;
             this.groupBoxStatus.Text = "Status";
             // 
+            // cbxForcePlayRegion
+            // 
+            this.cbxForcePlayRegion.AutoSize = true;
+            this.cbxForcePlayRegion.Location = new System.Drawing.Point(399, 120);
+            this.cbxForcePlayRegion.Name = "cbxForcePlayRegion";
+            this.cbxForcePlayRegion.Size = new System.Drawing.Size(60, 21);
+            this.cbxForcePlayRegion.TabIndex = 15;
+            this.cbxForcePlayRegion.Text = "Lock";
+            this.toolTip1.SetToolTip(this.cbxForcePlayRegion, "Continuously reapply the entered play region");
+            this.cbxForcePlayRegion.UseVisualStyleBackColor = true;
+            // 
             // nudPlayRegion
             // 
             this.nudPlayRegion.Location = new System.Drawing.Point(292, 119);
             this.nudPlayRegion.Margin = new System.Windows.Forms.Padding(4);
             this.nudPlayRegion.Maximum = new decimal(new int[] {
-            999999,
+            999999999,
             0,
             0,
             0});
             this.nudPlayRegion.Minimum = new decimal(new int[] {
-            999999,
+            999999999,
             0,
             0,
             -2147483648});
@@ -4091,17 +4102,6 @@
             this.linkLabelNewVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.linkLabelNewVersion.Visible = false;
             this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
-            // 
-            // cbxForcePlayRegion
-            // 
-            this.cbxForcePlayRegion.AutoSize = true;
-            this.cbxForcePlayRegion.Location = new System.Drawing.Point(399, 120);
-            this.cbxForcePlayRegion.Name = "cbxForcePlayRegion";
-            this.cbxForcePlayRegion.Size = new System.Drawing.Size(60, 21);
-            this.cbxForcePlayRegion.TabIndex = 15;
-            this.cbxForcePlayRegion.Text = "Lock";
-            this.toolTip1.SetToolTip(this.cbxForcePlayRegion, "Continuously reapply the entered play region");
-            this.cbxForcePlayRegion.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 

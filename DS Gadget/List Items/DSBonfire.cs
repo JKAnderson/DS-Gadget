@@ -18,6 +18,12 @@ namespace DS_Gadget
             ID = Convert.ToInt32(bonfireEntry.Groups["id"].Value);
         }
 
+        public DSBonfire(int id, string name)
+        {
+            ID = id;
+            Name = name;
+        }
+
         public override string ToString()
         {
             return Name;

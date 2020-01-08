@@ -8,13 +8,13 @@ using System.Windows.Forms;
 
 namespace DS_Gadget
 {
-    public partial class MainForm : Form
+    partial class MainForm : Form
     {
         private static Properties.Settings settings = Properties.Settings.Default;
 
-        private DSHook Hook;
-        private bool loaded = false;
-        private bool reading = false;
+        public DSHook Hook { get; private set; }
+        public bool Loaded { get; private set; }
+        public bool Reading { get; private set; }
 
         public MainForm()
         {
@@ -29,9 +29,9 @@ namespace DS_Gadget
         {
             Invoke(new Action(() =>
             {
-                labelProcess.Text = Hook.ID.ToString();
-                labelVersion.Text = Hook.Version;
-                labelVersion.ForeColor = Hook.Valid ? Color.DarkGreen : Color.DarkOrange;
+                lblProcess.Text = Hook.ID.ToString();
+                lblVersion.Text = Hook.Version;
+                lblVersion.ForeColor = Hook.AOBScanSucceeded ? Color.DarkGreen : Color.DarkOrange;
             }));
         }
 
@@ -39,12 +39,12 @@ namespace DS_Gadget
         {
             Invoke(new Action(() =>
             {
-                labelProcess.Text = "None";
-                labelVersion.Text = "None";
-                labelVersion.ForeColor = Color.Black;
-                labelLoaded.Text = "No";
-                enableTabs(false);
-                loaded = false;
+                lblProcess.Text = "None";
+                lblVersion.Text = "None";
+                lblVersion.ForeColor = Color.Black;
+                lblLoaded.Text = "No";
+                EnableTabs(false);
+                Loaded = false;
             }));
         }
 
@@ -52,7 +52,7 @@ namespace DS_Gadget
         {
             Location = settings.WindowLocation;
             Text = "DS Gadget " + System.Windows.Forms.Application.ProductVersion;
-            enableTabs(false);
+            EnableTabs(false);
             InitAllTabs();
 
             GitHubClient gitHubClient = new GitHubClient(new ProductHeaderValue("DS-Gadget"));
@@ -64,8 +64,8 @@ namespace DS_Gadget
                     labelCheckVersion.Visible = false;
                     LinkLabel.Link link = new LinkLabel.Link();
                     link.LinkData = release.HtmlUrl;
-                    linkLabelNewVersion.Links.Add(link);
-                    linkLabelNewVersion.Visible = true;
+                    llbNewVersion.Links.Add(link);
+                    llbNewVersion.Visible = true;
                 }
                 else
                 {
@@ -76,6 +76,11 @@ namespace DS_Gadget
             {
                 labelCheckVersion.Text = "Current app version unknown";
             }
+        }
+
+        private void linkLabelNewVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(e.Link.LinkData.ToString());
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -92,7 +97,7 @@ namespace DS_Gadget
             ResetAllTabs();
         }
 
-        private void enableTabs(bool enable)
+        private void EnableTabs(bool enable)
         {
             foreach (TabPage tab in tabControlMain.TabPages)
                 tab.Enabled = enable;
@@ -104,94 +109,89 @@ namespace DS_Gadget
             {
                 if (Hook.Loaded)
                 {
-                    if (!loaded)
+                    if (!Loaded)
                     {
-                        labelLoaded.Text = "Yes";
-                        loaded = true;
-                        reading = true;
+                        lblLoaded.Text = "Yes";
+                        Loaded = true;
+                        Reading = true;
                         ReloadAllTabs();
-                        reading = false;
-                        enableTabs(true);
+                        Reading = false;
+                        EnableTabs(true);
                     }
                     else
                     {
-                        reading = true;
+                        Reading = true;
                         UpdateAllTabs();
-                        reading = false;
+                        Reading = false;
                     }
                 }
-                else if (loaded)
+                else if (Loaded)
                 {
-                    labelLoaded.Text = "No";
-                    enableTabs(false);
-                    loaded = false;
+                    lblLoaded.Text = "No";
+                    EnableTabs(false);
+                    Loaded = false;
                 }
             }
         }
 
         private void InitAllTabs()
         {
-            initPlayer();
-            initStats();
-            initItems();
-            initGraphics();
-            initCheats();
-            initInternals();
-            initMisc();
+            gadgetTabPlayer.InitTab(this);
+            gadgetTabStats.InitTab(this);
+            gadgetTabItems.InitTab(this);
+            gadgetTabGraphics.InitTab(this);
+            gadgetTabCheats.InitTab(this);
+            gadgetTabInternals.InitTab(this);
+            gadgetTabMisc.InitTab(this);
             initHotkeys();
         }
 
         private void ReloadAllTabs()
         {
-            reloadPlayer();
-            reloadStats();
-            reloadItems();
-            reloadGraphics();
-            reloadCheats();
-            reloadInternals();
-            reloadMisc();
+            gadgetTabPlayer.ReloadTab();
+            gadgetTabStats.ReloadTab();
+            gadgetTabItems.ReloadTab();
+            gadgetTabGraphics.ReloadTab();
+            gadgetTabCheats.ReloadTab();
+            gadgetTabInternals.ReloadTab();
+            gadgetTabMisc.ReloadTab();
             reloadHotkeys();
         }
 
         private void UpdateAllTabs()
         {
-            updatePlayer();
-            updateStats();
-            updateItems();
-            updateGraphics();
-            updateCheats();
-            updateInternals();
-            updateMisc();
+            gadgetTabPlayer.UpdateTab();
+            gadgetTabStats.UpdateTab();
+            gadgetTabItems.UpdateTab();
+            gadgetTabGraphics.UpdateTab();
+            gadgetTabCheats.UpdateTab();
+            gadgetTabInternals.UpdateTab();
+            gadgetTabMisc.UpdateTab();
             updateHotkeys();
         }
 
         private void SaveAllTabs()
         {
-            savePlayer();
-            saveStats();
-            saveItems();
-            saveGraphics();
-            saveCheats();
-            saveInternals();
-            saveMisc();
+            gadgetTabPlayer.SaveTab();
+            gadgetTabStats.SaveTab();
+            gadgetTabItems.SaveTab();
+            gadgetTabGraphics.SaveTab();
+            gadgetTabCheats.SaveTab();
+            gadgetTabInternals.SaveTab();
+            gadgetTabMisc.SaveTab();
             saveHotkeys();
         }
 
         private void ResetAllTabs()
         {
-            resetPlayer();
-            resetStats();
-            resetItems();
-            resetGraphics();
-            resetCheats();
-            resetInternals();
-            resetMisc();
+            gadgetTabPlayer.ResetTab();
+            gadgetTabStats.ResetTab();
+            gadgetTabItems.ResetTab();
+            gadgetTabGraphics.ResetTab();
+            gadgetTabCheats.ResetTab();
+            gadgetTabInternals.ResetTab();
+            gadgetTabMisc.ResetTab();
             resetHotkeys();
-        }
-
-        private void linkLabelNewVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start(e.Link.LinkData.ToString());
         }
     }
 }

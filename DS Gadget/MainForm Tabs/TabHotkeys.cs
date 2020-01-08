@@ -16,7 +16,7 @@ namespace DS_Gadget
 
             hotkeys.Add(new GadgetHotkey("HotkeyFilter", textBoxHotkeyFilter, tabPageHotkeys, () =>
             {
-                checkBoxFilter.Checked = !checkBoxFilter.Checked;
+                gadgetTabGraphics.FlipFilter();
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyMoveswap", textBoxHotkeyMoveswap, tabPageHotkeys, () =>
@@ -31,27 +31,27 @@ namespace DS_Gadget
 
             hotkeys.Add(new GadgetHotkey("HotkeyStore", textBoxHotkeyStore, tabPageHotkeys, () =>
             {
-                posStore();
+                gadgetTabPlayer.StorePosition();
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyRestore", textBoxHotkeyRestore, tabPageHotkeys, () =>
             {
-                posRestore();
+                gadgetTabPlayer.RestorePosition();
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyGravity", textBoxHotkeyGravity, tabPageHotkeys, () =>
             {
-                checkBoxGravity.Checked = !checkBoxGravity.Checked;
+                gadgetTabPlayer.FlipGravity();
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyCollision", textBoxHotkeyCollision, tabPageHotkeys, () =>
             {
-                checkBoxCollision.Checked = !checkBoxCollision.Checked;
+                gadgetTabPlayer.FlipCollision();
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeySpeed", textBoxHotkeySpeed, tabPageHotkeys, () =>
             {
-                checkBoxSpeed.Checked = !checkBoxSpeed.Checked;
+                gadgetTabPlayer.FlipSpeed();
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyMenu", textBoxHotkeyMenu, tabPageHotkeys, () =>
@@ -79,12 +79,12 @@ namespace DS_Gadget
 
             hotkeys.Add(new GadgetHotkey("HotkeyDeath", textBoxHotkeyDeath, tabPageHotkeys, () =>
             {
-                checkBoxPlayerDeadMode.Checked = !checkBoxPlayerDeadMode.Checked;
+                gadgetTabCheats.FlipPlayerDeadMode();
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyItem", txtHotkeyItem, tabPageHotkeys, () =>
             {
-                createItem();
+                gadgetTabItems.CreateItem();
             }));
 
             /* Template :^
@@ -129,7 +129,7 @@ namespace DS_Gadget
 
         private void GlobalKeyboardHook_KeyDownOrUp(object sender, GlobalKeyboardHookEventArgs e)
         {
-            if (!e.IsUp && loaded && checkBoxEnableHotkeys.Checked && Hook.Focused)
+            if (!e.IsUp && Loaded && checkBoxEnableHotkeys.Checked && Hook.Focused)
             {
                 foreach (GadgetHotkey hotkey in hotkeys)
                 {

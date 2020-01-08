@@ -81,34 +81,58 @@
   <ItemGroup>
     <Compile Include="DSHook.cs" />
     <Compile Include="GadgetHotkey.cs" />
+    <Compile Include="MainForm Tabs\GadgetTabGraphics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm Tabs\GadgetTabGraphics.Designer.cs">
+      <DependentUpon>GadgetTabGraphics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm Tabs\GadgetTabCheats.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm Tabs\GadgetTabCheats.Designer.cs">
+      <DependentUpon>GadgetTabCheats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm Tabs\GadgetTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm Tabs\GadgetTabInternals.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm Tabs\GadgetTabInternals.Designer.cs">
+      <DependentUpon>GadgetTabInternals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm Tabs\GadgetTabItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm Tabs\GadgetTabItems.Designer.cs">
+      <DependentUpon>GadgetTabItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm Tabs\GadgetTabMisc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm Tabs\GadgetTabMisc.Designer.cs">
+      <DependentUpon>GadgetTabMisc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm Tabs\GadgetTabPlayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm Tabs\GadgetTabPlayer.Designer.cs">
+      <DependentUpon>GadgetTabPlayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="List Items\DSBonfire.cs" />
     <Compile Include="List Items\DSClass.cs" />
     <Compile Include="List Items\DSInfusion.cs" />
     <Compile Include="List Items\DSItem.cs" />
     <Compile Include="List Items\DSItemCategory.cs" />
     <Compile Include="DSOffsets.cs" />
-    <Compile Include="MainForm Tabs\TabInternals.cs">
-      <SubType>Form</SubType>
+    <Compile Include="MainForm Tabs\GadgetTabStats.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainForm Tabs\TabStats.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm Tabs\TabItems.cs">
-      <SubType>Form</SubType>
+    <Compile Include="MainForm Tabs\GadgetTabStats.Designer.cs">
+      <DependentUpon>GadgetTabStats.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm Tabs\TabHotkeys.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm Tabs\TabMisc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm Tabs\TabCheats.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm Tabs\TabGraphics.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm Tabs\TabPlayer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -120,6 +144,27 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User32.cs" />
+    <EmbeddedResource Include="MainForm Tabs\GadgetTabGraphics.resx">
+      <DependentUpon>GadgetTabGraphics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm Tabs\GadgetTabCheats.resx">
+      <DependentUpon>GadgetTabCheats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm Tabs\GadgetTabInternals.resx">
+      <DependentUpon>GadgetTabInternals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm Tabs\GadgetTabItems.resx">
+      <DependentUpon>GadgetTabItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm Tabs\GadgetTabMisc.resx">
+      <DependentUpon>GadgetTabMisc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm Tabs\GadgetTabPlayer.resx">
+      <DependentUpon>GadgetTabPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm Tabs\GadgetTabStats.resx">
+      <DependentUpon>GadgetTabStats.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

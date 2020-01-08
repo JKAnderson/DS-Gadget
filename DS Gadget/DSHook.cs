@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace DS_Gadget
 {
-    internal class DSHook : PHook
+    public class DSHook : PHook
     {
         private const uint VERSION_RELEASE = 0xFC293654;
         private const uint VERSION_DEBUG = 0xCE9634B4;
@@ -51,13 +51,11 @@ namespace DS_Gadget
 
         public int ID => Process?.Id ?? -1;
         public string Version { get; private set; }
-        public bool Valid { get; private set; }
 
         public DSHook(int refreshInterval, int minLifetime) :
             base(refreshInterval, minLifetime, p => p.MainWindowTitle == "DARK SOULS")
         {
             Version = "None";
-            Valid = false;
 
             CheckVersion = CreateBasePointer((IntPtr)DSOffsets.CheckVersion);
 
@@ -108,22 +106,18 @@ namespace DS_Gadget
             {
                 case VERSION_RELEASE:
                     Version = "Steam";
-                    Valid = true;
                     break;
 
                 case VERSION_DEBUG:
                     Version = "Debug";
-                    Valid = true;
                     break;
 
                 case VERSION_BETA:
                     Version = "Steamworks Beta";
-                    Valid = false;
                     break;
 
                 default:
                     Version = $"Unknown 0x{version:X8}";
-                    Valid = false;
                     break;
             }
         }
@@ -131,7 +125,6 @@ namespace DS_Gadget
         private void DSHook_OnUnhooked(object sender, PHEventArgs e)
         {
             Version = "None";
-            Valid = false;
         }
 
         public bool Loaded => ChrFollowCam.Resolve() != IntPtr.Zero;

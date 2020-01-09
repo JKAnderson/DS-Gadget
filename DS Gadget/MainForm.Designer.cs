@@ -39,12 +39,19 @@
             this.lblVersion = new System.Windows.Forms.Label();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPagePlayer = new System.Windows.Forms.TabPage();
+            this.gadgetTabPlayer = new DS_Gadget.GadgetTabPlayer();
             this.tabPageStats = new System.Windows.Forms.TabPage();
+            this.gadgetTabStats = new DS_Gadget.GadgetTabStats();
             this.tabPageItems = new System.Windows.Forms.TabPage();
+            this.gadgetTabItems = new DS_Gadget.GadgetTabItems();
             this.tabPageGraphics = new System.Windows.Forms.TabPage();
+            this.gadgetTabGraphics = new DS_Gadget.GadgetTabGraphics();
             this.tabPageCheats = new System.Windows.Forms.TabPage();
+            this.gadgetTabCheats = new DS_Gadget.GadgetTabCheats();
             this.tabPageInternals = new System.Windows.Forms.TabPage();
+            this.gadgetTabInternals = new DS_Gadget.GadgetTabInternals();
             this.tabPageMisc = new System.Windows.Forms.TabPage();
+            this.gadgetTabMisc = new DS_Gadget.GadgetTabMisc();
             this.tabPageHotkeys = new System.Windows.Forms.TabPage();
             this.lblHotkeyItem = new System.Windows.Forms.Label();
             this.txtHotkeyItem = new System.Windows.Forms.TextBox();
@@ -82,13 +89,6 @@
             this.labelCheckVersion = new System.Windows.Forms.Label();
             this.llbNewVersion = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.gadgetTabPlayer = new DS_Gadget.GadgetTabPlayer();
-            this.gadgetTabStats = new DS_Gadget.GadgetTabStats();
-            this.gadgetTabItems = new DS_Gadget.GadgetTabItems();
-            this.gadgetTabCheats = new DS_Gadget.GadgetTabCheats();
-            this.gadgetTabInternals = new DS_Gadget.GadgetTabInternals();
-            this.gadgetTabMisc = new DS_Gadget.GadgetTabMisc();
-            this.gadgetTabGraphics = new DS_Gadget.GadgetTabGraphics();
             this.tabControlMain.SuspendLayout();
             this.tabPagePlayer.SuspendLayout();
             this.tabPageStats.SuspendLayout();
@@ -182,7 +182,7 @@
             this.tabControlMain.Location = new System.Drawing.Point(12, 65);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(484, 666);
+            this.tabControlMain.Size = new System.Drawing.Size(496, 666);
             this.tabControlMain.TabIndex = 0;
             // 
             // tabPagePlayer
@@ -191,10 +191,19 @@
             this.tabPagePlayer.Location = new System.Drawing.Point(4, 25);
             this.tabPagePlayer.Name = "tabPagePlayer";
             this.tabPagePlayer.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.tabPagePlayer.Size = new System.Drawing.Size(476, 637);
+            this.tabPagePlayer.Size = new System.Drawing.Size(488, 637);
             this.tabPagePlayer.TabIndex = 2;
             this.tabPagePlayer.Text = "Player";
             this.tabPagePlayer.UseVisualStyleBackColor = true;
+            // 
+            // gadgetTabPlayer
+            // 
+            this.gadgetTabPlayer.AutoSize = true;
+            this.gadgetTabPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gadgetTabPlayer.Location = new System.Drawing.Point(0, 3);
+            this.gadgetTabPlayer.Name = "gadgetTabPlayer";
+            this.gadgetTabPlayer.Size = new System.Drawing.Size(488, 634);
+            this.gadgetTabPlayer.TabIndex = 0;
             // 
             // tabPageStats
             // 
@@ -202,10 +211,18 @@
             this.tabPageStats.Location = new System.Drawing.Point(4, 25);
             this.tabPageStats.Name = "tabPageStats";
             this.tabPageStats.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.tabPageStats.Size = new System.Drawing.Size(476, 637);
+            this.tabPageStats.Size = new System.Drawing.Size(488, 637);
             this.tabPageStats.TabIndex = 3;
             this.tabPageStats.Text = "Stats";
             this.tabPageStats.UseVisualStyleBackColor = true;
+            // 
+            // gadgetTabStats
+            // 
+            this.gadgetTabStats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gadgetTabStats.Location = new System.Drawing.Point(0, 3);
+            this.gadgetTabStats.Name = "gadgetTabStats";
+            this.gadgetTabStats.Size = new System.Drawing.Size(488, 634);
+            this.gadgetTabStats.TabIndex = 0;
             // 
             // tabPageItems
             // 
@@ -213,10 +230,19 @@
             this.tabPageItems.Location = new System.Drawing.Point(4, 25);
             this.tabPageItems.Name = "tabPageItems";
             this.tabPageItems.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.tabPageItems.Size = new System.Drawing.Size(476, 637);
+            this.tabPageItems.Size = new System.Drawing.Size(488, 637);
             this.tabPageItems.TabIndex = 5;
             this.tabPageItems.Text = "Items";
             this.tabPageItems.UseVisualStyleBackColor = true;
+            // 
+            // gadgetTabItems
+            // 
+            this.gadgetTabItems.AutoSize = true;
+            this.gadgetTabItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gadgetTabItems.Location = new System.Drawing.Point(0, 3);
+            this.gadgetTabItems.Name = "gadgetTabItems";
+            this.gadgetTabItems.Size = new System.Drawing.Size(488, 634);
+            this.gadgetTabItems.TabIndex = 0;
             // 
             // tabPageGraphics
             // 
@@ -224,10 +250,19 @@
             this.tabPageGraphics.Location = new System.Drawing.Point(4, 25);
             this.tabPageGraphics.Name = "tabPageGraphics";
             this.tabPageGraphics.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.tabPageGraphics.Size = new System.Drawing.Size(476, 637);
+            this.tabPageGraphics.Size = new System.Drawing.Size(488, 637);
             this.tabPageGraphics.TabIndex = 0;
             this.tabPageGraphics.Text = "Graphics";
             this.tabPageGraphics.UseVisualStyleBackColor = true;
+            // 
+            // gadgetTabGraphics
+            // 
+            this.gadgetTabGraphics.AutoSize = true;
+            this.gadgetTabGraphics.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gadgetTabGraphics.Location = new System.Drawing.Point(0, 3);
+            this.gadgetTabGraphics.Name = "gadgetTabGraphics";
+            this.gadgetTabGraphics.Size = new System.Drawing.Size(488, 634);
+            this.gadgetTabGraphics.TabIndex = 0;
             // 
             // tabPageCheats
             // 
@@ -235,10 +270,19 @@
             this.tabPageCheats.Location = new System.Drawing.Point(4, 25);
             this.tabPageCheats.Name = "tabPageCheats";
             this.tabPageCheats.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.tabPageCheats.Size = new System.Drawing.Size(476, 637);
+            this.tabPageCheats.Size = new System.Drawing.Size(488, 637);
             this.tabPageCheats.TabIndex = 6;
             this.tabPageCheats.Text = "Cheats";
             this.tabPageCheats.UseVisualStyleBackColor = true;
+            // 
+            // gadgetTabCheats
+            // 
+            this.gadgetTabCheats.AutoSize = true;
+            this.gadgetTabCheats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gadgetTabCheats.Location = new System.Drawing.Point(0, 3);
+            this.gadgetTabCheats.Name = "gadgetTabCheats";
+            this.gadgetTabCheats.Size = new System.Drawing.Size(488, 634);
+            this.gadgetTabCheats.TabIndex = 0;
             // 
             // tabPageInternals
             // 
@@ -246,10 +290,19 @@
             this.tabPageInternals.Location = new System.Drawing.Point(4, 25);
             this.tabPageInternals.Name = "tabPageInternals";
             this.tabPageInternals.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.tabPageInternals.Size = new System.Drawing.Size(476, 637);
+            this.tabPageInternals.Size = new System.Drawing.Size(488, 637);
             this.tabPageInternals.TabIndex = 9;
             this.tabPageInternals.Text = "Internals";
             this.tabPageInternals.UseVisualStyleBackColor = true;
+            // 
+            // gadgetTabInternals
+            // 
+            this.gadgetTabInternals.AutoSize = true;
+            this.gadgetTabInternals.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gadgetTabInternals.Location = new System.Drawing.Point(0, 3);
+            this.gadgetTabInternals.Name = "gadgetTabInternals";
+            this.gadgetTabInternals.Size = new System.Drawing.Size(488, 634);
+            this.gadgetTabInternals.TabIndex = 0;
             // 
             // tabPageMisc
             // 
@@ -257,10 +310,19 @@
             this.tabPageMisc.Location = new System.Drawing.Point(4, 25);
             this.tabPageMisc.Name = "tabPageMisc";
             this.tabPageMisc.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.tabPageMisc.Size = new System.Drawing.Size(476, 637);
+            this.tabPageMisc.Size = new System.Drawing.Size(488, 637);
             this.tabPageMisc.TabIndex = 8;
             this.tabPageMisc.Text = "Misc";
             this.tabPageMisc.UseVisualStyleBackColor = true;
+            // 
+            // gadgetTabMisc
+            // 
+            this.gadgetTabMisc.AutoSize = true;
+            this.gadgetTabMisc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gadgetTabMisc.Location = new System.Drawing.Point(0, 3);
+            this.gadgetTabMisc.Name = "gadgetTabMisc";
+            this.gadgetTabMisc.Size = new System.Drawing.Size(488, 634);
+            this.gadgetTabMisc.TabIndex = 0;
             // 
             // tabPageHotkeys
             // 
@@ -300,7 +362,7 @@
             this.tabPageHotkeys.Location = new System.Drawing.Point(4, 25);
             this.tabPageHotkeys.Name = "tabPageHotkeys";
             this.tabPageHotkeys.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.tabPageHotkeys.Size = new System.Drawing.Size(476, 637);
+            this.tabPageHotkeys.Size = new System.Drawing.Size(488, 637);
             this.tabPageHotkeys.TabIndex = 7;
             this.tabPageHotkeys.Text = "Hotkeys";
             this.tabPageHotkeys.UseVisualStyleBackColor = true;
@@ -658,7 +720,7 @@
             this.labelCheckVersion.Location = new System.Drawing.Point(57, 11);
             this.labelCheckVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCheckVersion.Name = "labelCheckVersion";
-            this.labelCheckVersion.Size = new System.Drawing.Size(439, 28);
+            this.labelCheckVersion.Size = new System.Drawing.Size(451, 28);
             this.labelCheckVersion.TabIndex = 6;
             this.labelCheckVersion.Text = "Checking for new version...";
             this.labelCheckVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -670,7 +732,7 @@
             this.llbNewVersion.Location = new System.Drawing.Point(196, 11);
             this.llbNewVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.llbNewVersion.Name = "llbNewVersion";
-            this.llbNewVersion.Size = new System.Drawing.Size(299, 28);
+            this.llbNewVersion.Size = new System.Drawing.Size(311, 28);
             this.llbNewVersion.TabIndex = 7;
             this.llbNewVersion.TabStop = true;
             this.llbNewVersion.Text = "New version available!";
@@ -678,74 +740,12 @@
             this.llbNewVersion.Visible = false;
             this.llbNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewVersion_LinkClicked);
             // 
-            // gadgetTabPlayer
-            // 
-            this.gadgetTabPlayer.AutoSize = true;
-            this.gadgetTabPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gadgetTabPlayer.Location = new System.Drawing.Point(0, 3);
-            this.gadgetTabPlayer.Name = "gadgetTabPlayer";
-            this.gadgetTabPlayer.Size = new System.Drawing.Size(476, 634);
-            this.gadgetTabPlayer.TabIndex = 0;
-            // 
-            // gadgetTabStats
-            // 
-            this.gadgetTabStats.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gadgetTabStats.Location = new System.Drawing.Point(0, 3);
-            this.gadgetTabStats.Name = "gadgetTabStats";
-            this.gadgetTabStats.Size = new System.Drawing.Size(476, 634);
-            this.gadgetTabStats.TabIndex = 0;
-            // 
-            // gadgetTabItems
-            // 
-            this.gadgetTabItems.AutoSize = true;
-            this.gadgetTabItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gadgetTabItems.Location = new System.Drawing.Point(0, 3);
-            this.gadgetTabItems.Name = "gadgetTabItems";
-            this.gadgetTabItems.Size = new System.Drawing.Size(476, 634);
-            this.gadgetTabItems.TabIndex = 0;
-            // 
-            // gadgetTabCheats
-            // 
-            this.gadgetTabCheats.AutoSize = true;
-            this.gadgetTabCheats.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gadgetTabCheats.Location = new System.Drawing.Point(0, 3);
-            this.gadgetTabCheats.Name = "gadgetTabCheats";
-            this.gadgetTabCheats.Size = new System.Drawing.Size(476, 634);
-            this.gadgetTabCheats.TabIndex = 0;
-            // 
-            // gadgetTabInternals
-            // 
-            this.gadgetTabInternals.AutoSize = true;
-            this.gadgetTabInternals.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gadgetTabInternals.Location = new System.Drawing.Point(0, 3);
-            this.gadgetTabInternals.Name = "gadgetTabInternals";
-            this.gadgetTabInternals.Size = new System.Drawing.Size(476, 634);
-            this.gadgetTabInternals.TabIndex = 0;
-            // 
-            // gadgetTabMisc
-            // 
-            this.gadgetTabMisc.AutoSize = true;
-            this.gadgetTabMisc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gadgetTabMisc.Location = new System.Drawing.Point(0, 3);
-            this.gadgetTabMisc.Name = "gadgetTabMisc";
-            this.gadgetTabMisc.Size = new System.Drawing.Size(476, 634);
-            this.gadgetTabMisc.TabIndex = 0;
-            // 
-            // gadgetTabGraphics
-            // 
-            this.gadgetTabGraphics.AutoSize = true;
-            this.gadgetTabGraphics.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gadgetTabGraphics.Location = new System.Drawing.Point(0, 3);
-            this.gadgetTabGraphics.Name = "gadgetTabGraphics";
-            this.gadgetTabGraphics.Size = new System.Drawing.Size(476, 634);
-            this.gadgetTabGraphics.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(508, 743);
+            this.ClientSize = new System.Drawing.Size(520, 743);
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.lblVersionStatic);

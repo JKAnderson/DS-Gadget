@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="DSHook.cs" />
     <Compile Include="GadgetHotkey.cs" />
+    <Compile Include="List Items\DSCovenant.cs" />
     <Compile Include="MainForm Tabs\GadgetTabGraphics.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +205,7 @@
     <Content Include="Resources\Assembly\ItemDrop.txt" />
     <Content Include="Resources\Assembly\ItemGet.txt" />
     <Content Include="Resources\Assembly\LevelUp.txt" />
+    <None Include="Resources\Covenants.txt" />
     <Content Include="Resources\Items\MysteryWeapons.txt" />
     <Content Include="Resources\Items\RangedWeapons.txt" />
     <Content Include="Resources\Items\Shields.txt" />

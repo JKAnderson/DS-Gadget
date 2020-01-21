@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DS Gadget")]
-[assembly: AssemblyDescription("A multi-purpose testing tool for Dark Souls 1.")]
+[assembly: AssemblyDescription("A multi-purpose testing tool for Dark Souls: Prepare to Die Edition.")]
 #if DEBUG
 [assembly: AssemblyConfiguration("Debug")]
 #else
@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 #endif
 [assembly: AssemblyCompany("JKAnderson")]
 [assembly: AssemblyProduct("DS Gadget")]
-[assembly: AssemblyCopyright("Copyright © 2018 Joseph Anderson")]
+[assembly: AssemblyCopyright("Copyright © 2018-2020 Joseph Anderson")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -36,5 +36,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.3.2.0")]
-[assembly: AssemblyFileVersion("2.3.2")]
+[assembly: AssemblyVersion("2.3.3.0")]
+[assembly: AssemblyFileVersion("2.3.3")]

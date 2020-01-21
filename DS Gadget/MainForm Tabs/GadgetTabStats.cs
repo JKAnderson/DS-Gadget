@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace DS_Gadget
 {
@@ -16,6 +17,10 @@ namespace DS_Gadget
                 cmbClass.Items.Add(charClass);
             nudHumanity.Maximum = int.MaxValue;
             nudHumanity.Minimum = int.MinValue;
+
+            foreach (DSCovenant covenant in DSCovenant.All)
+                cmbCovenant.Items.Add(covenant);
+            cmbCovenant.SelectedIndex = 0;
         }
 
         public override void ReloadTab()
@@ -40,7 +45,20 @@ namespace DS_Gadget
                 nudFth.Value = Hook.Faith;
             }
             // Race condition when checking if the game is still loaded; doesn't really matter
-            catch (ArgumentOutOfRangeException) { return; }
+            catch (ArgumentOutOfRangeException) { }
+
+            if (!cmbCovenant.DroppedDown)
+            {
+                cmbCovenant.SelectedItem = cmbCovenant.Items.Cast<DSCovenant>()
+                    .First(c => c.ID == Hook.Covenant);
+            }
+            nudCovChaos.Value = Hook.ChaosServantPoints;
+            nudCovDarkmoon.Value = Hook.DarkmoonBladePoints;
+            nudCovDarkwraith.Value = Hook.DarkwraithPoints;
+            nudCovDragon.Value = Hook.PathOfTheDragonPoints;
+            nudCovForest.Value = Hook.ForestHunterPoints;
+            nudCovGravelord.Value = Hook.GravelordServantPoints;
+            nudCovSunlight.Value = Hook.WarriorOfSunlightPoints;
         }
 
         private void RecalculateStats()
@@ -102,6 +120,54 @@ namespace DS_Gadget
         {
             if (!Reading)
                 RecalculateStats();
+        }
+
+        private void cmbCovenant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!Reading)
+                Hook.Covenant = ((DSCovenant)cmbCovenant.SelectedItem).ID;
+        }
+
+        private void nudCovChaos_ValueChanged(object sender, EventArgs e)
+        {
+            if (!Reading)
+                Hook.ChaosServantPoints = (byte)nudCovChaos.Value;
+        }
+
+        private void nudCovDarkmoon_ValueChanged(object sender, EventArgs e)
+        {
+            if (!Reading)
+                Hook.DarkmoonBladePoints = (byte)nudCovDarkmoon.Value;
+        }
+
+        private void nudCovDarkwraith_ValueChanged(object sender, EventArgs e)
+        {
+            if (!Reading)
+                Hook.DarkwraithPoints = (byte)nudCovDarkwraith.Value;
+        }
+
+        private void nudCovForest_ValueChanged(object sender, EventArgs e)
+        {
+            if (!Reading)
+                Hook.ForestHunterPoints = (byte)nudCovForest.Value;
+        }
+
+        private void nudCovGravelord_ValueChanged(object sender, EventArgs e)
+        {
+            if (!Reading)
+                Hook.GravelordServantPoints = (byte)nudCovGravelord.Value;
+        }
+
+        private void nudCovDragon_ValueChanged(object sender, EventArgs e)
+        {
+            if (!Reading)
+                Hook.PathOfTheDragonPoints = (byte)nudCovDragon.Value;
+        }
+
+        private void nudCovSunlight_ValueChanged(object sender, EventArgs e)
+        {
+            if (!Reading)
+                Hook.WarriorOfSunlightPoints = (byte)nudCovSunlight.Value;
         }
     }
 }

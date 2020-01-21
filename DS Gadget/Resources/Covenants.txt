@@ -1,0 +1,10 @@
+0 [None]
+1 Way of White
+2 Princess's Guard
+3 Warrior of Sunlight
+4 Darkwraith
+5 Path of the Dragon
+6 Gravelord Servant
+7 Forest Hunter
+8 Darkmoon Blade
+9 Chaos Servant

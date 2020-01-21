@@ -2,6 +2,7 @@
 using PropertyHook;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace DS_Gadget
 {
@@ -384,6 +385,60 @@ namespace DS_Gadget
             Free(stats);
 
             Humanity = humanity;
+        }
+
+        public byte WarriorOfSunlightPoints
+        {
+            get => CharData2.ReadByte((int)DSOffsets.CharData2.WarriorOfSunlightPoints);
+            set => CharData2.WriteByte((int)DSOffsets.CharData2.WarriorOfSunlightPoints, value);
+        }
+
+        public byte DarkwraithPoints
+        {
+            get => CharData2.ReadByte((int)DSOffsets.CharData2.DarkwraithPoints);
+            set => CharData2.WriteByte((int)DSOffsets.CharData2.DarkwraithPoints, value);
+        }
+
+        public byte PathOfTheDragonPoints
+        {
+            get => CharData2.ReadByte((int)DSOffsets.CharData2.PathOfTheDragonPoints);
+            set => CharData2.WriteByte((int)DSOffsets.CharData2.PathOfTheDragonPoints, value);
+        }
+
+        public byte GravelordServantPoints
+        {
+            get => CharData2.ReadByte((int)DSOffsets.CharData2.GravelordServantPoints);
+            set => CharData2.WriteByte((int)DSOffsets.CharData2.GravelordServantPoints, value);
+        }
+
+        public byte ForestHunterPoints
+        {
+            get => CharData2.ReadByte((int)DSOffsets.CharData2.ForestHunterPoints);
+            set => CharData2.WriteByte((int)DSOffsets.CharData2.ForestHunterPoints, value);
+        }
+
+        public byte DarkmoonBladePoints
+        {
+            get => CharData2.ReadByte((int)DSOffsets.CharData2.DarkmoonBladePoints);
+            set => CharData2.WriteByte((int)DSOffsets.CharData2.DarkmoonBladePoints, value);
+        }
+
+        public byte ChaosServantPoints
+        {
+            get => CharData2.ReadByte((int)DSOffsets.CharData2.ChaosServantPoints);
+            set => CharData2.WriteByte((int)DSOffsets.CharData2.ChaosServantPoints, value);
+        }
+
+        public byte Covenant
+        {
+            get => CharData2.ReadByte((int)DSOffsets.CharData2.Covenant);
+            set => CharData2.WriteByte((int)DSOffsets.CharData2.Covenant, value);
+        }
+
+        public string CharName
+        {
+            get => CharData2.ReadString((int)DSOffsets.CharData2.CharName, Encoding.Unicode, 0x22);
+            set => CharData2.WriteString((int)DSOffsets.CharData2.CharName, Encoding.Unicode, 0x22, value);
         }
         #endregion
 

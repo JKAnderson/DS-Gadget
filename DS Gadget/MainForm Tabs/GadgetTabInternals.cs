@@ -47,8 +47,8 @@ namespace DS_Gadget
             txtEquipPantsIdx.Text = Hook.EquipPantsIdx.ToString();
             txtEquipPantsID.Text = Hook.EquipPantsID.ToString();
 
-            txtEquipHairIdx.Text = Hook.EquipHairIdx.ToString();
-            txtEquipHairID.Text = Hook.EquipHairID.ToString();
+            nudHairIdx.Value = Hook.EquipHairIdx;
+            nudHairID.Value = Hook.EquipHairID;
 
             txtEquipRing1Idx.Text = Hook.EquipRing1Idx.ToString();
             txtEquipRing1ID.Text = Hook.EquipRing1ID.ToString();
@@ -76,15 +76,16 @@ namespace DS_Gadget
             txtStoredQuantity.Text = Hook.StoredQuantity.ToString();
         }
 
-        private void btnHaircut_Click(object sender, EventArgs e)
+        private void nudHairIdx_ValueChanged(object sender, EventArgs e)
         {
-            Hook.EquipHairIdx = -1;
-            // Female
-            if (Hook.Gender == 0)
-                Hook.EquipHairID = 3000;
-            // Not female
-            else
-                Hook.EquipHairID = 1000;
+            if (!Reading)
+                Hook.EquipHairIdx = (int)nudHairIdx.Value;
+        }
+
+        private void nudHairID_ValueChanged(object sender, EventArgs e)
+        {
+            if (!Reading)
+                Hook.EquipHairID = (int)nudHairID.Value;
         }
     }
 }

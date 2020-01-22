@@ -56,15 +56,14 @@
             System.Windows.Forms.Label lblEquipID1;
             System.Windows.Forms.Label lblEquipIndex1;
             System.Windows.Forms.Label lblStoredItem;
-            this.btnHaircut = new System.Windows.Forms.Button();
+            this.nudHairID = new System.Windows.Forms.NumericUpDown();
+            this.nudHairIdx = new System.Windows.Forms.NumericUpDown();
             this.txtEquipItem5ID = new System.Windows.Forms.TextBox();
             this.txtEquipItem5Idx = new System.Windows.Forms.TextBox();
             this.txtEquipItem4ID = new System.Windows.Forms.TextBox();
             this.txtEquipItem4Idx = new System.Windows.Forms.TextBox();
             this.txtEquipItem3ID = new System.Windows.Forms.TextBox();
-            this.txtEquipHairIdx = new System.Windows.Forms.TextBox();
             this.txtEquipItem3Idx = new System.Windows.Forms.TextBox();
-            this.txtEquipHairID = new System.Windows.Forms.TextBox();
             this.txtEquipItem2ID = new System.Windows.Forms.TextBox();
             this.txtEquipItem2Idx = new System.Windows.Forms.TextBox();
             this.txtEquipItem1ID = new System.Windows.Forms.TextBox();
@@ -129,12 +128,14 @@
             lblEquipIndex1 = new System.Windows.Forms.Label();
             lblStoredItem = new System.Windows.Forms.Label();
             gbxEquipment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHairID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHairIdx)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStoredQuantity
             // 
             lblStoredQuantity.AutoSize = true;
-            lblStoredQuantity.Location = new System.Drawing.Point(281, 418);
+            lblStoredQuantity.Location = new System.Drawing.Point(284, 380);
             lblStoredQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblStoredQuantity.Name = "lblStoredQuantity";
             lblStoredQuantity.Size = new System.Drawing.Size(107, 17);
@@ -144,7 +145,7 @@
             // lblStoredMagic
             // 
             lblStoredMagic.AutoSize = true;
-            lblStoredMagic.Location = new System.Drawing.Point(141, 418);
+            lblStoredMagic.Location = new System.Drawing.Point(144, 380);
             lblStoredMagic.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblStoredMagic.Name = "lblStoredMagic";
             lblStoredMagic.Size = new System.Drawing.Size(108, 17);
@@ -156,7 +157,8 @@
             gbxEquipment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             gbxEquipment.AutoSize = true;
-            gbxEquipment.Controls.Add(this.btnHaircut);
+            gbxEquipment.Controls.Add(this.nudHairID);
+            gbxEquipment.Controls.Add(this.nudHairIdx);
             gbxEquipment.Controls.Add(lblEquipItem5);
             gbxEquipment.Controls.Add(this.txtEquipItem5ID);
             gbxEquipment.Controls.Add(this.txtEquipItem5Idx);
@@ -165,9 +167,7 @@
             gbxEquipment.Controls.Add(this.txtEquipItem4ID);
             gbxEquipment.Controls.Add(this.txtEquipItem4Idx);
             gbxEquipment.Controls.Add(this.txtEquipItem3ID);
-            gbxEquipment.Controls.Add(this.txtEquipHairIdx);
             gbxEquipment.Controls.Add(this.txtEquipItem3Idx);
-            gbxEquipment.Controls.Add(this.txtEquipHairID);
             gbxEquipment.Controls.Add(lblEquipHair);
             gbxEquipment.Controls.Add(lblEquipItem2);
             gbxEquipment.Controls.Add(lblEquipItem1);
@@ -225,21 +225,51 @@
             gbxEquipment.Margin = new System.Windows.Forms.Padding(4);
             gbxEquipment.Name = "gbxEquipment";
             gbxEquipment.Padding = new System.Windows.Forms.Padding(4);
-            gbxEquipment.Size = new System.Drawing.Size(479, 410);
+            gbxEquipment.Size = new System.Drawing.Size(479, 372);
             gbxEquipment.TabIndex = 12;
             gbxEquipment.TabStop = false;
             gbxEquipment.Text = "Equipment";
             // 
-            // btnHaircut
+            // nudHairID
             // 
-            this.btnHaircut.Location = new System.Drawing.Point(371, 359);
-            this.btnHaircut.Margin = new System.Windows.Forms.Padding(4);
-            this.btnHaircut.Name = "btnHaircut";
-            this.btnHaircut.Size = new System.Drawing.Size(100, 28);
-            this.btnHaircut.TabIndex = 10;
-            this.btnHaircut.Text = "Haircut";
-            this.btnHaircut.UseVisualStyleBackColor = true;
-            this.btnHaircut.Click += new System.EventHandler(this.btnHaircut_Click);
+            this.nudHairID.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudHairID.Location = new System.Drawing.Point(404, 328);
+            this.nudHairID.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudHairID.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.nudHairID.Name = "nudHairID";
+            this.nudHairID.Size = new System.Drawing.Size(65, 22);
+            this.nudHairID.TabIndex = 74;
+            this.nudHairID.ValueChanged += new System.EventHandler(this.nudHairID_ValueChanged);
+            // 
+            // nudHairIdx
+            // 
+            this.nudHairIdx.Location = new System.Drawing.Point(329, 328);
+            this.nudHairIdx.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudHairIdx.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.nudHairIdx.Name = "nudHairIdx";
+            this.nudHairIdx.Size = new System.Drawing.Size(65, 22);
+            this.nudHairIdx.TabIndex = 73;
+            this.nudHairIdx.ValueChanged += new System.EventHandler(this.nudHairIdx_ValueChanged);
             // 
             // lblEquipItem5
             // 
@@ -326,17 +356,6 @@
             this.txtEquipItem3ID.Text = "0";
             this.txtEquipItem3ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtEquipHairIdx
-            // 
-            this.txtEquipHairIdx.Location = new System.Drawing.Point(329, 327);
-            this.txtEquipHairIdx.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEquipHairIdx.Name = "txtEquipHairIdx";
-            this.txtEquipHairIdx.ReadOnly = true;
-            this.txtEquipHairIdx.Size = new System.Drawing.Size(65, 22);
-            this.txtEquipHairIdx.TabIndex = 44;
-            this.txtEquipHairIdx.Text = "0";
-            this.txtEquipHairIdx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // txtEquipItem3Idx
             // 
             this.txtEquipItem3Idx.Location = new System.Drawing.Point(109, 295);
@@ -347,17 +366,6 @@
             this.txtEquipItem3Idx.TabIndex = 62;
             this.txtEquipItem3Idx.Text = "0";
             this.txtEquipItem3Idx.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtEquipHairID
-            // 
-            this.txtEquipHairID.Location = new System.Drawing.Point(404, 327);
-            this.txtEquipHairID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEquipHairID.Name = "txtEquipHairID";
-            this.txtEquipHairID.ReadOnly = true;
-            this.txtEquipHairID.Size = new System.Drawing.Size(65, 22);
-            this.txtEquipHairID.TabIndex = 45;
-            this.txtEquipHairID.Text = "0";
-            this.txtEquipHairID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblEquipHair
             // 
@@ -924,7 +932,7 @@
             // lblStoredItem
             // 
             lblStoredItem.AutoSize = true;
-            lblStoredItem.Location = new System.Drawing.Point(1, 418);
+            lblStoredItem.Location = new System.Drawing.Point(4, 380);
             lblStoredItem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblStoredItem.Name = "lblStoredItem";
             lblStoredItem.Size = new System.Drawing.Size(97, 17);
@@ -933,7 +941,7 @@
             // 
             // txtStoredQuantity
             // 
-            this.txtStoredQuantity.Location = new System.Drawing.Point(284, 439);
+            this.txtStoredQuantity.Location = new System.Drawing.Point(287, 401);
             this.txtStoredQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.txtStoredQuantity.Name = "txtStoredQuantity";
             this.txtStoredQuantity.ReadOnly = true;
@@ -942,7 +950,7 @@
             // 
             // txtStoredMagic
             // 
-            this.txtStoredMagic.Location = new System.Drawing.Point(144, 439);
+            this.txtStoredMagic.Location = new System.Drawing.Point(147, 401);
             this.txtStoredMagic.Margin = new System.Windows.Forms.Padding(4);
             this.txtStoredMagic.Name = "txtStoredMagic";
             this.txtStoredMagic.ReadOnly = true;
@@ -951,7 +959,7 @@
             // 
             // txtStoredItem
             // 
-            this.txtStoredItem.Location = new System.Drawing.Point(4, 439);
+            this.txtStoredItem.Location = new System.Drawing.Point(7, 401);
             this.txtStoredItem.Margin = new System.Windows.Forms.Padding(4);
             this.txtStoredItem.Name = "txtStoredItem";
             this.txtStoredItem.ReadOnly = true;
@@ -970,9 +978,11 @@
             this.Controls.Add(lblStoredItem);
             this.Controls.Add(this.txtStoredItem);
             this.Name = "GadgetTabInternals";
-            this.Size = new System.Drawing.Size(487, 465);
+            this.Size = new System.Drawing.Size(487, 531);
             gbxEquipment.ResumeLayout(false);
             gbxEquipment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHairID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHairIdx)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -982,15 +992,12 @@
 
         private System.Windows.Forms.TextBox txtStoredQuantity;
         private System.Windows.Forms.TextBox txtStoredMagic;
-        private System.Windows.Forms.Button btnHaircut;
         private System.Windows.Forms.TextBox txtEquipItem5ID;
         private System.Windows.Forms.TextBox txtEquipItem5Idx;
         private System.Windows.Forms.TextBox txtEquipItem4ID;
         private System.Windows.Forms.TextBox txtEquipItem4Idx;
         private System.Windows.Forms.TextBox txtEquipItem3ID;
-        private System.Windows.Forms.TextBox txtEquipHairIdx;
         private System.Windows.Forms.TextBox txtEquipItem3Idx;
-        private System.Windows.Forms.TextBox txtEquipHairID;
         private System.Windows.Forms.TextBox txtEquipItem2ID;
         private System.Windows.Forms.TextBox txtEquipItem2Idx;
         private System.Windows.Forms.TextBox txtEquipItem1ID;
@@ -1024,5 +1031,7 @@
         private System.Windows.Forms.TextBox txtEquipRight1ID;
         private System.Windows.Forms.TextBox txtEquipRight1Idx;
         private System.Windows.Forms.TextBox txtStoredItem;
+        private System.Windows.Forms.NumericUpDown nudHairID;
+        private System.Windows.Forms.NumericUpDown nudHairIdx;
     }
 }

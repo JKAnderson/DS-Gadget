@@ -1,0 +1,9 @@
+0 Average
+1 Slim
+2 Very Slim
+3 Large
+4 Very Large
+5 Large Upper Body
+6 Large Lower Body
+7 Top-heavy
+8 Tiny Head

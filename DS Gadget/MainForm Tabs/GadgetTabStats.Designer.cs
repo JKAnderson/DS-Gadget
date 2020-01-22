@@ -49,9 +49,13 @@
             System.Windows.Forms.Label lblCovForest;
             System.Windows.Forms.Label lblCovGravelord;
             System.Windows.Forms.Label lblCovDarkmoon;
+            System.Windows.Forms.Label lblName;
+            System.Windows.Forms.Label lblPhysique;
+            System.Windows.Forms.Label lblSex;
             this.nudVit = new System.Windows.Forms.NumericUpDown();
             this.nudFth = new System.Windows.Forms.NumericUpDown();
             this.nudAtt = new System.Windows.Forms.NumericUpDown();
+            this.txtSoulLevel = new System.Windows.Forms.TextBox();
             this.nudInt = new System.Windows.Forms.NumericUpDown();
             this.nudEnd = new System.Windows.Forms.NumericUpDown();
             this.nudRes = new System.Windows.Forms.NumericUpDown();
@@ -66,9 +70,12 @@
             this.nudCovDarkmoon = new System.Windows.Forms.NumericUpDown();
             this.nudCovGravelord = new System.Windows.Forms.NumericUpDown();
             this.nudSouls = new System.Windows.Forms.NumericUpDown();
-            this.txtSoulLevel = new System.Windows.Forms.TextBox();
             this.nudHumanity = new System.Windows.Forms.NumericUpDown();
             this.cmbClass = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbPhysique = new System.Windows.Forms.ComboBox();
+            this.cmbSex = new System.Windows.Forms.ComboBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             lblFth = new System.Windows.Forms.Label();
             lblInt = new System.Windows.Forms.Label();
             lblRes = new System.Windows.Forms.Label();
@@ -90,6 +97,9 @@
             lblCovForest = new System.Windows.Forms.Label();
             lblCovGravelord = new System.Windows.Forms.Label();
             lblCovDarkmoon = new System.Windows.Forms.Label();
+            lblName = new System.Windows.Forms.Label();
+            lblPhysique = new System.Windows.Forms.Label();
+            lblSex = new System.Windows.Forms.Label();
             gbxStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudVit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFth)).BeginInit();
@@ -109,12 +119,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCovGravelord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSouls)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHumanity)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblFth
             // 
             lblFth.AutoSize = true;
-            lblFth.Location = new System.Drawing.Point(87, 249);
+            lblFth.Location = new System.Drawing.Point(87, 279);
             lblFth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblFth.Name = "lblFth";
             lblFth.Size = new System.Drawing.Size(39, 17);
@@ -124,7 +135,7 @@
             // lblInt
             // 
             lblInt.AutoSize = true;
-            lblInt.Location = new System.Drawing.Point(87, 217);
+            lblInt.Location = new System.Drawing.Point(87, 247);
             lblInt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblInt.Name = "lblInt";
             lblInt.Size = new System.Drawing.Size(79, 17);
@@ -134,7 +145,7 @@
             // lblRes
             // 
             lblRes.AutoSize = true;
-            lblRes.Location = new System.Drawing.Point(87, 185);
+            lblRes.Location = new System.Drawing.Point(87, 215);
             lblRes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblRes.Name = "lblRes";
             lblRes.Size = new System.Drawing.Size(78, 17);
@@ -144,7 +155,7 @@
             // lblDex
             // 
             lblDex.AutoSize = true;
-            lblDex.Location = new System.Drawing.Point(87, 153);
+            lblDex.Location = new System.Drawing.Point(87, 183);
             lblDex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblDex.Name = "lblDex";
             lblDex.Size = new System.Drawing.Size(63, 17);
@@ -154,7 +165,7 @@
             // lblStr
             // 
             lblStr.AutoSize = true;
-            lblStr.Location = new System.Drawing.Point(87, 121);
+            lblStr.Location = new System.Drawing.Point(87, 151);
             lblStr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblStr.Name = "lblStr";
             lblStr.Size = new System.Drawing.Size(62, 17);
@@ -164,7 +175,7 @@
             // lblEnd
             // 
             lblEnd.AutoSize = true;
-            lblEnd.Location = new System.Drawing.Point(87, 89);
+            lblEnd.Location = new System.Drawing.Point(87, 119);
             lblEnd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblEnd.Name = "lblEnd";
             lblEnd.Size = new System.Drawing.Size(77, 17);
@@ -174,7 +185,7 @@
             // lblAtt
             // 
             lblAtt.AutoSize = true;
-            lblAtt.Location = new System.Drawing.Point(87, 57);
+            lblAtt.Location = new System.Drawing.Point(87, 87);
             lblAtt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblAtt.Name = "lblAtt";
             lblAtt.Size = new System.Drawing.Size(80, 17);
@@ -184,7 +195,7 @@
             // lblVit
             // 
             lblVit.AutoSize = true;
-            lblVit.Location = new System.Drawing.Point(87, 25);
+            lblVit.Location = new System.Drawing.Point(87, 55);
             lblVit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblVit.Name = "lblVit";
             lblVit.Size = new System.Drawing.Size(49, 17);
@@ -193,9 +204,8 @@
             // 
             // lblSouls
             // 
-            lblSouls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             lblSouls.AutoSize = true;
-            lblSouls.Location = new System.Drawing.Point(400, 1);
+            lblSouls.Location = new System.Drawing.Point(185, 63);
             lblSouls.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblSouls.Name = "lblSouls";
             lblSouls.Size = new System.Drawing.Size(43, 17);
@@ -206,7 +216,7 @@
             // 
             lblSoulLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             lblSoulLevel.AutoSize = true;
-            lblSoulLevel.Location = new System.Drawing.Point(240, 1);
+            lblSoulLevel.Location = new System.Drawing.Point(87, 25);
             lblSoulLevel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblSoulLevel.Name = "lblSoulLevel";
             lblSoulLevel.Size = new System.Drawing.Size(74, 17);
@@ -215,9 +225,8 @@
             // 
             // lblHumanity
             // 
-            lblHumanity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             lblHumanity.AutoSize = true;
-            lblHumanity.Location = new System.Drawing.Point(320, 1);
+            lblHumanity.Location = new System.Drawing.Point(185, 17);
             lblHumanity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblHumanity.Name = "lblHumanity";
             lblHumanity.Size = new System.Drawing.Size(67, 17);
@@ -227,7 +236,7 @@
             // lblClass
             // 
             lblClass.AutoSize = true;
-            lblClass.Location = new System.Drawing.Point(4, 0);
+            lblClass.Location = new System.Drawing.Point(7, 110);
             lblClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblClass.Name = "lblClass";
             lblClass.Size = new System.Drawing.Size(42, 17);
@@ -236,11 +245,14 @@
             // 
             // gbxStats
             // 
+            gbxStats.AutoSize = true;
             gbxStats.Controls.Add(this.nudVit);
             gbxStats.Controls.Add(lblFth);
             gbxStats.Controls.Add(lblVit);
             gbxStats.Controls.Add(this.nudFth);
+            gbxStats.Controls.Add(lblSoulLevel);
             gbxStats.Controls.Add(this.nudAtt);
+            gbxStats.Controls.Add(this.txtSoulLevel);
             gbxStats.Controls.Add(lblInt);
             gbxStats.Controls.Add(lblAtt);
             gbxStats.Controls.Add(this.nudInt);
@@ -252,9 +264,9 @@
             gbxStats.Controls.Add(lblDex);
             gbxStats.Controls.Add(lblStr);
             gbxStats.Controls.Add(this.nudDex);
-            gbxStats.Location = new System.Drawing.Point(3, 53);
+            gbxStats.Location = new System.Drawing.Point(3, 231);
             gbxStats.Name = "gbxStats";
-            gbxStats.Size = new System.Drawing.Size(174, 290);
+            gbxStats.Size = new System.Drawing.Size(174, 320);
             gbxStats.TabIndex = 49;
             gbxStats.TabStop = false;
             gbxStats.Text = "Stats";
@@ -262,7 +274,7 @@
             // nudVit
             // 
             this.nudVit.AutoSize = true;
-            this.nudVit.Location = new System.Drawing.Point(7, 22);
+            this.nudVit.Location = new System.Drawing.Point(7, 52);
             this.nudVit.Margin = new System.Windows.Forms.Padding(4);
             this.nudVit.Maximum = new decimal(new int[] {
             99,
@@ -287,7 +299,7 @@
             // nudFth
             // 
             this.nudFth.AutoSize = true;
-            this.nudFth.Location = new System.Drawing.Point(7, 246);
+            this.nudFth.Location = new System.Drawing.Point(7, 276);
             this.nudFth.Margin = new System.Windows.Forms.Padding(4);
             this.nudFth.Maximum = new decimal(new int[] {
             99,
@@ -312,7 +324,7 @@
             // nudAtt
             // 
             this.nudAtt.AutoSize = true;
-            this.nudAtt.Location = new System.Drawing.Point(7, 54);
+            this.nudAtt.Location = new System.Drawing.Point(7, 84);
             this.nudAtt.Margin = new System.Windows.Forms.Padding(4);
             this.nudAtt.Maximum = new decimal(new int[] {
             99,
@@ -334,10 +346,20 @@
             0});
             this.nudAtt.ValueChanged += new System.EventHandler(this.nudStat_ValueChanged);
             // 
+            // txtSoulLevel
+            // 
+            this.txtSoulLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSoulLevel.Location = new System.Drawing.Point(7, 22);
+            this.txtSoulLevel.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoulLevel.Name = "txtSoulLevel";
+            this.txtSoulLevel.ReadOnly = true;
+            this.txtSoulLevel.Size = new System.Drawing.Size(72, 22);
+            this.txtSoulLevel.TabIndex = 29;
+            // 
             // nudInt
             // 
             this.nudInt.AutoSize = true;
-            this.nudInt.Location = new System.Drawing.Point(7, 214);
+            this.nudInt.Location = new System.Drawing.Point(7, 244);
             this.nudInt.Margin = new System.Windows.Forms.Padding(4);
             this.nudInt.Maximum = new decimal(new int[] {
             99,
@@ -362,7 +384,7 @@
             // nudEnd
             // 
             this.nudEnd.AutoSize = true;
-            this.nudEnd.Location = new System.Drawing.Point(7, 86);
+            this.nudEnd.Location = new System.Drawing.Point(7, 116);
             this.nudEnd.Margin = new System.Windows.Forms.Padding(4);
             this.nudEnd.Maximum = new decimal(new int[] {
             99,
@@ -387,7 +409,7 @@
             // nudRes
             // 
             this.nudRes.AutoSize = true;
-            this.nudRes.Location = new System.Drawing.Point(7, 182);
+            this.nudRes.Location = new System.Drawing.Point(7, 212);
             this.nudRes.Margin = new System.Windows.Forms.Padding(4);
             this.nudRes.Maximum = new decimal(new int[] {
             99,
@@ -412,7 +434,7 @@
             // nudStr
             // 
             this.nudStr.AutoSize = true;
-            this.nudStr.Location = new System.Drawing.Point(7, 118);
+            this.nudStr.Location = new System.Drawing.Point(7, 148);
             this.nudStr.Margin = new System.Windows.Forms.Padding(4);
             this.nudStr.Maximum = new decimal(new int[] {
             99,
@@ -437,7 +459,7 @@
             // nudDex
             // 
             this.nudDex.AutoSize = true;
-            this.nudDex.Location = new System.Drawing.Point(7, 150);
+            this.nudDex.Location = new System.Drawing.Point(7, 180);
             this.nudDex.Margin = new System.Windows.Forms.Padding(4);
             this.nudDex.Maximum = new decimal(new int[] {
             99,
@@ -478,9 +500,9 @@
             gbxCovenant.Controls.Add(this.nudCovGravelord);
             gbxCovenant.Controls.Add(lblCovGravelord);
             gbxCovenant.Controls.Add(lblCovDarkmoon);
-            gbxCovenant.Location = new System.Drawing.Point(183, 53);
+            gbxCovenant.Location = new System.Drawing.Point(183, 231);
             gbxCovenant.Name = "gbxCovenant";
-            gbxCovenant.Size = new System.Drawing.Size(323, 290);
+            gbxCovenant.Size = new System.Drawing.Size(228, 320);
             gbxCovenant.TabIndex = 50;
             gbxCovenant.TabStop = false;
             gbxCovenant.Text = "Covenant";
@@ -503,7 +525,7 @@
             this.cmbCovenant.FormattingEnabled = true;
             this.cmbCovenant.Location = new System.Drawing.Point(6, 21);
             this.cmbCovenant.Name = "cmbCovenant";
-            this.cmbCovenant.Size = new System.Drawing.Size(311, 24);
+            this.cmbCovenant.Size = new System.Drawing.Size(216, 24);
             this.cmbCovenant.TabIndex = 0;
             this.cmbCovenant.SelectedIndexChanged += new System.EventHandler(this.cmbCovenant_SelectedIndexChanged);
             // 
@@ -672,10 +694,36 @@
             lblCovDarkmoon.TabIndex = 52;
             lblCovDarkmoon.Text = "Darkmoon Blade";
             // 
+            // lblName
+            // 
+            lblName.AutoSize = true;
+            lblName.Location = new System.Drawing.Point(6, 18);
+            lblName.Name = "lblName";
+            lblName.Size = new System.Drawing.Size(45, 17);
+            lblName.TabIndex = 27;
+            lblName.Text = "Name";
+            // 
+            // lblPhysique
+            // 
+            lblPhysique.AutoSize = true;
+            lblPhysique.Location = new System.Drawing.Point(6, 157);
+            lblPhysique.Name = "lblPhysique";
+            lblPhysique.Size = new System.Drawing.Size(66, 17);
+            lblPhysique.TabIndex = 28;
+            lblPhysique.Text = "Physique";
+            // 
+            // lblSex
+            // 
+            lblSex.AutoSize = true;
+            lblSex.Location = new System.Drawing.Point(6, 63);
+            lblSex.Name = "lblSex";
+            lblSex.Size = new System.Drawing.Size(31, 17);
+            lblSex.TabIndex = 30;
+            lblSex.Text = "Sex";
+            // 
             // nudSouls
             // 
-            this.nudSouls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudSouls.Location = new System.Drawing.Point(404, 21);
+            this.nudSouls.Location = new System.Drawing.Point(188, 84);
             this.nudSouls.Margin = new System.Windows.Forms.Padding(4);
             this.nudSouls.Maximum = new decimal(new int[] {
             999999999,
@@ -683,7 +731,7 @@
             0,
             0});
             this.nudSouls.Name = "nudSouls";
-            this.nudSouls.Size = new System.Drawing.Size(102, 22);
+            this.nudSouls.Size = new System.Drawing.Size(105, 22);
             this.nudSouls.TabIndex = 32;
             this.nudSouls.Value = new decimal(new int[] {
             999999999,
@@ -692,20 +740,9 @@
             0});
             this.nudSouls.ValueChanged += new System.EventHandler(this.nudSouls_ValueChanged);
             // 
-            // txtSoulLevel
-            // 
-            this.txtSoulLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSoulLevel.Location = new System.Drawing.Point(244, 21);
-            this.txtSoulLevel.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSoulLevel.Name = "txtSoulLevel";
-            this.txtSoulLevel.ReadOnly = true;
-            this.txtSoulLevel.Size = new System.Drawing.Size(71, 22);
-            this.txtSoulLevel.TabIndex = 29;
-            // 
             // nudHumanity
             // 
-            this.nudHumanity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudHumanity.Location = new System.Drawing.Point(324, 21);
+            this.nudHumanity.Location = new System.Drawing.Point(188, 38);
             this.nudHumanity.Margin = new System.Windows.Forms.Padding(4);
             this.nudHumanity.Maximum = new decimal(new int[] {
             0,
@@ -713,38 +750,80 @@
             0,
             0});
             this.nudHumanity.Name = "nudHumanity";
-            this.nudHumanity.Size = new System.Drawing.Size(72, 22);
+            this.nudHumanity.Size = new System.Drawing.Size(105, 22);
             this.nudHumanity.TabIndex = 27;
             this.nudHumanity.ValueChanged += new System.EventHandler(this.nudHumanity_ValueChanged);
             // 
             // cmbClass
             // 
-            this.cmbClass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbClass.FormattingEnabled = true;
-            this.cmbClass.Location = new System.Drawing.Point(4, 20);
-            this.cmbClass.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbClass.Location = new System.Drawing.Point(6, 130);
             this.cmbClass.Name = "cmbClass";
-            this.cmbClass.Size = new System.Drawing.Size(232, 24);
+            this.cmbClass.Size = new System.Drawing.Size(163, 24);
             this.cmbClass.TabIndex = 25;
             this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.cmbPhysique);
+            this.groupBox1.Controls.Add(this.cmbSex);
+            this.groupBox1.Controls.Add(lblSex);
+            this.groupBox1.Controls.Add(lblSouls);
+            this.groupBox1.Controls.Add(this.txtName);
+            this.groupBox1.Controls.Add(this.nudSouls);
+            this.groupBox1.Controls.Add(lblPhysique);
+            this.groupBox1.Controls.Add(lblHumanity);
+            this.groupBox1.Controls.Add(this.nudHumanity);
+            this.groupBox1.Controls.Add(lblName);
+            this.groupBox1.Controls.Add(lblClass);
+            this.groupBox1.Controls.Add(this.cmbClass);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(410, 222);
+            this.groupBox1.TabIndex = 51;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Character";
+            // 
+            // cmbPhysique
+            // 
+            this.cmbPhysique.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPhysique.FormattingEnabled = true;
+            this.cmbPhysique.Location = new System.Drawing.Point(6, 177);
+            this.cmbPhysique.Name = "cmbPhysique";
+            this.cmbPhysique.Size = new System.Drawing.Size(161, 24);
+            this.cmbPhysique.TabIndex = 32;
+            this.cmbPhysique.SelectedIndexChanged += new System.EventHandler(this.cmbPhysique_SelectedIndexChanged);
+            // 
+            // cmbSex
+            // 
+            this.cmbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSex.FormattingEnabled = true;
+            this.cmbSex.Location = new System.Drawing.Point(6, 83);
+            this.cmbSex.Name = "cmbSex";
+            this.cmbSex.Size = new System.Drawing.Size(161, 24);
+            this.cmbSex.TabIndex = 31;
+            this.cmbSex.SelectedIndexChanged += new System.EventHandler(this.cmbSex_SelectedIndexChanged);
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(6, 38);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(161, 22);
+            this.txtName.TabIndex = 29;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // GadgetTabStats
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(gbxCovenant);
             this.Controls.Add(gbxStats);
-            this.Controls.Add(lblSouls);
-            this.Controls.Add(this.nudSouls);
-            this.Controls.Add(lblSoulLevel);
-            this.Controls.Add(this.txtSoulLevel);
-            this.Controls.Add(lblHumanity);
-            this.Controls.Add(this.nudHumanity);
-            this.Controls.Add(lblClass);
-            this.Controls.Add(this.cmbClass);
             this.Name = "GadgetTabStats";
-            this.Size = new System.Drawing.Size(510, 776);
+            this.Size = new System.Drawing.Size(415, 615);
             gbxStats.ResumeLayout(false);
             gbxStats.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudVit)).EndInit();
@@ -766,6 +845,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCovGravelord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSouls)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHumanity)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -793,5 +874,9 @@
         private System.Windows.Forms.NumericUpDown nudCovDarkwraith;
         private System.Windows.Forms.NumericUpDown nudCovDarkmoon;
         private System.Windows.Forms.NumericUpDown nudCovGravelord;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cmbPhysique;
+        private System.Windows.Forms.ComboBox cmbSex;
+        private System.Windows.Forms.TextBox txtName;
     }
 }

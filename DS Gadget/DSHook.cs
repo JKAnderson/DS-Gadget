@@ -290,10 +290,28 @@ namespace DS_Gadget
         #endregion
 
         #region Stats Tab
+        public string CharName
+        {
+            get => CharData2.ReadString((int)DSOffsets.CharData2.CharName, Encoding.Unicode, 0x22);
+            set => CharData2.WriteString((int)DSOffsets.CharData2.CharName, Encoding.Unicode, 0x22, value);
+        }
+
+        public short Sex
+        {
+            get => CharData2.ReadInt16((int)DSOffsets.CharData2.Sex);
+            set => CharData2.WriteInt16((int)DSOffsets.CharData2.Sex, value);
+        }
+
         public byte Class
         {
             get => CharData2.ReadByte((int)DSOffsets.CharData2.Class);
             set => CharData2.WriteByte((int)DSOffsets.CharData2.Class, value);
+        }
+
+        public byte Physique
+        {
+            get => CharData2.ReadByte((int)DSOffsets.CharData2.Physique);
+            set => CharData2.WriteByte((int)DSOffsets.CharData2.Physique, value);
         }
 
         public int SoulLevel
@@ -433,12 +451,6 @@ namespace DS_Gadget
         {
             get => CharData2.ReadByte((int)DSOffsets.CharData2.Covenant);
             set => CharData2.WriteByte((int)DSOffsets.CharData2.Covenant, value);
-        }
-
-        public string CharName
-        {
-            get => CharData2.ReadString((int)DSOffsets.CharData2.CharName, Encoding.Unicode, 0x22);
-            set => CharData2.WriteString((int)DSOffsets.CharData2.CharName, Encoding.Unicode, 0x22, value);
         }
         #endregion
 
@@ -671,11 +683,6 @@ namespace DS_Gadget
         #endregion
 
         #region Internals Tab
-        public int Gender
-        {
-            get => CharData2.ReadByte((int)DSOffsets.CharData2.Gender);
-        }
-
         public int EquipRight1Idx => CharData2.ReadInt32((int)DSOffsets.CharData2.EquipRight1Idx);
         public int EquipRight1ID => CharData2.ReadInt32((int)DSOffsets.CharData2.EquipRight1ID);
         public int EquipRight2Idx => CharData2.ReadInt32((int)DSOffsets.CharData2.EquipRight2Idx);

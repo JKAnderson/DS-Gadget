@@ -365,6 +365,23 @@ namespace DS_Gadget.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 0 Average
+        ///1 Slim
+        ///2 Very Slim
+        ///3 Large
+        ///4 Very Large
+        ///5 Large Upper Body
+        ///6 Large Lower Body
+        ///7 Top-heavy
+        ///8 Tiny Head.
+        /// </summary>
+        internal static string Physiques {
+            get {
+                return ResourceManager.GetString("Physiques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 1200000   1 3 Short Bow
         ///1201000   1 3 Longbow
         ///1202000   1 3 Black Bow of Pharis
@@ -410,6 +427,16 @@ namespace DS_Gadget.Properties {
         internal static string Rings {
             get {
                 return ResourceManager.GetString("Rings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0 Female
+        ///1 Male.
+        /// </summary>
+        internal static string Sexes {
+            get {
+                return ResourceManager.GetString("Sexes", resourceCulture);
             }
         }
         

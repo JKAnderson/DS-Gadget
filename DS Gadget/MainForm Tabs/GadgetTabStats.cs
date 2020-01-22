@@ -13,19 +13,25 @@ namespace DS_Gadget
         public override void InitTab(MainForm parent)
         {
             base.InitTab(parent);
+            foreach (DSSex sex in DSSex.All)
+                cmbSex.Items.Add(sex);
             foreach (DSClass charClass in DSClass.All)
                 cmbClass.Items.Add(charClass);
+            foreach (DSPhysique physique in DSPhysique.All)
+                cmbPhysique.Items.Add(physique);
             nudHumanity.Maximum = int.MaxValue;
             nudHumanity.Minimum = int.MinValue;
 
             foreach (DSCovenant covenant in DSCovenant.All)
                 cmbCovenant.Items.Add(covenant);
-            cmbCovenant.SelectedIndex = 0;
         }
 
         public override void ReloadTab()
         {
-            cmbClass.SelectedIndex = Hook.Class;
+            txtName.Text = Hook.CharName;
+            cmbSex.SelectedItem = cmbSex.Items.Cast<DSSex>().FirstOrDefault(s => s.ID == Hook.Sex);
+            cmbClass.SelectedItem = cmbClass.Items.Cast<DSClass>().FirstOrDefault(c => c.ID == Hook.Class);
+            cmbPhysique.SelectedItem = cmbPhysique.Items.Cast<DSPhysique>().FirstOrDefault(p => p.ID == Hook.Physique);
         }
 
         public override void UpdateTab()
@@ -50,7 +56,7 @@ namespace DS_Gadget
             if (!cmbCovenant.DroppedDown)
             {
                 cmbCovenant.SelectedItem = cmbCovenant.Items.Cast<DSCovenant>()
-                    .First(c => c.ID == Hook.Covenant);
+                    .FirstOrDefault(c => c.ID == Hook.Covenant);
             }
             nudCovChaos.Value = Hook.ChaosServantPoints;
             nudCovDarkmoon.Value = Hook.DarkmoonBladePoints;
@@ -86,6 +92,18 @@ namespace DS_Gadget
             Hook.LevelUp(vitality, attunement, endurance, strength, dexterity, resistance, intelligence, faith, sl);
         }
 
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            if (!Reading)
+                Hook.CharName = txtName.Text;
+        }
+
+        private void cmbSex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!Reading)
+                Hook.Sex = (cmbSex.SelectedItem as DSSex).ID;
+        }
+
         private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             DSClass charClass = cmbClass.SelectedItem as DSClass;
@@ -102,6 +120,12 @@ namespace DS_Gadget
                 Hook.Class = charClass.ID;
                 RecalculateStats();
             }
+        }
+
+        private void cmbPhysique_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!Reading)
+                Hook.Physique = (cmbPhysique.SelectedItem as DSPhysique).ID;
         }
 
         private void nudHumanity_ValueChanged(object sender, EventArgs e)

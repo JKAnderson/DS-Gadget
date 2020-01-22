@@ -60,11 +60,11 @@
     <Reference Include="LowLevelHooking, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LowLevelHooking.1.0.1\lib\net20\LowLevelHooking.dll</HintPath>
     </Reference>
-    <Reference Include="Octokit, Version=0.29.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Octokit.0.29.0\lib\net45\Octokit.dll</HintPath>
+    <Reference Include="Octokit, Version=0.36.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Octokit.0.36.0\lib\net46\Octokit.dll</HintPath>
     </Reference>
-    <Reference Include="Semver, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Semver.2.0.4\lib\net452\Semver.dll</HintPath>
+    <Reference Include="Semver, Version=2.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Semver.2.0.6\lib\net452\Semver.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -264,7 +264,7 @@ if "$(ConfigurationName)" == "Release" (
   md "%25output%25\lib"
   copy "$(TargetPath)" "%25output%25\"
   copy "$(TargetPath).config" "%25output%25\"
-  copy "$(TargetDir)$(TargetName).pdb" "%25output%25\"
+  rem copy "$(TargetDir)$(TargetName).pdb" "%25output%25\"
   copy "$(SolutionDir)readme.txt" "%25output%25\"
   copy "$(TargetDir)*.dll" "%25output%25\lib\"
   copy "$(TargetDir)*.xml" "%25output%25\lib\"

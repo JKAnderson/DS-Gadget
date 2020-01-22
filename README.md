@@ -1,8 +1,18 @@
 
-# DS Gadget 2.3
-A multi-purpose testing tool for Dark Souls 1. Compatible with both the Steam and debug versions.  
-Requires [.NET 4.6.2](https://www.microsoft.com/net/download/thank-you/net462) and [VC Redist 2012 x86](https://my.visualstudio.com/Downloads?pid=1452)  
+# DS Gadget
+A multi-purpose testing tool for Dark Souls: Prepare to Die Edition. Compatible with the current Steam and debug versions, as well as, in theory, everything else.  
+Requires [.NET 4.6.2](https://www.microsoft.com/net/download/thank-you/net462) and [VC Redist 2012 x86](https://www.microsoft.com/en-us/download/details.aspx?id=30679)  
 You probably already have both.
+
+# Instructions 
+Extract the entire Gadget folder to wherever you want, and run DS Gadget.exe.  
+Once the game is running, Gadget will automatically attach; if the Version is displayed in green everything should work correctly.  
+If it's orange, your game version isn't fully supported and some things may not work. I recommend finding a newer one.  
+All features are disabled until you load a character (indicated by the Loaded text).  
+When you shut down Gadget, active modifications like cheats and filters will be reset.
+
+If you get the following error when using certain features, uninstall and reinstall the VC Redist linked above:  
+`System.IO.FileNotFoundException: Could not load file or assembly 'Fasm.NET.dll' or one of its dependencies.`
 
 # Credits
 [Fasm.NET](https://github.com/ZenLulz/Fasm.NET) by Jämes Ménétrey
@@ -10,6 +20,8 @@ You probably already have both.
 [LowLevelHooking](https://github.com/jnm2/LowLevelHooking) by Joseph N. Musser II
 
 [Octokit](https://github.com/octokit/octokit.net) by GitHub
+
+[PropertyHook](https://github.com/JKAnderson/PropertyHook) by Me
 
 [Semver](https://github.com/maxhauser/semver) by Max Hauser
 
@@ -25,6 +37,15 @@ You probably already have both.
 And all of the other wonderful people in the SpeedSouls discord.
 
 # Changelog
+### 3.0
+* AOB scanning instead of hardcoded offsets, aka support for unofficial versions
+* Play region editable for PVPfriends
+* Character name, sex, and physique editable for debug elitists
+* Covenant stuff editable
+* Hair slot directly editable
+* Bonfire names are less obtuse
+* Hotkeys don't lag typing as much
+
 ### 2.3
 * Add create item hotkey
 * Search for game by window title, not filename

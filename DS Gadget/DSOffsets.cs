@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace DS_Gadget
 {
@@ -375,5 +376,11 @@ namespace DS_Gadget
         public const int FuncItemDropUnknown1AOBOffset = 0x12;
         public const string FuncItemDropUnknown2AOB = "D9 E8 8B 1D ? ? ? ? 83 EC 08 D9 54 24 04 D9 1C 24 8D 44 24 20 6A 03 8B D3";
         public const int FuncItemDropUnknown2AOBOffset = 4;
+
+
+        public const string AiTimerAOB = "8b 15 ? ? ? ? f3 0f ? ? ? ? 52";
+        public const int AiTimerOffset1 = 0x2;
+        public const int AiTimerOffset2 = 0x0;
+        public const int AiTimerOffset3 = 0x14;
     }
 }

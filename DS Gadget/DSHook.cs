@@ -41,6 +41,7 @@ namespace DS_Gadget
         private PHPointer Unknown2;
         private PHPointer Unknown3;
         private PHPointer Unknown4;
+        private PHPointer AiTimer;
 
         private PHPointer FuncItemGet;
         private PHPointer FuncLevelUp;
@@ -87,6 +88,7 @@ namespace DS_Gadget
             Unknown2 = RegisterAbsoluteAOB(DSOffsets.Unknown2AOB, DSOffsets.Unknown2AOBOffset, DSOffsets.Unknown2Offset1);
             Unknown3 = RegisterAbsoluteAOB(DSOffsets.Unknown3AOB, DSOffsets.Unknown3AOBOffset, DSOffsets.Unknown3Offset1);
             Unknown4 = RegisterAbsoluteAOB(DSOffsets.Unknown4AOB, DSOffsets.Unknown4AOBOffset, DSOffsets.Unknown4Offset1, DSOffsets.Unknown4Offset2);
+            AiTimer = RegisterAbsoluteAOB(DSOffsets.AiTimerAOB, DSOffsets.AiTimerOffset1, DSOffsets.AiTimerOffset2);
 
             FuncItemGet = RegisterAbsoluteAOB(DSOffsets.FuncItemGetAOB);
             FuncLevelUp = RegisterAbsoluteAOB(DSOffsets.FuncLevelUpAOB);
@@ -287,6 +289,9 @@ namespace DS_Gadget
         {
             AnimData.WriteSingle((int)DSOffsets.AnimData.PlaySpeed, speed);
         }
+
+        public float AiTimerValue => AiTimer.ReadSingle(DSOffsets.AiTimerOffset3);
+
         #endregion
 
         #region Stats Tab

@@ -76,6 +76,7 @@ namespace DS_Gadget
             nudStaminaModMax.Value = Hook.StaminaModMax;
             nudChrType.Value = Hook.ChrType;
             nudTeamType.Value = Hook.TeamType;
+            txtAiTimer.Text = Hook.AiTimerValue.ToString("N3");
 
             if (cbxForcePlayRegion.Checked)
                 Hook.PlayRegion = (int)nudPlayRegion.Value;

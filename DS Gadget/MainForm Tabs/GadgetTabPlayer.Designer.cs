@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.GroupBox gbxOther;
             System.Windows.Forms.GroupBox gbxStatus;
+            System.Windows.Forms.Label LabelAiTimer;
             System.Windows.Forms.Label lblPlayRegion;
             System.Windows.Forms.Label lblTeamType;
             System.Windows.Forms.Label lblChrType;
@@ -56,6 +57,7 @@
             this.cbxBonfire = new System.Windows.Forms.ComboBox();
             this.lblBonfire = new System.Windows.Forms.Label();
             this.cbxCollision = new System.Windows.Forms.CheckBox();
+            this.txtAiTimer = new System.Windows.Forms.TextBox();
             this.cbxForcePlayRegion = new System.Windows.Forms.CheckBox();
             this.nudPlayRegion = new System.Windows.Forms.NumericUpDown();
             this.nudTeamType = new System.Windows.Forms.NumericUpDown();
@@ -86,6 +88,7 @@
             this.btnPosRestore = new System.Windows.Forms.Button();
             gbxOther = new System.Windows.Forms.GroupBox();
             gbxStatus = new System.Windows.Forms.GroupBox();
+            LabelAiTimer = new System.Windows.Forms.Label();
             lblPlayRegion = new System.Windows.Forms.Label();
             lblTeamType = new System.Windows.Forms.Label();
             lblChrType = new System.Windows.Forms.Label();
@@ -170,7 +173,7 @@
             this.cbxSpeed.Location = new System.Drawing.Point(8, 102);
             this.cbxSpeed.Margin = new System.Windows.Forms.Padding(4);
             this.cbxSpeed.Name = "cbxSpeed";
-            this.cbxSpeed.Size = new System.Drawing.Size(116, 21);
+            this.cbxSpeed.Size = new System.Drawing.Size(91, 17);
             this.cbxSpeed.TabIndex = 4;
             this.cbxSpeed.Text = "Modify Speed";
             this.cbxSpeed.UseVisualStyleBackColor = true;
@@ -188,7 +191,7 @@
             this.nudSpeed.Location = new System.Drawing.Point(137, 101);
             this.nudSpeed.Margin = new System.Windows.Forms.Padding(4);
             this.nudSpeed.Name = "nudSpeed";
-            this.nudSpeed.Size = new System.Drawing.Size(121, 22);
+            this.nudSpeed.Size = new System.Drawing.Size(121, 20);
             this.nudSpeed.TabIndex = 5;
             this.nudSpeed.Value = new decimal(new int[] {
             1,
@@ -205,7 +208,7 @@
             this.cbxGravity.Location = new System.Drawing.Point(8, 23);
             this.cbxGravity.Margin = new System.Windows.Forms.Padding(4);
             this.cbxGravity.Name = "cbxGravity";
-            this.cbxGravity.Size = new System.Drawing.Size(75, 21);
+            this.cbxGravity.Size = new System.Drawing.Size(59, 17);
             this.cbxGravity.TabIndex = 0;
             this.cbxGravity.Text = "Gravity";
             this.cbxGravity.UseVisualStyleBackColor = true;
@@ -217,7 +220,7 @@
             this.cbxDeathCam.Location = new System.Drawing.Point(188, 23);
             this.cbxDeathCam.Margin = new System.Windows.Forms.Padding(4);
             this.cbxDeathCam.Name = "cbxDeathCam";
-            this.cbxDeathCam.Size = new System.Drawing.Size(100, 21);
+            this.cbxDeathCam.Size = new System.Drawing.Size(79, 17);
             this.cbxDeathCam.TabIndex = 2;
             this.cbxDeathCam.Text = "Death Cam";
             this.cbxDeathCam.UseVisualStyleBackColor = true;
@@ -232,7 +235,7 @@
             this.cbxBonfire.Location = new System.Drawing.Point(8, 69);
             this.cbxBonfire.Margin = new System.Windows.Forms.Padding(4);
             this.cbxBonfire.Name = "cbxBonfire";
-            this.cbxBonfire.Size = new System.Drawing.Size(342, 24);
+            this.cbxBonfire.Size = new System.Drawing.Size(342, 21);
             this.cbxBonfire.TabIndex = 3;
             this.cbxBonfire.SelectedIndexChanged += new System.EventHandler(this.cbxBonfire_SelectedIndexChanged);
             // 
@@ -242,7 +245,7 @@
             this.lblBonfire.Location = new System.Drawing.Point(8, 48);
             this.lblBonfire.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBonfire.Name = "lblBonfire";
-            this.lblBonfire.Size = new System.Drawing.Size(53, 17);
+            this.lblBonfire.Size = new System.Drawing.Size(40, 13);
             this.lblBonfire.TabIndex = 0;
             this.lblBonfire.Text = "Bonfire";
             // 
@@ -254,7 +257,7 @@
             this.cbxCollision.Location = new System.Drawing.Point(95, 23);
             this.cbxCollision.Margin = new System.Windows.Forms.Padding(4);
             this.cbxCollision.Name = "cbxCollision";
-            this.cbxCollision.Size = new System.Drawing.Size(82, 21);
+            this.cbxCollision.Size = new System.Drawing.Size(64, 17);
             this.cbxCollision.TabIndex = 1;
             this.cbxCollision.Text = "Collision";
             this.cbxCollision.UseVisualStyleBackColor = true;
@@ -265,6 +268,8 @@
             gbxStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             gbxStatus.AutoSize = true;
+            gbxStatus.Controls.Add(this.txtAiTimer);
+            gbxStatus.Controls.Add(LabelAiTimer);
             gbxStatus.Controls.Add(this.cbxForcePlayRegion);
             gbxStatus.Controls.Add(this.nudPlayRegion);
             gbxStatus.Controls.Add(lblPlayRegion);
@@ -292,12 +297,32 @@
             gbxStatus.TabStop = false;
             gbxStatus.Text = "Status";
             // 
+            // txtAiTimer
+            // 
+            this.txtAiTimer.Enabled = false;
+            this.txtAiTimer.Location = new System.Drawing.Point(408, 37);
+            this.txtAiTimer.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAiTimer.Name = "txtAiTimer";
+            this.txtAiTimer.ReadOnly = true;
+            this.txtAiTimer.Size = new System.Drawing.Size(48, 20);
+            this.txtAiTimer.TabIndex = 25;
+            // 
+            // LabelAiTimer
+            // 
+            LabelAiTimer.AutoSize = true;
+            LabelAiTimer.Location = new System.Drawing.Point(405, 20);
+            LabelAiTimer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            LabelAiTimer.Name = "LabelAiTimer";
+            LabelAiTimer.Size = new System.Drawing.Size(46, 13);
+            LabelAiTimer.TabIndex = 17;
+            LabelAiTimer.Text = "AI Timer";
+            // 
             // cbxForcePlayRegion
             // 
             this.cbxForcePlayRegion.AutoSize = true;
             this.cbxForcePlayRegion.Location = new System.Drawing.Point(399, 120);
             this.cbxForcePlayRegion.Name = "cbxForcePlayRegion";
-            this.cbxForcePlayRegion.Size = new System.Drawing.Size(60, 21);
+            this.cbxForcePlayRegion.Size = new System.Drawing.Size(50, 17);
             this.cbxForcePlayRegion.TabIndex = 15;
             this.cbxForcePlayRegion.Text = "Lock";
             this.cbxForcePlayRegion.UseVisualStyleBackColor = true;
@@ -317,7 +342,7 @@
             0,
             -2147483648});
             this.nudPlayRegion.Name = "nudPlayRegion";
-            this.nudPlayRegion.Size = new System.Drawing.Size(100, 22);
+            this.nudPlayRegion.Size = new System.Drawing.Size(100, 20);
             this.nudPlayRegion.TabIndex = 13;
             this.nudPlayRegion.ValueChanged += new System.EventHandler(this.nudPlayRegion_ValueChanged);
             // 
@@ -327,7 +352,7 @@
             lblPlayRegion.Location = new System.Drawing.Point(289, 100);
             lblPlayRegion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblPlayRegion.Name = "lblPlayRegion";
-            lblPlayRegion.Size = new System.Drawing.Size(84, 17);
+            lblPlayRegion.Size = new System.Drawing.Size(64, 13);
             lblPlayRegion.TabIndex = 14;
             lblPlayRegion.Text = "Play Region";
             // 
@@ -341,7 +366,7 @@
             0,
             0});
             this.nudTeamType.Name = "nudTeamType";
-            this.nudTeamType.Size = new System.Drawing.Size(100, 22);
+            this.nudTeamType.Size = new System.Drawing.Size(100, 20);
             this.nudTeamType.TabIndex = 1;
             this.nudTeamType.ValueChanged += new System.EventHandler(this.nudTeamType_ValueChanged);
             // 
@@ -355,7 +380,7 @@
             0,
             0});
             this.nudChrType.Name = "nudChrType";
-            this.nudChrType.Size = new System.Drawing.Size(100, 22);
+            this.nudChrType.Size = new System.Drawing.Size(100, 20);
             this.nudChrType.TabIndex = 0;
             this.nudChrType.ValueChanged += new System.EventHandler(this.nudChrType_ValueChanged);
             // 
@@ -365,7 +390,7 @@
             lblTeamType.Location = new System.Drawing.Point(181, 100);
             lblTeamType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblTeamType.Name = "lblTeamType";
-            lblTeamType.Size = new System.Drawing.Size(80, 17);
+            lblTeamType.Size = new System.Drawing.Size(61, 13);
             lblTeamType.TabIndex = 12;
             lblTeamType.Text = "Team Type";
             // 
@@ -375,7 +400,7 @@
             lblChrType.Location = new System.Drawing.Point(72, 100);
             lblChrType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblChrType.Name = "lblChrType";
-            lblChrType.Size = new System.Drawing.Size(66, 17);
+            lblChrType.Size = new System.Drawing.Size(50, 13);
             lblChrType.TabIndex = 11;
             lblChrType.Text = "Chr Type";
             // 
@@ -385,7 +410,7 @@
             lblStamina.Location = new System.Drawing.Point(9, 73);
             lblStamina.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblStamina.Name = "lblStamina";
-            lblStamina.Size = new System.Drawing.Size(59, 17);
+            lblStamina.Size = new System.Drawing.Size(45, 13);
             lblStamina.TabIndex = 10;
             lblStamina.Text = "Stamina";
             // 
@@ -395,7 +420,7 @@
             lblHealth.Location = new System.Drawing.Point(19, 41);
             lblHealth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblHealth.Name = "lblHealth";
-            lblHealth.Size = new System.Drawing.Size(49, 17);
+            lblHealth.Size = new System.Drawing.Size(38, 13);
             lblHealth.TabIndex = 9;
             lblHealth.Text = "Health";
             // 
@@ -405,7 +430,7 @@
             lblStatusModMax.Location = new System.Drawing.Point(288, 20);
             lblStatusModMax.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblStatusModMax.Name = "lblStatusModMax";
-            lblStatusModMax.Size = new System.Drawing.Size(90, 17);
+            lblStatusModMax.Size = new System.Drawing.Size(70, 13);
             lblStatusModMax.TabIndex = 8;
             lblStatusModMax.Text = "Modified Max";
             // 
@@ -415,7 +440,7 @@
             lblStatusMax.Location = new System.Drawing.Point(180, 20);
             lblStatusMax.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblStatusMax.Name = "lblStatusMax";
-            lblStatusMax.Size = new System.Drawing.Size(33, 17);
+            lblStatusMax.Size = new System.Drawing.Size(27, 13);
             lblStatusMax.TabIndex = 7;
             lblStatusMax.Text = "Max";
             // 
@@ -425,7 +450,7 @@
             lblStatusCurrent.Location = new System.Drawing.Point(72, 20);
             lblStatusCurrent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblStatusCurrent.Name = "lblStatusCurrent";
-            lblStatusCurrent.Size = new System.Drawing.Size(55, 17);
+            lblStatusCurrent.Size = new System.Drawing.Size(41, 13);
             lblStatusCurrent.TabIndex = 6;
             lblStatusCurrent.Text = "Current";
             // 
@@ -440,7 +465,7 @@
             0,
             0});
             this.nudStaminaModMax.Name = "nudStaminaModMax";
-            this.nudStaminaModMax.Size = new System.Drawing.Size(100, 22);
+            this.nudStaminaModMax.Size = new System.Drawing.Size(100, 20);
             this.nudStaminaModMax.TabIndex = 5;
             // 
             // nudStaminaMax
@@ -454,7 +479,7 @@
             0,
             0});
             this.nudStaminaMax.Name = "nudStaminaMax";
-            this.nudStaminaMax.Size = new System.Drawing.Size(100, 22);
+            this.nudStaminaMax.Size = new System.Drawing.Size(100, 20);
             this.nudStaminaMax.TabIndex = 4;
             // 
             // nudStamina
@@ -472,7 +497,7 @@
             0,
             -2147483648});
             this.nudStamina.Name = "nudStamina";
-            this.nudStamina.Size = new System.Drawing.Size(100, 22);
+            this.nudStamina.Size = new System.Drawing.Size(100, 20);
             this.nudStamina.TabIndex = 3;
             this.nudStamina.ValueChanged += new System.EventHandler(this.nudStamina_ValueChanged);
             // 
@@ -487,7 +512,7 @@
             0,
             0});
             this.nudHealthModMax.Name = "nudHealthModMax";
-            this.nudHealthModMax.Size = new System.Drawing.Size(100, 22);
+            this.nudHealthModMax.Size = new System.Drawing.Size(100, 20);
             this.nudHealthModMax.TabIndex = 10;
             // 
             // nudHealthMax
@@ -501,7 +526,7 @@
             0,
             0});
             this.nudHealthMax.Name = "nudHealthMax";
-            this.nudHealthMax.Size = new System.Drawing.Size(100, 22);
+            this.nudHealthMax.Size = new System.Drawing.Size(100, 20);
             this.nudHealthMax.TabIndex = 7;
             // 
             // nudHealth
@@ -514,7 +539,7 @@
             0,
             0});
             this.nudHealth.Name = "nudHealth";
-            this.nudHealth.Size = new System.Drawing.Size(100, 22);
+            this.nudHealth.Size = new System.Drawing.Size(100, 20);
             this.nudHealth.TabIndex = 7;
             this.nudHealth.ValueChanged += new System.EventHandler(this.nudHealth_ValueChanged);
             // 
@@ -565,7 +590,7 @@
             this.cbxStoreState.Location = new System.Drawing.Point(292, 251);
             this.cbxStoreState.Margin = new System.Windows.Forms.Padding(4);
             this.cbxStoreState.Name = "cbxStoreState";
-            this.cbxStoreState.Size = new System.Drawing.Size(110, 21);
+            this.cbxStoreState.Size = new System.Drawing.Size(87, 17);
             this.cbxStoreState.TabIndex = 24;
             this.cbxStoreState.Text = "Include state";
             this.cbxStoreState.UseVisualStyleBackColor = true;
@@ -576,7 +601,7 @@
             this.cbxPosLock.Location = new System.Drawing.Point(76, 251);
             this.cbxPosLock.Margin = new System.Windows.Forms.Padding(4);
             this.cbxPosLock.Name = "cbxPosLock";
-            this.cbxPosLock.Size = new System.Drawing.Size(74, 21);
+            this.cbxPosLock.Size = new System.Drawing.Size(58, 17);
             this.cbxPosLock.TabIndex = 4;
             this.cbxPosLock.Text = "Freeze";
             this.cbxPosLock.UseVisualStyleBackColor = true;
@@ -588,7 +613,7 @@
             lblPosAngle.Location = new System.Drawing.Point(23, 186);
             lblPosAngle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblPosAngle.Name = "lblPosAngle";
-            lblPosAngle.Size = new System.Drawing.Size(44, 17);
+            lblPosAngle.Size = new System.Drawing.Size(34, 13);
             lblPosAngle.TabIndex = 16;
             lblPosAngle.Text = "Angle";
             // 
@@ -609,7 +634,7 @@
             0,
             -2147483648});
             this.nudPosZ.Name = "nudPosZ";
-            this.nudPosZ.Size = new System.Drawing.Size(100, 22);
+            this.nudPosZ.Size = new System.Drawing.Size(100, 20);
             this.nudPosZ.TabIndex = 2;
             this.nudPosZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPosZ.ValueChanged += new System.EventHandler(this.nudPos_ValueChanged);
@@ -620,7 +645,7 @@
             lblPosStored.Location = new System.Drawing.Point(288, 68);
             lblPosStored.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblPosStored.Name = "lblPosStored";
-            lblPosStored.Size = new System.Drawing.Size(50, 17);
+            lblPosStored.Size = new System.Drawing.Size(38, 13);
             lblPosStored.TabIndex = 19;
             lblPosStored.Text = "Stored";
             // 
@@ -641,7 +666,7 @@
             lblArea.Location = new System.Drawing.Point(180, 20);
             lblArea.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblArea.Name = "lblArea";
-            lblArea.Size = new System.Drawing.Size(38, 17);
+            lblArea.Size = new System.Drawing.Size(29, 13);
             lblArea.TabIndex = 23;
             lblArea.Text = "Area";
             // 
@@ -651,7 +676,7 @@
             lblPosStable.Location = new System.Drawing.Point(180, 68);
             lblPosStable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblPosStable.Name = "lblPosStable";
-            lblPosStable.Size = new System.Drawing.Size(48, 17);
+            lblPosStable.Size = new System.Drawing.Size(37, 13);
             lblPosStable.TabIndex = 18;
             lblPosStable.Text = "Stable";
             // 
@@ -661,7 +686,7 @@
             this.txtArea.Location = new System.Drawing.Point(184, 39);
             this.txtArea.Margin = new System.Windows.Forms.Padding(4);
             this.txtArea.Name = "txtArea";
-            this.txtArea.Size = new System.Drawing.Size(99, 22);
+            this.txtArea.Size = new System.Drawing.Size(99, 20);
             this.txtArea.TabIndex = 22;
             // 
             // nudPosY
@@ -681,7 +706,7 @@
             0,
             -2147483648});
             this.nudPosY.Name = "nudPosY";
-            this.nudPosY.Size = new System.Drawing.Size(100, 22);
+            this.nudPosY.Size = new System.Drawing.Size(100, 20);
             this.nudPosY.TabIndex = 1;
             this.nudPosY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPosY.ValueChanged += new System.EventHandler(this.nudPos_ValueChanged);
@@ -692,7 +717,7 @@
             lblWorld.Location = new System.Drawing.Point(72, 20);
             lblWorld.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblWorld.Name = "lblWorld";
-            lblWorld.Size = new System.Drawing.Size(45, 17);
+            lblWorld.Size = new System.Drawing.Size(35, 13);
             lblWorld.TabIndex = 21;
             lblWorld.Text = "World";
             // 
@@ -702,7 +727,7 @@
             lblPosCurrent.Location = new System.Drawing.Point(72, 68);
             lblPosCurrent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblPosCurrent.Name = "lblPosCurrent";
-            lblPosCurrent.Size = new System.Drawing.Size(55, 17);
+            lblPosCurrent.Size = new System.Drawing.Size(41, 13);
             lblPosCurrent.TabIndex = 17;
             lblPosCurrent.Text = "Current";
             // 
@@ -712,7 +737,7 @@
             this.txtWorld.Location = new System.Drawing.Point(76, 39);
             this.txtWorld.Margin = new System.Windows.Forms.Padding(4);
             this.txtWorld.Name = "txtWorld";
-            this.txtWorld.Size = new System.Drawing.Size(99, 22);
+            this.txtWorld.Size = new System.Drawing.Size(99, 20);
             this.txtWorld.TabIndex = 20;
             // 
             // nudPosStableZ
@@ -732,7 +757,7 @@
             0,
             -2147483648});
             this.nudPosStableZ.Name = "nudPosStableZ";
-            this.nudPosStableZ.Size = new System.Drawing.Size(100, 22);
+            this.nudPosStableZ.Size = new System.Drawing.Size(100, 20);
             this.nudPosStableZ.TabIndex = 5;
             this.nudPosStableZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -753,7 +778,7 @@
             0,
             -2147483648});
             this.nudPosX.Name = "nudPosX";
-            this.nudPosX.Size = new System.Drawing.Size(100, 22);
+            this.nudPosX.Size = new System.Drawing.Size(100, 20);
             this.nudPosX.TabIndex = 0;
             this.nudPosX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPosX.ValueChanged += new System.EventHandler(this.nudPos_ValueChanged);
@@ -774,7 +799,7 @@
             0,
             -2147483648});
             this.nudPosStoredAngle.Name = "nudPosStoredAngle";
-            this.nudPosStoredAngle.Size = new System.Drawing.Size(100, 22);
+            this.nudPosStoredAngle.Size = new System.Drawing.Size(100, 20);
             this.nudPosStoredAngle.TabIndex = 8;
             this.nudPosStoredAngle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -795,7 +820,7 @@
             0,
             -2147483648});
             this.nudPosStableY.Name = "nudPosStableY";
-            this.nudPosStableY.Size = new System.Drawing.Size(100, 22);
+            this.nudPosStableY.Size = new System.Drawing.Size(100, 20);
             this.nudPosStableY.TabIndex = 7;
             this.nudPosStableY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -816,7 +841,7 @@
             0,
             -2147483648});
             this.nudPosStableAngle.Name = "nudPosStableAngle";
-            this.nudPosStableAngle.Size = new System.Drawing.Size(100, 22);
+            this.nudPosStableAngle.Size = new System.Drawing.Size(100, 20);
             this.nudPosStableAngle.TabIndex = 15;
             this.nudPosStableAngle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -837,7 +862,7 @@
             0,
             -2147483648});
             this.nudPosStableX.Name = "nudPosStableX";
-            this.nudPosStableX.Size = new System.Drawing.Size(100, 22);
+            this.nudPosStableX.Size = new System.Drawing.Size(100, 20);
             this.nudPosStableX.TabIndex = 8;
             this.nudPosStableX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -858,7 +883,7 @@
             0,
             -2147483648});
             this.nudPosAngle.Name = "nudPosAngle";
-            this.nudPosAngle.Size = new System.Drawing.Size(100, 22);
+            this.nudPosAngle.Size = new System.Drawing.Size(100, 20);
             this.nudPosAngle.TabIndex = 14;
             this.nudPosAngle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -878,7 +903,7 @@
             0,
             -2147483648});
             this.nudPosStoredX.Name = "nudPosStoredX";
-            this.nudPosStoredX.Size = new System.Drawing.Size(100, 22);
+            this.nudPosStoredX.Size = new System.Drawing.Size(100, 20);
             this.nudPosStoredX.TabIndex = 5;
             this.nudPosStoredX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -888,7 +913,7 @@
             lblPosZ.Location = new System.Drawing.Point(49, 154);
             lblPosZ.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblPosZ.Name = "lblPosZ";
-            lblPosZ.Size = new System.Drawing.Size(17, 17);
+            lblPosZ.Size = new System.Drawing.Size(14, 13);
             lblPosZ.TabIndex = 13;
             lblPosZ.Text = "Z";
             // 
@@ -908,7 +933,7 @@
             0,
             -2147483648});
             this.nudPosStoredY.Name = "nudPosStoredY";
-            this.nudPosStoredY.Size = new System.Drawing.Size(100, 22);
+            this.nudPosStoredY.Size = new System.Drawing.Size(100, 20);
             this.nudPosStoredY.TabIndex = 6;
             this.nudPosStoredY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -918,7 +943,7 @@
             lblPosY.Location = new System.Drawing.Point(49, 122);
             lblPosY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblPosY.Name = "lblPosY";
-            lblPosY.Size = new System.Drawing.Size(17, 17);
+            lblPosY.Size = new System.Drawing.Size(14, 13);
             lblPosY.TabIndex = 12;
             lblPosY.Text = "Y";
             // 
@@ -938,7 +963,7 @@
             0,
             -2147483648});
             this.nudPosStoredZ.Name = "nudPosStoredZ";
-            this.nudPosStoredZ.Size = new System.Drawing.Size(100, 22);
+            this.nudPosStoredZ.Size = new System.Drawing.Size(100, 20);
             this.nudPosStoredZ.TabIndex = 7;
             this.nudPosStoredZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -948,7 +973,7 @@
             lblPosX.Location = new System.Drawing.Point(49, 90);
             lblPosX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblPosX.Name = "lblPosX";
-            lblPosX.Size = new System.Drawing.Size(17, 17);
+            lblPosX.Size = new System.Drawing.Size(14, 13);
             lblPosX.TabIndex = 11;
             lblPosX.Text = "X";
             // 
@@ -1043,5 +1068,6 @@
         private System.Windows.Forms.NumericUpDown nudPosStoredY;
         private System.Windows.Forms.NumericUpDown nudPosStoredZ;
         private System.Windows.Forms.Button btnPosRestore;
+        private System.Windows.Forms.TextBox txtAiTimer;
     }
 }
